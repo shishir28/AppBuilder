@@ -1,0 +1,7 @@
+C:\Work\AppBuilder\src\Monad.AB.Infrastructure.DependencyResolver\bin\Debug\netcoreapp1.1\Monad.AB.Infrastructure.DependencyResolver.deps.json
+C:\Work\AppBuilder\src\Monad.AB.Infrastructure.DependencyResolver\bin\Debug\netcoreapp1.1\Monad.AB.Infrastructure.DependencyResolver.dll
+C:\Work\AppBuilder\src\Monad.AB.Infrastructure.DependencyResolver\bin\Debug\netcoreapp1.1\Monad.AB.Infrastructure.DependencyResolver.pdb
+C:\Work\AppBuilder\src\Monad.AB.Infrastructure.DependencyResolver\obj\Debug\netcoreapp1.1\Monad.AB.Infrastructure.DependencyResolver.csprojResolveAssemblyReference.cache
+C:\Work\AppBuilder\src\Monad.AB.Infrastructure.DependencyResolver\obj\Debug\netcoreapp1.1\Monad.AB.Infrastructure.DependencyResolver.AssemblyInfo.cs
+C:\Work\AppBuilder\src\Monad.AB.Infrastructure.DependencyResolver\obj\Debug\netcoreapp1.1\Monad.AB.Infrastructure.DependencyResolver.dll
+C:\Work\AppBuilder\src\Monad.AB.Infrastructure.DependencyResolver\obj\Debug\netcoreapp1.1\Monad.AB.Infrastructure.DependencyResolver.pdb

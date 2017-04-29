@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Monad.AB.Domain.Entities\Monad.AB.Domain.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
