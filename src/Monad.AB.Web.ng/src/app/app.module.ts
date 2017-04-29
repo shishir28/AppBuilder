@@ -41,7 +41,6 @@ import { BreadcrumbService } from "./core/breadcrumb/breadcrumb.service";
 //import { Level5Component } from './demo/levels/level5/level5.component';
 //import { DynamicMenuService } from "./demo/dynamic-menu/dynamic-menu.service";
 //import { AdminComponent } from './core/admin/admin.component';
-//import { LoginComponent } from './demo/custom-pages/login/login.component';
 //import { RegisterComponent } from './demo/custom-pages/register/register.component';
 //import { ForgotPasswordComponent } from './demo/custom-pages/forgot-password/forgot-password.component';
 //import { QuillModule } from 'ngx-quill';
@@ -67,15 +66,19 @@ import { BreadcrumbService } from "./core/breadcrumb/breadcrumb.service";
 //import { ChatComponent } from './demo/apps/chat/chat.component';
 import { CommonModule } from "@angular/common";
 //import { AutocompleteComponent } from './demo/components/autocomplete/autocomplete.component';
-//import { PerfectScrollbarConfigInterface, PerfectScrollbarModule } from "ngx-perfect-scrollbar";
+import { PerfectScrollbarConfigInterface, PerfectScrollbarModule } from "ngx-perfect-scrollbar";
 //import { AgmCoreModule } from "@agm/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-//import { MediaReplayService } from "./core/mediareplay/media-replay.service";
+import { HomeComponent } from './home/home.component';
+import { MediaReplayService } from "./core/mediareplay/media-replay.service";
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
-//const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
-//    suppressScrollX: true,
-//    swipePropagation: false
-//};
+const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
+    suppressScrollX: true,
+    swipePropagation: false
+};
 
 //const sortablejsConfig: SortablejsOptions = {
 //    animation: 300
@@ -92,6 +95,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
         //FormElementsComponent,
         //SearchComponent,
         BreadcrumbsComponent,
+        HomeComponent,
+        LoginComponent,
+        RegisterComponent,
+        ForgotPasswordComponent,
         //ListsComponent,
         //WidgetComponent,
         //nvD3,
@@ -113,7 +120,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
         //DynamicMenuComponent,
         //Level5Component,
         //AdminComponent,
-        //LoginComponent,
         //RegisterComponent,
         //ForgotPasswordComponent,
         //EditorComponent,
@@ -150,7 +156,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
         BrowserAnimationsModule,
         MaterialModule,
         FlexLayoutModule,
-        //PerfectScrollbarModule.forRoot(perfectScrollbarConfig),
+        PerfectScrollbarModule.forRoot(perfectScrollbarConfig),
         //AgmCoreModule.forRoot({
         //    apiKey: environment.googleApi
         //}),
@@ -166,7 +172,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
         //DynamicMenuService,
         //D3ChartService,
         //MailService,
-        //MediaReplayService
+        MediaReplayService
     ],
     bootstrap: [AppComponent]
 })

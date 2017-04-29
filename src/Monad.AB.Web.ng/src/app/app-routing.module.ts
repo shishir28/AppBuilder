@@ -1,5 +1,12 @@
 ﻿import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from "./home/home.component";
+import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from "./register/register.component";
+import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
+
+
+
 //import {DashboardV1Component} from "./demo/custom-pages/dashboard-v1/dashboard-v1.component";
 //import {AdminComponent} from "./core/admin/admin.component";
 //import {ButtonsComponent} from "./demo/components/buttons/buttons.component";
@@ -19,7 +26,6 @@ import { Routes, RouterModule } from '@angular/router';
 //import {GoogleMapsComponent} from "./demo/maps/google-maps/google-maps.component";
 //import {SimpleTableComponent} from "./demo/tables/simple-table/simple-table.component";
 //import {FixedHeaderTableComponent} from "./demo/tables/fixed-header-table/fixed-header-table.component";
-//import {LoginComponent} from "./demo/custom-pages/login/login.component";
 //import {RegisterComponent} from "./demo/custom-pages/register/register.component";
 //import {ForgotPasswordComponent} from "./demo/custom-pages/forgot-password/forgot-password.component";
 //import {EditorComponent} from "./demo/editor/editor.component";
@@ -31,30 +37,29 @@ import { Routes, RouterModule } from '@angular/router';
 //import {AutocompleteComponent} from "./demo/components/autocomplete/autocomplete.component";
 
 const routes: Routes = [
-  //{
-  //  path: 'login',
-  //  component: LoginComponent
-  //},
-  //{
-  //  path: 'register',
-  //  component: RegisterComponent
-  //},
-  //{
-  //  path: 'forgot-password',
-  //  component: ForgotPasswordComponent
-  //},
-  //{
-  //  path: '',
-  //  component: AdminComponent,
-  //  children: [
-     
-  //  ]
-  //}
+    {
+      path: 'login',
+      component: LoginComponent
+    },
+    {
+      path: 'register',
+      component: RegisterComponent
+    },
+    {
+      path: 'forgot-password',
+      component: ForgotPasswordComponent
+    },
+    {
+        path: '',
+        component: HomeComponent,
+        children: [
+        ]
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: []
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
+    providers: []
 })
 export class RoutingModule { }
