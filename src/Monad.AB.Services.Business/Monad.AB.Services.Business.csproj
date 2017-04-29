@@ -1,7 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Monad.AB.Common\Monad.AB.Common.csproj" />
+    <ProjectReference Include="..\Monad.AB.Domain.Entities\Monad.AB.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Monad.AB.Domain.Interfaces\Monad.AB.Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\Monad.AB.Services.Interface\Monad.AB.Services.Interface.csproj" />
+  </ItemGroup>
 
 </Project>
