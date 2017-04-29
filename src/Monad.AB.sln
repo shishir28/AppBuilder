@@ -5,35 +5,49 @@ VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{A08F8B92-87C3-45FA-B18F-84F148F8B1D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monad.AB.Web.App.Angular", "Monad.AB.Web.App.Angular\Monad.AB.Web.App.Angular.csproj", "{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monad.AB.Web.App", "Monad.AB.Web.App\Monad.AB.Web.App.csproj", "{38DBDA01-2088-4D2D-813C-0355EEF25C31}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Monad.AB.Web.ng", "Monad.AB.Web.ng\", "{6A79AF70-D9C0-49BD-99F6-BBFC7327EF0B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_3757"
+		Debug.AspNetCompiler.PhysicalPath = "Monad.AB.Web.ng\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3757\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_3757"
+		Release.AspNetCompiler.PhysicalPath = "Monad.AB.Web.ng\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3757\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3757"
+		SlnRelativePath = "Monad.AB.Web.ng\"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Debug|x64.Build.0 = Debug|Any CPU
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Debug|x86.Build.0 = Debug|Any CPU
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Release|x64.ActiveCfg = Release|Any CPU
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Release|x64.Build.0 = Release|Any CPU
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Release|x86.ActiveCfg = Release|Any CPU
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5}.Release|x86.Build.0 = Release|Any CPU
+		{38DBDA01-2088-4D2D-813C-0355EEF25C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38DBDA01-2088-4D2D-813C-0355EEF25C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38DBDA01-2088-4D2D-813C-0355EEF25C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38DBDA01-2088-4D2D-813C-0355EEF25C31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A79AF70-D9C0-49BD-99F6-BBFC7327EF0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A79AF70-D9C0-49BD-99F6-BBFC7327EF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A79AF70-D9C0-49BD-99F6-BBFC7327EF0B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A79AF70-D9C0-49BD-99F6-BBFC7327EF0B}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{47A8EE44-C72D-4DE9-B7B9-CDB07966D6B5} = {A08F8B92-87C3-45FA-B18F-84F148F8B1D3}
+		{38DBDA01-2088-4D2D-813C-0355EEF25C31} = {A08F8B92-87C3-45FA-B18F-84F148F8B1D3}
+		{6A79AF70-D9C0-49BD-99F6-BBFC7327EF0B} = {A08F8B92-87C3-45FA-B18F-84F148F8B1D3}
 	EndGlobalSection
 EndGlobal
