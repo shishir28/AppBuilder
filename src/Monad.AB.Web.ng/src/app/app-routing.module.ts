@@ -4,8 +4,7 @@ import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
-
-
+import { AuthGuard } from './shared/guards/index';
 
 //import {DashboardV1Component} from "./demo/custom-pages/dashboard-v1/dashboard-v1.component";
 //import {AdminComponent} from "./core/admin/admin.component";
@@ -38,20 +37,20 @@ import { ForgotPasswordComponent } from "./forgot-password/forgot-password.compo
 
 const routes: Routes = [
     {
-      path: 'login',
-      component: LoginComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
-      path: 'register',
-      component: RegisterComponent
+        path: 'register',
+        component: RegisterComponent
     },
     {
-      path: 'forgot-password',
-      component: ForgotPasswordComponent
+        path: 'forgot-password',
+        component: ForgotPasswordComponent
     },
     {
         path: '',
-        component: HomeComponent,
+        component: HomeComponent, canActivate: [AuthGuard],
         children: [
         ]
     }

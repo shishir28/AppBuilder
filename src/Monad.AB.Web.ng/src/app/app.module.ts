@@ -74,6 +74,7 @@ import { MediaReplayService } from "./core/mediareplay/media-replay.service";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AuthGuard } from './shared/guards/index';
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
@@ -172,7 +173,8 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
         //DynamicMenuService,
         //D3ChartService,
         //MailService,
-        MediaReplayService
+        MediaReplayService,
+        AuthGuard
     ],
     bootstrap: [AppComponent]
 })
