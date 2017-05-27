@@ -26,4 +26,10 @@
   </ItemGroup>
 
 
+  <ItemGroup>
+    <ProjectReference Include="..\Monad.AB.Common\Monad.AB.Common.csproj" />
+    <ProjectReference Include="..\Monad.AB.Services.Interface\Monad.AB.Services.Interface.csproj" />
+  </ItemGroup>
+
+
 </Project>
