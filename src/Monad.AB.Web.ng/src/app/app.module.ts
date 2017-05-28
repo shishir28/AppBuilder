@@ -75,6 +75,18 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AuthGuard } from './shared/guards/index';
+import { NewProjectComponent } from './new-project/new-project.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
+import { ViewProjectComponent } from './view-project/view-project.component';
+import { ListProjectComponent } from './list-project/list-project.component';
+import { NewFormComponent } from './form/new-form.component';
+import { EditFormComponent } from './form/edit-form.component';
+import { ViewFormComponent } from './form/view-form.component';
+import { ListFormComponent } from './form/list-form.component';
+import { NewFieldComponent } from './field/new-field.component';
+import { EditFieldComponent } from './field/edit-field.component';
+import { ViewFieldComponent } from './field/view-field.component';
+import { ListFieldComponent } from './field/list-field.component';
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
@@ -100,6 +112,18 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
         LoginComponent,
         RegisterComponent,
         ForgotPasswordComponent,
+        NewProjectComponent,
+        EditProjectComponent,
+        ViewProjectComponent,
+        ListProjectComponent,
+        NewFormComponent,
+        EditFormComponent,
+        ViewFormComponent,
+        ListFormComponent,
+        NewFieldComponent,
+        EditFieldComponent,
+        ViewFieldComponent,
+        ListFieldComponent,
         //ListsComponent,
         //WidgetComponent,
         //nvD3,
