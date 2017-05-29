@@ -6,6 +6,8 @@ namespace Monad.AB.Infrastructure.Data
 {
     public class CustomDBContext : IdentityDbContext<User, Role, string>
     {
+        public CustomDBContext(DbContextOptions options) : base(options) { }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ControlType>(b =>

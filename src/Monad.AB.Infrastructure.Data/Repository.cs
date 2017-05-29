@@ -13,7 +13,7 @@ namespace Monad.AB.Infrastructure.Data
         public Repository(CustomDBContext dataContext)
         {
             _dbContext = dataContext;
-            DbSet = dataContext.Set<T>();
+            DbSet = _dbContext.Set<T>();
         }
 
         public void Create(T entity)

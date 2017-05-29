@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.IO;
+using Monad.AB.Web.App.Middlewares;
+using Monad.AB.Infrastructure.DependencyResolver;
 
 namespace Monad.AB.Web.App
 {
@@ -30,11 +32,16 @@ namespace Monad.AB.Web.App
         {
             // Add framework services.
             services.AddMvc();
+            DependencyInstaller.InjectDependencies(services, this.Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.Use(new UnhandledExceptionMiddleware().Process);
+            app.Use(new PerformanceLoggingMiddleware().Process);
+            app.Use(new MonitoringMiddleware().Process);
+
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
@@ -48,14 +55,8 @@ namespace Monad.AB.Web.App
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            //app.UseStaticFiles();
 
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
+            
 
             app.Use(async (context, next) =>
             {
@@ -69,9 +70,14 @@ namespace Monad.AB.Web.App
                     await next();
                 }
             });
-
-            app.UseMvc();
             app.UseStaticFiles();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
+            
         }
     }
 }

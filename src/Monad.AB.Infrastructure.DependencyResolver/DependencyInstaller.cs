@@ -75,6 +75,7 @@ namespace Monad.AB.Infrastructure.DependencyResolver
             //services.AddTransient<IBuildScriptBuilder, BuildScriptBuilder>();
             services.AddTransient<IActivityService, ActivityService>();
             //services.AddTransient<IRoleService, RoleService>();
+            services.AddTransient<IProjectService, ProjectService>();
         }
     }
 }
