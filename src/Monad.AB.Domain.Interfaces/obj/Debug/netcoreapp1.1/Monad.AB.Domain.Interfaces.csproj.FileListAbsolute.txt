@@ -1,9 +1,8 @@
 C:\Work\AppBuilder\src\Monad.AB.Domain.Interfaces\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Interfaces.deps.json
 C:\Work\AppBuilder\src\Monad.AB.Domain.Interfaces\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Interfaces.dll
 C:\Work\AppBuilder\src\Monad.AB.Domain.Interfaces\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Interfaces.pdb
-C:\Work\AppBuilder\src\Monad.AB.Domain.Interfaces\obj\Debug\netcoreapp1.1\Monad.AB.Domain.Interfaces.csprojResolveAssemblyReference.cache
+C:\Work\AppBuilder\src\Monad.AB.Domain.Interfaces\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.dll
+C:\Work\AppBuilder\src\Monad.AB.Domain.Interfaces\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.pdb
 C:\Work\AppBuilder\src\Monad.AB.Domain.Interfaces\obj\Debug\netcoreapp1.1\Monad.AB.Domain.Interfaces.AssemblyInfo.cs
 C:\Work\AppBuilder\src\Monad.AB.Domain.Interfaces\obj\Debug\netcoreapp1.1\Monad.AB.Domain.Interfaces.dll
 C:\Work\AppBuilder\src\Monad.AB.Domain.Interfaces\obj\Debug\netcoreapp1.1\Monad.AB.Domain.Interfaces.pdb
-C:\Work\AppBuilder\src\Monad.AB.Domain.Interfaces\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.dll
-C:\Work\AppBuilder\src\Monad.AB.Domain.Interfaces\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.pdb

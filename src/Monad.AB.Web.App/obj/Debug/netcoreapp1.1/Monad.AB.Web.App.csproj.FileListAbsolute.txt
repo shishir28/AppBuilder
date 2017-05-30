@@ -3,10 +3,6 @@ C:\Work\AppBuilder\src\Monad.AB.Web.App\bin\Debug\netcoreapp1.1\Monad.AB.Web.App
 C:\Work\AppBuilder\src\Monad.AB.Web.App\bin\Debug\netcoreapp1.1\Monad.AB.Web.App.runtimeconfig.dev.json
 C:\Work\AppBuilder\src\Monad.AB.Web.App\bin\Debug\netcoreapp1.1\Monad.AB.Web.App.dll
 C:\Work\AppBuilder\src\Monad.AB.Web.App\bin\Debug\netcoreapp1.1\Monad.AB.Web.App.pdb
-C:\Work\AppBuilder\src\Monad.AB.Web.App\obj\Debug\netcoreapp1.1\Monad.AB.Web.App.csprojResolveAssemblyReference.cache
-C:\Work\AppBuilder\src\Monad.AB.Web.App\obj\Debug\netcoreapp1.1\Monad.AB.Web.App.AssemblyInfo.cs
-C:\Work\AppBuilder\src\Monad.AB.Web.App\obj\Debug\netcoreapp1.1\Monad.AB.Web.App.dll
-C:\Work\AppBuilder\src\Monad.AB.Web.App\obj\Debug\netcoreapp1.1\Monad.AB.Web.App.pdb
 C:\Work\AppBuilder\src\Monad.AB.Web.App\bin\Debug\netcoreapp1.1\Monad.AB.Common.dll
 C:\Work\AppBuilder\src\Monad.AB.Web.App\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.dll
 C:\Work\AppBuilder\src\Monad.AB.Web.App\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Interfaces.dll
@@ -23,3 +19,6 @@ C:\Work\AppBuilder\src\Monad.AB.Web.App\bin\Debug\netcoreapp1.1\Monad.AB.Common.
 C:\Work\AppBuilder\src\Monad.AB.Web.App\bin\Debug\netcoreapp1.1\Monad.AB.Infrastructure.Data.pdb
 C:\Work\AppBuilder\src\Monad.AB.Web.App\bin\Debug\netcoreapp1.1\Monad.AB.Infrastructure.StateManagement.pdb
 C:\Work\AppBuilder\src\Monad.AB.Web.App\bin\Debug\netcoreapp1.1\Monad.AB.Services.Business.pdb
+C:\Work\AppBuilder\src\Monad.AB.Web.App\obj\Debug\netcoreapp1.1\Monad.AB.Web.App.AssemblyInfo.cs
+C:\Work\AppBuilder\src\Monad.AB.Web.App\obj\Debug\netcoreapp1.1\Monad.AB.Web.App.dll
+C:\Work\AppBuilder\src\Monad.AB.Web.App\obj\Debug\netcoreapp1.1\Monad.AB.Web.App.pdb

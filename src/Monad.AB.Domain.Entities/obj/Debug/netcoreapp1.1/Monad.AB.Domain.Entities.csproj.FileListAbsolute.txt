@@ -1,7 +1,6 @@
 C:\Work\AppBuilder\src\Monad.AB.Domain.Entities\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.deps.json
 C:\Work\AppBuilder\src\Monad.AB.Domain.Entities\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.dll
 C:\Work\AppBuilder\src\Monad.AB.Domain.Entities\bin\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.pdb
-C:\Work\AppBuilder\src\Monad.AB.Domain.Entities\obj\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.csprojResolveAssemblyReference.cache
 C:\Work\AppBuilder\src\Monad.AB.Domain.Entities\obj\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.AssemblyInfo.cs
 C:\Work\AppBuilder\src\Monad.AB.Domain.Entities\obj\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.dll
 C:\Work\AppBuilder\src\Monad.AB.Domain.Entities\obj\Debug\netcoreapp1.1\Monad.AB.Domain.Entities.pdb
