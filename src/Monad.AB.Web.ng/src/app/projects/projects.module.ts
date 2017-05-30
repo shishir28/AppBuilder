@@ -7,7 +7,7 @@ import { ListProjectComponent } from './list-project.component';
 import { NewProjectComponent } from './new-project.component';
 import { EditProjectComponent } from './edit-project.component';
 import { ViewProjectComponent } from './view-project.component';
-
+import { ProjectsService } from './Shared/projects.service';
 @NgModule({
     imports: [
         CommonModule,
@@ -23,10 +23,10 @@ import { ViewProjectComponent } from './view-project.component';
         ViewProjectComponent
     ],
     exports: [
-        //ListProjectComponent
+        ListProjectComponent
     ],
     providers: [
-        //UsersService
+        ProjectsService
     ]
 })
 export class ProjectsModule { }

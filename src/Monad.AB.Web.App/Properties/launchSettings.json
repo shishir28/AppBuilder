@@ -16,7 +16,12 @@
       }
     },
     "Monad.AB.Web.App": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:4501"
     }
   }
 }

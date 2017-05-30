@@ -1,8 +1,0 @@
-C:\Work\AppBuilder\src\Monad.AB.Infrastructure.StateManagement\bin\Debug\netcoreapp1.1\Monad.AB.Infrastructure.StateManagement.deps.json
-C:\Work\AppBuilder\src\Monad.AB.Infrastructure.StateManagement\bin\Debug\netcoreapp1.1\Monad.AB.Infrastructure.StateManagement.dll
-C:\Work\AppBuilder\src\Monad.AB.Infrastructure.StateManagement\bin\Debug\netcoreapp1.1\Monad.AB.Infrastructure.StateManagement.pdb
-C:\Work\AppBuilder\src\Monad.AB.Infrastructure.StateManagement\bin\Debug\netcoreapp1.1\Monad.AB.Common.dll
-C:\Work\AppBuilder\src\Monad.AB.Infrastructure.StateManagement\bin\Debug\netcoreapp1.1\Monad.AB.Common.pdb
-C:\Work\AppBuilder\src\Monad.AB.Infrastructure.StateManagement\obj\Debug\netcoreapp1.1\Monad.AB.Infrastructure.StateManagement.AssemblyInfo.cs
-C:\Work\AppBuilder\src\Monad.AB.Infrastructure.StateManagement\obj\Debug\netcoreapp1.1\Monad.AB.Infrastructure.StateManagement.dll
-C:\Work\AppBuilder\src\Monad.AB.Infrastructure.StateManagement\obj\Debug\netcoreapp1.1\Monad.AB.Infrastructure.StateManagement.pdb

@@ -13,6 +13,7 @@ import { IconSidenavDirective } from './core/sidenav/icon-sidenav.directive';
 import { RoutingModule } from "./app-routing.module";
 import { projectsRouting } from "./projects/projects.routing";
 import { ProjectsModule } from "./projects/projects.module";
+import { ProjectsService } from "./projects/shared/projects.service";
 
 import { formsRouting } from "./forms/forms.routing";
 import { AppFormsModule } from "./forms/forms.module";
@@ -185,6 +186,7 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
         SidenavService,
         MdIconRegistry,
         BreadcrumbService,
+        ProjectsService,
         //DynamicMenuService,
         //D3ChartService,
         //MailService,
