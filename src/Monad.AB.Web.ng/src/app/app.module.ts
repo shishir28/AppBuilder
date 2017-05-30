@@ -11,6 +11,16 @@ import { SidenavItemComponent } from './core/sidenav-item/sidenav-item.component
 import { SidenavService } from "./core/sidenav/sidenav.service";
 import { IconSidenavDirective } from './core/sidenav/icon-sidenav.directive';
 import { RoutingModule } from "./app-routing.module";
+import { projectsRouting } from "./projects/projects.routing";
+import { ProjectsModule } from "./projects/projects.module";
+
+import { formsRouting } from "./forms/forms.routing";
+import { AppFormsModule } from "./forms/forms.module";
+
+import { fieldsRouting } from "./fields/fields.routing";
+import { FieldsModule } from "./fields/fields.module";
+
+
 //import { DashboardV1Component } from './demo/custom-pages/dashboard-v1/dashboard-v1.component';
 //import { ButtonsComponent } from './demo/components/buttons/buttons.component';
 //import { HighlightModule } from "./core/highlightjs/highlight.module";
@@ -75,18 +85,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AuthGuard } from './shared/guards/index';
-import { NewProjectComponent } from './project/new-project.component';
-import { EditProjectComponent } from './project/edit-project.component';
-import { ViewProjectComponent } from './project/view-project.component';
-import { ListProjectComponent } from './project/list-project.component';
-import { NewFormComponent } from './form/new-form.component';
-import { EditFormComponent } from './form/edit-form.component';
-import { ViewFormComponent } from './form/view-form.component';
-import { ListFormComponent } from './form/list-form.component';
-import { NewFieldComponent } from './field/new-field.component';
-import { EditFieldComponent } from './field/edit-field.component';
-import { ViewFieldComponent } from './field/view-field.component';
-import { ListFieldComponent } from './field/list-field.component';
+
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
@@ -112,18 +111,6 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
         LoginComponent,
         RegisterComponent,
         ForgotPasswordComponent,
-        NewProjectComponent,
-        EditProjectComponent,
-        ViewProjectComponent,
-        ListProjectComponent,
-        NewFormComponent,
-        EditFormComponent,
-        ViewFormComponent,
-        ListFormComponent,
-        NewFieldComponent,
-        EditFieldComponent,
-        ViewFieldComponent,
-        ListFieldComponent,
         //ListsComponent,
         //WidgetComponent,
         //nvD3,
@@ -181,6 +168,10 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
         BrowserAnimationsModule,
         MaterialModule,
         FlexLayoutModule,
+        projectsRouting, ProjectsModule,
+        formsRouting, AppFormsModule,
+        fieldsRouting, FieldsModule,
+
         PerfectScrollbarModule.forRoot(perfectScrollbarConfig),
         //AgmCoreModule.forRoot({
         //    apiKey: environment.googleApi
