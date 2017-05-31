@@ -4,6 +4,10 @@ import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
+import { ListProjectComponent } from "./projects/list-project.component";
+import { ViewProjectComponent } from "./projects/view-project.component";
+import { EditProjectComponent } from "./projects/edit-project.component";
+
 import { AuthGuard } from './shared/guards/index';
 
 //import {DashboardV1Component} from "./demo/custom-pages/dashboard-v1/dashboard-v1.component";
@@ -50,8 +54,25 @@ const routes: Routes = [
     },
     {
         path: '',
-        component: HomeComponent, canActivate: [AuthGuard],
+        component: HomeComponent,// canActivate: [AuthGuard],
         children: [
+            {
+                path: '',
+                redirectTo: 'projects',
+                pathMatch: 'full'
+            },
+            {
+                path: 'projects',
+                component: ListProjectComponent
+            },
+            {
+                path: 'projects/:id',
+                component: ViewProjectComponent
+            },
+            {
+                path: 'projects/edit/:id',
+                component: EditProjectComponent
+            },
         ]
     }
 ];

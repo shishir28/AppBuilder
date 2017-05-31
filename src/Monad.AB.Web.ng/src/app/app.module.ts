@@ -13,7 +13,7 @@ import { IconSidenavDirective } from './core/sidenav/icon-sidenav.directive';
 import { RoutingModule } from "./app-routing.module";
 import { projectsRouting } from "./projects/projects.routing";
 import { ProjectsModule } from "./projects/projects.module";
-import { ProjectsService } from "./projects/shared/projects.service";
+//import { ProjectsService } from "./projects/shared/projects.service";
 
 import { formsRouting } from "./forms/forms.routing";
 import { AppFormsModule } from "./forms/forms.module";
@@ -24,7 +24,7 @@ import { FieldsModule } from "./fields/fields.module";
 
 //import { DashboardV1Component } from './demo/custom-pages/dashboard-v1/dashboard-v1.component';
 //import { ButtonsComponent } from './demo/components/buttons/buttons.component';
-//import { HighlightModule } from "./core/highlightjs/highlight.module";
+import { HighlightModule } from "./core/highlightjs/highlight.module";
 //import { FormElementsComponent } from './demo/forms/form-elements/form-elements.component';
 //import { SearchComponent } from './core/search/search.component';
 import { BreadcrumbsComponent } from './core/breadcrumb/breadcrumb.component';
@@ -132,7 +132,7 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
         //TooltipComponent,
         //DynamicMenuComponent,
         //Level5Component,
-        //AdminComponent,
+       // AdminComponent
         //RegisterComponent,
         //ForgotPasswordComponent,
         //EditorComponent,
@@ -178,15 +178,15 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
         //    apiKey: environment.googleApi
         //}),
         //QuillModule,
-        //HighlightModule,
+        HighlightModule,
         //SortablejsModule,
         //CalendarModule.forRoot(),
-    ],
+    ],    
     providers: [
         SidenavService,
         MdIconRegistry,
         BreadcrumbService,
-        ProjectsService,
+       // ProjectsService,
         //DynamicMenuService,
         //D3ChartService,
         //MailService,

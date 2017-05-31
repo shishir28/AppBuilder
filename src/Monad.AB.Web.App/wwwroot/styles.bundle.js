@@ -1,6 +1,6 @@
 webpackJsonp([2,4],{
 
-/***/ 115:
+/***/ 119:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -122,7 +122,7 @@ function fromByteArray (uint8) {
 
 /***/ }),
 
-/***/ 116:
+/***/ 120:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -136,9 +136,9 @@ function fromByteArray (uint8) {
 
 
 
-var base64 = __webpack_require__(115)
-var ieee754 = __webpack_require__(135)
-var isArray = __webpack_require__(136)
+var base64 = __webpack_require__(119)
+var ieee754 = __webpack_require__(139)
+var isArray = __webpack_require__(140)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -1920,7 +1920,7 @@ function isnan (val) {
 
 /***/ }),
 
-/***/ 135:
+/***/ 139:
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -2011,7 +2011,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 /***/ }),
 
-/***/ 136:
+/***/ 140:
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -2023,13 +2023,13 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 
-/***/ 274:
+/***/ 273:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(468);
+var content = __webpack_require__(469);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(85)(content, {});
@@ -2050,13 +2050,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 275:
+/***/ 274:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(464);
+var content = __webpack_require__(465);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(85)(content, {});
@@ -2077,13 +2077,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 276:
+/***/ 275:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(465);
+var content = __webpack_require__(466);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(85)(content, {});
@@ -2104,13 +2104,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 277:
+/***/ 276:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(466);
+var content = __webpack_require__(467);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(85)(content, {});
@@ -2131,13 +2131,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 278:
+/***/ 277:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(467);
+var content = __webpack_require__(468);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(85)(content, {});
@@ -2158,7 +2158,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 463:
+/***/ 464:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)(false);
@@ -2173,7 +2173,7 @@ exports.push([module.i, ".mat-elevation-z0{box-shadow:0 0 0 0 rgba(0,0,0,.2),0 0
 
 /***/ }),
 
-/***/ 464:
+/***/ 465:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)(false);
@@ -2188,7 +2188,7 @@ exports.push([module.i, "/**\n * angular-calendar - A calendar component for ang
 
 /***/ }),
 
-/***/ 465:
+/***/ 466:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)(false);
@@ -2203,7 +2203,7 @@ exports.push([module.i, "/*! normalize.css v5.0.0 | MIT License | github.com/nec
 
 /***/ }),
 
-/***/ 466:
+/***/ 467:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)(false);
@@ -2218,7 +2218,7 @@ exports.push([module.i, "/* nvd3 version 1.8.5 (https://github.com/novus/nvd3) 2
 
 /***/ }),
 
-/***/ 467:
+/***/ 468:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)(false);
@@ -2233,13 +2233,13 @@ exports.push([module.i, "/*!\n * Quill Editor v1.2.5\n * https://quilljs.com/\n 
 
 /***/ }),
 
-/***/ 468:
+/***/ 469:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)(false);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700);", ""]);
-exports.i(__webpack_require__(463), "");
+exports.i(__webpack_require__(464), "");
 
 // module
 exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n/* -- Material Design Table style -------------- */\n.table {\n  width: 100%;\n  max-width: 100%;\n  background-color: #fff;\n  border-spacing: 0; }\n  .table > thead > tr,\n  .table > tbody > tr,\n  .table > tfoot > tr {\n    transition: all .3s ease; }\n    .table > thead > tr > th,\n    .table > thead > tr > td,\n    .table > tbody > tr > th,\n    .table > tbody > tr > td,\n    .table > tfoot > tr > th,\n    .table > tfoot > tr > td {\n      text-align: left;\n      padding: 16px;\n      vertical-align: middle;\n      border-top: 0;\n      transition: all .3s ease; }\n  .table > thead > tr > th {\n    font-weight: 400;\n    color: #757575;\n    vertical-align: bottom;\n    border-bottom: 1px solid rgba(0, 0, 0, 0.12); }\n  .table > caption + thead > tr:first-child > th,\n  .table > caption + thead > tr:first-child > td,\n  .table > colgroup + thead > tr:first-child > th,\n  .table > colgroup + thead > tr:first-child > td,\n  .table > thead:first-child > tr:first-child > th,\n  .table > thead:first-child > tr:first-child > td {\n    border-top: 0; }\n  .table > tbody + tbody {\n    border-top: 1px solid rgba(0, 0, 0, 0.12); }\n  .table .table {\n    background-color: #fff; }\n  .table .no-border {\n    border: 0; }\n\n.table-condensed > thead > tr > th,\n.table-condensed > thead > tr > td,\n.table-condensed > tbody > tr > th,\n.table-condensed > tbody > tr > td,\n.table-condensed > tfoot > tr > th,\n.table-condensed > tfoot > tr > td {\n  padding: 8px; }\n\n.table-bordered {\n  border: 0; }\n  .table-bordered > thead > tr > th,\n  .table-bordered > thead > tr > td,\n  .table-bordered > tbody > tr > th,\n  .table-bordered > tbody > tr > td,\n  .table-bordered > tfoot > tr > th,\n  .table-bordered > tfoot > tr > td {\n    border: 0;\n    border-bottom: 1px solid #e0e0e0; }\n  .table-bordered > thead > tr > th,\n  .table-bordered > thead > tr > td {\n    border-bottom-width: 2px; }\n\n.table-striped > tbody > tr:nth-child(even) > td,\n.table-striped > tbody > tr:nth-child(even) > th {\n  background-color: #f5f5f5; }\n\n.table-hover > tbody > tr:hover > td,\n.table-hover > tbody > tr:hover > th {\n  background-color: rgba(0, 0, 0, 0.12); }\n\n.table-striped.table-mc-red > tbody > tr:nth-child(odd) > td,\n.table-striped.table-mc-red > tbody > tr:nth-child(odd) > th {\n  background-color: #fde0dc; }\n\n.table-hover.table-mc-red > tbody > tr:hover > td,\n.table-hover.table-mc-red > tbody > tr:hover > th {\n  background-color: #f9bdbb; }\n\n@media screen and (max-width: 767px) {\n  .table-responsive-vertical .table-striped.table-mc-red > tbody > tr > td,\n  .table-responsive-vertical .table-striped.table-mc-red > tbody > tr:nth-child(odd) {\n    background-color: #fff; }\n  .table-responsive-vertical .table-striped.table-mc-red > tbody > tr > td:nth-child(odd) {\n    background-color: #fde0dc; }\n  .table-responsive-vertical .table-hover.table-mc-red > tbody > tr:hover > td,\n  .table-responsive-vertical .table-hover.table-mc-red > tbody > tr:hover {\n    background-color: #fff; }\n  .table-responsive-vertical .table-hover.table-mc-red > tbody > tr > td:hover {\n    background-color: #f9bdbb; } }\n\n.table-grey-header thead {\n  background-color: #EEEEEE; }\n\n.chart-widget {\n  position: relative;\n  background: white;\n  border-radius: 3px; }\n  .chart-widget .title-container {\n    padding: 18px;\n    color: #212121; }\n    .chart-widget .title-container .title {\n      font-weight: 500; }\n    .chart-widget .title-container .extra {\n      font-size: 13px; }\n      .chart-widget .title-container .extra .arrow {\n        width: 14px;\n        height: 14px;\n        font-size: 14px;\n        vertical-align: sub; }\n  .chart-widget .chart-container {\n    padding: 12px 18px 18px; }\n    .chart-widget .chart-container .thin-discrete-bar .bar-rect {\n      -webkit-clip-path: inset(0 0.1vw) !important;\n              clip-path: inset(0 0.1vw) !important;\n      shape-rendering: crispEdges !important;\n      fill-opacity: 1 !important; }\n    .chart-widget .chart-container .display-dots-line-chart .nvd3 .nv-groups .nv-point {\n      stroke-opacity: 1 !important;\n      fill-opacity: 1 !important;\n      stroke-width: 3px; }\n      .chart-widget .chart-container .display-dots-line-chart .nvd3 .nv-groups .nv-point.hover {\n        stroke-width: 7px; }\n    .chart-widget .chart-container .no-clipping svg {\n      overflow: visible !important; }\n  .chart-widget .chart-footer {\n    border-top: 1px solid #E1E1E1;\n    padding: 12px; }\n    .chart-widget .chart-footer .border-right {\n      border-right: 1px solid #E1E1E1; }\n    .chart-widget .chart-footer .border-left {\n      border-left: 1px solid #E1E1E1; }\n    .chart-widget .chart-footer .title {\n      font-weight: 500;\n      font-size: 24px; }\n    .chart-widget .chart-footer .extra {\n      font-size: 15px; }\n\n.piechart-widget .title-container {\n  padding: 12px 18px;\n  background: #EEEEEE;\n  border-bottom: 1px solid #E1E1E1; }\n\n.fill-bg-opacity .nvd3 .nv-group.nv-series-0 {\n  fill-opacity: 1 !important; }\n\n.nvd3 text {\n  font-family: Roboto, Arial, sans-serif;\n  font-size: 12px; }\n\n.nvtooltip {\n  font-family: Roboto, Arial, sans-serif;\n  font-size: 13px;\n  border-radius: 0;\n  background: #FFF;\n  border: none;\n  box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12); }\n\n.intense-colors-pie-chart .nvd3.nv-pie path {\n  fill-opacity: .8 !important; }\n\n.white-labels-pie-chart .nvd3.nv-pie .nv-label text {\n  fill: white !important; }\n\n.social-card {\n  position: relative; }\n  .social-card [md-card-avatar] {\n    margin-right: 4px;\n    width: 40px; }\n  .social-card md-card-subtitle {\n    margin-bottom: 4px; }\n\n.activity-card {\n  position: relative;\n  background: white;\n  padding: 0; }\n  .activity-card .title-container {\n    padding: 12px 18px;\n    color: #757575;\n    background: #EEEEEE;\n    border-bottom: 1px solid #E1E1E1; }\n    .activity-card .title-container .title {\n      font-weight: 500; }\n    .activity-card .title-container .extra {\n      font-size: 13px; }\n      .activity-card .title-container .extra .arrow {\n        width: 14px;\n        height: 14px;\n        font-size: 14px;\n        vertical-align: sub; }\n  .activity-card md-list {\n    padding: 0; }\n    .activity-card md-list .extra {\n      color: #757575; }\n\n.traffic-sources-card {\n  position: relative;\n  background: white;\n  padding: 0; }\n  .traffic-sources-card .title-container {\n    padding: 12px 18px;\n    color: #757575;\n    background: #EEEEEE;\n    border-bottom: 1px solid #E1E1E1; }\n    .traffic-sources-card .title-container .title {\n      font-weight: 500; }\n    .traffic-sources-card .title-container .extra {\n      font-size: 13px; }\n  .traffic-sources-card .content {\n    padding: 12px 18px; }\n    .traffic-sources-card .content .section {\n      padding: 12px 0; }\n      .traffic-sources-card .content .section .source {\n        color: white;\n        border-radius: 15px;\n        padding: 5px 0;\n        font-size: 16px; }\n      .traffic-sources-card .content .section .value {\n        font-size: 16px;\n        font-weight: 500; }\n\n.inbox .ql-container .ql-editor {\n  min-height: 100px; }\n\n.inbox-compose [md-dialog-actions], .inbox-compose md-dialog-action {\n  padding: 12px 0 26px; }\n\n.inbox-compose .content {\n  margin: 24px -24px; }\n  .inbox-compose .content .input-container {\n    width: 100%; }\n  .inbox-compose .content .editor {\n    margin: 0; }\n\n.inbox-compose .send {\n  margin-left: 12px; }\n  .inbox-compose .send md-icon {\n    font-size: 18px;\n    height: 18px;\n    width: 18px;\n    margin-left: 6px; }\n\n.inbox .checkbox .mat-checkbox-inner-container {\n  width: 16px;\n  height: 16px; }\n\n.event-edit {\n  min-width: 350px; }\n  .event-edit [md-dialog-actions], .event-edit md-dialog-action {\n    padding: 12px 0 26px; }\n  .event-edit .content {\n    margin: 24px -24px; }\n  .event-edit .save {\n    margin-left: 12px; }\n\ni.icon {\n  font-family: 'Material Icons';\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -webkit-font-feature-settings: 'liga';\n  -webkit-font-smoothing: antialiased;\n  vertical-align: middle; }\n\n.cal-event-title {\n  text-decoration: none; }\n\nmwl-calendar-week-view .cal-event-title, mwl-calendar-day-view .cal-event-title {\n  color: #212121; }\n\n.cal-event-action {\n  color: white; }\n  .cal-event-action i.icon {\n    font-size: 20px; }\n\nhtml, body {\n  min-height: 100%;\n  height: 100%;\n  line-height: normal;\n  font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-touch-callout: none;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n\ndiv {\n  box-sizing: border-box; }\n\nmd-sidenav-container {\n  height: 100%; }\n\nh3 {\n  font-size: 20px;\n  font-weight: 500;\n  letter-spacing: 0.005em; }\n\npre {\n  margin: 0; }\n\ncode {\n  white-space: pre; }\n\n.demo-preview {\n  background: #F2F2F2; }\n  .demo-preview md-card {\n    margin: 24px 0; }\n  .demo-preview md-card + md-card {\n    margin: 0 0 24px; }\n  .demo-preview md-card > md-card-content > * {\n    margin: 10px 5px; }\n\nh3, h4, h5, p {\n  margin: 0 0 16px; }\n\nh4 {\n  font-weight: 500;\n  color: #777777;\n  font-size: 18px; }\n\np {\n  line-height: 1.5; }\n\n@media only screen and (min-width: 1280px) {\n  .demo-tabs {\n    overflow-x: hidden; } }\n\n.inline {\n  display: inline-block;\n  padding: 0 0.5em;\n  white-space: normal;\n  vertical-align: text-bottom; }\n\n[md-prefix] > md-icon, [md-suffix] > md-icon {\n  font-size: 18px;\n  vertical-align: middle;\n  height: 16px;\n  width: 22px; }\n\n.demo-list {\n  margin: 24px 0;\n  background: #FFF;\n  width: 350px; }\n\n.subline {\n  color: #999999; }\n\n.avatar-flex {\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  -ms-flex-negative: 0;\n      flex-shrink: 0; }\n\n.widget {\n  margin: 12px; }\n\n.border-radius {\n  border-radius: 50%; }\n\n.avatar {\n  width: 40px;\n  min-width: 40px;\n  height: 40px;\n  line-height: 40px;\n  border-radius: 50%;\n  text-align: center; }\n\n.middle {\n  vertical-align: middle; }\n\n.quickpanel .mat-tab-body-content,\n.quickpanel .mat-tab-body-wrapper,\n.quickpanel md-tab-body,\n.quickpanel md-tab-group {\n  height: 100%; }\n\n.text-center {\n  text-align: center; }\n\n.pointer {\n  cursor: pointer; }\n\n.mt0 {\n  margin-top: 0 !important; }\n", ""]);
@@ -2277,14 +2277,14 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 779:
+/***/ 781:
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(275);
 __webpack_require__(276);
 __webpack_require__(277);
-__webpack_require__(278);
-__webpack_require__(275);
-module.exports = __webpack_require__(274);
+__webpack_require__(274);
+module.exports = __webpack_require__(273);
 
 
 /***/ }),
@@ -2368,7 +2368,7 @@ function toComment(sourceMap) {
   return '/*# ' + data + ' */';
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(116).Buffer))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(120).Buffer))
 
 /***/ }),
 
@@ -2625,5 +2625,5 @@ function updateLink(linkElement, obj) {
 
 /***/ })
 
-},[779]);
+},[781]);
 //# sourceMappingURL=styles.bundle.js.map

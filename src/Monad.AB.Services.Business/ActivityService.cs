@@ -13,7 +13,6 @@ namespace Monad.AB.Services.Business
 
         private IActivityRepository _repository;
         private IActivityRoleRepository _activityRoleRepository;
-
         public ActivityService(IActivityRepository repository, IActivityRoleRepository activityRoleRepository)
         {
             _repository = repository;

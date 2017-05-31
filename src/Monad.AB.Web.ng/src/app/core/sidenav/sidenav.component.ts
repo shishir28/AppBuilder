@@ -42,9 +42,8 @@ export class SidenavComponent implements OnInit, OnDestroy {
       }
     });
 
-
-    //this.breadcrumbService.addFriendlyNameForRoute('/', "Dashboard");
-    //this.breadcrumbService.addFriendlyNameForRoute('/apps', "Apps");
+    this.breadcrumbService.addFriendlyNameForRoute('/', "Home");
+    this.breadcrumbService.addFriendlyNameForRoute('/projects', "Projects");
     //this.breadcrumbService.addFriendlyNameForRoute('/apps/inbox', "Inbox");
     //this.breadcrumbService.addFriendlyNameForRoute('/apps/calendar', "Calendar");
     //this.breadcrumbService.addFriendlyNameForRoute('/apps/chat', "Chat");

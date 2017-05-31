@@ -13,7 +13,6 @@ namespace Monad.AB.Services.Business
         private IDatabaseConfigurationRepository _databaseConfigurationRepository;
         private IProjectPublishStatusRepository _projectPublishStatusRepository;
 
-
         public PublishService(IDatabaseConfigurationRepository databaseConfigurationRespository,
             IWebAppConfigurationRepository webAppConfigurationRespository,
             IProjectPublishStatusRepository projectPublishStatusRepository
