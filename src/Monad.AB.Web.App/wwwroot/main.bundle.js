@@ -2396,7 +2396,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ":host {\n  display: block;\n  padding: 36px;\n  height: calc(100% - 72px);\n  background: url(\"/assets/img/backgrounds/2.jpg\") no-repeat center center fixed;\n  background-size: cover; }\n\nmd-input-container {\n  margin: 8px 0; }\n", ""]);
 
 // exports
 
@@ -2586,7 +2586,7 @@ module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\" style=\"
 /***/ 522:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dashboard-container\" fxLayout=\"column\" fxLayoutAlign=\"center stretch\">\r\n  <div fxLayout=\"row\">\r\n    <md-card class=\"widget\" fxFlex>\r\n      <md-input-container>\r\n        <input mdInput placeholder=\"E-Mail\" type=\"text\" name=\"email\">\r\n      </md-input-container>\r\n    </md-card>\r\n\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "\r\n<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n  <md-card fxFlex=\"90%\" style=\"padding: 0;\">\r\n    <md-toolbar color=\"primary\">Form Wizard</md-toolbar>\r\n    <form #form=\"ngForm\">\r\n      <div fxLayout=\"column\" style=\"padding: 16px;\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"name\"\r\n                 placeholder=\"Name\"\r\n                 required\r\n                 ngModel=\"DavidSmith33\">\r\n        </md-input-container>\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"title\"\r\n                 required\r\n                 placeholder=\"Title\">\r\n        </md-input-container>\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"rootNamespace\"\r\n                 required\r\n                 placeholder=\"RootNamespace\">\r\n        </md-input-container>\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"companyName\"\r\n                 required\r\n                 placeholder=\"CompanyName\">\r\n        </md-input-container>\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"description\"\r\n                 required\r\n                 placeholder=\"Description\">\r\n        </md-input-container>\r\n\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button\r\n                  type=\"button\">\r\n            Cancel\r\n          </button>\r\n          <button color=\"primary\"\r\n                  md-raised-button\r\n                  style=\"margin-left: 8px;\"\r\n                  type=\"button\">\r\n            Save\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </md-card>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
