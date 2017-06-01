@@ -26,7 +26,7 @@ import { FieldsModule } from "./fields/fields.module";
 //import { ButtonsComponent } from './demo/components/buttons/buttons.component';
 import { HighlightModule } from "./core/highlightjs/highlight.module";
 //import { FormElementsComponent } from './demo/forms/form-elements/form-elements.component';
-//import { SearchComponent } from './core/search/search.component';
+import { SearchComponent } from './core/search/search.component';
 import { BreadcrumbsComponent } from './core/breadcrumb/breadcrumb.component';
 import { BreadcrumbService } from "./core/breadcrumb/breadcrumb.service";
 //import { ListsComponent } from './demo/components/lists/lists.component';
@@ -56,7 +56,7 @@ import { BreadcrumbService } from "./core/breadcrumb/breadcrumb.service";
 //import { ForgotPasswordComponent } from './demo/custom-pages/forgot-password/forgot-password.component';
 //import { QuillModule } from 'ngx-quill';
 //import { EditorComponent } from './demo/editor/editor.component';
-//import { QuickpanelComponent } from './core/quickpanel/quickpanel.component';
+import { QuickpanelComponent } from './core/quickpanel/quickpanel.component';
 //import { DashboardComponent } from './demo/dashboard/dashboard.component';
 //import { BarChartComponent } from './core/widgets/bar-chart/bar-chart.component';
 //import { LineChartComponent } from './core/widgets/line-chart/line-chart.component';
@@ -106,7 +106,7 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
         //DashboardV1Component,
         //ButtonsComponent,
         //FormElementsComponent,
-        //SearchComponent,
+        SearchComponent,
         BreadcrumbsComponent,
         HomeComponent,
         LoginComponent,
@@ -136,7 +136,7 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
         //RegisterComponent,
         //ForgotPasswordComponent,
         //EditorComponent,
-        //QuickpanelComponent,
+        QuickpanelComponent,
         //DashboardComponent,
         //BarChartComponent,
         //LineChartComponent,

@@ -1,9 +1,9 @@
 ﻿
 <div fxLayout="row" fxLayoutAlign="center center">
-  <md-card fxFlex="90%" style="padding: 0;">
+  <md-card fxFlex="90%" style="padding: 16px;">
     <md-toolbar color="primary">Form Wizard</md-toolbar>
     <form #form="ngForm">
-      <div fxLayout="column" style="padding: 16px;">
+      <div fxLayout="column">
         <md-input-container>
           <input mdInput
                  name="name"
@@ -11,31 +11,42 @@
                  required
                  ngModel="DavidSmith33">
         </md-input-container>
+      </div>
+
+      <div fxLayout="column">
         <md-input-container>
           <input mdInput
                  name="title"
                  required
                  placeholder="Title">
         </md-input-container>
+      </div>
+
+      <div fxLayout="column">
         <md-input-container>
           <input mdInput
                  name="rootNamespace"
                  required
                  placeholder="RootNamespace">
         </md-input-container>
+      </div>
+      <div fxLayout="column">
         <md-input-container>
           <input mdInput
                  name="companyName"
                  required
                  placeholder="CompanyName">
         </md-input-container>
+      </div>
+      <div fxLayout="column">
         <md-input-container>
           <input mdInput
                  name="description"
                  required
                  placeholder="Description">
         </md-input-container>
-
+      </div>
+      <div fxLayout="column">
         <div fxLayout="row" fxLayoutAlign="end center">
           <button md-raised-button
                   type="button">

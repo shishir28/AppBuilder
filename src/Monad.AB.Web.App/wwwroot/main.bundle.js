@@ -1,5 +1,258 @@
 webpackJsonp([1],{
 
+/***/ "./node_modules/moment/locale recursive ^\\.\\/.*$":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./src async recursive":
 /***/ (function(module, exports) {
 
@@ -191,18 +444,20 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__fields_fields_routing__ = __webpack_require__("./src/app/fields/fields.routing.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__fields_fields_module__ = __webpack_require__("./src/app/fields/fields.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__core_highlightjs_highlight_module__ = __webpack_require__("./src/app/core/highlightjs/highlight.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__core_breadcrumb_breadcrumb_component__ = __webpack_require__("./src/app/core/breadcrumb/breadcrumb.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__core_breadcrumb_breadcrumb_service__ = __webpack_require__("./src/app/core/breadcrumb/breadcrumb.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ngx_perfect_scrollbar__ = __webpack_require__("./node_modules/ngx-perfect-scrollbar/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_ngx_perfect_scrollbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__core_mediareplay_media_replay_service__ = __webpack_require__("./src/app/core/mediareplay/media-replay.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__forgot_password_forgot_password_component__ = __webpack_require__("./src/app/forgot-password/forgot-password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__shared_guards_index__ = __webpack_require__("./src/app/shared/guards/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__core_search_search_component__ = __webpack_require__("./src/app/core/search/search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__core_breadcrumb_breadcrumb_component__ = __webpack_require__("./src/app/core/breadcrumb/breadcrumb.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__core_breadcrumb_breadcrumb_service__ = __webpack_require__("./src/app/core/breadcrumb/breadcrumb.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__core_quickpanel_quickpanel_component__ = __webpack_require__("./src/app/core/quickpanel/quickpanel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ngx_perfect_scrollbar__ = __webpack_require__("./node_modules/ngx-perfect-scrollbar/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_ngx_perfect_scrollbar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__core_mediareplay_media_replay_service__ = __webpack_require__("./src/app/core/mediareplay/media-replay.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__forgot_password_forgot_password_component__ = __webpack_require__("./src/app/forgot-password/forgot-password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__shared_guards_index__ = __webpack_require__("./src/app/shared/guards/index.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -233,7 +488,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 //import { ButtonsComponent } from './demo/components/buttons/buttons.component';
 
 //import { FormElementsComponent } from './demo/forms/form-elements/form-elements.component';
-//import { SearchComponent } from './core/search/search.component';
+
 
 
 //import { ListsComponent } from './demo/components/lists/lists.component';
@@ -263,7 +518,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 //import { ForgotPasswordComponent } from './demo/custom-pages/forgot-password/forgot-password.component';
 //import { QuillModule } from 'ngx-quill';
 //import { EditorComponent } from './demo/editor/editor.component';
-//import { QuickpanelComponent } from './core/quickpanel/quickpanel.component';
+
 //import { DashboardComponent } from './demo/dashboard/dashboard.component';
 //import { BarChartComponent } from './core/widgets/bar-chart/bar-chart.component';
 //import { LineChartComponent } from './core/widgets/line-chart/line-chart.component';
@@ -315,28 +570,53 @@ AppModule = __decorate([
             //DashboardV1Component,
             //ButtonsComponent,
             //FormElementsComponent,
-            //SearchComponent,
-            __WEBPACK_IMPORTED_MODULE_19__core_breadcrumb_breadcrumb_component__["a" /* BreadcrumbsComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_27__register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_28__forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__core_search_search_component__["a" /* SearchComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__core_breadcrumb_breadcrumb_component__["a" /* BreadcrumbsComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_28__login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */],
+            //ListsComponent,
+            //WidgetComponent,
+            //nvD3,
+            //LineChartWidgetComponent,
+            //SourceOverviewWidgetComponent,
+            //SimpleTableComponent,
+            //FixedHeaderTableComponent,
+            //FormWizardComponent,
+            //GoogleMapsComponent,
+            //CardsComponent,
+            //DialogsComponent,
+            //DemoDialog,
+            //IconsComponent,
+            //GridListComponent,
+            //MenuComponent,
+            //SliderComponent,
+            //SnackBarComponent,
+            //TooltipComponent,
+            //DynamicMenuComponent,
+            //Level5Component,
+            // AdminComponent
+            //RegisterComponent,
+            //ForgotPasswordComponent,
+            //EditorComponent,
+            __WEBPACK_IMPORTED_MODULE_22__core_quickpanel_quickpanel_component__["a" /* QuickpanelComponent */],
         ],
         entryComponents: [],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_21__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_23__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_11__app_routing_module__["a" /* RoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_23__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_25__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["a" /* MaterialModule */],
             __WEBPACK_IMPORTED_MODULE_7__angular_flex_layout__["a" /* FlexLayoutModule */],
             __WEBPACK_IMPORTED_MODULE_12__projects_projects_routing__["a" /* projectsRouting */], __WEBPACK_IMPORTED_MODULE_13__projects_projects_module__["a" /* ProjectsModule */],
             __WEBPACK_IMPORTED_MODULE_14__forms_forms_routing__["a" /* formsRouting */], __WEBPACK_IMPORTED_MODULE_15__forms_forms_module__["a" /* AppFormsModule */],
             __WEBPACK_IMPORTED_MODULE_16__fields_fields_routing__["a" /* fieldsRouting */], __WEBPACK_IMPORTED_MODULE_17__fields_fields_module__["a" /* FieldsModule */],
-            __WEBPACK_IMPORTED_MODULE_22_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forRoot(perfectScrollbarConfig),
+            __WEBPACK_IMPORTED_MODULE_24_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forRoot(perfectScrollbarConfig),
             //AgmCoreModule.forRoot({
             //    apiKey: environment.googleApi
             //}),
@@ -346,13 +626,13 @@ AppModule = __decorate([
         providers: [
             __WEBPACK_IMPORTED_MODULE_9__core_sidenav_sidenav_service__["a" /* SidenavService */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["b" /* MdIconRegistry */],
-            __WEBPACK_IMPORTED_MODULE_20__core_breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */],
+            __WEBPACK_IMPORTED_MODULE_21__core_breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */],
             // ProjectsService,
             //DynamicMenuService,
             //D3ChartService,
             //MailService,
-            __WEBPACK_IMPORTED_MODULE_25__core_mediareplay_media_replay_service__["a" /* MediaReplayService */],
-            __WEBPACK_IMPORTED_MODULE_29__shared_guards_index__["a" /* AuthGuard */]
+            __WEBPACK_IMPORTED_MODULE_27__core_mediareplay_media_replay_service__["a" /* MediaReplayService */],
+            __WEBPACK_IMPORTED_MODULE_31__shared_guards_index__["a" /* AuthGuard */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
@@ -708,6 +988,153 @@ MediaReplayService = __decorate([
 
 var _a;
 //# sourceMappingURL=media-replay.service.js.map
+
+/***/ }),
+
+/***/ "./src/app/core/quickpanel/quickpanel.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<md-tab-group>\r\n  <md-tab label=\"Overview\">\r\n      <perfect-scrollbar class=\"overflow-container\">\r\n          <div class=\"text-padding\">\r\n            <p>TODAY</p>\r\n            <p class=\"h1\">\r\n              <span>{{ todayDay }}</span> <br/>\r\n              <span>{{ todayDate }}</span><span style=\"font-size: 18px; vertical-align: top;\">{{ todayDateSuffix }}</span><span>{{ todayMonth }}</span>\r\n            </p>\r\n          </div>\r\n\r\n          <md-divider></md-divider>\r\n\r\n          <md-nav-list>\r\n            <h3 md-subheader>Upcoming Events</h3>\r\n            <a href=\"javascript:;\" md-list-item>\r\n              <h4 md-line>Business Meeting</h4>\r\n              <p md-line>In 16 Minutes, Meeting Room</p>\r\n            </a>\r\n            <a href=\"javascript:;\" md-list-item>\r\n              <h4 md-line>Ask for Vacation</h4>\r\n              <p md-line>12:00 PM</p>\r\n            </a>\r\n            <a href=\"javascript:;\" md-list-item>\r\n              <h4 md-line>Dinner with Sophie</h4>\r\n              <p md-line>18:30 PM</p>\r\n            </a>\r\n            <a href=\"javascript:;\" md-list-item>\r\n              <h4 md-line>Deadline for Project X</h4>\r\n              <p  md-line>21:00 PM</p>\r\n            </a>\r\n            <md-divider></md-divider>\r\n            <h3 md-subheader>TODO-List</h3>\r\n            <a md-list-item>\r\n              <h4 md-line>Invite Jack to play golf</h4>\r\n              <p md-line>Added: 6 hours ago</p>\r\n            </a>\r\n            <a md-list-item>\r\n              <h4 md-line>Get to know Angular more</h4>\r\n              <p md-line>Added: 2 days ago</p>\r\n            </a>\r\n            <a md-list-item>\r\n              <h4 md-line>Configure that new router</h4>\r\n              <p md-line>Added: 5 days ago</p>\r\n            </a>\r\n            <md-divider></md-divider>\r\n            <h3 md-subheader>Server Statistics</h3>\r\n            <a md-list-item>\r\n              <p md-line>CPU Load (71% / 100%)</p>\r\n              <p md-line><md-progress-bar mode=\"determinate\" color=\"primary\" value=\"71\"></md-progress-bar></p>\r\n            </a>\r\n            <a md-list-item>\r\n              <p md-line>RAM Usage (6,175 MB / 16,384 MB)</p>\r\n              <p md-line><md-progress-bar mode=\"determinate\" color=\"accent\" value=\"34\"></md-progress-bar></p>\r\n            </a>\r\n            <a md-list-item>\r\n              <p md-line>CPU Temp (43° / 80°)</p>\r\n              <p md-line><md-progress-bar mode=\"determinate\" color=\"warn\" value=\"54\"></md-progress-bar></p>\r\n            </a>\r\n          </md-nav-list>\r\n      </perfect-scrollbar>\r\n  </md-tab>\r\n  <md-tab label=\"Notifications\">\r\n    <perfect-scrollbar class=\"overflow-container\">\r\n      <md-nav-list>\r\n        <h3 md-subheader>Friends</h3>\r\n        <a href=\"javascript:;\" md-list-item>\r\n          <img md-list-avatar src=\"assets/img/avatars/1.png\">\r\n          <h3 md-line> Sophie </h3>\r\n          <p md-line>\r\n            <span> Dinner? </span>\r\n            <span class=\"\"> -- Are we still going out tonight? </span>\r\n          </p>\r\n        </a>\r\n        <a href=\"javascript:;\" md-list-item>\r\n          <img md-list-avatar src=\"assets/img/avatars/4.png\">\r\n          <h3 md-line> Jack </h3>\r\n          <p md-line>\r\n            <span> Golf weekend </span>\r\n            <span class=\"\"> -- Hey! You wanted to go play Golf? </span>\r\n          </p>\r\n        </a>\r\n        <a href=\"javascript:;\" md-list-item>\r\n          <img md-list-avatar src=\"assets/img/avatars/9.png\">\r\n          <h3 md-line> Cody </h3>\r\n          <p md-line>\r\n            <span> Code Quality </span>\r\n            <span class=\"\"> -- Love your newest theme, so clean and slick! </span>\r\n          </p>\r\n        </a>\r\n        <a href=\"javascript:;\" md-list-item>\r\n          <img md-list-avatar src=\"assets/img/avatars/16.png\">\r\n          <h3 md-line> James </h3>\r\n          <p md-line>\r\n            <span> Gaming? </span>\r\n            <span class=\"\"> -- You wanna throw a party this weekend? </span>\r\n          </p>\r\n        </a>\r\n        <a href=\"javascript:;\" md-list-item>\r\n          <img md-list-avatar src=\"assets/img/avatars/19.png\">\r\n          <h3 md-line> Jessica </h3>\r\n          <p md-line>\r\n            <span> Love you... </span>\r\n            <span class=\"\"> -- Hope we can see us again soon :) </span>\r\n          </p>\r\n        </a>\r\n\r\n        <md-divider></md-divider>\r\n\r\n        <h3 md-subheader>Server Statistics</h3>\r\n        <a md-list-item>\r\n          <p md-line>CPU Load (71% / 100%)</p>\r\n          <p md-line><md-progress-bar mode=\"determinate\" color=\"primary\" value=\"71\"></md-progress-bar></p>\r\n        </a>\r\n        <a md-list-item>\r\n          <p md-line>RAM Usage (6,175 MB / 16,384 MB)</p>\r\n          <p md-line><md-progress-bar mode=\"determinate\" color=\"accent\" value=\"34\"></md-progress-bar></p>\r\n        </a>\r\n        <a md-list-item>\r\n          <p md-line>CPU Temp (43° / 80°)</p>\r\n          <p md-line><md-progress-bar mode=\"determinate\" color=\"warn\" value=\"54\"></md-progress-bar></p>\r\n        </a>\r\n      </md-nav-list>\r\n    </perfect-scrollbar>\r\n  </md-tab>\r\n</md-tab-group>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/core/quickpanel/quickpanel.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".overflow-container {\n  height: 100%;\n  overflow-x: hidden;\n  position: absolute;\n  width: 100%; }\n\n.text-padding {\n  padding: 24px; }\n\np {\n  color: #444; }\n\n.h1 {\n  font-size: 32px;\n  font-weight: 500;\n  margin-bottom: 0; }\n\nh4 {\n  color: #212121; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "./src/app/core/quickpanel/quickpanel.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment__ = __webpack_require__("./node_modules/moment/moment.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_moment__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuickpanelComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var QuickpanelComponent = (function () {
+    function QuickpanelComponent() {
+    }
+    QuickpanelComponent.prototype.ngOnInit = function () {
+        this.todayDay = __WEBPACK_IMPORTED_MODULE_1_moment__().format('dddd');
+        this.todayDate = __WEBPACK_IMPORTED_MODULE_1_moment__().format('Do');
+        this.todayDate = this.todayDate.replace(/\D/g, '');
+        this.todayDateSuffix = __WEBPACK_IMPORTED_MODULE_1_moment__().format('Do');
+        this.todayDateSuffix = this.todayDateSuffix.replace(/[0-9]/g, '');
+        this.todayMonth = __WEBPACK_IMPORTED_MODULE_1_moment__().format('MMMM');
+    };
+    return QuickpanelComponent;
+}());
+QuickpanelComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ms-quickpanel',
+        template: __webpack_require__("./src/app/core/quickpanel/quickpanel.component.html"),
+        styles: [__webpack_require__("./src/app/core/quickpanel/quickpanel.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], QuickpanelComponent);
+
+//# sourceMappingURL=quickpanel.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/core/search/search.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center stretch\" style=\"height: 100%;\">\r\n  <button class=\"search-button\" md-button (click)=\"open()\">\r\n    <md-icon>search</md-icon>\r\n  </button>\r\n  <md-input-container class=\"search\" floatingPlaceholder=\"false\" [class.search-open]=\"isOpen\">\r\n    <input #input (blur)=\"close()\" mdInput placeholder=\"Search...\">\r\n  </md-input-container>\r\n</div>\r\n\r\n\r\n<!--<div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n  <div class=\"search-wrapper\" fxLayout=\"row\" [class.focus]=\"isFocused()\" fxShow=\"false\" fxShow.gt-md=\"true\">\r\n    <md-icon class=\"search-icon\">search</md-icon>\r\n    <input type=\"search\"\r\n           autocomplete=\"off\"\r\n           spellcheck=\"off\"\r\n           class=\"search-input\"\r\n           [(ngModel)]=\"search\"\r\n           (focus)=\"focus()\"\r\n           (blur)=\"blur()\"\r\n           placeholder=\"Search\">\r\n  </div>\r\n</div>\r\n-->\r\n"
+
+/***/ }),
+
+/***/ "./src/app/core/search/search.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  height: 100%; }\n\n.search {\n  margin-left: 8px;\n  width: 0;\n  overflow: hidden;\n  opacity: 0;\n  visibility: hidden;\n  transition: all 0.4s cubic-bezier(0.35, 0, 0.25, 1); }\n  .search.search-open {\n    width: 250px;\n    visibility: visible;\n    opacity: 1; }\n\n.search-button {\n  border-radius: 0;\n  padding: 0;\n  min-width: 50px;\n  max-width: 50px; }\n\ninput[type=\"search\"] {\n  -webkit-appearance: none; }\n\n.search-wrapper {\n  position: relative;\n  -webkit-box-flex: 1.5;\n      -ms-flex-positive: 1.5;\n          flex-grow: 1.5; }\n  .search-wrapper .search-icon {\n    position: absolute;\n    font-size: 24px;\n    top: 6px;\n    left: 24px;\n    transition: color 0.2s ease; }\n  .search-wrapper input.search-input {\n    display: block;\n    padding: 8px 8px 8px 72px;\n    box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.06), 0 1px 1px rgba(0, 0, 0, 0.12);\n    height: 36px;\n    transition: all 0.2s ease;\n    border: none;\n    font-size: 16px;\n    -webkit-appearance: textfield;\n       -moz-appearance: textfield;\n            appearance: textfield;\n    font-weight: 300;\n    outline: none;\n    border-radius: 3px;\n    box-sizing: border-box;\n    color: currentColor;\n    background: rgba(255, 255, 255, 0.2);\n    width: 100%; }\n    .search-wrapper input.search-input:hover {\n      background: rgba(255, 255, 255, 0.5); }\n    .search-wrapper input.search-input::-webkit-input-placeholder {\n      color: currentColor; }\n    .search-wrapper input.search-input:-moz-placeholder {\n      opacity: 1;\n      color: currentColor; }\n    .search-wrapper input.search-input::-moz-placeholder {\n      opacity: 1;\n      color: currentColor; }\n    .search-wrapper input.search-input:-ms-input-placeholder {\n      color: currentColor; }\n  .search-wrapper.focus .search-icon {\n    color: rgba(0, 0, 0, 0.87); }\n  .search-wrapper.focus input.search-input {\n    background: white;\n    color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input::-webkit-input-placeholder {\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input:-moz-placeholder {\n      opacity: 1;\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input::-moz-placeholder {\n      opacity: 1;\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input:-ms-input-placeholder {\n      color: rgba(0, 0, 0, 0.87); }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "./src/app/core/search/search.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SearchComponent = (function () {
+    function SearchComponent(renderer) {
+        this.renderer = renderer;
+    }
+    SearchComponent.prototype.ngOnInit = function () {
+    };
+    SearchComponent.prototype.open = function () {
+        var _this = this;
+        this.isOpen = true;
+        setTimeout(function () {
+            _this.renderer.invokeElementMethod(_this.input.nativeElement, 'focus', []);
+        }, 100);
+    };
+    SearchComponent.prototype.close = function () {
+        this.isOpen = false;
+    };
+    return SearchComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('input'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+], SearchComponent.prototype, "input", void 0);
+SearchComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ms-search',
+        template: __webpack_require__("./src/app/core/search/search.component.html"),
+        styles: [__webpack_require__("./src/app/core/search/search.component.scss")]
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]) === "function" && _b || Object])
+], SearchComponent);
+
+var _a, _b;
+//# sourceMappingURL=search.component.js.map
 
 /***/ }),
 
@@ -2027,7 +2454,7 @@ ViewFormComponent = __decorate([
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-sidenav-container>\r\n\r\n  <md-sidenav class=\"quickpanel\" [opened]=\"quickpanelOpen\" align=\"end\" mode=\"over\" #quickpanel>\r\n\r\n    <!--<ms-quickpanel></ms-quickpanel>-->\r\n\r\n  </md-sidenav>\r\n\r\n  <md-sidenav class=\"sidenav\" [opened]=\"sidenavOpen\" align=\"start\" [mode]=\"sidenavMode\" msIconSidenav #sidenav>\r\n\r\n    <ms-sidenav></ms-sidenav>\r\n\r\n  </md-sidenav>\r\n\r\n  <md-toolbar class=\"main-toolbar mat-elevation-z2\">\r\n    <div fxHide=\"false\" fxHide.gt-sm>\r\n      <button (click)=\"sidenav.open()\" md-icon-button>\r\n        <md-icon>menu</md-icon>\r\n      </button>\r\n    </div>\r\n\r\n    <ms-breadcrumbs fxHide=\"true\" fxHide.gt-sm=\"false\"></ms-breadcrumbs>\r\n\r\n    <span fxFlex></span>\r\n\r\n    <button fxHide=\"true\" fxHide.gt-sm=\"false\" md-button class=\"fullscreen-toggle\" (click)=\"toggleFullscreen()\">\r\n      <md-icon *ngIf=\"!isFullscreen\">fullscreen</md-icon>\r\n      <md-icon *ngIf=\"isFullscreen\">fullscreen_exit</md-icon>\r\n    </button>\r\n\r\n    <!--<ms-search></ms-search>-->\r\n\r\n    <button class=\"user-button\" md-button [mdMenuTriggerFor]=\"menu\">\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <img src=\"assets/img/avatars/noavatar.png\" class=\"avatar-flex\" />\r\n        <span fxHide=\"true\" fxHide.gt-sm=\"false\" style=\"font-weight: 500; margin-left: 5px;\">David Smith</span>\r\n        <md-icon fxHide=\"true\" fxHide.gt-sm=\"false\">keyboard_arrow_down</md-icon>\r\n      </div>\r\n    </button>\r\n\r\n\r\n    <button md-button class=\"quickpanel-toggle\" (click)=\"quickpanel.open()\">\r\n      <md-icon>format_align_right</md-icon>\r\n    </button>\r\n\r\n\r\n    <md-menu class=\"user-menu\" x-position=\"before\" y-position=\"below\" #menu=\"mdMenu\">\r\n      <button md-menu-item>\r\n        <md-icon>account_circle</md-icon>\r\n        <span>Profile</span>\r\n      </button>\r\n      <button md-menu-item>\r\n        <md-icon>settings</md-icon>\r\n        <span>Settings</span>\r\n      </button>\r\n      <button md-menu-item>\r\n        <md-icon>help</md-icon>\r\n        <span>Help</span>\r\n      </button>\r\n      <md-divider></md-divider>\r\n      <button [routerLink]=\"['/login']\" md-menu-item>\r\n        <md-icon>exit_to_app</md-icon>\r\n        <span>Logout</span>\r\n      </button>\r\n    </md-menu>\r\n  </md-toolbar>\r\n\r\n  <div class=\"main-container\" #scrollContainer>\r\n    <router-outlet (activate)=\"onActivate($event, scrollContainer)\"></router-outlet>\r\n  </div>\r\n\r\n</md-sidenav-container>\r\n"
+module.exports = "<md-sidenav-container>\r\n\r\n  <md-sidenav class=\"quickpanel\" [opened]=\"quickpanelOpen\" align=\"end\" mode=\"over\" #quickpanel>\r\n\r\n    <ms-quickpanel></ms-quickpanel>\r\n\r\n  </md-sidenav>\r\n\r\n  <md-sidenav class=\"sidenav\" [opened]=\"sidenavOpen\" align=\"start\" [mode]=\"sidenavMode\" msIconSidenav #sidenav>\r\n\r\n    <ms-sidenav></ms-sidenav>\r\n\r\n  </md-sidenav>\r\n\r\n  <md-toolbar class=\"main-toolbar mat-elevation-z2\">\r\n    <div fxHide=\"false\" fxHide.gt-sm>\r\n      <button (click)=\"sidenav.open()\" md-icon-button>\r\n        <md-icon>menu</md-icon>\r\n      </button>\r\n    </div>\r\n\r\n    <ms-breadcrumbs fxHide=\"true\" fxHide.gt-sm=\"false\"></ms-breadcrumbs>\r\n\r\n    <span fxFlex></span>\r\n\r\n    <button fxHide=\"true\" fxHide.gt-sm=\"false\" md-button class=\"fullscreen-toggle\" (click)=\"toggleFullscreen()\">\r\n      <md-icon *ngIf=\"!isFullscreen\">fullscreen</md-icon>\r\n      <md-icon *ngIf=\"isFullscreen\">fullscreen_exit</md-icon>\r\n    </button>\r\n\r\n    <ms-search></ms-search>\r\n\r\n    <button class=\"user-button\" md-button [mdMenuTriggerFor]=\"menu\">\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <img src=\"assets/img/avatars/noavatar.png\" class=\"avatar-flex\" />\r\n        <span fxHide=\"true\" fxHide.gt-sm=\"false\" style=\"font-weight: 500; margin-left: 5px;\">David Smith</span>\r\n        <md-icon fxHide=\"true\" fxHide.gt-sm=\"false\">keyboard_arrow_down</md-icon>\r\n      </div>\r\n    </button>\r\n\r\n\r\n    <button md-button class=\"quickpanel-toggle\" (click)=\"quickpanel.open()\">\r\n      <md-icon>format_align_right</md-icon>\r\n    </button>\r\n\r\n\r\n    <md-menu class=\"user-menu\" x-position=\"before\" y-position=\"below\" #menu=\"mdMenu\">\r\n      <button md-menu-item>\r\n        <md-icon>account_circle</md-icon>\r\n        <span>Profile</span>\r\n      </button>\r\n      <button md-menu-item>\r\n        <md-icon>settings</md-icon>\r\n        <span>Settings</span>\r\n      </button>\r\n      <button md-menu-item>\r\n        <md-icon>help</md-icon>\r\n        <span>Help</span>\r\n      </button>\r\n      <md-divider></md-divider>\r\n      <button [routerLink]=\"['/login']\" md-menu-item>\r\n        <md-icon>exit_to_app</md-icon>\r\n        <span>Logout</span>\r\n      </button>\r\n    </md-menu>\r\n  </md-toolbar>\r\n\r\n  <div class=\"main-container\" #scrollContainer>\r\n    <router-outlet (activate)=\"onActivate($event, scrollContainer)\"></router-outlet>\r\n  </div>\r\n\r\n</md-sidenav-container>\r\n"
 
 /***/ }),
 
@@ -2206,7 +2633,7 @@ var _a;
 /***/ "./src/app/projects/edit-project.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n  <md-card fxFlex=\"90%\" style=\"padding: 0;\">\r\n    <md-toolbar color=\"primary\">Form Wizard</md-toolbar>\r\n    <form #form=\"ngForm\">\r\n      <div fxLayout=\"column\" style=\"padding: 16px;\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"name\"\r\n                 placeholder=\"Name\"\r\n                 required\r\n                 ngModel=\"DavidSmith33\">\r\n        </md-input-container>\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"title\"\r\n                 required\r\n                 placeholder=\"Title\">\r\n        </md-input-container>\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"rootNamespace\"\r\n                 required\r\n                 placeholder=\"RootNamespace\">\r\n        </md-input-container>\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"companyName\"\r\n                 required\r\n                 placeholder=\"CompanyName\">\r\n        </md-input-container>\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"description\"\r\n                 required\r\n                 placeholder=\"Description\">\r\n        </md-input-container>\r\n\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button\r\n                  type=\"button\">\r\n            Cancel\r\n          </button>\r\n          <button color=\"primary\"\r\n                  md-raised-button\r\n                  style=\"margin-left: 8px;\"\r\n                  type=\"button\">\r\n            Save\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </md-card>\r\n</div>\r\n\r\n"
+module.exports = "\r\n<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n  <md-card fxFlex=\"90%\" style=\"padding: 16px;\">\r\n    <md-toolbar color=\"primary\">Form Wizard</md-toolbar>\r\n    <form #form=\"ngForm\">\r\n      <div fxLayout=\"column\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"name\"\r\n                 placeholder=\"Name\"\r\n                 required\r\n                 ngModel=\"DavidSmith33\">\r\n        </md-input-container>\r\n      </div>\r\n\r\n      <div fxLayout=\"column\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"title\"\r\n                 required\r\n                 placeholder=\"Title\">\r\n        </md-input-container>\r\n      </div>\r\n\r\n      <div fxLayout=\"column\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"rootNamespace\"\r\n                 required\r\n                 placeholder=\"RootNamespace\">\r\n        </md-input-container>\r\n      </div>\r\n      <div fxLayout=\"column\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"companyName\"\r\n                 required\r\n                 placeholder=\"CompanyName\">\r\n        </md-input-container>\r\n      </div>\r\n      <div fxLayout=\"column\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"description\"\r\n                 required\r\n                 placeholder=\"Description\">\r\n        </md-input-container>\r\n      </div>\r\n      <div fxLayout=\"column\">\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button\r\n                  type=\"button\">\r\n            Cancel\r\n          </button>\r\n          <button color=\"primary\"\r\n                  md-raised-button\r\n                  style=\"margin-left: 8px;\"\r\n                  type=\"button\">\r\n            Save\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </md-card>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
