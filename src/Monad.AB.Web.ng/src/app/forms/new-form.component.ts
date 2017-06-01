@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-new-form',
+  selector: 'ms-new-form',
   templateUrl: './new-form.component.html',
   styleUrls: ['./new-form.component.scss']
 })

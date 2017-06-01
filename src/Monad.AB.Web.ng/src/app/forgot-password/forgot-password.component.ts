@@ -3,7 +3,7 @@ import { fadeInAnimation } from "../route.animation";
 import { Router } from "@angular/router";
 
 @Component({
-    selector: 'app-forgot-password',
+    selector: 'ms-forgot-password',
     templateUrl: './forgot-password.component.html',
     styleUrls: ['./forgot-password.component.scss'],
     host: {

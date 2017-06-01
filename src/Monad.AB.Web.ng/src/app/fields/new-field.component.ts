@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-new-field',
+  selector: 'ms-new-field',
   templateUrl: './new-field.component.html',
   styleUrls: ['./new-field.component.scss']
 })

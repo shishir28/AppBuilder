@@ -5,7 +5,7 @@ declare let ResizeSensor;
 
 import { ProjectsService } from './shared/projects.service';
 @Component({
-    selector: 'app-list-project',
+    selector: 'ms-list-project',
     templateUrl: './list-project.component.html',
     styleUrls: ['./list-project.component.scss'],
     host: {

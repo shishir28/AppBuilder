@@ -5,7 +5,7 @@ import { Router, NavigationEnd } from "@angular/router";
 import * as screenfull from 'screenfull';
 
 @Component({
-    selector: 'app-home',
+    selector: 'ms-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
     encapsulation: ViewEncapsulation.None

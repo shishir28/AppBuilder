@@ -5,7 +5,7 @@ import { fadeInAnimation } from "../route.animation";
 
 
 @Component({
-    selector: 'app-login',
+    selector: 'ms-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
     host: {

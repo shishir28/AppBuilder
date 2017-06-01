@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-view-project',
+  selector: 'ms-view-project',
   templateUrl: './view-project.component.html',
   styleUrls: ['./view-project.component.scss']
 })

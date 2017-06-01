@@ -118,6 +118,21 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!./node_modules/postcss-loader/index.js?{\"ident\":\"postcss\"}!./src/app/core/highlightjs/github.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*\r\n\r\ngithub.com style (c) Vasily Polovnyov <vast@whiteants.net>\r\n\r\n*/\r\n\r\n.hljs {\r\n  display: block;\r\n  overflow-x: auto;\r\n  padding: 0.5em;\r\n  color: #333;\r\n  background: #f8f8f8;\r\n}\r\n\r\n.hljs-comment,\r\n.hljs-quote {\r\n  color: #998;\r\n  font-style: italic;\r\n}\r\n\r\n.hljs-keyword,\r\n.hljs-selector-tag,\r\n.hljs-subst {\r\n  color: #333;\r\n  font-weight: bold;\r\n}\r\n\r\n.hljs-number,\r\n.hljs-literal,\r\n.hljs-variable,\r\n.hljs-template-variable,\r\n.hljs-tag .hljs-attr {\r\n  color: #008080;\r\n}\r\n\r\n.hljs-string,\r\n.hljs-doctag {\r\n  color: #d14;\r\n}\r\n\r\n.hljs-title,\r\n.hljs-section,\r\n.hljs-selector-id {\r\n  color: #900;\r\n  font-weight: bold;\r\n}\r\n\r\n.hljs-subst {\r\n  font-weight: normal;\r\n}\r\n\r\n.hljs-type,\r\n.hljs-class .hljs-title {\r\n  color: #458;\r\n  font-weight: bold;\r\n}\r\n\r\n.hljs-tag,\r\n.hljs-name,\r\n.hljs-attribute {\r\n  color: #000080;\r\n  font-weight: normal;\r\n}\r\n\r\n.hljs-regexp,\r\n.hljs-link {\r\n  color: #009926;\r\n}\r\n\r\n.hljs-symbol,\r\n.hljs-bullet {\r\n  color: #990073;\r\n}\r\n\r\n.hljs-built_in,\r\n.hljs-builtin-name {\r\n  color: #0086b3;\r\n}\r\n\r\n.hljs-meta {\r\n  color: #999;\r\n  font-weight: bold;\r\n}\r\n\r\n.hljs-deletion {\r\n  background: #fdd;\r\n}\r\n\r\n.hljs-addition {\r\n  background: #dfd;\r\n}\r\n\r\n.hljs-emphasis {\r\n  font-style: italic;\r\n}\r\n\r\n.hljs-strong {\r\n  font-weight: bold;\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/lib/css-base.js":
 /***/ (function(module, exports) {
 
@@ -535,6 +550,33 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
+/***/ "./src/app/core/highlightjs/github.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!./node_modules/postcss-loader/index.js?{\"ident\":\"postcss\"}!./src/app/core/highlightjs/github.css");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/style-loader/addStyles.js")(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--9-1!../../../../node_modules/postcss-loader/index.js??postcss!./github.css", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--9-1!../../../../node_modules/postcss-loader/index.js??postcss!./github.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "./src/styles.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -566,6 +608,7 @@ if(false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__("./node_modules/normalize.css/normalize.css");
+__webpack_require__("./src/app/core/highlightjs/github.css");
 __webpack_require__("./node_modules/nvd3/build/nv.d3.css");
 __webpack_require__("./node_modules/quill/dist/quill.snow.css");
 __webpack_require__("./node_modules/angular-calendar/dist/css/angular-calendar.css");

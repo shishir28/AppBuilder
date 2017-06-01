@@ -1771,7 +1771,7 @@ var EditFieldComponent = (function () {
 }());
 EditFieldComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-edit-field',
+        selector: 'ms-edit-field',
         template: __webpack_require__("./src/app/fields/edit-field.component.html"),
         styles: [__webpack_require__("./src/app/fields/edit-field.component.scss")]
     }),
@@ -1916,7 +1916,7 @@ var ListFieldComponent = (function () {
 }());
 ListFieldComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-list-field',
+        selector: 'ms-list-field',
         template: __webpack_require__("./src/app/fields/list-field.component.html"),
         styles: [__webpack_require__("./src/app/fields/list-field.component.scss")]
     }),
@@ -1977,7 +1977,7 @@ var NewFieldComponent = (function () {
 }());
 NewFieldComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-new-field',
+        selector: 'ms-new-field',
         template: __webpack_require__("./src/app/fields/new-field.component.html"),
         styles: [__webpack_require__("./src/app/fields/new-field.component.scss")]
     }),
@@ -2038,7 +2038,7 @@ var ViewFieldComponent = (function () {
 }());
 ViewFieldComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-view-field',
+        selector: 'ms-view-field',
         template: __webpack_require__("./src/app/fields/view-field.component.html"),
         styles: [__webpack_require__("./src/app/fields/view-field.component.scss")]
     }),
@@ -2107,7 +2107,7 @@ var ForgotPasswordComponent = (function () {
 }());
 ForgotPasswordComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-forgot-password',
+        selector: 'ms-forgot-password',
         template: __webpack_require__("./src/app/forgot-password/forgot-password.component.html"),
         styles: [__webpack_require__("./src/app/forgot-password/forgot-password.component.scss")],
         host: {
@@ -2173,7 +2173,7 @@ var EditFormComponent = (function () {
 }());
 EditFormComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-edit-form',
+        selector: 'ms-edit-form',
         template: __webpack_require__("./src/app/forms/edit-form.component.html"),
         styles: [__webpack_require__("./src/app/forms/edit-form.component.scss")]
     }),
@@ -2318,7 +2318,7 @@ var ListFormComponent = (function () {
 }());
 ListFormComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-list-form',
+        selector: 'ms-list-form',
         template: __webpack_require__("./src/app/forms/list-form.component.html"),
         styles: [__webpack_require__("./src/app/forms/list-form.component.scss")]
     }),
@@ -2379,7 +2379,7 @@ var NewFormComponent = (function () {
 }());
 NewFormComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-new-form',
+        selector: 'ms-new-form',
         template: __webpack_require__("./src/app/forms/new-form.component.html"),
         styles: [__webpack_require__("./src/app/forms/new-form.component.scss")]
     }),
@@ -2440,7 +2440,7 @@ var ViewFormComponent = (function () {
 }());
 ViewFormComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-view-form',
+        selector: 'ms-view-form',
         template: __webpack_require__("./src/app/forms/view-form.component.html"),
         styles: [__webpack_require__("./src/app/forms/view-form.component.scss")]
     }),
@@ -2543,7 +2543,7 @@ __decorate([
 ], HomeComponent.prototype, "sidenav", void 0);
 HomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-home',
+        selector: 'ms-home',
         template: __webpack_require__("./src/app/home/home.component.html"),
         styles: [__webpack_require__("./src/app/home/home.component.scss")],
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None
@@ -2614,7 +2614,7 @@ var LoginComponent = (function () {
 }());
 LoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-login',
+        selector: 'ms-login',
         template: __webpack_require__("./src/app/login/login.component.html"),
         styles: [__webpack_require__("./src/app/login/login.component.scss")],
         host: {
@@ -2633,7 +2633,7 @@ var _a;
 /***/ "./src/app/projects/edit-project.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n  <md-card fxFlex=\"90%\" style=\"padding: 16px;\">\r\n    <md-toolbar color=\"primary\">Form Wizard</md-toolbar>\r\n    <form #form=\"ngForm\">\r\n      <div fxLayout=\"column\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"name\"\r\n                 placeholder=\"Name\"\r\n                 required\r\n                 ngModel=\"DavidSmith33\">\r\n        </md-input-container>\r\n      </div>\r\n\r\n      <div fxLayout=\"column\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"title\"\r\n                 required\r\n                 placeholder=\"Title\">\r\n        </md-input-container>\r\n      </div>\r\n\r\n      <div fxLayout=\"column\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"rootNamespace\"\r\n                 required\r\n                 placeholder=\"RootNamespace\">\r\n        </md-input-container>\r\n      </div>\r\n      <div fxLayout=\"column\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"companyName\"\r\n                 required\r\n                 placeholder=\"CompanyName\">\r\n        </md-input-container>\r\n      </div>\r\n      <div fxLayout=\"column\">\r\n        <md-input-container>\r\n          <input mdInput\r\n                 name=\"description\"\r\n                 required\r\n                 placeholder=\"Description\">\r\n        </md-input-container>\r\n      </div>\r\n      <div fxLayout=\"column\">\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button\r\n                  type=\"button\">\r\n            Cancel\r\n          </button>\r\n          <button color=\"primary\"\r\n                  md-raised-button\r\n                  style=\"margin-left: 8px;\"\r\n                  type=\"button\">\r\n            Save\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </md-card>\r\n</div>\r\n\r\n"
+module.exports = "<div   >\r\n  <md-card fxFlex=\"90%\" >\r\n    <md-toolbar color=\"primary\">Form Wizard</md-toolbar>\r\n    <md-card-content>\r\n      <md-tab-group [selectedIndex]=\"selectedIndex\">\r\n        <md-tab label=\"ACCOUNT DETAILS\">\r\n          <form #form=\"ngForm\">\r\n            <div fxLayout=\"column\" style=\"padding: 16px;\">\r\n              <md-input-container>\r\n                <input mdInput\r\n                       name=\"username\"\r\n                       placeholder=\"Username\"\r\n                       required\r\n                       ngModel=\"DavidSmith33\">\r\n              </md-input-container>\r\n              <md-input-container>\r\n                <input mdInput\r\n                       name=\"email\"\r\n                       type=\"email\"\r\n                       required\r\n                       ngModel\r\n                       placeholder=\"E-Mail\">\r\n              </md-input-container>\r\n              <div fxLayout=\"column\" fxLayout.gt-sm=\"row\">\r\n                <md-input-container fxFlex>\r\n                  <input mdInput\r\n                         name=\"password\"\r\n                         type=\"password\"\r\n                         required\r\n                         ngModel\r\n                         placeholder=\"Password\">\r\n                </md-input-container>\r\n                <md-input-container fxFlex>\r\n                  <input mdInput\r\n                         name=\"password_confirm\"\r\n                         type=\"password\"\r\n                         required\r\n                         ngModel\r\n                         placeholder=\"Confirm Password\">\r\n                </md-input-container>\r\n              </div>\r\n\r\n              <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n                <button md-button\r\n                        type=\"button\"\r\n                        disabled>\r\n                  Previous\r\n                </button>\r\n\r\n                <button color=\"primary\"\r\n                        md-raised-button\r\n                        style=\"margin-left: 8px;\"\r\n                        [disabled]=\"!form.valid\"\r\n                        (click)=\"nextStep()\"\r\n                        type=\"button\">\r\n                  Next\r\n                </button>\r\n              </div>\r\n            </div>\r\n          </form>\r\n        </md-tab>\r\n        <md-tab label=\"YOUR ADDRESS\" [disabled]=\"!form.valid\">\r\n          <form #form2=\"ngForm\">\r\n            <div fxLayout=\"column\" style=\"padding: 16px;\">\r\n              <div fxLayout=\"column\" fxLayout.gt-sm=\"row\">\r\n                <md-input-container fxFlex>\r\n                  <input mdInput\r\n                         name=\"firstname\"\r\n                         placeholder=\"First Name\"\r\n                         required>\r\n                </md-input-container>\r\n                <md-input-container fxFlex>\r\n                  <input mdInput\r\n                         name=\"lastname\"\r\n                         placeholder=\"Last Name\"\r\n                         required\r\n                         ngModel>\r\n                </md-input-container>\r\n              </div>\r\n\r\n              <md-input-container fxFlex>\r\n                <input mdInput\r\n                       name=\"street\"\r\n                       required\r\n                       ngModel\r\n                       placeholder=\"Street\">\r\n              </md-input-container>\r\n\r\n              <div fxLayout=\"column\" fxLayout.gt-sm=\"row\">\r\n                <md-input-container fxFlex>\r\n                  <input mdInput\r\n                         name=\"zipcode\"\r\n                         required\r\n                         ngModel\r\n                         placeholder=\"Zipcode\">\r\n                </md-input-container>\r\n                <md-input-container fxFlex>\r\n                  <input mdInput\r\n                         name=\"city\"\r\n                         required\r\n                         ngModel\r\n                         placeholder=\"City\">\r\n                </md-input-container>\r\n              </div>\r\n\r\n              <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n                <button md-button\r\n                        type=\"button\"\r\n                        (click)=\"previousStep()\">\r\n                  Previous\r\n                </button>\r\n\r\n                <button color=\"primary\"\r\n                        md-raised-button\r\n                        style=\"margin-left: 8px;\"\r\n                        [disabled]=\"!form2.valid\"\r\n                        (click)=\"nextStep()\"\r\n                        type=\"button\">\r\n                  Next\r\n                </button>\r\n              </div>\r\n            </div>\r\n          </form>\r\n        </md-tab>\r\n        <md-tab label=\"BILLING DETAILS\" [disabled]=\"!form2.valid\">\r\n          <form #form3=\"ngForm\">\r\n            <div fxLayout=\"column\" style=\"padding: 16px;\">\r\n              <md-input-container fxFlex>\r\n                <input mdInput\r\n                       name=\"creditcard\"\r\n                       placeholder=\"Credit Card Number\"\r\n                       required>\r\n              </md-input-container>\r\n\r\n              <md-input-container fxFlex>\r\n                <input mdInput\r\n                       name=\"creditcardname\"\r\n                       required\r\n                       ngModel\r\n                       placeholder=\"Credit Card Owner\">\r\n              </md-input-container>\r\n\r\n              <md-input-container fxFlex>\r\n                <input mdInput\r\n                       name=\"expirydate\"\r\n                       required\r\n                       ngModel\r\n                       placeholder=\"Expiry Date (MM/YYYY)\">\r\n              </md-input-container>\r\n\r\n              <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n                <button md-button\r\n                        type=\"button\"\r\n                        (click)=\"previousStep()\">\r\n                  Previous\r\n                </button>\r\n\r\n                <button color=\"primary\"\r\n                        md-raised-button\r\n                        style=\"margin-left: 8px;\"\r\n                        [disabled]=\"!form3.valid\"\r\n                        (click)=\"nextStep()\"\r\n                        type=\"button\">\r\n                  Next\r\n                </button>\r\n              </div>\r\n            </div>\r\n          </form>\r\n        </md-tab>\r\n        <md-tab label=\"CONFIRMATION\" [disabled]=\"!form3.valid\">\r\n          <div fxLayout=\"column\" style=\"padding: 16px;\">\r\n            <h1>Congratulations!</h1>\r\n            <p>You submitted the form.</p>\r\n          </div>\r\n        </md-tab>\r\n      </md-tab-group>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2680,7 +2680,7 @@ var EditProjectComponent = (function () {
 }());
 EditProjectComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-edit-project',
+        selector: 'ms-edit-project',
         template: __webpack_require__("./src/app/projects/edit-project.component.html"),
         styles: [__webpack_require__("./src/app/projects/edit-project.component.scss")]
     }),
@@ -2783,7 +2783,7 @@ __decorate([
 ], ListProjectComponent.prototype, "tbody", void 0);
 ListProjectComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-list-project',
+        selector: 'ms-list-project',
         template: __webpack_require__("./src/app/projects/list-project.component.html"),
         styles: [__webpack_require__("./src/app/projects/list-project.component.scss")],
         host: {
@@ -2849,7 +2849,7 @@ var NewProjectComponent = (function () {
 }());
 NewProjectComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-new-project',
+        selector: 'ms-new-project',
         template: __webpack_require__("./src/app/projects/new-project.component.html"),
         styles: [__webpack_require__("./src/app/projects/new-project.component.scss")]
     }),
@@ -3052,7 +3052,7 @@ var ViewProjectComponent = (function () {
 }());
 ViewProjectComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-view-project',
+        selector: 'ms-view-project',
         template: __webpack_require__("./src/app/projects/view-project.component.html"),
         styles: [__webpack_require__("./src/app/projects/view-project.component.scss")]
     }),
@@ -3121,7 +3121,7 @@ var RegisterComponent = (function () {
 }());
 RegisterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-register',
+        selector: 'ms-register',
         template: __webpack_require__("./src/app/register/register.component.html"),
         styles: [__webpack_require__("./src/app/register/register.component.scss")],
         host: {

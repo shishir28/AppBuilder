@@ -3,7 +3,7 @@ import { fadeInAnimation } from "../route.animation";
 import { Router } from "@angular/router";
 
 @Component({
-    selector: 'app-register',
+    selector: 'ms-register',
     templateUrl: './register.component.html',
     styleUrls: ['./register.component.scss'],
     host: {
