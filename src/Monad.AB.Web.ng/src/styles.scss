@@ -1,4 +1,4 @@
-﻿/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import "styles/_var";
@@ -13,6 +13,7 @@ html, body {
   height: 100%;
   line-height: normal;
   font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
+
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-text-size-adjust: 100%;
@@ -154,3 +155,5 @@ p {
 .mt0 {
   margin-top: 0 !important;
 }
+
+
