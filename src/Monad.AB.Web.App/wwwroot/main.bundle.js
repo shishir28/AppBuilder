@@ -1536,7 +1536,7 @@ SidenavComponent = __decorate([
         styles: [__webpack_require__("./src/app/core/sidenav/sidenav.component.scss")],
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MdSnackBar */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["e" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["e" /* MdSnackBar */]) === "function" && _d || Object])
 ], SidenavComponent);
 
 var _a, _b, _c, _d;
@@ -2790,8 +2790,10 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__route_animation__ = __webpack_require__("./src/app/route.animation.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_projects_service__ = __webpack_require__("./src/app/projects/shared/projects.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_projects_service__ = __webpack_require__("./src/app/projects/shared/projects.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListProjectComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DemoDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2805,10 +2807,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ListProjectComponent = (function () {
-    function ListProjectComponent(projectsService, router) {
+    function ListProjectComponent(projectsService, router, dialog) {
         this.projectsService = projectsService;
         this.router = router;
+        this.dialog = dialog;
         this.cellWidths = [];
         this.tableHover = true;
         this.tableStriped = true;
@@ -2830,7 +2834,31 @@ var ListProjectComponent = (function () {
         this.router.navigateByUrl('projects/edit/' + projectId);
     };
     ListProjectComponent.prototype.deleteProject = function (projectId) {
-        console.log(projectId + ' Deleted');
+        var _this = this;
+        this.dialogRef = this.dialog.open(DemoDialog, {
+            disableClose: false
+        });
+        this.dialogRef.afterClosed().subscribe(function (result) {
+            if (result == 'Yes') {
+                _this.projectsService.deleteProject(projectId)
+                    .subscribe(function (response) {
+                    alert(response.statusCode);
+                    if (response.statusCode == 204) {
+                        _this.projectsService.getProjects('a@b.com')
+                            .subscribe(function (data) {
+                            _this.projects = data;
+                        });
+                    }
+                    else if (response.statusCode == 412) {
+                        //  this.serverErrorMessage = "Some details were missing!";
+                    }
+                    else {
+                        // this.serverErrorMessage = response.content;
+                    }
+                });
+            }
+            _this.dialogRef = null;
+        });
     };
     return ListProjectComponent;
 }());
@@ -2848,10 +2876,24 @@ ListProjectComponent = __decorate([
         },
         animations: [__WEBPACK_IMPORTED_MODULE_2__route_animation__["a" /* routeAnimation */]]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__shared_projects_service__["a" /* ProjectsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_projects_service__["a" /* ProjectsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__shared_projects_service__["a" /* ProjectsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_projects_service__["a" /* ProjectsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdDialog */]) === "function" && _d || Object])
 ], ListProjectComponent);
 
-var _a, _b, _c;
+var DemoDialog = (function () {
+    function DemoDialog(dialogRef) {
+        this.dialogRef = dialogRef;
+    }
+    return DemoDialog;
+}());
+DemoDialog = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ms-demo-dialog',
+        template: "<h1>Would you like to delete Project?</h1>\n  <md-dialog-actions align=\"end\">\n    <button md-button (click)=\"dialogRef.close('No')\">No</button>\n    <button md-button color=\"primary\" (click)=\"dialogRef.close('Yes')\">Yes</button>\n  </md-dialog-actions>"
+    }),
+    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["d" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["d" /* MdDialogRef */]) === "function" && _e || Object])
+], DemoDialog);
+
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=list-project.component.js.map
 
 /***/ }),
@@ -3018,9 +3060,13 @@ ProjectsModule = __decorate([
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_6__list_project_component__["a" /* ListProjectComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__list_project_component__["b" /* DemoDialog */],
             __WEBPACK_IMPORTED_MODULE_7__new_project_component__["a" /* NewProjectComponent */],
             __WEBPACK_IMPORTED_MODULE_8__edit_project_component__["a" /* EditProjectComponent */],
             __WEBPACK_IMPORTED_MODULE_9__view_project_component__["a" /* ViewProjectComponent */]
+        ],
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_6__list_project_component__["b" /* DemoDialog */]
         ],
         exports: [
             __WEBPACK_IMPORTED_MODULE_6__list_project_component__["a" /* ListProjectComponent */]
