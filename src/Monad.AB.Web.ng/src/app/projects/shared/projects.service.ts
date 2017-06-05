@@ -5,8 +5,10 @@ import { Observable } from 'rxjs/Observable'
 @Injectable()
 
 export class ProjectsService {
+    options: RequestOptions;
     constructor(private http: Http) {
-        //
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        this.options = new RequestOptions({ headers: headers });
     }
 
     getProjects(userName): Observable<any[]> {
@@ -26,14 +28,12 @@ export class ProjectsService {
     }
 
     addProject(project) {
-        return this.http.post("/api/project/addproject/", JSON.stringify(project))
+        return this.http.post("/api/project/addproject/", JSON.stringify(project), this.options)
             .map(res => res.json());
     }
 
     updateProject(project) {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-        return this.http.put("/api/project/editproject/", JSON.stringify(project), options)
+        return this.http.put("/api/project/editproject/", JSON.stringify(project), this.options)
             .map(res => res.json());
     }
 

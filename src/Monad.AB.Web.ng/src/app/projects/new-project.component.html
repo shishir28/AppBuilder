@@ -1,3 +1,107 @@
-<p>
-  new-project works!
-</p>
+﻿<div fxLayout="row" fxLayoutAlign="start">
+  <md-card style="padding: 16px;" fxFlex="90%">
+    <md-toolbar color="primary">Add Project</md-toolbar>
+    <md-card-content>
+      <form [formGroup]="projForm" novalidate (ngSubmit)="saveProject(projForm.value)">
+        <div fxLayout fxLayoutWrap>
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="name"
+                   placeholder="Name"
+                   required
+                   [(ngModel)]="project.name"
+                   formControlName="name"
+                   [class.invalid]="projForm.controls['name'].touched && !projForm.controls['name'].valid" />
+            <md-hint [hidden]="projForm.controls['name'].pristine || projForm.controls['name'].valid">
+              <span [hidden]="!projForm.controls['name'].errors?.required">Project Name is required.</span>
+            </md-hint>
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="title"
+                   required
+                   placeholder="Title"
+                   [(ngModel)]="project.title"
+                   formControlName="title"
+                   [class.invalid]="projForm.controls['title'].touched && !projForm.controls['title'].valid" />
+            <md-hint [hidden]="projForm.controls['title'].pristine || projForm.controls['title'].valid">
+              <span [hidden]="!projForm.controls['title'].errors?.required">Project Title is required.</span>
+            </md-hint>
+
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="rootNamespace"
+                   required
+                   placeholder="RootNamespace"
+                   [(ngModel)]="project.rootNamespace"
+                   formControlName="rootNamespace"
+                   [class.invalid]="projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid" />
+
+            <md-hint [hidden]="projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid">
+              <span [hidden]="!projForm.controls['rootNamespace'].errors?.required">Project Root Namespace is required.</span>
+            </md-hint>
+
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="companyName"
+                   required
+                   placeholder="CompanyName"
+                   [(ngModel)]="project.companyName"
+                   formControlName="companyName"
+                   [class.invalid]="projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid" />
+
+            <md-hint [hidden]="projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid">
+              <span [hidden]="!projForm.controls['companyName'].errors?.required">Company Name is required.</span>
+            </md-hint>
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="description"
+                   placeholder="Description"
+                   [(ngModel)]="project.description"
+                   formControlName="description" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column" *ngIf="serverErrorMessage">
+          <div fxLayout="row" fxLayoutAlign="end center">
+            <label class="control-label">
+              {{ serverErrorMessage}}
+            </label>
+          </div>
+        </div>
+
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutAlign="end center">
+            <button md-raised-button
+                    type="button" (click)="cancelChanges($event);">
+              Cancel
+            </button>
+            <button md-button color="primary"
+                    md-raised-button
+                    style="margin-left: 8px;"
+                    type="submit"
+                    [disabled]="!projForm.valid">
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>
+

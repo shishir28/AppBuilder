@@ -1,4 +1,4 @@
-import { Routes, RouterModule } from '@angular/router';
+﻿import { Routes, RouterModule } from '@angular/router';
 
 import {ListProjectComponent} from "./list-project.component";
 import {EditProjectComponent} from "./edit-project.component";

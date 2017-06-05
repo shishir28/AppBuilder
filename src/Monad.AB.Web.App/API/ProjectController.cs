@@ -72,7 +72,7 @@ namespace Monad.AB.Web.App.Controllers
                 }
                 catch (System.Exception ex)
                 {
-                    return new ObjectResult(new { StatusCode = 400, Content = $@"Project {model.Name} could not Created!" });
+                    return new ObjectResult(new { StatusCode = 400, Content = $@"Project {model.Name} could not Created! " });
                 }
             }
             return new StatusCodeResult(412);

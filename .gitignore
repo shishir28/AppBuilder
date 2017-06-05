@@ -47,4 +47,5 @@ bld/
 [Bb]in/
 [Oo]bj/*.*
 /src/Monad.AB.Web.ng/false
-/src/Monad.AB.Web.ng/false
+[Bb]in/
+[Oo]bj/

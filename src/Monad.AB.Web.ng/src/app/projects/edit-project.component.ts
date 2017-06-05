@@ -61,7 +61,6 @@ export class EditProjectComponent implements OnInit {
         this.projectsService.updateProject(data)
             .subscribe(response => {
                 if (response.statusCode == 204) {
-                  //  this.ngOnChanges();
                     this.router.navigateByUrl('/projects');
                 } else if (response.statusCode == 412) {
                     this.serverErrorMessage = "Some details were missing!";
@@ -71,22 +70,9 @@ export class EditProjectComponent implements OnInit {
             });
     }
 
-    revert(e) {
-        //this.ngOnChanges();
+    cancelChanges(e) {   
         this.router.navigateByUrl('/projects');
     }
-
-    //ngOnChanges() {
-    //    this.projForm.reset({
-    //        name: this.project.name,
-    //        userName: this.project.userName,
-    //        title: this.project.title,
-    //        description: this.project.description,
-    //        rootNamespace: this.project.rootNamespace,
-    //        companyName: this.project.companyName,
-    //    });
-
-    //}
 
 
 }

@@ -7,6 +7,7 @@ import { ForgotPasswordComponent } from "./forgot-password/forgot-password.compo
 import { ListProjectComponent } from "./projects/list-project.component";
 import { ViewProjectComponent } from "./projects/view-project.component";
 import { EditProjectComponent } from "./projects/edit-project.component";
+import { NewProjectComponent } from "./projects/new-project.component";
 
 import { AuthGuard } from './shared/guards/index';
 
@@ -65,6 +66,11 @@ const routes: Routes = [
                 path: 'projects',
                 component: ListProjectComponent
             },
+            {
+                path: 'projects/new',
+                component: NewProjectComponent
+            },
+
             {
                 path: 'projects/:id',
                 component: ViewProjectComponent
