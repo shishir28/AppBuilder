@@ -18,7 +18,28 @@ export class ProjectsService {
         });
         return this.http.get('api/project/GetProjects', options)
             .map(this.extractData);
+    }
 
+    getProject(id) {
+        return this.http.get("/api/project/GetProject?projectId=" + id)
+            .map(res => res.json());
+    }
+
+    addProject(project) {
+        return this.http.post("/api/project/addproject/", JSON.stringify(project))
+            .map(res => res.json());
+    }
+
+    updateProject(project) {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.put("/api/project/editproject/", JSON.stringify(project), options)
+            .map(res => res.json());
+    }
+
+    deleteProject(id) {
+        return this.http.delete("/api/project/deleteproject?projectId=" + id)
+            .map(res => res.json());
     }
 
     private extractData(res: Response) {

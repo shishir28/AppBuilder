@@ -24,23 +24,11 @@ export class ListProjectComponent implements OnInit, AfterViewInit {
     tableCondensed: boolean = true;
     tableBordered: boolean;
     private projects: any[];
-    constructor(private projectsService: ProjectsService, private router: Router ) {
+    constructor(private projectsService: ProjectsService, private router: Router) {
     }
 
     ngAfterViewInit() {
-        //let cells = this.tbody.nativeElement.children[0].children;
 
-        //for (let cell of cells) {
-        //    this.cellWidths.push(cell.offsetWidth);
-        //}
-
-        //let resizeSensor = new ResizeSensor(this.tbody.nativeElement, () => {
-        //    this.cellWidths.length = 0;
-
-        //    for (let cell of cells) {
-        //        this.cellWidths.push(cell.offsetWidth);
-        //    }
-        //});
     }
 
     ngOnInit() {
