@@ -68,7 +68,7 @@ namespace Monad.AB.Web.App
             });
             app.UseMvc();
             app.UseStaticFiles();
-            
+            AutoMapperBootStrapper.Bootstrap();
         }
     }
 }

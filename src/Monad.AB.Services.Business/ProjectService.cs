@@ -50,9 +50,10 @@ namespace Monad.AB.Services.Business
             _projectRepository.Create(project);
         }
 
-        public void DeleteProject(Project project)
+        public void DeleteProject(int projectId)
         {
-            _projectRepository.Delete(project);
+            var tobeDeleted = _projectRepository.GetById(projectId);
+            _projectRepository.Delete(tobeDeleted);
         }
 
         public void EditProject(Project project)
