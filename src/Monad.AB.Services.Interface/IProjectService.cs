@@ -9,7 +9,7 @@ namespace Monad.AB.Services.Interface
         Project GetProjectById(int projectId);
         void AddProject(Project project);
         void EditProject(Project project);
-        void DeleteProject(Project project);
+        void DeleteProject(int projectId);
         Project LoadProjectMetaData(Project project);
         void IntitateProjectPublish(int projectId);
         void UpdateProjectPublish(int projectId, string status, string url, string downloadLink);
