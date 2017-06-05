@@ -1,10 +1,63 @@
-﻿<div class="dashboard-container" fxLayout="column" fxLayoutAlign="start stretch">
-  <div fxLayout="column" fxLayout.gt-md="row" style="height: 100%;">
-    <div fxFlex class="table-container mat-elevation-z2">
-      <p>
-        view-project works!sdadd
-      </p>
-    </div>
-  </div>
+﻿<div fxLayout="row" fxLayoutAlign="start">
+  <md-card style="padding: 16px;" fxFlex="90%">
+    <md-toolbar color="primary">View Project</md-toolbar>
+    <md-card-content>
+      <form [formGroup]="projForm">
+        <div fxLayout fxLayoutWrap>
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="name"
+                   [(ngModel)]="project.name"
+                   formControlName="name" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="title"
+                   [(ngModel)]="project.title"
+                   formControlName="title" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="rootNamespace"
+                   [(ngModel)]="project.rootNamespace"
+                   formControlName="rootNamespace" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="companyName"
+                   [(ngModel)]="project.companyName"
+                   formControlName="companyName" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="description"
+                   [(ngModel)]="project.description"
+                   formControlName="description" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutAlign="end center">
+            <button md-raised-button
+                    type="button" (click)="cancelChanges($event);">
+              Go Back
+            </button>
+          </div>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
 </div>
 
