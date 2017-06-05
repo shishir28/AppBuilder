@@ -2,13 +2,13 @@
   <md-card style="padding: 16px;" fxFlex="90%">
     <md-toolbar color="primary">View Project</md-toolbar>
     <md-card-content>
-      <form [formGroup]="projForm">
+      <form>
         <div fxLayout fxLayoutWrap>
           <md-input-container fxFlex="50">
             <input mdInput
                    name="name"
-                   [(ngModel)]="project.name"
-                   formControlName="name" />
+                   [disabled]="true"
+                   [(ngModel)]="project.name" />
           </md-input-container>
         </div>
 
@@ -16,8 +16,8 @@
           <md-input-container>
             <input mdInput
                    name="title"
-                   [(ngModel)]="project.title"
-                   formControlName="title" />
+                   [disabled]="true"
+                   [(ngModel)]="project.title" />
           </md-input-container>
         </div>
 
@@ -25,8 +25,8 @@
           <md-input-container>
             <input mdInput
                    name="rootNamespace"
-                   [(ngModel)]="project.rootNamespace"
-                   formControlName="rootNamespace" />
+                   [disabled]="true"
+                   [(ngModel)]="project.rootNamespace" />
           </md-input-container>
         </div>
 
@@ -34,8 +34,8 @@
           <md-input-container>
             <input mdInput
                    name="companyName"
-                   [(ngModel)]="project.companyName"
-                   formControlName="companyName" />
+                   [disabled]="true"
+                   [(ngModel)]="project.companyName" />
           </md-input-container>
         </div>
 
@@ -43,8 +43,8 @@
           <md-input-container>
             <input mdInput
                    name="description"
-                   [(ngModel)]="project.description"
-                   formControlName="description" />
+                   [disabled]="true"
+                   [(ngModel)]="project.description" />
           </md-input-container>
         </div>
 

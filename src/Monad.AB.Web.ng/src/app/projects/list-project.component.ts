@@ -16,9 +16,7 @@ import { ProjectsService } from './shared/projects.service';
 export class ListProjectComponent implements OnInit, AfterViewInit {
     @ViewChild('tbody')
     tbody: ElementRef;
-
     cellWidths = [];
-
     tableHover: boolean = true;
     tableStriped: boolean = true;
     tableCondensed: boolean = true;
