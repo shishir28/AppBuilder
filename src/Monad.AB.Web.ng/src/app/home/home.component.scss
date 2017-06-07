@@ -22,20 +22,12 @@
 
 .main-toolbar {
   background: #ffffff;
-  position: relative;
-  overflow-x: hidden;
-  z-index: $z-index__main-toolbar;
   padding-right: 0;
+  height: 64px;
+  padding-left: 16px;
 
-  .user-button {
+  .user-button-container {
     height: 100%;
-    border-radius: 0;
-
-    md-icon {
-      font-size: 16px;
-      width: 16px;
-      height: 16px;
-    }
   }
 
   button.fullscreen-toggle {
@@ -86,6 +78,10 @@
   background: $background-color__sidenav-list;
   overflow-x: hidden;
   z-index: $z-index__md-sidenav;
+}
+
+.content-container {
+  height: 100%;
 }
 
 .main-container {

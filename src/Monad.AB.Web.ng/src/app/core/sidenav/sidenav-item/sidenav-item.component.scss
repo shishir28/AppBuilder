@@ -1,4 +1,4 @@
-@import "../../../styles/_var";
+@import "../../../../styles/_var";
 
 :host {
   display: block;
@@ -59,6 +59,7 @@ md-nav-list a.sidenav-anchor {
     cursor: pointer;
     color: $color__sidenav-list;
     transition: color .1s;
+    outline: none;
 
     &:hover {
       color: #FFFFFF;

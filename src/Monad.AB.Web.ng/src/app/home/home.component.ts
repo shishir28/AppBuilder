@@ -1,8 +1,13 @@
-﻿import { Component, OnInit, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
+﻿import * as screenfull from 'screenfull';
+
+import {
+    Component, OnInit, ViewChild, ViewEncapsulation, AfterViewInit, ViewChildren, QueryList,
+    ElementRef, OnDestroy
+} from '@angular/core';
 import { Subscription } from "rxjs";
-import { MediaChange, ObservableMedia } from "@angular/flex-layout";
+import { MediaChange } from "@angular/flex-layout";
 import { Router, NavigationEnd } from "@angular/router";
-import * as screenfull from 'screenfull';
+import { MediaReplayService } from "../core/sidenav/mediareplay/media-replay.service";
 
 @Component({
     selector: 'ms-home',
@@ -14,27 +19,23 @@ import * as screenfull from 'screenfull';
 
 export class HomeComponent implements OnInit {
 
-    @ViewChild('sidenav')
-    sidenav;
+    @ViewChild('sidenav') sidenav;
 
     private _mediaSubscription: Subscription;
-    sidenavOpen: boolean = false;
-    sidenavMode: string = 'side';
-    isMobile: boolean = false;
-
     private _routerEventsSubscription: Subscription;
 
     quickpanelOpen: boolean = false;
-
-    isFullscreen: boolean = false;
+    sidenavOpen: boolean = true;
+    sidenavMode: string = 'side';
+    isMobile: boolean = false;
 
     constructor(
-        private media: ObservableMedia,
         private router: Router,
+        private mediaReplayService: MediaReplayService
     ) { }
 
     ngOnInit() {
-        this._mediaSubscription = this.media.asObservable().subscribe((change: MediaChange) => {
+        this._mediaSubscription = this.mediaReplayService.media$.subscribe((change: MediaChange) => {
             let isMobile = (change.mqAlias == 'xs') || (change.mqAlias == 'sm');
 
             this.isMobile = isMobile;
@@ -47,13 +48,6 @@ export class HomeComponent implements OnInit {
                 this.sidenav.close();
             }
         });
-    }
-
-    toggleFullscreen() {
-        if (screenfull.enabled) {
-            screenfull.toggle();
-            this.isFullscreen = !this.isFullscreen;
-        }
     }
 
     ngOnDestroy() {

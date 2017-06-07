@@ -32,6 +32,10 @@
         shape-rendering: crispEdges !important;
         fill-opacity: 1 !important;
       }
+
+      .nv-axis line {
+        stroke-opacity: 0;
+      }
     }
 
     .display-dots-line-chart {

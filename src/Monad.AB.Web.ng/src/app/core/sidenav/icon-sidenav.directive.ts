@@ -1,8 +1,9 @@
 import {Directive, HostBinding, HostListener, Inject, OnInit, OnDestroy} from '@angular/core';
 import { SidenavService } from "./sidenav.service";
-import { SidenavItem } from "../sidenav-item/sidenav-item.model";
+import { SidenavItem } from "./sidenav-item/sidenav-item.model";
 import {MediaChange, ObservableMedia} from "@angular/flex-layout";
 import { Subscription } from "rxjs";
+import {MediaReplayService} from "./mediareplay/media-replay.service";
 
 @Directive({
   selector: '[msIconSidenav]'
@@ -43,11 +44,11 @@ export class IconSidenavDirective implements OnInit, OnDestroy {
 
   constructor(
     private sidenavService: SidenavService,
-    private media: ObservableMedia
+    private mediaReplayService: MediaReplayService
   ) { }
 
   ngOnInit() {
-    this._mediaSubscription = this.media.asObservable().subscribe((change: MediaChange) => {
+    this._mediaSubscription = this.mediaReplayService.media$.subscribe((change: MediaChange) => {
       this.isMobile = (change.mqAlias == 'xs') || (change.mqAlias == 'sm');
     });
   }

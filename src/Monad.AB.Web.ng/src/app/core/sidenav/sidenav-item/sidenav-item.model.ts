@@ -1,12 +1,13 @@
 export class SidenavItem {
   name: string;
   icon: string;
-  route: string;
+  route: any;
   parent: SidenavItem;
   subItems: SidenavItem[];
   position: number;
   badge: string;
   badgeColor: string;
+  customClass: string;
 
   constructor(model: any = null) {
     if (model) {
@@ -18,6 +19,7 @@ export class SidenavItem {
       this.position = model.position;
       this.badge = model.badge;
       this.badgeColor = model.badgeColor;
+      this.customClass = model.customClass;
     }
   }
 
@@ -40,5 +42,9 @@ export class SidenavItem {
 
       return list;
     }
+  }
+
+  isRouteString() {
+    return this.route instanceof String || typeof this.route === 'string';
   }
 }

@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewEncapsulation, HostBinding, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, HostBinding } from '@angular/core';
 import { Input } from "@angular/core";
 import { SidenavItem } from "./sidenav-item.model";
-import { SidenavService } from "../sidenav/sidenav.service";
+import { SidenavService } from "../sidenav.service";
 
 @Component({
   selector: 'ms-sidenav-item',
@@ -53,5 +53,4 @@ export class SidenavItemComponent implements OnInit {
 
     return count;
   }
-
 }

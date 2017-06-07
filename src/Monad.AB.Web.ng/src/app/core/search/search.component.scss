@@ -9,6 +9,7 @@
   opacity: 0;
   visibility: hidden;
   transition: all .4s cubic-bezier(.35,0,.25,1);
+  margin-top: 7px;
 
   &.search-open {
     width: 250px;

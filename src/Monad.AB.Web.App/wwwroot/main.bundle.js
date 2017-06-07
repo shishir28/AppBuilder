@@ -297,34 +297,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-//import {DashboardV1Component} from "./demo/custom-pages/dashboard-v1/dashboard-v1.component";
-//import {AdminComponent} from "./core/admin/admin.component";
-//import {ButtonsComponent} from "./demo/components/buttons/buttons.component";
-//import {CardsComponent} from "./demo/components/cards/cards.component";
-//import {DialogsComponent} from "./demo/components/dialogs/dialogs.component";
-//import {GridListComponent} from "./demo/components/grid-list/grid-list.component";
-//import {ListsComponent} from "./demo/components/lists/lists.component";
-//import {MenuComponent} from "./demo/components/menu/menu.component";
-//import {SliderComponent} from "./demo/components/slider/slider.component";
-//import {SnackBarComponent} from "./demo/components/snack-bar/snack-bar.component";
-//import {TooltipComponent} from "./demo/components/tooltip/tooltip.component";
-//import {DynamicMenuComponent} from "./demo/dynamic-menu/dynamic-menu.component";
-//import {FormElementsComponent} from "./demo/forms/form-elements/form-elements.component";
-//import {FormWizardComponent} from "./demo/forms/form-wizard/form-wizard.component";
-//import {IconsComponent} from "./demo/icons/icons.component";
-//import {Level5Component} from "./demo/levels/level5/level5.component";
-//import {GoogleMapsComponent} from "./demo/maps/google-maps/google-maps.component";
-//import {SimpleTableComponent} from "./demo/tables/simple-table/simple-table.component";
-//import {FixedHeaderTableComponent} from "./demo/tables/fixed-header-table/fixed-header-table.component";
-//import {RegisterComponent} from "./demo/custom-pages/register/register.component";
-//import {ForgotPasswordComponent} from "./demo/custom-pages/forgot-password/forgot-password.component";
-//import {EditorComponent} from "./demo/editor/editor.component";
-//import {DashboardComponent} from "./demo/dashboard/dashboard.component";
-//import {DragAndDropComponent} from "./demo/drag-and-drop/drag-and-drop.component";
-//import {InboxComponent} from "./demo/apps/inbox/inbox.component";
-//import {CalendarComponent} from "./demo/apps/calendar/calendar.component";
-//import {ChatComponent} from "./demo/apps/chat/chat.component";
-//import {AutocompleteComponent} from "./demo/components/autocomplete/autocomplete.component";
 var routes = [
     {
         path: 'login',
@@ -386,7 +358,7 @@ RoutingModule = __decorate([
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\r\n"
+module.exports = "<div class=\"page-load-animation\">\r\n</div>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -395,7 +367,7 @@ module.exports = "<router-outlet></router-outlet>\r\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_mediareplay_media_replay_service__ = __webpack_require__("./src/app/core/mediareplay/media-replay.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_sidenav_mediareplay_media_replay_service__ = __webpack_require__("./src/app/core/sidenav/mediareplay/media-replay.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -419,7 +391,7 @@ AppComponent = __decorate([
         template: __webpack_require__("./src/app/app.component.html"),
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__core_mediareplay_media_replay_service__["a" /* MediaReplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__core_mediareplay_media_replay_service__["a" /* MediaReplayService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__core_sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__core_sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */]) === "function" && _a || Object])
 ], AppComponent);
 
 var _a;
@@ -436,13 +408,15 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_sidenav_sidenav_component__ = __webpack_require__("./src/app/core/sidenav/sidenav.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_flex_layout__ = __webpack_require__("./node_modules/@angular/flex-layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_sidenav_item_sidenav_item_component__ = __webpack_require__("./src/app/core/sidenav-item/sidenav-item.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__core_sidenav_sidenav_service__ = __webpack_require__("./src/app/core/sidenav/sidenav.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__core_sidenav_icon_sidenav_directive__ = __webpack_require__("./src/app/core/sidenav/icon-sidenav.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_perfect_scrollbar__ = __webpack_require__("./node_modules/ngx-perfect-scrollbar/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_ngx_perfect_scrollbar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__core_core_module__ = __webpack_require__("./src/app/core/core.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular_sortablejs__ = __webpack_require__("./node_modules/angular-sortablejs/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular_sortablejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_angular_sortablejs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__projects_projects_routing__ = __webpack_require__("./src/app/projects/projects.routing.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__projects_projects_module__ = __webpack_require__("./src/app/projects/projects.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__forms_forms_routing__ = __webpack_require__("./src/app/forms/forms.routing.ts");
@@ -450,20 +424,12 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__fields_fields_routing__ = __webpack_require__("./src/app/fields/fields.routing.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__fields_fields_module__ = __webpack_require__("./src/app/fields/fields.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__core_highlightjs_highlight_module__ = __webpack_require__("./src/app/core/highlightjs/highlight.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__core_search_search_component__ = __webpack_require__("./src/app/core/search/search.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__core_breadcrumb_breadcrumb_component__ = __webpack_require__("./src/app/core/breadcrumb/breadcrumb.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__core_breadcrumb_breadcrumb_service__ = __webpack_require__("./src/app/core/breadcrumb/breadcrumb.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__core_quickpanel_quickpanel_component__ = __webpack_require__("./src/app/core/quickpanel/quickpanel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ngx_perfect_scrollbar__ = __webpack_require__("./node_modules/ngx-perfect-scrollbar/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_ngx_perfect_scrollbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__core_mediareplay_media_replay_service__ = __webpack_require__("./src/app/core/mediareplay/media-replay.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__forgot_password_forgot_password_component__ = __webpack_require__("./src/app/forgot-password/forgot-password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__shared_guards_index__ = __webpack_require__("./src/app/shared/guards/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__core_breadcrumb_breadcrumb_service__ = __webpack_require__("./src/app/core/breadcrumb/breadcrumb.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__forgot_password_forgot_password_component__ = __webpack_require__("./src/app/forgot-password/forgot-password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__shared_guards_index__ = __webpack_require__("./src/app/shared/guards/index.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -490,63 +456,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-//import { DashboardV1Component } from './demo/custom-pages/dashboard-v1/dashboard-v1.component';
-//import { ButtonsComponent } from './demo/components/buttons/buttons.component';
-
-//import { FormElementsComponent } from './demo/forms/form-elements/form-elements.component';
-
-
-
-//import { ListsComponent } from './demo/components/lists/lists.component';
-//import { WidgetComponent } from './core/widgets-v1/widget-v1/widget-v1.component';
-//import { D3ChartService } from "./core/nvD3/nvD3.service";
-//import { nvD3 } from "./core/nvD3/nvD3.component";
-//import { LineChartWidgetComponent } from './core/widgets-v1/line-chart-widget/line-chart-widget.component';
-//import { SourceOverviewWidgetComponent } from './core/widgets-v1/source-overview-widget/source-overview-widget.component';
-//import { SimpleTableComponent } from './demo/tables/simple-table/simple-table.component';
-//import { FixedHeaderTableComponent } from './demo/tables/fixed-header-table/fixed-header-table.component';
-//import { FormWizardComponent } from './demo/forms/form-wizard/form-wizard.component';
-//import { GoogleMapsComponent } from './demo/maps/google-maps/google-maps.component';
-//import { CardsComponent } from './demo/components/cards/cards.component';
-//import { DialogsComponent, DemoDialog } from './demo/components/dialogs/dialogs.component';
-//import { IconsComponent } from './demo/icons/icons.component';
-//import { GridListComponent } from './demo/components/grid-list/grid-list.component';
-//import { MenuComponent } from './demo/components/menu/menu.component';
-//import { SliderComponent } from './demo/components/slider/slider.component';
-//import { SnackBarComponent } from './demo/components/snack-bar/snack-bar.component';
-//import { TooltipComponent } from './demo/components/tooltip/tooltip.component';
-//import { DynamicMenuComponent } from './demo/dynamic-menu/dynamic-menu.component';
-//import { environment } from "../environments/environment";
-//import { Level5Component } from './demo/levels/level5/level5.component';
-//import { DynamicMenuService } from "./demo/dynamic-menu/dynamic-menu.service";
-//import { AdminComponent } from './core/admin/admin.component';
-//import { RegisterComponent } from './demo/custom-pages/register/register.component';
-//import { ForgotPasswordComponent } from './demo/custom-pages/forgot-password/forgot-password.component';
-//import { QuillModule } from 'ngx-quill';
-//import { EditorComponent } from './demo/editor/editor.component';
-
-//import { DashboardComponent } from './demo/dashboard/dashboard.component';
-//import { BarChartComponent } from './core/widgets/bar-chart/bar-chart.component';
-//import { LineChartComponent } from './core/widgets/line-chart/line-chart.component';
-//import { RecentSalesComponent } from './core/widgets/recent-sales/recent-sales.component';
-//import { PieChartComponent } from './core/widgets/pie-chart/pie-chart.component';
-//import { GoogleMapsWidgetComponent } from './core/widgets/google-maps-widget/google-maps-widget.component';
-//import { ActivityComponent } from './core/widgets/activity/activity.component';
-//import { TrafficSourcesComponent } from './core/widgets/traffic-sources/traffic-sources.component';
-//import { LoadingOverlayComponent } from './core/loading-overlay/loading-overlay.component';
-//import { SortablejsModule, SortablejsOptions } from "angular-sortablejs";
-//import { DragAndDropComponent } from './demo/drag-and-drop/drag-and-drop.component';
-//import { InboxComponent } from './demo/apps/inbox/inbox.component';
-//import { MailService } from "./demo/apps/inbox/mail.service";
-//import { InboxComposeComponent } from './demo/apps/inbox/inbox-compose/inbox-compose.component';
-//import { CalendarModule } from "angular-calendar";
-//import { CalendarComponent } from './demo/apps/calendar/calendar.component';
-//import { CalendarEditComponent } from './demo/apps/calendar/calendar-edit/calendar-edit.component';
-//import { ChatComponent } from './demo/apps/chat/chat.component';
-
-//import { AutocompleteComponent } from './demo/components/autocomplete/autocomplete.component';
-
-//import { AgmCoreModule } from "@agm/core";
 
 
 
@@ -558,9 +467,9 @@ var perfectScrollbarConfig = {
     suppressScrollX: true,
     swipePropagation: false
 };
-//const sortablejsConfig: SortablejsOptions = {
-//    animation: 300
-//};
+var sortablejsConfig = {
+    animation: 300
+};
 var AppModule = (function () {
     function AppModule() {
     }
@@ -570,75 +479,32 @@ AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__core_sidenav_sidenav_component__["a" /* SidenavComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__core_sidenav_item_sidenav_item_component__["a" /* SidenavItemComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__core_sidenav_icon_sidenav_directive__["a" /* IconSidenavDirective */],
-            //DashboardV1Component,
-            //ButtonsComponent,
-            //FormElementsComponent,
-            __WEBPACK_IMPORTED_MODULE_19__core_search_search_component__["a" /* SearchComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__core_breadcrumb_breadcrumb_component__["a" /* BreadcrumbsComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_28__login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_29__register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */],
-            //ListsComponent,
-            //WidgetComponent,
-            //nvD3,
-            //LineChartWidgetComponent,
-            //SourceOverviewWidgetComponent,
-            //SimpleTableComponent,
-            //FixedHeaderTableComponent,
-            //FormWizardComponent,
-            //GoogleMapsComponent,
-            //CardsComponent,
-            //DialogsComponent,
-            //DemoDialog,
-            //IconsComponent,
-            //GridListComponent,
-            //MenuComponent,
-            //SliderComponent,
-            //SnackBarComponent,
-            //TooltipComponent,
-            //DynamicMenuComponent,
-            //Level5Component,
-            // AdminComponent
-            //RegisterComponent,
-            //ForgotPasswordComponent,
-            //EditorComponent,
-            __WEBPACK_IMPORTED_MODULE_22__core_quickpanel_quickpanel_component__["a" /* QuickpanelComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */]
         ],
         entryComponents: [],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_23__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_7__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_11__app_routing_module__["a" /* RoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_25__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["a" /* MaterialModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_flex_layout__["a" /* FlexLayoutModule */],
+            __WEBPACK_IMPORTED_MODULE_6__app_routing_module__["a" /* RoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_10__core_core_module__["a" /* CoreModule */],
             __WEBPACK_IMPORTED_MODULE_12__projects_projects_routing__["a" /* projectsRouting */], __WEBPACK_IMPORTED_MODULE_13__projects_projects_module__["a" /* ProjectsModule */],
             __WEBPACK_IMPORTED_MODULE_14__forms_forms_routing__["a" /* formsRouting */], __WEBPACK_IMPORTED_MODULE_15__forms_forms_module__["a" /* AppFormsModule */],
             __WEBPACK_IMPORTED_MODULE_16__fields_fields_routing__["a" /* fieldsRouting */], __WEBPACK_IMPORTED_MODULE_17__fields_fields_module__["a" /* FieldsModule */],
-            __WEBPACK_IMPORTED_MODULE_24_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forRoot(perfectScrollbarConfig),
-            //AgmCoreModule.forRoot({
-            //    apiKey: environment.googleApi
-            //}),
-            //QuillModule,
+            __WEBPACK_IMPORTED_MODULE_8_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forRoot(perfectScrollbarConfig),
             __WEBPACK_IMPORTED_MODULE_18__core_highlightjs_highlight_module__["a" /* HighlightModule */],
+            __WEBPACK_IMPORTED_MODULE_11_angular_sortablejs__["SortablejsModule"]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_9__core_sidenav_sidenav_service__["a" /* SidenavService */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["b" /* MdIconRegistry */],
-            __WEBPACK_IMPORTED_MODULE_21__core_breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */],
-            // ProjectsService,
-            //DynamicMenuService,
-            //D3ChartService,
-            //MailService,
-            __WEBPACK_IMPORTED_MODULE_27__core_mediareplay_media_replay_service__["a" /* MediaReplayService */],
-            __WEBPACK_IMPORTED_MODULE_31__shared_guards_index__["a" /* AuthGuard */]
+            __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MdIconRegistry */],
+            __WEBPACK_IMPORTED_MODULE_19__core_breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */],
+            __WEBPACK_IMPORTED_MODULE_24__shared_guards_index__["a" /* AuthGuard */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
@@ -663,7 +529,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".breadcrumbs {\n  margin: 0;\n  padding: 0 16px;\n  list-style: none; }\n  .breadcrumbs li {\n    line-height: 64px; }\n    .breadcrumbs li md-icon {\n      margin: 0 8px; }\n", ""]);
+exports.push([module.i, ".breadcrumbs {\n  margin: 0;\n  padding: 0 16px;\n  list-style: none;\n  font-weight: 400;\n  font-size: 20px; }\n  .breadcrumbs li {\n    line-height: 64px; }\n    .breadcrumbs li md-icon {\n      margin: 0 8px; }\n", ""]);
 
 // exports
 
@@ -881,6 +747,102 @@ BreadcrumbService = __decorate([
 
 /***/ }),
 
+/***/ "./src/app/core/core.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_component__ = __webpack_require__("./src/app/core/sidenav/sidenav.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sidenav_sidenav_item_sidenav_item_component__ = __webpack_require__("./src/app/core/sidenav/sidenav-item/sidenav-item.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sidenav_icon_sidenav_directive__ = __webpack_require__("./src/app/core/sidenav/icon-sidenav.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toolbar_search_search_component__ = __webpack_require__("./src/app/core/toolbar/search/search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__breadcrumb_breadcrumb_component__ = __webpack_require__("./src/app/core/breadcrumb/breadcrumb.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__quickpanel_quickpanel_component__ = __webpack_require__("./src/app/core/quickpanel/quickpanel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__toolbar_toolbar_component__ = __webpack_require__("./src/app/core/toolbar/toolbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__toolbar_toolbar_user_button_toolbar_user_button_component__ = __webpack_require__("./src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_click_outside_directive__ = __webpack_require__("./src/app/core/utils/click-outside.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__toolbar_search_bar_search_bar_component__ = __webpack_require__("./src/app/core/toolbar/search-bar/search-bar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__toolbar_toolbar_notifications_toolbar_notifications_component__ = __webpack_require__("./src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__sidenav_sidenav_service__ = __webpack_require__("./src/app/core/sidenav/sidenav.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__sidenav_mediareplay_media_replay_service__ = __webpack_require__("./src/app/core/sidenav/mediareplay/media-replay.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__breadcrumb_breadcrumb_service__ = __webpack_require__("./src/app/core/breadcrumb/breadcrumb.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__material_components_module__ = __webpack_require__("./src/app/material-components.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__ = __webpack_require__("./node_modules/ngx-perfect-scrollbar/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_flex_layout__ = __webpack_require__("./node_modules/@angular/flex-layout/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CoreModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+//import { AdminComponent } from './admin/admin.component';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var CoreModule = (function () {
+    function CoreModule() {
+    }
+    return CoreModule;
+}());
+CoreModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_18__angular_router__["b" /* RouterModule */],
+            __WEBPACK_IMPORTED_MODULE_16__material_components_module__["a" /* MaterialComponentsModule */],
+            __WEBPACK_IMPORTED_MODULE_19__angular_flex_layout__["a" /* FlexLayoutModule */],
+            __WEBPACK_IMPORTED_MODULE_20__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forChild()
+        ],
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_component__["a" /* SidenavComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__sidenav_sidenav_item_sidenav_item_component__["a" /* SidenavItemComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__sidenav_icon_sidenav_directive__["a" /* IconSidenavDirective */],
+            __WEBPACK_IMPORTED_MODULE_5__toolbar_search_search_component__["a" /* SearchComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__breadcrumb_breadcrumb_component__["a" /* BreadcrumbsComponent */],
+            // AdminComponent,
+            __WEBPACK_IMPORTED_MODULE_7__quickpanel_quickpanel_component__["a" /* QuickpanelComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__toolbar_toolbar_component__["a" /* ToolbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__toolbar_toolbar_user_button_toolbar_user_button_component__["a" /* ToolbarUserButtonComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__utils_click_outside_directive__["a" /* ClickOutsideDirective */],
+            __WEBPACK_IMPORTED_MODULE_11__toolbar_search_bar_search_bar_component__["a" /* SearchBarComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__toolbar_toolbar_notifications_toolbar_notifications_component__["a" /* ToolbarNotificationsComponent */]
+        ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_13__sidenav_sidenav_service__["a" /* SidenavService */],
+            __WEBPACK_IMPORTED_MODULE_14__sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */],
+            __WEBPACK_IMPORTED_MODULE_15__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]
+        ]
+    })
+], CoreModule);
+
+//# sourceMappingURL=core.module.js.map
+
+/***/ }),
+
 /***/ "./src/app/core/highlightjs/highlight.directive.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -947,53 +909,6 @@ HighlightModule = __decorate([
 ], HighlightModule);
 
 //# sourceMappingURL=highlight.module.js.map
-
-/***/ }),
-
-/***/ "./src/app/core/mediareplay/media-replay.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__ = __webpack_require__("./node_modules/rxjs/ReplaySubject.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_flex_layout__ = __webpack_require__("./node_modules/@angular/flex-layout/index.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MediaReplayService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var MediaReplayService = (function () {
-    function MediaReplayService(media) {
-        var _this = this;
-        this._media$ = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["ReplaySubject"](1);
-        media.asObservable()
-            .subscribe(function (res) { return _this._media$.next(res); }, function (err) { return _this._media$.error(err); }, function () { return _this._media$.complete(); });
-    }
-    Object.defineProperty(MediaReplayService.prototype, "media$", {
-        get: function () {
-            return this._media$.asObservable();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return MediaReplayService;
-}());
-MediaReplayService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_flex_layout__["b" /* ObservableMedia */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_flex_layout__["b" /* ObservableMedia */]) === "function" && _a || Object])
-], MediaReplayService);
-
-var _a;
-//# sourceMappingURL=media-replay.service.js.map
 
 /***/ }),
 
@@ -1067,37 +982,14 @@ QuickpanelComponent = __decorate([
 
 /***/ }),
 
-/***/ "./src/app/core/search/search.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center stretch\" style=\"height: 100%;\">\r\n  <button class=\"search-button\" md-button (click)=\"open()\">\r\n    <md-icon>search</md-icon>\r\n  </button>\r\n  <md-input-container class=\"search\" floatingPlaceholder=\"false\" [class.search-open]=\"isOpen\">\r\n    <input #input (blur)=\"close()\" mdInput placeholder=\"Search...\">\r\n  </md-input-container>\r\n</div>\r\n\r\n\r\n<!--<div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n  <div class=\"search-wrapper\" fxLayout=\"row\" [class.focus]=\"isFocused()\" fxShow=\"false\" fxShow.gt-md=\"true\">\r\n    <md-icon class=\"search-icon\">search</md-icon>\r\n    <input type=\"search\"\r\n           autocomplete=\"off\"\r\n           spellcheck=\"off\"\r\n           class=\"search-input\"\r\n           [(ngModel)]=\"search\"\r\n           (focus)=\"focus()\"\r\n           (blur)=\"blur()\"\r\n           placeholder=\"Search\">\r\n  </div>\r\n</div>\r\n-->\r\n"
-
-/***/ }),
-
-/***/ "./src/app/core/search/search.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ":host {\n  height: 100%; }\n\n.search {\n  margin-left: 8px;\n  width: 0;\n  overflow: hidden;\n  opacity: 0;\n  visibility: hidden;\n  transition: all 0.4s cubic-bezier(0.35, 0, 0.25, 1); }\n  .search.search-open {\n    width: 250px;\n    visibility: visible;\n    opacity: 1; }\n\n.search-button {\n  border-radius: 0;\n  padding: 0;\n  min-width: 50px;\n  max-width: 50px; }\n\ninput[type=\"search\"] {\n  -webkit-appearance: none; }\n\n.search-wrapper {\n  position: relative;\n  -webkit-box-flex: 1.5;\n      -ms-flex-positive: 1.5;\n          flex-grow: 1.5; }\n  .search-wrapper .search-icon {\n    position: absolute;\n    font-size: 24px;\n    top: 6px;\n    left: 24px;\n    transition: color 0.2s ease; }\n  .search-wrapper input.search-input {\n    display: block;\n    padding: 8px 8px 8px 72px;\n    box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.06), 0 1px 1px rgba(0, 0, 0, 0.12);\n    height: 36px;\n    transition: all 0.2s ease;\n    border: none;\n    font-size: 16px;\n    -webkit-appearance: textfield;\n       -moz-appearance: textfield;\n            appearance: textfield;\n    font-weight: 300;\n    outline: none;\n    border-radius: 3px;\n    box-sizing: border-box;\n    color: currentColor;\n    background: rgba(255, 255, 255, 0.2);\n    width: 100%; }\n    .search-wrapper input.search-input:hover {\n      background: rgba(255, 255, 255, 0.5); }\n    .search-wrapper input.search-input::-webkit-input-placeholder {\n      color: currentColor; }\n    .search-wrapper input.search-input:-moz-placeholder {\n      opacity: 1;\n      color: currentColor; }\n    .search-wrapper input.search-input::-moz-placeholder {\n      opacity: 1;\n      color: currentColor; }\n    .search-wrapper input.search-input:-ms-input-placeholder {\n      color: currentColor; }\n  .search-wrapper.focus .search-icon {\n    color: rgba(0, 0, 0, 0.87); }\n  .search-wrapper.focus input.search-input {\n    background: white;\n    color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input::-webkit-input-placeholder {\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input:-moz-placeholder {\n      opacity: 1;\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input::-moz-placeholder {\n      opacity: 1;\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input:-ms-input-placeholder {\n      color: rgba(0, 0, 0, 0.87); }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "./src/app/core/search/search.component.ts":
+/***/ "./src/app/core/sidenav/icon-sidenav.directive.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sidenav_service__ = __webpack_require__("./src/app/core/sidenav/sidenav.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mediareplay_media_replay_service__ = __webpack_require__("./src/app/core/sidenav/mediareplay/media-replay.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IconSidenavDirective; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1108,50 +1000,133 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var SearchComponent = (function () {
-    function SearchComponent(renderer) {
-        this.renderer = renderer;
+
+
+var IconSidenavDirective = (function () {
+    function IconSidenavDirective(sidenavService, mediaReplayService) {
+        this.sidenavService = sidenavService;
+        this.mediaReplayService = mediaReplayService;
+        this.isMobile = false;
     }
-    SearchComponent.prototype.ngOnInit = function () {
+    Object.defineProperty(IconSidenavDirective.prototype, "isIconSidenav", {
+        get: function () {
+            return this.sidenavService.isIconSidenav;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    IconSidenavDirective.prototype.onMouseEnter = function () {
+        if (this.isIconSidenav && !this.isMobile) {
+            this.collapsed = false;
+            this.sidenavService.nextCurrentlyOpen(this.currentlyOpen);
+        }
     };
-    SearchComponent.prototype.open = function () {
+    IconSidenavDirective.prototype.onMouseLeave = function () {
+        if (this.isIconSidenav && !this.isMobile) {
+            this.collapsed = true;
+            this.currentlyOpen = this.sidenavService.currentlyOpen;
+            this.sidenavService.nextCurrentlyOpen([]);
+        }
+    };
+    IconSidenavDirective.prototype.ngOnInit = function () {
         var _this = this;
-        this.isOpen = true;
-        setTimeout(function () {
-            _this.renderer.invokeElementMethod(_this.input.nativeElement, 'focus', []);
-        }, 100);
+        this._mediaSubscription = this.mediaReplayService.media$.subscribe(function (change) {
+            _this.isMobile = (change.mqAlias == 'xs') || (change.mqAlias == 'sm');
+        });
     };
-    SearchComponent.prototype.close = function () {
-        this.isOpen = false;
+    IconSidenavDirective.prototype.ngOnDestroy = function () {
+        this._mediaSubscription.unsubscribe();
     };
-    return SearchComponent;
+    return IconSidenavDirective;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('input'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
-], SearchComponent.prototype, "input", void 0);
-SearchComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-search',
-        template: __webpack_require__("./src/app/core/search/search.component.html"),
-        styles: [__webpack_require__("./src/app/core/search/search.component.scss")]
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostBinding"])('class.icon-sidenav'),
+    __metadata("design:type", Boolean),
+    __metadata("design:paramtypes", [])
+], IconSidenavDirective.prototype, "isIconSidenav", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostBinding"])('class.collapsed'),
+    __metadata("design:type", Boolean)
+], IconSidenavDirective.prototype, "collapsed", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('mouseenter'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], IconSidenavDirective.prototype, "onMouseEnter", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('mouseleave'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], IconSidenavDirective.prototype, "onMouseLeave", null);
+IconSidenavDirective = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
+        selector: '[msIconSidenav]'
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]) === "function" && _b || Object])
-], SearchComponent);
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__mediareplay_media_replay_service__["a" /* MediaReplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__mediareplay_media_replay_service__["a" /* MediaReplayService */]) === "function" && _b || Object])
+], IconSidenavDirective);
 
 var _a, _b;
-//# sourceMappingURL=search.component.js.map
+//# sourceMappingURL=icon-sidenav.directive.js.map
 
 /***/ }),
 
-/***/ "./src/app/core/sidenav-item/sidenav-item.component.html":
+/***/ "./src/app/core/sidenav/mediareplay/media-replay.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__ = __webpack_require__("./node_modules/rxjs/ReplaySubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_flex_layout__ = __webpack_require__("./node_modules/@angular/flex-layout/index.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MediaReplayService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MediaReplayService = (function () {
+    function MediaReplayService(media) {
+        var _this = this;
+        this._media$ = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["ReplaySubject"](1);
+        media.asObservable()
+            .subscribe(function (res) { return _this._media$.next(res); }, function (err) { return _this._media$.error(err); }, function () { return _this._media$.complete(); });
+    }
+    Object.defineProperty(MediaReplayService.prototype, "media$", {
+        get: function () {
+            return this._media$.asObservable();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return MediaReplayService;
+}());
+MediaReplayService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_flex_layout__["b" /* ObservableMedia */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_flex_layout__["b" /* ObservableMedia */]) === "function" && _a || Object])
+], MediaReplayService);
+
+var _a;
+//# sourceMappingURL=media-replay.service.js.map
+
+/***/ }),
+
+/***/ "./src/app/core/sidenav/sidenav-item/sidenav-item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"sidenav-anchor\"\r\n   *ngIf=\"!item.hasSubItems()\"\r\n   md-list-item md-ripple\r\n   [routerLink]=\"[item.route]\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\r\n  <md-icon>{{ item.icon }}</md-icon>\r\n  <span class=\"sidenav-item-name fade-in-on-icon-sidenav\">{{ item.name }}</span>\r\n  <span fxFlex><!-- fill space --></span>\r\n  <span class=\"badge fade-in-on-icon-sidenav\" *ngIf=\"item.badge\" [style.background-color]=\"item.badgeColor\">{{ item.badge }}</span>\r\n</a>\r\n\r\n<a class=\"sidenav-anchor\"\r\n   *ngIf=\"item.hasSubItems()\"\r\n   md-list-item md-ripple\r\n   (click)=\"toggleDropdown()\">\r\n\r\n  <md-icon>{{ item.icon }}</md-icon>\r\n  <span class=\"sidenav-item-name fade-in-on-icon-sidenav\">{{ item.name }}</span>\r\n  <span fxFlex><!-- fill space --></span>\r\n  <span class=\"badge fade-in-on-icon-sidenav\" *ngIf=\"item.badge\" [style.background-color]=\"item.badgeColor\" style=\"margin-right: 12px;\">{{ item.badge }}</span>\r\n  <md-icon *ngIf=\"item.hasSubItems()\" class=\"sidenav-item-dropdown-indicator rotate fade-in-on-icon-sidenav\">expand_more</md-icon>\r\n\r\n</a>\r\n\r\n<md-nav-list class=\"sidenav-list sidenav-list-nested\"\r\n     fxLayout=\"column\" [style.height]=\"getSubItemsHeight()\">\r\n  <ms-sidenav-item *ngFor=\"let subItem of item.subItems\" [item]=\"subItem\"></ms-sidenav-item>\r\n</md-nav-list>\r\n"
+module.exports = "<div *ngIf=\"item.isRouteString(); then routeNavItem else functionNavItem\"></div>\r\n\r\n<ng-template #functionNavItem>\r\n  <a class=\"sidenav-anchor\" [ngClass]=\"item.customClass\"\r\n     *ngIf=\"!item.hasSubItems()\"\r\n     md-list-item md-ripple (click)=\"item.route()\">\r\n\r\n    <md-icon>{{ item.icon }}</md-icon>\r\n    <span class=\"sidenav-item-name fade-in-on-icon-sidenav\">{{ item.name }}</span>\r\n    <span fxFlex><!-- fill space --></span>\r\n    <span class=\"badge fade-in-on-icon-sidenav\" *ngIf=\"item.badge\" [style.background-color]=\"item.badgeColor\">{{ item.badge }}</span>\r\n  </a>\r\n</ng-template>\r\n\r\n\r\n<ng-template #routeNavItem>\r\n  <a class=\"sidenav-anchor\" [ngClass]=\"item.customClass\"\r\n     *ngIf=\"!item.hasSubItems()\"\r\n     md-list-item md-ripple\r\n     [routerLink]=\"[item.route]\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\r\n    <md-icon>{{ item.icon }}</md-icon>\r\n    <span class=\"sidenav-item-name fade-in-on-icon-sidenav\">{{ item.name }}</span>\r\n    <span fxFlex><!-- fill space --></span>\r\n    <span class=\"badge fade-in-on-icon-sidenav\" *ngIf=\"item.badge\" [style.background-color]=\"item.badgeColor\">{{ item.badge }}</span>\r\n  </a>\r\n</ng-template>\r\n\r\n<a class=\"sidenav-anchor\"\r\n   *ngIf=\"item.hasSubItems()\"\r\n   md-list-item md-ripple\r\n   (click)=\"toggleDropdown()\"\r\n   [ngClass]=\"item.customClass\">\r\n\r\n  <md-icon>{{ item.icon }}</md-icon>\r\n  <span class=\"sidenav-item-name fade-in-on-icon-sidenav\">{{ item.name }}</span>\r\n  <span fxFlex><!-- fill space --></span>\r\n  <span class=\"badge fade-in-on-icon-sidenav\" *ngIf=\"item.badge\" [style.background-color]=\"item.badgeColor\" style=\"margin-right: 12px;\">{{ item.badge }}</span>\r\n  <md-icon *ngIf=\"item.hasSubItems()\" class=\"sidenav-item-dropdown-indicator rotate fade-in-on-icon-sidenav\">expand_more</md-icon>\r\n\r\n</a>\r\n\r\n<md-nav-list class=\"sidenav-list sidenav-list-nested\"\r\n     fxLayout=\"column\" [style.height]=\"getSubItemsHeight()\">\r\n  <ms-sidenav-item *ngFor=\"let subItem of item.subItems\" [item]=\"subItem\"></ms-sidenav-item>\r\n</md-nav-list>\r\n"
 
 /***/ }),
 
-/***/ "./src/app/core/sidenav-item/sidenav-item.component.scss":
+/***/ "./src/app/core/sidenav/sidenav-item/sidenav-item.component.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
@@ -1159,7 +1134,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ":host {\n  display: block; }\n\nmd-nav-list a.sidenav-anchor.mat-list-item .mat-list-item-content {\n  padding-left: 24px;\n  padding-right: 24px; }\n\nmd-nav-list a.sidenav-anchor .sidenav-item-name {\n  margin-left: 24px;\n  font-size: 14px; }\n\nmd-nav-list a.sidenav-anchor md-icon {\n  width: 18px;\n  height: 18px;\n  font-size: 18px;\n  line-height: 18px; }\n\n.sidenav-list {\n  transition: height 0.4s cubic-bezier(0.35, 0, 0.25, 1); }\n  .sidenav-list > ms-sidenav-item.open > .sidenav-anchor .sidenav-item-dropdown-indicator {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  .sidenav-list > ms-sidenav-item .sidenav-item-dropdown-indicator {\n    transition: -webkit-transform .25s;\n    transition: transform .25s;\n    transition: transform .25s, -webkit-transform .25s; }\n  .sidenav-list > ms-sidenav-item .badge {\n    padding: 4px 8px;\n    font-size: 12px;\n    background: #2196F3;\n    border-radius: 5px;\n    color: #FFF; }\n\n.sidenav-toplevel .sidenav-anchor {\n  position: relative;\n  cursor: pointer;\n  color: #A7A9AE;\n  transition: color .1s; }\n  .sidenav-toplevel .sidenav-anchor:hover {\n    color: #FFFFFF; }\n  .sidenav-toplevel .sidenav-anchor.active {\n    color: #FFFFFF; }\n\n.sidenav-toplevel > .sidenav-item > .sidenav-anchor:hover {\n  background: #272b35; }\n\n.sidenav-toplevel > .sidenav-item > .sidenav-anchor.active {\n  background: #272b35; }\n\n.sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item {\n  background: #262a34; }\n  .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n    background: #22262f; }\n  .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n    background: #22262f; }\n  .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item {\n    background: #20242c; }\n    .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor {\n      padding-left: 10px; }\n      .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n        background: #1d2028; }\n      .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n        background: #1d2028; }\n    .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item {\n      background: #1b1e25; }\n      .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor {\n        padding-left: 20px; }\n        .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n          background: #181a20; }\n        .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n          background: #181a20; }\n      .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item {\n        background: #16181e; }\n        .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor {\n          padding-left: 30px; }\n          .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n            background: #121419; }\n          .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n            background: #121419; }\n        .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item {\n          background: #101216; }\n          .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor {\n            padding-left: 40px; }\n            .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n              background: #0d0e12; }\n            .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n              background: #0d0e12; }\n          .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item .sidenav-list-nested > .sidenav-item > .sidenav-anchor {\n            padding-left: 40px; }\n            .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n              background: #08080a; }\n            .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n              background: #08080a; }\n\n.sidenav-toplevel .sidenav-item .sidenav-list-nested {\n  position: relative;\n  padding: 0;\n  overflow: hidden; }\n  .sidenav-toplevel .sidenav-item .sidenav-list-nested:before, .sidenav-toplevel .sidenav-item .sidenav-list-nested:after {\n    content: \" \";\n    left: 0;\n    position: absolute;\n    width: 100%;\n    height: 2px;\n    z-index: 3; }\n  .sidenav-toplevel .sidenav-item .sidenav-list-nested:before {\n    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0, transparent);\n    top: 0; }\n  .sidenav-toplevel .sidenav-item .sidenav-list-nested:after {\n    background: linear-gradient(-180deg, rgba(0, 0, 0, 0.3) 0, transparent);\n    bottom: 0; }\n", ""]);
+exports.push([module.i, ":host {\n  display: block; }\n\nmd-nav-list a.sidenav-anchor.mat-list-item .mat-list-item-content {\n  padding-left: 24px;\n  padding-right: 24px; }\n\nmd-nav-list a.sidenav-anchor .sidenav-item-name {\n  margin-left: 24px;\n  font-size: 14px; }\n\nmd-nav-list a.sidenav-anchor md-icon {\n  width: 18px;\n  height: 18px;\n  font-size: 18px;\n  line-height: 18px; }\n\n.sidenav-list {\n  transition: height 0.4s cubic-bezier(0.35, 0, 0.25, 1); }\n  .sidenav-list > ms-sidenav-item.open > .sidenav-anchor .sidenav-item-dropdown-indicator {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  .sidenav-list > ms-sidenav-item .sidenav-item-dropdown-indicator {\n    transition: -webkit-transform .25s;\n    transition: transform .25s;\n    transition: transform .25s, -webkit-transform .25s; }\n  .sidenav-list > ms-sidenav-item .badge {\n    padding: 4px 8px;\n    font-size: 12px;\n    background: #2196F3;\n    border-radius: 5px;\n    color: #FFF; }\n\n.sidenav-toplevel .sidenav-anchor {\n  position: relative;\n  cursor: pointer;\n  color: #A7A9AE;\n  transition: color .1s;\n  outline: none; }\n  .sidenav-toplevel .sidenav-anchor:hover {\n    color: #FFFFFF; }\n  .sidenav-toplevel .sidenav-anchor.active {\n    color: #FFFFFF; }\n\n.sidenav-toplevel > .sidenav-item > .sidenav-anchor:hover {\n  background: #272b35; }\n\n.sidenav-toplevel > .sidenav-item > .sidenav-anchor.active {\n  background: #272b35; }\n\n.sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item {\n  background: #262a34; }\n  .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n    background: #22262f; }\n  .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n    background: #22262f; }\n  .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item {\n    background: #20242c; }\n    .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor {\n      padding-left: 10px; }\n      .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n        background: #1d2028; }\n      .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n        background: #1d2028; }\n    .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item {\n      background: #1b1e25; }\n      .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor {\n        padding-left: 20px; }\n        .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n          background: #181a20; }\n        .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n          background: #181a20; }\n      .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item {\n        background: #16181e; }\n        .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor {\n          padding-left: 30px; }\n          .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n            background: #121419; }\n          .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n            background: #121419; }\n        .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item {\n          background: #101216; }\n          .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor {\n            padding-left: 40px; }\n            .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n              background: #0d0e12; }\n            .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n              background: #0d0e12; }\n          .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item .sidenav-list-nested > .sidenav-item > .sidenav-anchor {\n            padding-left: 40px; }\n            .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item .sidenav-list-nested > .sidenav-item > .sidenav-anchor:hover {\n              background: #08080a; }\n            .sidenav-toplevel > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item > .sidenav-list-nested > .sidenav-item .sidenav-list-nested > .sidenav-item > .sidenav-anchor.active {\n              background: #08080a; }\n\n.sidenav-toplevel .sidenav-item .sidenav-list-nested {\n  position: relative;\n  padding: 0;\n  overflow: hidden; }\n  .sidenav-toplevel .sidenav-item .sidenav-list-nested:before, .sidenav-toplevel .sidenav-item .sidenav-list-nested:after {\n    content: \" \";\n    left: 0;\n    position: absolute;\n    width: 100%;\n    height: 2px;\n    z-index: 3; }\n  .sidenav-toplevel .sidenav-item .sidenav-list-nested:before {\n    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0, transparent);\n    top: 0; }\n  .sidenav-toplevel .sidenav-item .sidenav-list-nested:after {\n    background: linear-gradient(-180deg, rgba(0, 0, 0, 0.3) 0, transparent);\n    bottom: 0; }\n", ""]);
 
 // exports
 
@@ -1169,13 +1144,13 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "./src/app/core/sidenav-item/sidenav-item.component.ts":
+/***/ "./src/app/core/sidenav/sidenav-item/sidenav-item.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sidenav_item_model__ = __webpack_require__("./src/app/core/sidenav-item/sidenav-item.model.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__ = __webpack_require__("./src/app/core/sidenav/sidenav.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sidenav_item_model__ = __webpack_require__("./src/app/core/sidenav/sidenav-item/sidenav-item.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidenav_service__ = __webpack_require__("./src/app/core/sidenav/sidenav.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SidenavItemComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1243,11 +1218,11 @@ __decorate([
 SidenavItemComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'ms-sidenav-item',
-        template: __webpack_require__("./src/app/core/sidenav-item/sidenav-item.component.html"),
-        styles: [__webpack_require__("./src/app/core/sidenav-item/sidenav-item.component.scss")],
+        template: __webpack_require__("./src/app/core/sidenav/sidenav-item/sidenav-item.component.html"),
+        styles: [__webpack_require__("./src/app/core/sidenav/sidenav-item/sidenav-item.component.scss")],
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__["a" /* SidenavService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__sidenav_service__["a" /* SidenavService */]) === "function" && _b || Object])
 ], SidenavItemComponent);
 
 var _a, _b;
@@ -1255,7 +1230,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ "./src/app/core/sidenav-item/sidenav-item.model.ts":
+/***/ "./src/app/core/sidenav/sidenav-item/sidenav-item.model.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1272,6 +1247,7 @@ var SidenavItem = (function () {
             this.position = model.position;
             this.badge = model.badge;
             this.badgeColor = model.badgeColor;
+            this.customClass = model.customClass;
         }
     }
     SidenavItem.prototype.hasSubItems = function () {
@@ -1291,100 +1267,13 @@ var SidenavItem = (function () {
             return list;
         }
     };
+    SidenavItem.prototype.isRouteString = function () {
+        return this.route instanceof String || typeof this.route === 'string';
+    };
     return SidenavItem;
 }());
 
 //# sourceMappingURL=sidenav-item.model.js.map
-
-/***/ }),
-
-/***/ "./src/app/core/sidenav/icon-sidenav.directive.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sidenav_service__ = __webpack_require__("./src/app/core/sidenav/sidenav.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_flex_layout__ = __webpack_require__("./node_modules/@angular/flex-layout/index.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IconSidenavDirective; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var IconSidenavDirective = (function () {
-    function IconSidenavDirective(sidenavService, media) {
-        this.sidenavService = sidenavService;
-        this.media = media;
-        this.isMobile = false;
-    }
-    Object.defineProperty(IconSidenavDirective.prototype, "isIconSidenav", {
-        get: function () {
-            return this.sidenavService.isIconSidenav;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    IconSidenavDirective.prototype.onMouseEnter = function () {
-        if (this.isIconSidenav && !this.isMobile) {
-            this.collapsed = false;
-            this.sidenavService.nextCurrentlyOpen(this.currentlyOpen);
-        }
-    };
-    IconSidenavDirective.prototype.onMouseLeave = function () {
-        if (this.isIconSidenav && !this.isMobile) {
-            this.collapsed = true;
-            this.currentlyOpen = this.sidenavService.currentlyOpen;
-            this.sidenavService.nextCurrentlyOpen([]);
-        }
-    };
-    IconSidenavDirective.prototype.ngOnInit = function () {
-        var _this = this;
-        this._mediaSubscription = this.media.asObservable().subscribe(function (change) {
-            _this.isMobile = (change.mqAlias == 'xs') || (change.mqAlias == 'sm');
-        });
-    };
-    IconSidenavDirective.prototype.ngOnDestroy = function () {
-        this._mediaSubscription.unsubscribe();
-    };
-    return IconSidenavDirective;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostBinding"])('class.icon-sidenav'),
-    __metadata("design:type", Boolean),
-    __metadata("design:paramtypes", [])
-], IconSidenavDirective.prototype, "isIconSidenav", null);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostBinding"])('class.collapsed'),
-    __metadata("design:type", Boolean)
-], IconSidenavDirective.prototype, "collapsed", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('mouseenter'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], IconSidenavDirective.prototype, "onMouseEnter", null);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('mouseleave'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], IconSidenavDirective.prototype, "onMouseLeave", null);
-IconSidenavDirective = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
-        selector: '[msIconSidenav]'
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_flex_layout__["b" /* ObservableMedia */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_flex_layout__["b" /* ObservableMedia */]) === "function" && _b || Object])
-], IconSidenavDirective);
-
-var _a, _b;
-//# sourceMappingURL=icon-sidenav.directive.js.map
 
 /***/ }),
 
@@ -1461,50 +1350,51 @@ var SidenavComponent = (function () {
                 }, 400);
             }
         });
-        this.breadcrumbService.addFriendlyNameForRoute('/', "Home");
-        this.breadcrumbService.addFriendlyNameForRoute('/projects', "Projects");
-        //this.breadcrumbService.addFriendlyNameForRoute('/apps/inbox', "Inbox");
-        //this.breadcrumbService.addFriendlyNameForRoute('/apps/calendar', "Calendar");
-        //this.breadcrumbService.addFriendlyNameForRoute('/apps/chat', "Chat");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components', "Components");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/autocomplete', "Autocomplete");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/buttons', "Buttons");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/cards', "Cards");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/dialogs', "Dialogs");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/grid-list', "Grid List");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/lists', "Lists");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/menu', "Menu");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/slider', "Slider");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/snack-bar', "Snack-Bar");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/tooltips', "Tooltips");
-        //this.breadcrumbService.addFriendlyNameForRoute('/forms', "Forms");
-        //this.breadcrumbService.addFriendlyNameForRoute('/forms/form-elements', "Form Elements");
-        //this.breadcrumbService.addFriendlyNameForRoute('/forms/form-wizard', "Form Wizard");
-        //this.breadcrumbService.addFriendlyNameForRoute('/tables', "Tables");
-        //this.breadcrumbService.addFriendlyNameForRoute('/tables/simple-table', "Simple Table");
-        //this.breadcrumbService.addFriendlyNameForRoute('/tables/fixed-header-table', "Fixed Header Table");
-        //this.breadcrumbService.addFriendlyNameForRoute('/maps', "Maps");
-        //this.breadcrumbService.addFriendlyNameForRoute('/maps/google-maps', "Google Maps");
-        //this.breadcrumbService.addFriendlyNameForRoute('/icons', "Material Icons");
-        //this.breadcrumbService.addFriendlyNameForRoute('/dashboard-v1', "Dashboard v1");
-        //this.breadcrumbService.addFriendlyNameForRoute('/drag-and-drop', "Drag & Drop");
-        //this.breadcrumbService.addFriendlyNameForRoute('/editor', "WYSISYG Editor");
-        //this.breadcrumbService.addFriendlyNameForRoute('/dynamic-menu', "Dynamic Menu");
-        //this.breadcrumbService.addFriendlyNameForRoute('/level1', "Level 1");
-        //this.breadcrumbService.addFriendlyNameForRoute('/level1/level2', "Level 2");
-        //this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3', "Level 3");
-        //this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3/level4', "Level 4");
-        //this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3/level4/level5', "Level 5");
+        this.breadcrumbService.addFriendlyNameForRoute('/', "Dashboard");
+        this.breadcrumbService.addFriendlyNameForRoute('/apps', "Apps");
+        this.breadcrumbService.addFriendlyNameForRoute('/apps/inbox', "Inbox");
+        this.breadcrumbService.addFriendlyNameForRoute('/apps/calendar', "Calendar");
+        this.breadcrumbService.addFriendlyNameForRoute('/apps/chat', "Chat");
+        this.breadcrumbService.addFriendlyNameForRoute('/components', "Components");
+        this.breadcrumbService.addFriendlyNameForRoute('/components/autocomplete', "Autocomplete");
+        this.breadcrumbService.addFriendlyNameForRoute('/components/buttons', "Buttons");
+        this.breadcrumbService.addFriendlyNameForRoute('/components/cards', "Cards");
+        this.breadcrumbService.addFriendlyNameForRoute('/components/dialogs', "Dialogs");
+        this.breadcrumbService.addFriendlyNameForRoute('/components/grid-list', "Grid List");
+        this.breadcrumbService.addFriendlyNameForRoute('/components/lists', "Lists");
+        this.breadcrumbService.addFriendlyNameForRoute('/components/menu', "Menu");
+        this.breadcrumbService.addFriendlyNameForRoute('/components/slider', "Slider");
+        this.breadcrumbService.addFriendlyNameForRoute('/components/snack-bar', "Snack-Bar");
+        this.breadcrumbService.addFriendlyNameForRoute('/components/tooltips', "Tooltips");
+        this.breadcrumbService.addFriendlyNameForRoute('/forms', "Forms");
+        this.breadcrumbService.addFriendlyNameForRoute('/forms/form-elements', "Form Elements");
+        this.breadcrumbService.addFriendlyNameForRoute('/forms/form-wizard', "Form Wizard");
+        this.breadcrumbService.addFriendlyNameForRoute('/tables', "Tables");
+        this.breadcrumbService.addFriendlyNameForRoute('/tables/simple-table', "Simple Table");
+        this.breadcrumbService.addFriendlyNameForRoute('/tables/fixed-header-table', "Fixed Header Table");
+        this.breadcrumbService.addFriendlyNameForRoute('/maps', "Maps");
+        this.breadcrumbService.addFriendlyNameForRoute('/maps/google-maps', "Google Maps");
+        this.breadcrumbService.addFriendlyNameForRoute('/icons', "Material Icons");
+        this.breadcrumbService.addFriendlyNameForRoute('/dashboard-v1', "Dashboard v1");
+        this.breadcrumbService.addFriendlyNameForRoute('/drag-and-drop', "Drag & Drop");
+        this.breadcrumbService.addFriendlyNameForRoute('/editor', "WYSISYG Editor");
+        this.breadcrumbService.addFriendlyNameForRoute('/dynamic-menu', "Dynamic Menu");
+        this.breadcrumbService.addFriendlyNameForRoute('/level1', "Level 1");
+        this.breadcrumbService.addFriendlyNameForRoute('/level1/level2', "Level 2");
+        this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3', "Level 3");
+        this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3/level4', "Level 4");
+        this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3/level4/level5', "Level 5");
     };
     SidenavComponent.prototype.toggleIconSidenav = function () {
         setTimeout(function () {
             window.dispatchEvent(new Event('resize'));
         }, 300);
         this.sidenavService.isIconSidenav = !this.sidenavService.isIconSidenav;
+        var snackBarConfig = {
+            duration: 10000
+        };
         if (this.sidenavService.isIconSidenav) {
-            this.snackBar.open('You activated Icon-Sidenav, move your mouse to the content and see what happens!', '', {
-                duration: 10000
-            });
+            this.snackBar.open('You activated Icon-Sidenav, move your mouse to the content and see what happens!', '', snackBarConfig);
         }
     };
     SidenavComponent.prototype.isIconSidenav = function () {
@@ -1549,11 +1439,12 @@ var _a, _b, _c, _d;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sidenav_item_sidenav_item_model__ = __webpack_require__("./src/app/core/sidenav-item/sidenav-item.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sidenav_item_sidenav_item_model__ = __webpack_require__("./src/app/core/sidenav/sidenav-item/sidenav-item.model.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs__ = __webpack_require__("./node_modules/rxjs/Rx.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SidenavService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1568,8 +1459,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SidenavService = (function () {
-    function SidenavService() {
+    function SidenavService(snackbar) {
         this._itemsSubject = new __WEBPACK_IMPORTED_MODULE_2_rxjs__["BehaviorSubject"]([]);
         this._items = [];
         this.items$ = this._itemsSubject.asObservable();
@@ -1577,46 +1469,57 @@ var SidenavService = (function () {
         this._currentlyOpen = [];
         this.currentlyOpen$ = this._currentlyOpenSubject.asObservable();
         var menu = this;
-        var dashboard = menu.addItem('Home', 'home', '/', 1);
-        menu.addItem('Projects', 'projects', '/projects', 1, '22', '#7986CC');
-        //menu.addItem('Chat', 'chat', '/apps/chat', 2, '14', '#E15C74');
-        //menu.addItem('Calendar', 'date_range', '/apps/calendar', 3);
-        //let components =  menu.addItem('Components', 'layers', null, 3);
-        //menu.addSubItem(components, 'Autocomplete', '/components/autocomplete', 1);
-        //menu.addSubItem(components, 'Buttons', '/components/buttons', 2);
-        //menu.addSubItem(components, 'Cards', '/components/cards', 3);
-        //menu.addSubItem(components, 'Dialogs', '/components/dialogs', 4);
-        //menu.addSubItem(components, 'Grid List', '/components/grid-list', 5);
-        //menu.addSubItem(components, 'Lists', '/components/lists', 6);
-        //menu.addSubItem(components, 'Menu', '/components/menu', 7);
-        //menu.addSubItem(components, 'Slider', '/components/slider', 8);
-        //menu.addSubItem(components, 'Snack-Bar', '/components/snack-bar', 9);
-        //menu.addSubItem(components, 'Tooltips', '/components/tooltips', 10);
-        //let forms = menu.addItem('Forms', 'insert_comment', null, 4);
-        //menu.addSubItem(forms, 'Form Elements', '/forms/form-elements', 1);
-        //menu.addSubItem(forms, 'Form Wizard', '/forms/form-wizard', 1);
-        //let tables =  menu.addItem('Tables', 'format_line_spacing', null, 5);
-        //menu.addSubItem(tables, 'Simple Table', '/tables/simple-table', 1);
-        //menu.addSubItem(tables, 'Fixed Header Table', '/tables/fixed-header-table', 2);
-        //let maps =  menu.addItem('Maps', 'map', null, 6, '3', '#4CAF50');
-        //menu.addSubItem(maps, 'Google Maps', '/maps/google-maps', 1);
-        //let icons = menu.addItem('Material Icons', 'grade', '/icons', 7);
-        //let customPages = menu.addItem('Custom Pages', 'web', null, 8);
-        //menu.addSubItem(customPages, 'Login Page', '/login', 1);
-        //menu.addSubItem(customPages, 'Register Page', '/register', 2);
-        //menu.addSubItem(customPages, 'Forgot Password', '/forgot-password', 3);
-        //menu.addSubItem(customPages, 'Dashboard v1', '/dashboard-v1', 4);
-        //let dragAndDrop = menu.addItem('Drag & Drop', 'mouse', '/drag-and-drop', 9);
-        //let editor = menu.addItem('WYSIWYG Editor', 'format_shapes', '/editor', 10, 'NEW', '#3F51B5');
-        //let dynamicMenu = menu.addItem('Dynamic Menu', 'extension', '/dynamic-menu', 11);
-        //let multiLevel = menu.addItem('Multi-Level Menu', 'menu', null, 12);
-        //let level1 = menu.addSubItem(multiLevel, 'Level 1', '/level1', 1);
-        //let level2 = menu.addSubItem(level1, 'Level 2', '/level1/level2', 2);
-        //let level3 = menu.addSubItem(level2, 'Level 3', '/level1/level2/level3', 3);
-        //let level4 = menu.addSubItem(level3, 'Level 4', '/level1/level2/level3/level4', 4);
-        //let level5 = menu.addSubItem(level4, 'Level 5', '/level1/level2/level3/level4/level5', 5);
+        var dashboard = menu.addItem('Dashboard', 'dashboard', '/', 1);
+        menu.addItem('Inbox', 'mail', '/apps/inbox', 1, '22', '#7986CC');
+        menu.addItem('Chat', 'chat', '/apps/chat', 2, '14', '#E15C74');
+        menu.addItem('Calendar', 'date_range', '/apps/calendar', 3);
+        var components = menu.addItem('Components', 'layers', null, 3);
+        menu.addSubItem(components, 'Autocomplete', '/components/autocomplete', 1);
+        menu.addSubItem(components, 'Buttons', '/components/buttons', 2);
+        menu.addSubItem(components, 'Cards', '/components/cards', 3);
+        menu.addSubItem(components, 'Dialogs', '/components/dialogs', 4);
+        menu.addSubItem(components, 'Grid List', '/components/grid-list', 5);
+        menu.addSubItem(components, 'Lists', '/components/lists', 6);
+        menu.addSubItem(components, 'Menu', '/components/menu', 7);
+        menu.addSubItem(components, 'Slider', '/components/slider', 8);
+        menu.addSubItem(components, 'Snack-Bar', '/components/snack-bar', 9);
+        menu.addSubItem(components, 'Tooltips', '/components/tooltips', 10);
+        var forms = menu.addItem('Forms', 'insert_comment', null, 4);
+        menu.addSubItem(forms, 'Form Elements', '/forms/form-elements', 1);
+        menu.addSubItem(forms, 'Form Wizard', '/forms/form-wizard', 1);
+        var tables = menu.addItem('Tables', 'format_line_spacing', null, 5);
+        menu.addSubItem(tables, 'Simple Table', '/tables/simple-table', 1);
+        menu.addSubItem(tables, 'Fixed Header Table', '/tables/fixed-header-table', 2);
+        var maps = menu.addItem('Maps', 'map', null, 6, '3', '#4CAF50');
+        menu.addSubItem(maps, 'Google Maps', '/maps/google-maps', 1);
+        var icons = menu.addItem('Material Icons', 'grade', '/icons', 7);
+        var customPages = menu.addItem('Custom Pages', 'web', null, 8);
+        menu.addSubItem(customPages, 'Login Page', '/login', 1);
+        menu.addSubItem(customPages, 'Register Page', '/register', 2);
+        menu.addSubItem(customPages, 'Forgot Password', '/forgot-password', 3);
+        menu.addSubItem(customPages, 'Dashboard v1', '/dashboard-v1', 4);
+        var dragAndDrop = menu.addItem('Drag & Drop', 'mouse', '/drag-and-drop', 9);
+        var editor = menu.addItem('WYSIWYG Editor', 'format_shapes', '/editor', 10, 'NEW', '#3F51B5');
+        var multiLevel = menu.addItem('Multi-Level Menu', 'menu', null, 11);
+        var level1 = menu.addSubItem(multiLevel, 'Level 1', '/level1', 1);
+        var level2 = menu.addSubItem(level1, 'Level 2', '/level1/level2', 2);
+        var level3 = menu.addSubItem(level2, 'Level 3', '/level1/level2/level3', 3);
+        var level4 = menu.addSubItem(level3, 'Level 4', '/level1/level2/level3/level4', 4);
+        var level5 = menu.addSubItem(level4, 'Level 5', '/level1/level2/level3/level4/level5', 5);
+        var dynamicMenuFunctionDemo = function () {
+            var dynamicFunction = function () {
+                var snackbarRef = snackbar.open('This menu item got added dynamically!', 'Remove item', {
+                    duration: 5000
+                });
+                snackbarRef.onAction().subscribe(function () {
+                    menu.removeItem(dynamicMenu);
+                });
+            };
+            var dynamicMenu = menu.addItem('Dynamic Menu Item', 'extension', dynamicFunction, 12);
+        };
+        var addMenu = menu.addItem('Add Menu Item', 'add', dynamicMenuFunctionDemo, 99, null, null, 'add-dynamic-menu');
     }
-    SidenavService.prototype.addItem = function (name, icon, route, position, badge, badgeColor) {
+    SidenavService.prototype.addItem = function (name, icon, route, position, badge, badgeColor, customClass) {
         var item = new __WEBPACK_IMPORTED_MODULE_1__sidenav_item_sidenav_item_model__["a" /* SidenavItem */]({
             name: name,
             icon: icon,
@@ -1624,7 +1527,8 @@ var SidenavService = (function () {
             subItems: [],
             position: position || 99,
             badge: badge || null,
-            badgeColor: badgeColor || null
+            badgeColor: badgeColor || null,
+            customClass: customClass || null
         });
         this._items.push(item);
         this._itemsSubject.next(this._items);
@@ -1716,14 +1620,458 @@ var SidenavService = (function () {
         enumerable: true,
         configurable: true
     });
+    SidenavService.prototype.getSidenavItemByRoute = function (route) {
+        return this.findByRouteRecursive(route, this._items);
+    };
     return SidenavService;
 }());
 SidenavService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MdSnackBar */]) === "function" && _a || Object])
 ], SidenavService);
 
+var _a;
 //# sourceMappingURL=sidenav.service.js.map
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/search-bar/search-bar.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"search-wrapper\" fxLayout=\"row\" [ngClass]=\"{ 'focus': focused, 'has-input': input }\" fxFlex (msClickOutside)=\"closeDropdown()\">\n  <md-icon class=\"search-icon\">search</md-icon>\n  <input type=\"search\"\n         autocomplete=\"off\"\n         spellcheck=\"false\"\n         class=\"search-input\"\n         [(ngModel)]=\"input\"\n         (focus)=\"openDropdown()\"\n         placeholder=\"Search...\">\n\n  <div class=\"search-dropdown mat-elevation-z1\">\n    <div class=\"content results\" *ngIf=\"input\" fxLayout=\"column\">\n      <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n        <md-icon class=\"icon\">search</md-icon>\n        Search results for: {{ input }}\n      </div>\n      <div class=\"items\">\n        <div class=\"item\" md-ripple>Form Elements</div>\n        <div class=\"item\" md-ripple>Form Wizard</div>\n        <div class=\"item\" md-ripple>Profile</div>\n        <div class=\"item\" md-ripple>Calendar</div>\n        <div class=\"item\" md-ripple>Profile page</div>\n      </div>\n    </div>\n\n    <div class=\"content recents\" fxLayout=\"row\" *ngIf=\"!input\">\n      <div class=\"recently\" fxLayout=\"column\" fxFlex>\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n          <md-icon class=\"icon\">restore</md-icon>\n          Recently Visited\n        </div>\n        <div class=\"items\">\n          <div class=\"item\" md-ripple *ngFor=\"let item of recentlyVisited\" [routerLink]=\"item.route\" (click)=\"closeDropdown()\">{{ item.name }}</div>\n        </div>\n      </div>\n      <div class=\"frequently\" fxLayout=\"column\" fxFlex fxFlexOffset=\"16px\">\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n          <md-icon class=\"icon\">youtube_searched_for</md-icon>\n          Frequently Visited\n        </div>\n        <div class=\"items\">\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-elements']\">Form Elements</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-wizard']\">Form Wizard</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/editor']\">WYSIWYG Editor</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/maps/google-maps']\">Google Maps</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/components/dialogs']\">Material Dialog</div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/search-bar/search-bar.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  display: block;\n  width: 100%; }\n\ninput[type=\"search\"] {\n  -webkit-appearance: none; }\n\n.search-wrapper {\n  position: relative;\n  width: 100%; }\n  .search-wrapper .search-icon {\n    position: absolute;\n    font-size: 24px;\n    top: 6px;\n    left: 24px;\n    transition: color 0.2s ease; }\n  .search-wrapper input.search-input {\n    display: block;\n    padding: 8px 8px 8px 72px;\n    box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.06), 0 1px 1px rgba(0, 0, 0, 0.12);\n    height: 36px;\n    transition: all 0.2s ease;\n    border: none;\n    font-size: 16px;\n    -webkit-appearance: textfield;\n       -moz-appearance: textfield;\n            appearance: textfield;\n    font-weight: 300;\n    outline: none;\n    border-radius: 3px;\n    box-sizing: border-box;\n    color: currentColor;\n    background: rgba(48, 52, 65, 0.05);\n    width: 100%; }\n    .search-wrapper input.search-input:hover {\n      background: rgba(48, 52, 65, 0.1); }\n    .search-wrapper input.search-input::-webkit-input-placeholder {\n      color: currentColor; }\n    .search-wrapper input.search-input:-moz-placeholder {\n      opacity: 1;\n      color: currentColor; }\n    .search-wrapper input.search-input::-moz-placeholder {\n      opacity: 1;\n      color: currentColor; }\n    .search-wrapper input.search-input:-ms-input-placeholder {\n      color: currentColor; }\n  .search-wrapper.focus .search-icon {\n    color: rgba(0, 0, 0, 0.87); }\n  .search-wrapper.focus input.search-input {\n    background: white;\n    background: rgba(48, 52, 65, 0.1); }\n    .search-wrapper.focus input.search-input::-webkit-input-placeholder {\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input:-moz-placeholder {\n      opacity: 1;\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input::-moz-placeholder {\n      opacity: 1;\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input:-ms-input-placeholder {\n      color: rgba(0, 0, 0, 0.87); }\n  .search-wrapper.focus .search-dropdown {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n    visibility: visible; }\n  .search-wrapper .search-dropdown {\n    background: white;\n    position: absolute;\n    top: 50px;\n    width: 100%;\n    z-index: -1;\n    -webkit-transform: translateY(-110%);\n            transform: translateY(-110%);\n    visibility: hidden;\n    transition: visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }\n    .search-wrapper .search-dropdown .content {\n      padding: 16px;\n      font-size: 14px; }\n      .search-wrapper .search-dropdown .content .heading {\n        font-size: 13px;\n        color: #888;\n        margin-bottom: 2px; }\n        .search-wrapper .search-dropdown .content .heading .icon {\n          font-size: 20px;\n          height: 20px;\n          width: 20px;\n          line-height: 20px;\n          margin-right: 6px; }\n      .search-wrapper .search-dropdown .content .items .item {\n        position: relative;\n        padding: 8px 0 6px 26px;\n        margin: 2px 0;\n        cursor: pointer;\n        transition: background .1s;\n        outline: none; }\n        .search-wrapper .search-dropdown .content .items .item:hover {\n          background: #EFEFEF; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/search-bar/search-bar.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__ = __webpack_require__("./src/app/core/sidenav/sidenav.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchBarComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SearchBarComponent = (function () {
+    function SearchBarComponent(router, sidenavService) {
+        this.router = router;
+        this.sidenavService = sidenavService;
+        this.recentlyVisited = [];
+    }
+    SearchBarComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        // Start Demo Data - You can safely remove this
+        this.recentlyVisited.push(this.sidenavService.getSidenavItemByRoute('/'));
+        this.recentlyVisited.push(this.sidenavService.getSidenavItemByRoute('/apps/chat'));
+        this.recentlyVisited.push(this.sidenavService.getSidenavItemByRoute('/tables/fixed-header-table'));
+        this.recentlyVisited.push(this.sidenavService.getSidenavItemByRoute('/icons'));
+        this.recentlyVisited.push(this.sidenavService.getSidenavItemByRoute('/apps/inbox'));
+        // End Demo Data - You can safely remove this
+        this.router.events.subscribe(function (event) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* NavigationEnd */]) {
+                var item = _this.sidenavService.getSidenavItemByRoute(event.urlAfterRedirects);
+                var index = _this.recentlyVisited.indexOf(item);
+                if (index > -1) {
+                    _this.recentlyVisited.splice(index, 1);
+                }
+                _this.recentlyVisited.unshift(item);
+                if (_this.recentlyVisited.length > 5) {
+                    _this.recentlyVisited.pop();
+                }
+            }
+        });
+    };
+    SearchBarComponent.prototype.openDropdown = function () {
+        this.focused = true;
+    };
+    SearchBarComponent.prototype.closeDropdown = function () {
+        this.focused = false;
+    };
+    return SearchBarComponent;
+}());
+SearchBarComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ms-search-bar',
+        template: __webpack_require__("./src/app/core/toolbar/search-bar/search-bar.component.html"),
+        styles: [__webpack_require__("./src/app/core/toolbar/search-bar/search-bar.component.scss")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__["a" /* SidenavService */]) === "function" && _b || Object])
+], SearchBarComponent);
+
+var _a, _b;
+//# sourceMappingURL=search-bar.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/search/search.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center stretch\" style=\"height: 100%;\">\r\n  <button class=\"search-button\" md-button (click)=\"open()\">\r\n    <md-icon>search</md-icon>\r\n  </button>\r\n  <md-input-container class=\"search\" floatingPlaceholder=\"false\" [class.search-open]=\"isOpen\">\r\n    <input #input (blur)=\"close()\" mdInput placeholder=\"Search...\">\r\n  </md-input-container>\r\n</div>\r\n\r\n\r\n<!--<div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n  <div class=\"search-wrapper\" fxLayout=\"row\" [class.focus]=\"isFocused()\" fxShow=\"false\" fxShow.gt-md=\"true\">\r\n    <md-icon class=\"search-icon\">search</md-icon>\r\n    <input type=\"search\"\r\n           autocomplete=\"off\"\r\n           spellcheck=\"off\"\r\n           class=\"search-input\"\r\n           [(ngModel)]=\"search\"\r\n           (focus)=\"focus()\"\r\n           (blur)=\"blur()\"\r\n           placeholder=\"Search\">\r\n  </div>\r\n</div>\r\n-->\r\n"
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/search/search.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  height: 100%; }\n\n.search {\n  width: 0;\n  overflow: hidden;\n  opacity: 0;\n  visibility: hidden;\n  transition: all 0.4s cubic-bezier(0.35, 0, 0.25, 1);\n  margin-top: 7px; }\n  .search.search-open {\n    width: 250px;\n    visibility: visible;\n    opacity: 1;\n    margin-top: 11px; }\n\n.search-button {\n  border-radius: 0;\n  padding: 0;\n  min-width: 50px;\n  max-width: 50px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/search/search.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SearchComponent = (function () {
+    function SearchComponent(renderer) {
+        this.renderer = renderer;
+    }
+    SearchComponent.prototype.ngOnInit = function () {
+    };
+    SearchComponent.prototype.open = function () {
+        var _this = this;
+        this.isOpen = true;
+        setTimeout(function () {
+            _this.renderer.invokeElementMethod(_this.input.nativeElement, 'focus', []);
+        }, 100);
+    };
+    SearchComponent.prototype.close = function () {
+        this.isOpen = false;
+    };
+    return SearchComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('input'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+], SearchComponent.prototype, "input", void 0);
+SearchComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ms-search',
+        template: __webpack_require__("./src/app/core/toolbar/search/search.component.html"),
+        styles: [__webpack_require__("./src/app/core/toolbar/search/search.component.scss")]
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]) === "function" && _b || Object])
+], SearchComponent);
+
+var _a, _b;
+//# sourceMappingURL=search.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"toolbar-button\" fxLayout=\"row\" fxLayoutAlign=\"start center\" (msClickOutside)=\"onClickOutside()\">\n  <button class=\"icon-button\" type=\"button\" md-button (click)=\"toggleDropdown()\" [class.open]=\"isOpen\">\n    <md-icon class=\"icon\">notifications_active</md-icon>\n  </button>\n\n  <div class=\"dropdown mat-elevation-z1\" [class.open]=\"isOpen\">\n    <div class=\"card\">\n      <div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\n        <div class=\"title\">\n          <div class=\"name\">Notifications</div>\n          <div class=\"extra\">You have 3 new notifications.</div>\n        </div>\n        <button type=\"button\" md-icon-button>\n          <md-icon class=\"icon\">settings</md-icon>\n        </button>\n      </div>\n      <perfect-scrollbar class=\"content\">\n        <div class=\"notification\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">notifications</md-icon>\n          <div class=\"title\" fxLayout=\"column\">\n            <div class=\"name\">This is a notification</div>\n            <div class=\"time\">few sec ago</div>\n          </div>\n          <span fxFlex></span>\n          <button type=\"button\" md-icon-button>\n            <md-icon class=\"close\">close</md-icon>\n          </button>\n        </div>\n        <div class=\"divider\"></div>\n        <div class=\"notification primary\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">shopping_basket</md-icon>\n          <div class=\"title\" fxLayout=\"column\">\n            <div class=\"name\">User bought your template</div>\n            <div class=\"time\">23 min ago</div>\n          </div>\n          <span fxFlex></span>\n          <button type=\"button\" md-icon-button>\n            <md-icon class=\"close\">close</md-icon>\n          </button>\n        </div>\n        <div class=\"divider\"></div>\n        <div class=\"notification accent\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">eject</md-icon>\n          <div class=\"title\" fxLayout=\"column\">\n            <div class=\"name\">Server Crashed</div>\n            <div class=\"time\">an hour ago</div>\n          </div>\n          <span fxFlex></span>\n          <button type=\"button\" md-icon-button>\n            <md-icon class=\"close\">close</md-icon>\n          </button>\n        </div>\n        <div class=\"divider\"></div>\n        <div class=\"notification read\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">cached</md-icon>\n          <div class=\"title\" fxLayout=\"column\">\n            <div class=\"name\">New user registered</div>\n            <div class=\"time\">6 hours ago</div>\n          </div>\n          <span fxFlex></span>\n          <button type=\"button\" md-icon-button>\n            <md-icon class=\"close\">close</md-icon>\n          </button>\n        </div>\n        <div class=\"divider\"></div>\n        <div class=\"notification read\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">code</md-icon>\n          <div class=\"title\" fxLayout=\"column\">\n            <div class=\"name\">John added you as friend</div>\n            <div class=\"time\">yesterday</div>\n          </div>\n          <span fxFlex></span>\n          <button type=\"button\" md-icon-button>\n            <md-icon class=\"close\">close</md-icon>\n          </button>\n        </div>\n      </perfect-scrollbar>\n      <div class=\"footer\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\n        <div class=\"action\">Mark all as read</div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".toolbar-button {\n  height: 100%;\n  position: relative; }\n  .toolbar-button .icon-button {\n    height: 100%;\n    padding: 0;\n    min-width: 50px; }\n  .toolbar-button .dropdown {\n    background: white;\n    position: absolute;\n    top: 64px;\n    right: 0;\n    min-width: 350px;\n    z-index: -1;\n    -webkit-transform: translateY(-110%) scale(0);\n            transform: translateY(-110%) scale(0);\n    -webkit-transform-origin: top right;\n            transform-origin: top right;\n    visibility: hidden;\n    transition: visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }\n    @media screen and (max-width: 599px) {\n      .toolbar-button .dropdown {\n        min-width: 100vw;\n        right: -147px; } }\n    .toolbar-button .dropdown.open {\n      -webkit-transform: translateY(0) scale(1);\n              transform: translateY(0) scale(1);\n      visibility: visible; }\n    .toolbar-button .dropdown .card .header {\n      background: #EEEEEE;\n      min-height: 54px;\n      padding-left: 16px;\n      padding-right: 8px;\n      color: #555;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: start;\n          -ms-flex-pack: start;\n              justify-content: flex-start;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -ms-flex-line-pack: center;\n          align-content: center;\n      border-bottom: 1px solid #e0e0e0; }\n      .toolbar-button .dropdown .card .header .extra {\n        font-size: 12px;\n        color: #888; }\n    .toolbar-button .dropdown .card .content {\n      overflow: hidden;\n      max-height: 256px; }\n      .toolbar-button .dropdown .card .content .notification {\n        min-height: 64px;\n        padding: 0 16px 0 14px;\n        position: relative;\n        color: #666;\n        cursor: pointer; }\n        .toolbar-button .dropdown .card .content .notification .icon {\n          height: 28px;\n          width: 28px;\n          line-height: 28px;\n          font-size: 18px;\n          margin-right: 13px;\n          text-align: center;\n          border-radius: 50%;\n          background: #FFF;\n          color: #888;\n          border: 1px solid #EEE; }\n        .toolbar-button .dropdown .card .content .notification .title {\n          font-weight: 500;\n          font-size: 14px; }\n        .toolbar-button .dropdown .card .content .notification .time {\n          font-size: 12px; }\n        .toolbar-button .dropdown .card .content .notification .close {\n          font-size: 18px;\n          width: 18px;\n          height: 18px;\n          line-height: 18px; }\n        .toolbar-button .dropdown .card .content .notification.primary .icon {\n          background: #4CAF50;\n          color: #FFF; }\n        .toolbar-button .dropdown .card .content .notification.accent .icon {\n          background: #E91E63;\n          color: #FFF; }\n        .toolbar-button .dropdown .card .content .notification.warn .icon {\n          background: #f44336;\n          color: #FFF; }\n        .toolbar-button .dropdown .card .content .notification.read {\n          color: #999; }\n          .toolbar-button .dropdown .card .content .notification.read .name {\n            font-weight: normal; }\n    .toolbar-button .dropdown .card .footer {\n      min-height: 42px;\n      border-top: 1px solid #EEE; }\n      .toolbar-button .dropdown .card .footer .action {\n        cursor: pointer;\n        color: #AAA;\n        text-align: center;\n        font-size: 13px; }\n    .toolbar-button .dropdown .card .divider {\n      width: calc(100% - 30px);\n      height: 1px;\n      background: #EEE;\n      margin: 0 16px 0 14px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToolbarNotificationsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ToolbarNotificationsComponent = (function () {
+    function ToolbarNotificationsComponent() {
+    }
+    ToolbarNotificationsComponent.prototype.ngOnInit = function () {
+    };
+    ToolbarNotificationsComponent.prototype.toggleDropdown = function () {
+        this.isOpen = !this.isOpen;
+    };
+    ToolbarNotificationsComponent.prototype.onClickOutside = function () {
+        this.isOpen = false;
+    };
+    return ToolbarNotificationsComponent;
+}());
+ToolbarNotificationsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ms-toolbar-notifications',
+        template: __webpack_require__("./src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.html"),
+        styles: [__webpack_require__("./src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], ToolbarNotificationsComponent);
+
+//# sourceMappingURL=toolbar-notifications.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"user-button-container\" #userButton (msClickOutside)=\"onClickOutside()\">\n  <button class=\"user-button\" md-button (click)=\"toggleDropdown()\" [class.open]=\"isOpen\">\n    <span fxLayout=\"row\" fxLayoutAlign=\"start center\">\n      <img class=\"avatar\" src=\"assets/img/avatars/noavatar.png\">\n      <span class=\"name\" fxHide fxShow.gt-sm>David Smith</span>\n      <md-icon class=\"icon\" fxHide fxShow.gt-sm>keyboard_arrow_down</md-icon>\n    </span>\n  </button>\n\n  <div class=\"dropdown mat-elevation-z1\" [class.open]=\"isOpen\">\n    <div class=\"content\">\n      <div class=\"list\">\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">account_circle</md-icon>\n          <span class=\"title\">Profile</span>\n        </div>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">settings</md-icon>\n          <span class=\"title\">Settings</span>\n        </div>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">help</md-icon>\n          <span class=\"title\">Help</span>\n        </div>\n        <md-divider></md-divider>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple [routerLink]=\"['/login']\">\n          <md-icon class=\"icon\">exit_to_app</md-icon>\n          <span class=\"title\">Logout</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".user-button-container {\n  height: 100%;\n  position: relative; }\n  .user-button-container .user-button {\n    height: 100%;\n    min-width: 72px; }\n    .user-button-container .user-button .avatar {\n      width: 40px;\n      height: 40px;\n      border-radius: 50%; }\n    .user-button-container .user-button .name {\n      margin: 0 8px 0 10px; }\n    .user-button-container .user-button .icon {\n      width: 16px;\n      height: 16px;\n      font-size: 16px;\n      -webkit-transform: rotate(0);\n              transform: rotate(0);\n      transition: -webkit-transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);\n      transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);\n      transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1); }\n    .user-button-container .user-button.open {\n      background: rgba(0, 0, 0, 0.05); }\n      .user-button-container .user-button.open .icon {\n        -webkit-transform: rotate(-180deg);\n                transform: rotate(-180deg); }\n  .user-button-container .dropdown {\n    background: white;\n    position: absolute;\n    top: 64px;\n    right: 0;\n    width: 100%;\n    min-width: 160px;\n    z-index: -1;\n    -webkit-transform: translateY(-110%);\n            transform: translateY(-110%);\n    visibility: hidden;\n    transition: visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }\n    .user-button-container .dropdown .content .list .item {\n      height: 48px;\n      padding: 0 16px;\n      position: relative;\n      cursor: pointer; }\n      .user-button-container .dropdown .content .list .item .icon {\n        padding-right: 12px; }\n    .user-button-container .dropdown.open {\n      -webkit-transform: translateY(0);\n              transform: translateY(0);\n      visibility: visible; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToolbarUserButtonComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ToolbarUserButtonComponent = (function () {
+    function ToolbarUserButtonComponent() {
+    }
+    ToolbarUserButtonComponent.prototype.ngOnInit = function () {
+    };
+    ToolbarUserButtonComponent.prototype.toggleDropdown = function () {
+        this.isOpen = !this.isOpen;
+    };
+    ToolbarUserButtonComponent.prototype.onClickOutside = function () {
+        this.isOpen = false;
+    };
+    return ToolbarUserButtonComponent;
+}());
+ToolbarUserButtonComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ms-toolbar-user-button',
+        template: __webpack_require__("./src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.html"),
+        styles: [__webpack_require__("./src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], ToolbarUserButtonComponent);
+
+//# sourceMappingURL=toolbar-user-button.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/toolbar.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-toolbar mat-elevation-z2\">\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"start center\" fxHide=\"false\" fxHide.gt-sm>\r\n    <button (click)=\"sidenav.open()\" md-icon-button>\r\n      <md-icon>menu</md-icon>\r\n    </button>\r\n  </div>\r\n\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"start center\" fxFlex=\"500px\" fxHide fxShow.gt-md>\r\n    <ms-search-bar></ms-search-bar>\r\n  </div>\r\n\r\n  <ms-breadcrumbs *ngIf=\"showBreadcrumbs\" [fxHide]=\"true\" [fxHide.gt-sm]=\"false\"></ms-breadcrumbs>\r\n\r\n  <span fxFlex></span>\r\n\r\n  <button [fxHide]=\"true\" [fxHide.gt-sm]=\"false\" md-button class=\"fullscreen-toggle\" (click)=\"toggleFullscreen()\">\r\n    <md-icon *ngIf=\"!isFullscreen\">fullscreen</md-icon>\r\n    <md-icon *ngIf=\"isFullscreen\">fullscreen_exit</md-icon>\r\n  </button>\r\n\r\n  <ms-search></ms-search>\r\n\r\n  <div class=\"\">\r\n    <ms-toolbar-notifications></ms-toolbar-notifications>\r\n  </div>\r\n\r\n  <div class=\"user-button-container\">\r\n    <ms-toolbar-user-button></ms-toolbar-user-button>\r\n  </div>\r\n\r\n  <button md-button class=\"quickpanel-toggle\" (click)=\"quickpanel.open()\">\r\n    <md-icon>format_align_right</md-icon>\r\n  </button>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/toolbar.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  z-index: 500; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "./src/app/core/toolbar/toolbar.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_screenfull__ = __webpack_require__("./node_modules/screenfull/dist/screenfull.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_screenfull___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_screenfull__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToolbarComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ToolbarComponent = (function () {
+    function ToolbarComponent() {
+        this.isFullscreen = false;
+        this.showBreadcrumbs = false;
+    }
+    ToolbarComponent.prototype.ngOnInit = function () { };
+    ToolbarComponent.prototype.toggleFullscreen = function () {
+        if (__WEBPACK_IMPORTED_MODULE_1_screenfull__["enabled"]) {
+            __WEBPACK_IMPORTED_MODULE_1_screenfull__["toggle"]();
+            this.isFullscreen = !this.isFullscreen;
+        }
+    };
+    return ToolbarComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('quickpanel'),
+    __metadata("design:type", Object)
+], ToolbarComponent.prototype, "quickpanel", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('sidenav'),
+    __metadata("design:type", Object)
+], ToolbarComponent.prototype, "sidenav", void 0);
+ToolbarComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ms-toolbar',
+        template: __webpack_require__("./src/app/core/toolbar/toolbar.component.html"),
+        styles: [__webpack_require__("./src/app/core/toolbar/toolbar.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], ToolbarComponent);
+
+//# sourceMappingURL=toolbar.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/core/utils/click-outside.directive.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClickOutsideDirective; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ClickOutsideDirective = (function () {
+    function ClickOutsideDirective(_elementRef) {
+        this._elementRef = _elementRef;
+        this.msClickOutside = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+    }
+    ClickOutsideDirective.prototype.onClick = function (event, targetElement) {
+        if (!targetElement) {
+            return;
+        }
+        var clickedInside = this._elementRef.nativeElement.contains(targetElement);
+        if (!clickedInside) {
+            this.msClickOutside.emit(event);
+        }
+    };
+    return ClickOutsideDirective;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", Object)
+], ClickOutsideDirective.prototype, "msClickOutside", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('document:click', ['$event', '$event.target']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], ClickOutsideDirective.prototype, "onClick", null);
+ClickOutsideDirective = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
+        selector: '[msClickOutside]'
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object])
+], ClickOutsideDirective);
+
+var _a;
+//# sourceMappingURL=click-outside.directive.js.map
 
 /***/ }),
 
@@ -2460,7 +2808,7 @@ ViewFormComponent = __decorate([
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-sidenav-container>\r\n\r\n  <md-sidenav class=\"quickpanel\" [opened]=\"quickpanelOpen\" align=\"end\" mode=\"over\" #quickpanel>\r\n\r\n    <ms-quickpanel></ms-quickpanel>\r\n\r\n  </md-sidenav>\r\n\r\n  <md-sidenav class=\"sidenav\" [opened]=\"sidenavOpen\" align=\"start\" [mode]=\"sidenavMode\" msIconSidenav #sidenav>\r\n\r\n    <ms-sidenav></ms-sidenav>\r\n\r\n  </md-sidenav>\r\n\r\n  <md-toolbar class=\"main-toolbar mat-elevation-z2\">\r\n    <div fxHide=\"false\" fxHide.gt-sm>\r\n      <button (click)=\"sidenav.open()\" md-icon-button>\r\n        <md-icon>menu</md-icon>\r\n      </button>\r\n    </div>\r\n\r\n    <ms-breadcrumbs fxHide=\"true\" fxHide.gt-sm=\"false\"></ms-breadcrumbs>\r\n\r\n    <span fxFlex></span>\r\n\r\n    <button fxHide=\"true\" fxHide.gt-sm=\"false\" md-button class=\"fullscreen-toggle\" (click)=\"toggleFullscreen()\">\r\n      <md-icon *ngIf=\"!isFullscreen\">fullscreen</md-icon>\r\n      <md-icon *ngIf=\"isFullscreen\">fullscreen_exit</md-icon>\r\n    </button>\r\n\r\n    <ms-search></ms-search>\r\n\r\n    <button class=\"user-button\" md-button [mdMenuTriggerFor]=\"menu\">\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <img src=\"assets/img/avatars/noavatar.png\" class=\"avatar-flex\" />\r\n        <span fxHide=\"true\" fxHide.gt-sm=\"false\" style=\"font-weight: 500; margin-left: 5px;\">David Smith</span>\r\n        <md-icon fxHide=\"true\" fxHide.gt-sm=\"false\">keyboard_arrow_down</md-icon>\r\n      </div>\r\n    </button>\r\n\r\n\r\n    <button md-button class=\"quickpanel-toggle\" (click)=\"quickpanel.open()\">\r\n      <md-icon>format_align_right</md-icon>\r\n    </button>\r\n\r\n\r\n    <md-menu class=\"user-menu\" x-position=\"before\" y-position=\"below\" #menu=\"mdMenu\">\r\n      <button md-menu-item>\r\n        <md-icon>account_circle</md-icon>\r\n        <span>Profile</span>\r\n      </button>\r\n      <button md-menu-item>\r\n        <md-icon>settings</md-icon>\r\n        <span>Settings</span>\r\n      </button>\r\n      <button md-menu-item>\r\n        <md-icon>help</md-icon>\r\n        <span>Help</span>\r\n      </button>\r\n      <md-divider></md-divider>\r\n      <button [routerLink]=\"['/login']\" md-menu-item>\r\n        <md-icon>exit_to_app</md-icon>\r\n        <span>Logout</span>\r\n      </button>\r\n    </md-menu>\r\n  </md-toolbar>\r\n\r\n  <div class=\"main-container\" #scrollContainer>\r\n    <router-outlet (activate)=\"onActivate($event, scrollContainer)\"></router-outlet>\r\n  </div>\r\n\r\n</md-sidenav-container>\r\n"
+module.exports = "<md-sidenav-container>\r\n\r\n  <md-sidenav class=\"quickpanel\" [opened]=\"quickpanelOpen\" align=\"end\" mode=\"over\" #quickpanel>\r\n\r\n    <ms-quickpanel></ms-quickpanel>\r\n\r\n  </md-sidenav>\r\n\r\n  <md-sidenav class=\"sidenav\" [opened]=\"sidenavOpen\" align=\"start\" [mode]=\"sidenavMode\" msIconSidenav #sidenav>\r\n\r\n    <ms-sidenav></ms-sidenav>\r\n\r\n  </md-sidenav>\r\n\r\n  <div class=\"content-container\" fxLayout=\"column\">\r\n    <ms-toolbar [quickpanel]=\"quickpanel\" [sidenav]=\"sidenav\"></ms-toolbar>\r\n\r\n    <div class=\"main-container\" #scrollContainer>\r\n      <router-outlet (activate)=\"onActivate($event, scrollContainer)\"></router-outlet>\r\n    </div>\r\n  </div>\r\n\r\n</md-sidenav-container>\r\n"
 
 /***/ }),
 
@@ -2472,7 +2820,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "@-webkit-keyframes fadein {\n  0% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@keyframes fadein {\n  0% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@-webkit-keyframes fadeout {\n  0% {\n    opacity: 1; }\n  100% {\n    opacity: 0; } }\n\n@keyframes fadeout {\n  0% {\n    opacity: 1; }\n  100% {\n    opacity: 0; } }\n\n.main-toolbar {\n  background: #ffffff;\n  position: relative;\n  overflow-x: hidden;\n  z-index: 4;\n  padding-right: 0; }\n  .main-toolbar .user-button {\n    height: 100%;\n    border-radius: 0; }\n    .main-toolbar .user-button md-icon {\n      font-size: 16px;\n      width: 16px;\n      height: 16px; }\n  .main-toolbar button.fullscreen-toggle {\n    border-radius: 0;\n    padding: 0;\n    min-width: 50px;\n    max-width: 50px;\n    height: 100%; }\n  .main-toolbar button.quickpanel-toggle {\n    border-radius: 0;\n    padding: 0;\n    min-width: 75px;\n    max-width: 75px;\n    height: 100%; }\n\n.mat-sidenav.quickpanel {\n  z-index: 100;\n  width: 330px;\n  min-width: 330px;\n  max-width: 330px; }\n\n@media screen and (max-width: 959px) {\n  .mat-sidenav.quickpanel {\n    width: 250px;\n    min-width: 250px;\n    max-width: 250px; }\n  button.user-button {\n    min-width: 72px; } }\n\n@media screen and (min-width: 960px) {\n  .mat-sidenav-backdrop {\n    z-index: 50 !important; } }\n\n.sidenav {\n  width: 250px;\n  max-width: 250px;\n  background: #2B303B;\n  overflow-x: hidden;\n  z-index: 4; }\n\n.main-container {\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: calc(100% - 64px);\n  position: relative; }\n\n@media screen and (min-width: 960px) {\n  .sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav + .mat-sidenav-content {\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition-property: max-width, margin-left, margin-right, -webkit-transform !important;\n    transition-property: transform, max-width, margin-left, margin-right !important;\n    transition-property: transform, max-width, margin-left, margin-right, -webkit-transform !important;\n    margin-left: 0 !important;\n    background: #EEE;\n    z-index: 5;\n    overflow: hidden;\n    box-shadow: inset 7px 0 9px -7px rgba(0, 0, 0, 0.4); }\n  .sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav + .mat-sidenav-content {\n    max-width: calc(100% - 250px);\n    -webkit-transform: translate3d(250px, 0, 0) !important;\n            transform: translate3d(250px, 0, 0) !important; }\n  .sidenav.icon-sidenav.collapsed + .cdk-visually-hidden + .mat-sidenav-content, .sidenav.icon-sidenav.collapsed + .mat-sidenav-content {\n    max-width: calc(100% - 68px);\n    -webkit-transform: translate3d(68px, 0, 0) !important;\n            transform: translate3d(68px, 0, 0) !important; }\n  .sidenav.icon-sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav.icon-sidenav + .mat-sidenav-content {\n    max-width: calc(100% - 68px); }\n  .sidenav.collapsed .fade-in-on-icon-sidenav {\n    -webkit-animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadeout;\n            animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadeout; }\n  .sidenav:not(.collapsed) .fade-in-on-icon-sidenav {\n    -webkit-animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;\n            animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein; } }\n", ""]);
+exports.push([module.i, "@-webkit-keyframes fadein {\n  0% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@keyframes fadein {\n  0% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@-webkit-keyframes fadeout {\n  0% {\n    opacity: 1; }\n  100% {\n    opacity: 0; } }\n\n@keyframes fadeout {\n  0% {\n    opacity: 1; }\n  100% {\n    opacity: 0; } }\n\n.main-toolbar {\n  background: #ffffff;\n  padding-right: 0;\n  height: 64px;\n  padding-left: 16px; }\n  .main-toolbar .user-button-container {\n    height: 100%; }\n  .main-toolbar button.fullscreen-toggle {\n    border-radius: 0;\n    padding: 0;\n    min-width: 50px;\n    max-width: 50px;\n    height: 100%; }\n  .main-toolbar button.quickpanel-toggle {\n    border-radius: 0;\n    padding: 0;\n    min-width: 75px;\n    max-width: 75px;\n    height: 100%; }\n\n.mat-sidenav.quickpanel {\n  z-index: 100;\n  width: 330px;\n  min-width: 330px;\n  max-width: 330px; }\n\n@media screen and (max-width: 959px) {\n  .mat-sidenav.quickpanel {\n    width: 250px;\n    min-width: 250px;\n    max-width: 250px; }\n  button.user-button {\n    min-width: 72px; } }\n\n@media screen and (min-width: 960px) {\n  .mat-sidenav-backdrop {\n    z-index: 50 !important; } }\n\n.sidenav {\n  width: 250px;\n  max-width: 250px;\n  background: #2B303B;\n  overflow-x: hidden;\n  z-index: 4; }\n\n.content-container {\n  height: 100%; }\n\n.main-container {\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: calc(100% - 64px);\n  position: relative; }\n\n@media screen and (min-width: 960px) {\n  .sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav + .mat-sidenav-content {\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition-property: max-width, margin-left, margin-right, -webkit-transform !important;\n    transition-property: transform, max-width, margin-left, margin-right !important;\n    transition-property: transform, max-width, margin-left, margin-right, -webkit-transform !important;\n    margin-left: 0 !important;\n    background: #EEE;\n    z-index: 5;\n    overflow: hidden;\n    box-shadow: inset 7px 0 9px -7px rgba(0, 0, 0, 0.4); }\n  .sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav + .mat-sidenav-content {\n    max-width: calc(100% - 250px);\n    -webkit-transform: translate3d(250px, 0, 0) !important;\n            transform: translate3d(250px, 0, 0) !important; }\n  .sidenav.icon-sidenav.collapsed + .cdk-visually-hidden + .mat-sidenav-content, .sidenav.icon-sidenav.collapsed + .mat-sidenav-content {\n    max-width: calc(100% - 68px);\n    -webkit-transform: translate3d(68px, 0, 0) !important;\n            transform: translate3d(68px, 0, 0) !important; }\n  .sidenav.icon-sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav.icon-sidenav + .mat-sidenav-content {\n    max-width: calc(100% - 68px); }\n  .sidenav.collapsed .fade-in-on-icon-sidenav {\n    -webkit-animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadeout;\n            animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadeout; }\n  .sidenav:not(.collapsed) .fade-in-on-icon-sidenav {\n    -webkit-animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;\n            animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein; } }\n", ""]);
 
 // exports
 
@@ -2487,10 +2835,8 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_flex_layout__ = __webpack_require__("./node_modules/@angular/flex-layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_screenfull__ = __webpack_require__("./node_modules/screenfull/dist/screenfull.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_screenfull___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_screenfull__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_sidenav_mediareplay_media_replay_service__ = __webpack_require__("./src/app/core/sidenav/mediareplay/media-replay.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2504,36 +2850,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var HomeComponent = (function () {
-    function HomeComponent(media, router) {
-        this.media = media;
+    function HomeComponent(router, mediaReplayService) {
         this.router = router;
-        this.sidenavOpen = false;
+        this.mediaReplayService = mediaReplayService;
+        this.quickpanelOpen = false;
+        this.sidenavOpen = true;
         this.sidenavMode = 'side';
         this.isMobile = false;
-        this.quickpanelOpen = false;
-        this.isFullscreen = false;
     }
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._mediaSubscription = this.media.asObservable().subscribe(function (change) {
+        this._mediaSubscription = this.mediaReplayService.media$.subscribe(function (change) {
             var isMobile = (change.mqAlias == 'xs') || (change.mqAlias == 'sm');
             _this.isMobile = isMobile;
             _this.sidenavMode = (isMobile) ? 'over' : 'side';
             _this.sidenavOpen = !isMobile;
         });
         this._routerEventsSubscription = this.router.events.subscribe(function (event) {
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* NavigationEnd */] && _this.isMobile) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* NavigationEnd */] && _this.isMobile) {
                 _this.sidenav.close();
             }
         });
-    };
-    HomeComponent.prototype.toggleFullscreen = function () {
-        if (__WEBPACK_IMPORTED_MODULE_3_screenfull__["enabled"]) {
-            __WEBPACK_IMPORTED_MODULE_3_screenfull__["toggle"]();
-            this.isFullscreen = !this.isFullscreen;
-        }
     };
     HomeComponent.prototype.ngOnDestroy = function () {
         this._mediaSubscription.unsubscribe();
@@ -2554,7 +2892,7 @@ HomeComponent = __decorate([
         styles: [__webpack_require__("./src/app/home/home.component.scss")],
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_flex_layout__["b" /* ObservableMedia */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_flex_layout__["b" /* ObservableMedia */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__core_sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__core_sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */]) === "function" && _b || Object])
 ], HomeComponent);
 
 var _a, _b;
@@ -2633,6 +2971,65 @@ LoginComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=login.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/material-components.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MaterialComponentsModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var MaterialComponentsModule = (function () {
+    function MaterialComponentsModule() {
+    }
+    return MaterialComponentsModule;
+}());
+MaterialComponentsModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]
+        ],
+        declarations: [],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MdTabsModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MdListModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["l" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["n" /* MdGridListModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["o" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MdSnackBarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MdTooltipModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MdSliderModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MdAutocompleteModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MdDatepickerModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["u" /* MdSlideToggleModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["v" /* MdSidenavModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["w" /* MdCheckboxModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["x" /* MdNativeDateModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["y" /* MdProgressBarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["z" /* MdProgressSpinnerModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["A" /* MdSelectModule */]
+        ]
+    })
+], MaterialComponentsModule);
+
+//# sourceMappingURL=material-components.module.js.map
 
 /***/ }),
 
@@ -3053,7 +3450,7 @@ ProjectsModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_material__["a" /* MaterialModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["b" /* MaterialModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */]
