@@ -802,6 +802,7 @@ var SidenavComponent = (function () {
     }
     SidenavComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.sidenavService.buildMenu('a@b.com');
         this._itemsSubscription = this.sidenavService.items$
             .subscribe(function (items) {
             _this.items = _this.sortRecursive(items, 'position');
@@ -876,6 +877,7 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SidenavService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -891,18 +893,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SidenavService = (function () {
-    function SidenavService(snackbar) {
+    function SidenavService(http, snackbar) {
+        this.http = http;
+        this.snackbar = snackbar;
         this._itemsSubject = new __WEBPACK_IMPORTED_MODULE_2_rxjs__["BehaviorSubject"]([]);
         this._items = [];
         this.items$ = this._itemsSubject.asObservable();
         this._currentlyOpenSubject = new __WEBPACK_IMPORTED_MODULE_2_rxjs__["BehaviorSubject"]([]);
         this._currentlyOpen = [];
         this.currentlyOpen$ = this._currentlyOpenSubject.asObservable();
+    }
+    SidenavService.prototype.buildMenu = function (userName) {
+        this.buildProjectMenu(userName);
+    };
+    SidenavService.prototype.buildProjectMenu = function (userName) {
         var menu = this;
         var projects = menu.addItem('Projects', 'insert_comment', null, 4);
-        menu.addSubItem(projects, 'Projects', '/projects', 3);
-    }
+        var result;
+        var params = new __WEBPACK_IMPORTED_MODULE_5__angular_http__["c" /* URLSearchParams */]();
+        params.set('userName', userName);
+        var options = new __WEBPACK_IMPORTED_MODULE_5__angular_http__["d" /* RequestOptions */]({
+            search: params
+        });
+        this.http.get('api/project/GetProjects', options)
+            .subscribe(function (response) {
+            var projectList = response.json();
+            for (var idx = 0; idx < projectList.length; idx++) {
+                var project = projectList[idx];
+                menu.addSubItem(projects, project.name, '/projects/' + project.id, 3);
+            }
+        });
+    };
     SidenavService.prototype.addItem = function (name, icon, route, position, badge, badgeColor, customClass) {
         var item = new __WEBPACK_IMPORTED_MODULE_1__sidenav_item_sidenav_item_model__["a" /* SidenavItem */]({
             name: name,
@@ -1011,10 +1034,10 @@ var SidenavService = (function () {
 }());
 SidenavService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdSnackBar */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdSnackBar */]) === "function" && _b || Object])
 ], SidenavService);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=sidenav.service.js.map
 
 /***/ }),
@@ -2118,12 +2141,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ProjectsService = (function () {
     function ProjectsService(http) {
         this.http = http;
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["e" /* Headers */]({ 'Content-Type': 'application/json' });
         this.options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers });
     }
     ProjectsService.prototype.getProjects = function (userName) {
         var result;
-        var params = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["e" /* URLSearchParams */]();
+        var params = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* URLSearchParams */]();
         params.set('userName', userName);
         var options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({
             search: params

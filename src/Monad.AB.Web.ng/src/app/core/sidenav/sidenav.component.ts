@@ -28,6 +28,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+      this.sidenavService.buildMenu('a@b.com');
     this._itemsSubscription = this.sidenavService.items$
       .subscribe((items: SidenavItem[]) => {
         this.items = this.sortRecursive(items, 'position');

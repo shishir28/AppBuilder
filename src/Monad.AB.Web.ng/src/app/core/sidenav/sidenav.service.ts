@@ -3,6 +3,7 @@ import { SidenavItem } from "./sidenav-item/sidenav-item.model";
 import { BehaviorSubject, Observable } from "rxjs";
 import * as _ from 'lodash';
 import { MdSnackBar, MdSnackBarConfig } from "@angular/material";
+import { Http, URLSearchParams, Response, Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class SidenavService {
@@ -16,14 +17,32 @@ export class SidenavService {
     currentlyOpen$: Observable<SidenavItem[]> = this._currentlyOpenSubject.asObservable();
 
     isIconSidenav: boolean;
+    options: RequestOptions;
 
-    constructor(
-        snackbar: MdSnackBar
-    ) {
+    constructor(private http: Http, private snackbar: MdSnackBar) {
+    }
+
+    public buildMenu(userName) {
+        this.buildProjectMenu(userName);
+    }
+
+    private buildProjectMenu(userName) {
         let menu = this;
-
         let projects = menu.addItem('Projects', 'insert_comment', null, 4);
-        menu.addSubItem(projects, 'Projects', '/projects', 3);
+        let result: Observable<any[]>;
+        let params = new URLSearchParams();
+        params.set('userName', userName);
+        let options = new RequestOptions({
+            search: params
+        });
+        this.http.get('api/project/GetProjects', options)
+            .subscribe(response => {
+                let projectList = response.json();
+                for (var idx = 0; idx < projectList.length; idx++) {
+                    var project = projectList[idx];
+                    menu.addSubItem(projects, project.name, '/projects/' + project.id, 3);
+                }
+            });
     }
 
     addItem(name: string, icon: string, route: any, position: number, badge?: string, badgeColor?: string, customClass?: string) {
@@ -106,15 +125,12 @@ export class SidenavService {
 
     nextCurrentlyOpenByRoute(route: string) {
         let currentlyOpen = [];
-
         let item = this.findByRouteRecursive(route, this._items);
-
         if (item && item.hasParent()) {
             currentlyOpen = this.getAllParents(item);
         } else if (item) {
             currentlyOpen = [item];
         }
-
         this.nextCurrentlyOpen(currentlyOpen);
     }
 
@@ -133,7 +149,6 @@ export class SidenavService {
                 }
             });
         }
-
         return result;
     }
 
