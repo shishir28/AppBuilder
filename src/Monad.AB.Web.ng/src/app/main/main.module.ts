@@ -24,7 +24,6 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { projectConfig } from './projects/projects.module'
 import { projectsRouting } from './projects/projects.routing';
-
 @NgModule({
     imports: [
         CommonModule,

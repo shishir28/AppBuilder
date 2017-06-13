@@ -2,7 +2,7 @@
 import { Router } from '@angular/router';
 import { routeAnimation } from "../../route.animation";
 import { MdDialog, MdDialogRef } from '@angular/material';
-
+import { SqaureComponent } from '../../core/widgets/sqaure/sqaure.component';
 import { ProjectsService } from './shared/projects.service';
 @Component({
     selector: 'ms-list-project',

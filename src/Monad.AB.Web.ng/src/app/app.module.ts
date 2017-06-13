@@ -12,9 +12,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MainModule } from './main/main.module';
 import { SortablejsModule, SortablejsOptions } from 'angular-sortablejs';
 
-
-
-
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   swipePropagation: false
