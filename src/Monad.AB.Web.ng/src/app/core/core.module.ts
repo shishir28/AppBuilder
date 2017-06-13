@@ -5,7 +5,7 @@ import { SidenavItemComponent } from './sidenav/sidenav-item/sidenav-item.compon
 import { IconSidenavDirective } from './sidenav/icon-sidenav.directive';
 import { SearchComponent } from './toolbar/search/search.component';
 import { BreadcrumbsComponent } from './breadcrumb/breadcrumb.component';
-//import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './admin/admin.component';
 import { QuickpanelComponent } from './quickpanel/quickpanel.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToolbarUserButtonComponent } from './toolbar/toolbar-user-button/toolbar-user-button.component';
@@ -15,7 +15,7 @@ import { ToolbarNotificationsComponent } from './toolbar/toolbar-notifications/t
 import { SidenavService } from './sidenav/sidenav.service';
 import { MediaReplayService } from './sidenav/mediareplay/media-replay.service';
 import { BreadcrumbService } from './breadcrumb/breadcrumb.service';
-import { MaterialComponentsModule } from '../material-components.module';
+import { MaterialComponentsModule } from '../material/material-components.module';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -36,7 +36,7 @@ import { FormsModule } from '@angular/forms';
     IconSidenavDirective,
     SearchComponent,
     BreadcrumbsComponent,
-   // AdminComponent,
+    AdminComponent,
     QuickpanelComponent,
     ToolbarComponent,
     ToolbarUserButtonComponent,

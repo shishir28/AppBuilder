@@ -1,4 +1,4 @@
-﻿declare module 'screenfull' {
-    var enabled: any;
-    function toggle(): any
+declare module 'screenfull' {
+  var enabled: any;
+  function toggle(): any
 }

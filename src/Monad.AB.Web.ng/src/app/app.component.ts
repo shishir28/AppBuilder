@@ -1,11 +1,11 @@
-﻿import { Component, ViewEncapsulation } from '@angular/core';
-import { MediaReplayService } from "./core/sidenav/mediareplay/media-replay.service";
+import { Component, ViewEncapsulation } from '@angular/core';
+import {MediaReplayService} from "./core/sidenav/mediareplay/media-replay.service";
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    encapsulation: ViewEncapsulation.None
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-    constructor(mediaReplayService: MediaReplayService) { }
+  constructor(mediaReplayService: MediaReplayService) { }
 }

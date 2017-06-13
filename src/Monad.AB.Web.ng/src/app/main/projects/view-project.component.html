@@ -1,0 +1,63 @@
+﻿<div fxLayout="row" fxLayoutAlign="start">
+  <md-card style="padding: 16px;" fxFlex="90%">
+    <md-toolbar color="primary">View Project</md-toolbar>
+    <md-card-content>
+      <form>
+        <div fxLayout fxLayoutWrap>
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="name"
+                   [disabled]="true"
+                   [(ngModel)]="project.name" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="title"
+                   [disabled]="true"
+                   [(ngModel)]="project.title" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="rootNamespace"
+                   [disabled]="true"
+                   [(ngModel)]="project.rootNamespace" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="companyName"
+                   [disabled]="true"
+                   [(ngModel)]="project.companyName" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="description"
+                   [disabled]="true"
+                   [(ngModel)]="project.description" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutAlign="end center">
+            <button md-raised-button
+                    type="button" (click)="cancelChanges($event);">
+              Go Back
+            </button>
+          </div>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>
+

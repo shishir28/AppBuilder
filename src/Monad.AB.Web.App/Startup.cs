@@ -40,7 +40,6 @@ namespace Monad.AB.Web.App
         {
             app.Use(new UnhandledExceptionMiddleware().Process);
             app.Use(new PerformanceLoggingMiddleware().Process);
-            app.Use(new MonitoringMiddleware().Process);
 
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
