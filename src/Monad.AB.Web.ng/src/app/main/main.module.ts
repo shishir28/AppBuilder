@@ -1,71 +1,66 @@
 ﻿import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WidgetComponent } from '../core/widgets/widgets-v1/widget-v1/widget-v1.component';
-import { LineChartWidgetComponent } from '../core/widgets/widgets-v1/line-chart-widget/line-chart-widget.component';
-import { SourceOverviewWidgetComponent } from '../core/widgets/widgets-v1/source-overview-widget/source-overview-widget.component';
 
+import { SidenavComponent } from '../core/sidenav/sidenav.component';
+import { SidenavItemComponent } from '../core/sidenav/sidenav-item/sidenav-item.component';
+import { IconSidenavDirective } from '../core/sidenav/icon-sidenav.directive';
+import { SearchComponent } from '../core/toolbar/search/search.component';
+import { BreadcrumbsComponent } from '../core/breadcrumb/breadcrumb.component';
+
+import { QuickpanelComponent } from '../core/quickpanel/quickpanel.component';
+import { ToolbarComponent } from '../core/toolbar/toolbar.component';
+import { ToolbarUserButtonComponent } from '../core/toolbar/toolbar-user-button/toolbar-user-button.component';
+import { ClickOutsideDirective } from '../core/utils/click-outside.directive';
+import { SearchBarComponent } from '../core/toolbar/search-bar/search-bar.component';
+import { ToolbarNotificationsComponent } from '../core/toolbar/toolbar-notifications/toolbar-notifications.component';
+import { SidenavService } from '../core/sidenav/sidenav.service';
+import { MediaReplayService } from '../core/sidenav/mediareplay/media-replay.service';
+import { BreadcrumbService } from '../core/breadcrumb/breadcrumb.service';
+import { MaterialComponentsModule } from '../material/material-components.module';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import { nvD3 } from '../core/charts/nvD3/nvD3.component';
 //import { LoginComponent } from './custom-pages/login/login.component';
-import { BarChartComponent } from '../core/widgets/bar-chart/bar-chart.component';
-import { PieChartComponent } from '../core/widgets/pie-chart/pie-chart.component';
-import { GoogleMapsWidgetComponent } from '../core/widgets/google-maps-widget/google-maps-widget.component';
-import { ActivityComponent } from '../core/widgets/activity/activity.component';
-import { TrafficSourcesComponent } from '../core/widgets/traffic-sources/traffic-sources.component';
-import { LoadingOverlayComponent } from '../core/loading-overlay/loading-overlay.component';
-import { environment } from "../../environments/environment";
-import { SortablejsModule, SortablejsOptions } from 'angular-sortablejs';
-import { D3ChartService } from '../core/charts/nvD3/nvD3.service';
-import { CalendarModule } from 'angular-calendar';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RoutingModule } from '../app-routing.module';
-import { MaterialComponentsModule } from '../material/material-components.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { AgmCoreModule } from '@agm/core';
-import { HighlightModule } from '../core/highlightjs/highlight.module';
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { QuillModule } from 'ngx-quill';
-
-import { ProjectsModule } from './projects/projects.module'
+import { HomeComponent } from './home/home.component';
+import { projectConfig } from './projects/projects.module'
 import { projectsRouting } from './projects/projects.routing';
 
 @NgModule({
     imports: [
         CommonModule,
-        BrowserModule,
-        FormsModule,
-        ReactiveFormsModule,
-        FormsModule,
-        HttpModule,
-        RoutingModule,
+        RouterModule,
         MaterialComponentsModule,
         FlexLayoutModule,
-        AgmCoreModule.forRoot({
-            apiKey: environment.googleApi
-        }),
-        QuillModule,
-        HighlightModule,
-        SortablejsModule,
-        ProjectsModule,
-        CalendarModule.forRoot(),
+        FormsModule,
         PerfectScrollbarModule.forChild(),
+        ...projectConfig.imports
     ],
-   
+
     declarations: [
-        WidgetComponent,
-        SourceOverviewWidgetComponent,
-        nvD3,
-        //LoginComponent,
-        BarChartComponent,
-        PieChartComponent,
-        GoogleMapsWidgetComponent,
-        ActivityComponent,
-        TrafficSourcesComponent,
-        LoadingOverlayComponent,
+        SidenavComponent,
+        SidenavItemComponent,
+        IconSidenavDirective,
+        SearchComponent,
+        BreadcrumbsComponent,
+        QuickpanelComponent,
+        ToolbarComponent,
+        ToolbarUserButtonComponent,
+        ClickOutsideDirective,
+        SearchBarComponent,
+        ToolbarNotificationsComponent,
+        HomeComponent,
+        ...projectConfig.declarations
+    ],
+    entryComponents: [
+        ...projectConfig.entryComponents
     ],
     providers: [
-        D3ChartService
+        SidenavService,
+        MediaReplayService,
+        BreadcrumbService
+        ...projectConfig.providers
     ]
 })
 export class MainModule { }

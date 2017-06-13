@@ -19,7 +19,7 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_admin_admin_component__ = __webpack_require__("../../../../../src/app/core/admin/admin.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_home_home_component__ = __webpack_require__("../../../../../src/app/main/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_projects_list_project_component__ = __webpack_require__("../../../../../src/app/main/projects/list-project.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__main_projects_view_project_component__ = __webpack_require__("../../../../../src/app/main/projects/view-project.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_projects_edit_project_component__ = __webpack_require__("../../../../../src/app/main/projects/edit-project.component.ts");
@@ -56,13 +56,8 @@ var routes = [
     //},
     {
         path: '',
-        component: __WEBPACK_IMPORTED_MODULE_2__core_admin_admin_component__["a" /* AdminComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_2__main_home_home_component__["a" /* HomeComponent */],
         children: [
-            //{
-            //    path: '',
-            //    component: DashboardComponent,
-            //    pathMatch: 'full'
-            //},
             {
                 path: 'projects',
                 component: __WEBPACK_IMPORTED_MODULE_3__main_projects_list_project_component__["a" /* ListProjectComponent */]
@@ -158,10 +153,9 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_perfect_scrollbar__ = __webpack_require__("../../../../ngx-perfect-scrollbar/dist/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_ngx_perfect_scrollbar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__core_core_module__ = __webpack_require__("../../../../../src/app/core/core.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__main_main_module__ = __webpack_require__("../../../../../src/app/main/main.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular_sortablejs__ = __webpack_require__("../../../../angular-sortablejs/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular_sortablejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_angular_sortablejs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__main_main_module__ = __webpack_require__("../../../../../src/app/main/main.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular_sortablejs__ = __webpack_require__("../../../../angular-sortablejs/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular_sortablejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_angular_sortablejs__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -169,7 +163,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -205,9 +198,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_6__app_routing_module__["a" /* RoutingModule */],
             __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_10__core_core_module__["a" /* CoreModule */],
-            __WEBPACK_IMPORTED_MODULE_11__main_main_module__["a" /* MainModule */],
-            __WEBPACK_IMPORTED_MODULE_12_angular_sortablejs__["SortablejsModule"],
+            __WEBPACK_IMPORTED_MODULE_10__main_main_module__["a" /* MainModule */],
+            __WEBPACK_IMPORTED_MODULE_11_angular_sortablejs__["SortablejsModule"],
             __WEBPACK_IMPORTED_MODULE_8_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forRoot(perfectScrollbarConfig),
         ],
         providers: [
@@ -218,101 +210,6 @@ AppModule = __decorate([
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/admin/admin.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<md-sidenav-container>\r\n\r\n  <md-sidenav class=\"quickpanel\" [opened]=\"quickpanelOpen\" align=\"end\" mode=\"over\" #quickpanel>\r\n\r\n    <ms-quickpanel></ms-quickpanel>\r\n\r\n  </md-sidenav>\r\n\r\n  <md-sidenav class=\"sidenav\" [opened]=\"sidenavOpen\" align=\"start\" [mode]=\"sidenavMode\" msIconSidenav #sidenav>\r\n\r\n    <ms-sidenav></ms-sidenav>\r\n\r\n  </md-sidenav>\r\n\r\n  <div class=\"content-container\" fxLayout=\"column\">\r\n    <ms-toolbar [quickpanel]=\"quickpanel\" [sidenav]=\"sidenav\"></ms-toolbar>\r\n\r\n    <div  #scrollContainer >\r\n      <router-outlet (activate)=\"onActivate($event, scrollContainer)\" ></router-outlet>\r\n    </div>\r\n  </div>\r\n\r\n</md-sidenav-container>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/admin/admin.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "@-webkit-keyframes fadein {\n  0% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@keyframes fadein {\n  0% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@-webkit-keyframes fadeout {\n  0% {\n    opacity: 1; }\n  100% {\n    opacity: 0; } }\n\n@keyframes fadeout {\n  0% {\n    opacity: 1; }\n  100% {\n    opacity: 0; } }\n\n.main-toolbar {\n  background: #ffffff;\n  padding-right: 0;\n  height: 64px;\n  padding-left: 16px; }\n  .main-toolbar .user-button-container {\n    height: 100%; }\n  .main-toolbar button.fullscreen-toggle {\n    border-radius: 0;\n    padding: 0;\n    min-width: 50px;\n    max-width: 50px;\n    height: 100%; }\n  .main-toolbar button.quickpanel-toggle {\n    border-radius: 0;\n    padding: 0;\n    min-width: 75px;\n    max-width: 75px;\n    height: 100%; }\n\n.mat-sidenav.quickpanel {\n  z-index: 100;\n  width: 330px;\n  min-width: 330px;\n  max-width: 330px; }\n\n@media screen and (max-width: 959px) {\n  .mat-sidenav.quickpanel {\n    width: 250px;\n    min-width: 250px;\n    max-width: 250px; }\n  button.user-button {\n    min-width: 72px; } }\n\n@media screen and (min-width: 960px) {\n  .mat-sidenav-backdrop {\n    z-index: 50 !important; } }\n\n.sidenav {\n  width: 250px;\n  max-width: 250px;\n  background: #2B303B;\n  overflow-x: hidden;\n  z-index: 4; }\n\n.content-container {\n  height: 100%; }\n\n.main-container {\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: calc(100% - 64px);\n  position: relative; }\n\n@media screen and (min-width: 960px) {\n  .sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav + .mat-sidenav-content {\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition-property: max-width, margin-left, margin-right, -webkit-transform !important;\n    transition-property: transform, max-width, margin-left, margin-right !important;\n    transition-property: transform, max-width, margin-left, margin-right, -webkit-transform !important;\n    margin-left: 0 !important;\n    background: #EEE;\n    z-index: 5;\n    overflow: hidden;\n    box-shadow: inset 7px 0 9px -7px rgba(0, 0, 0, 0.4); }\n  .sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav + .mat-sidenav-content {\n    max-width: calc(100% - 250px);\n    -webkit-transform: translate3d(250px, 0, 0) !important;\n            transform: translate3d(250px, 0, 0) !important; }\n  .sidenav.icon-sidenav.collapsed + .cdk-visually-hidden + .mat-sidenav-content, .sidenav.icon-sidenav.collapsed + .mat-sidenav-content {\n    max-width: calc(100% - 68px);\n    -webkit-transform: translate3d(68px, 0, 0) !important;\n            transform: translate3d(68px, 0, 0) !important; }\n  .sidenav.icon-sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav.icon-sidenav + .mat-sidenav-content {\n    max-width: calc(100% - 68px); }\n  .sidenav.collapsed .fade-in-on-icon-sidenav {\n    -webkit-animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadeout;\n            animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadeout; }\n  .sidenav:not(.collapsed) .fade-in-on-icon-sidenav {\n    -webkit-animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;\n            animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein; } }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/admin/admin.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidenav_mediareplay_media_replay_service__ = __webpack_require__("../../../../../src/app/core/sidenav/mediareplay/media-replay.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var AdminComponent = (function () {
-    function AdminComponent(router, mediaReplayService) {
-        this.router = router;
-        this.mediaReplayService = mediaReplayService;
-        this.quickpanelOpen = false;
-        this.sidenavOpen = true;
-        this.sidenavMode = 'side';
-        this.isMobile = false;
-    }
-    AdminComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this._mediaSubscription = this.mediaReplayService.media$.subscribe(function (change) {
-            var isMobile = (change.mqAlias == 'xs') || (change.mqAlias == 'sm');
-            _this.isMobile = isMobile;
-            _this.sidenavMode = (isMobile) ? 'over' : 'side';
-            _this.sidenavOpen = !isMobile;
-        });
-        this._routerEventsSubscription = this.router.events.subscribe(function (event) {
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* NavigationEnd */] && _this.isMobile) {
-                _this.sidenav.close();
-            }
-        });
-    };
-    AdminComponent.prototype.ngOnDestroy = function () {
-        this._mediaSubscription.unsubscribe();
-    };
-    AdminComponent.prototype.onActivate = function (e, scrollContainer) {
-        scrollContainer.scrollTop = 0;
-    };
-    return AdminComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('sidenav'),
-    __metadata("design:type", Object)
-], AdminComponent.prototype, "sidenav", void 0);
-AdminComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-admin',
-        template: __webpack_require__("../../../../../src/app/core/admin/admin.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/core/admin/admin.component.scss")],
-        encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */]) === "function" && _b || Object])
-], AdminComponent);
-
-var _a, _b;
-//# sourceMappingURL=admin.component.js.map
 
 /***/ }),
 
@@ -418,7 +315,7 @@ BreadcrumbsComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.component.html"),
         styles: [__webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__breadcrumb_service__["a" /* BreadcrumbService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__breadcrumb_service__["a" /* BreadcrumbService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__breadcrumb_service__["a" /* BreadcrumbService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__breadcrumb_service__["a" /* BreadcrumbService */]) === "function" && _b || Object])
 ], BreadcrumbsComponent);
 
 var _a, _b;
@@ -546,568 +443,6 @@ BreadcrumbService = __decorate([
 ], BreadcrumbService);
 
 //# sourceMappingURL=breadcrumb.service.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/charts/nvD3/nvD3.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__nvD3_service__ = __webpack_require__("../../../../../src/app/core/charts/nvD3/nvD3.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return nvD3; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var nvD3 = (function () {
-    function nvD3(elementRef, nvD3Service) {
-        this.el = elementRef.nativeElement;
-        this.d3 = nvD3Service.getD3();
-        this.nv = nvD3Service.getNv();
-    }
-    nvD3.prototype.ngOnChanges = function (changes) {
-        if (this.options) {
-            if (!this.chart || this.chartType !== this.options.chart.type) {
-                this.initChart(this.options);
-            }
-            else {
-                this.updateWithOptions(this.options);
-            }
-        }
-    };
-    nvD3.prototype.initChart = function (options) {
-        var _this = this;
-        // Clearing
-        this.clearElement();
-        if (!options)
-            return;
-        // Initialize chart with specific type
-        this.chart = this.nv.models[options.chart.type]();
-        this.chartType = this.options.chart.type;
-        // Generate random chart ID
-        this.chart.id = Math.random().toString(36).substr(2, 15);
-        this.updateWithOptions(options);
-        this.nv.addGraph(function () {
-            if (!_this.chart)
-                return;
-            // Remove resize handler. Due to async execution should be placed here, not in the clearElement
-            if (_this.chart.resizeHandler)
-                _this.chart.resizeHandler.clear();
-            _this.chart.resizeHandler = _this.nv.utils.windowResize(function () {
-                _this.chart && _this.chart.update && _this.chart.update();
-            });
-            return _this.chart;
-        }, options.chart['callback']);
-        setTimeout(function () {
-            window.dispatchEvent(new Event('resize'));
-        }, 0);
-    };
-    /**
-     * Update chart with new options.
-     * @param options
-     */
-    nvD3.prototype.updateWithOptions = function (options) {
-        // Exit if options are not yet bound
-        if (!options)
-            return;
-        for (var key in this.chart) {
-            if (!this.chart.hasOwnProperty(key))
-                continue;
-            var value = this.chart[key];
-            if (key[0] === '_') { }
-            else if ([
-                'clearHighlights',
-                'highlightPoint',
-                'id',
-                'options',
-                'resizeHandler',
-                'state',
-                'open',
-                'close',
-                'tooltipContent'
-            ].indexOf(key) >= 0) { }
-            else if (key === 'dispatch')
-                this.configureEvents(this.chart[key], options.chart[key]);
-            else if ([
-                'bars',
-                'bars1',
-                'bars2',
-                'boxplot',
-                'bullet',
-                'controls',
-                'discretebar',
-                'distX',
-                'distY',
-                'interactiveLayer',
-                'legend',
-                'lines',
-                'lines1',
-                'lines2',
-                'multibar',
-                'pie',
-                'scatter',
-                'scatters1',
-                'scatters2',
-                'sparkline',
-                'stack1',
-                'stack2',
-                'sunburst',
-                'tooltip',
-                'x2Axis',
-                'xAxis',
-                'y1Axis',
-                'y2Axis',
-                'y3Axis',
-                'y4Axis',
-                'yAxis',
-                'yAxis1',
-                'yAxis2'
-            ].indexOf(key) >= 0 ||
-                // stacked is a component for stackedAreaChart, but a boolean for multiBarChart and multiBarHorizontalChart
-                (key === 'stacked' && options.chart.type === 'stackedAreaChart')) {
-                this.configure(this.chart[key], options.chart[key], options.chart.type);
-            }
-            else if ((key === 'xTickFormat' || key === 'yTickFormat') && options.chart.type === 'lineWithFocusChart') {
-            }
-            else if ((key === 'tooltips') && options.chart.type === 'boxPlotChart') {
-            }
-            else if ((key === 'tooltipXContent' || key === 'tooltipYContent') && options.chart.type === 'scatterChart') {
-            }
-            else if (options.chart[key] === undefined || options.chart[key] === null) {
-            }
-            else
-                this.chart[key](options.chart[key]);
-        }
-        this.updateWithData(this.data);
-    };
-    /**
-     * Update chart with new chartDataArray.
-     * @param data
-     */
-    nvD3.prototype.updateWithData = function (data) {
-        if (data) {
-            // Select the add <svg> element (create it if necessary) and to render the chart in
-            {
-                var svgElement = this.el.querySelector('svg');
-                if (!svgElement) {
-                    this.svg = this.d3.select(this.el).append('svg');
-                }
-                else {
-                    this.svg = this.d3.select(svgElement);
-                }
-            }
-            this.updateSize();
-            this.svg.datum(data).call(this.chart);
-        }
-    };
-    /**
-     * Update the chart size.
-     */
-    nvD3.prototype.updateSize = function () {
-        if (this.svg) {
-            var h = void 0, w = void 0;
-            if (h = this.options.chart.height) {
-                if (!isNaN(+h))
-                    h += 'px';
-                this.svg.attr('height', h).style({ height: h });
-            }
-            if (w = this.options.chart.width) {
-                if (!isNaN(+w))
-                    w += 'px';
-                this.svg.attr('width', w).style({ width: w });
-            }
-            else {
-                this.svg.attr('width', '100%').style({ width: '100%' });
-            }
-        }
-    };
-    /**
-     * Synchronize the options with the options of the nvd3 chart.
-     * @param chart
-     * @param options
-     * @param chartType
-     */
-    nvD3.prototype.configure = function (chart, options, chartType) {
-        if (chart && options) {
-            for (var key in chart) {
-                if (!chart.hasOwnProperty(key))
-                    continue;
-                var value = chart[key];
-                if (key[0] === '_') {
-                }
-                else if (key === 'dispatch')
-                    this.configureEvents(value, options[key]);
-                else if (key === 'tooltip')
-                    this.configure(chart[key], options[key], chartType);
-                else if (key === 'contentGenerator') {
-                    if (options[key])
-                        chart[key](options[key]);
-                }
-                else if ([
-                    'axis',
-                    'clearHighlights',
-                    'defined',
-                    'highlightPoint',
-                    'nvPointerEventsClass',
-                    'options',
-                    'rangeBand',
-                    'rangeBands',
-                    'scatter',
-                    'open',
-                    'close'
-                ].indexOf(key) === -1) {
-                    if (options[key] === undefined || options[key] === null) {
-                    }
-                    else
-                        chart[key](options[key]);
-                }
-            }
-        }
-    };
-    /**
-     * Configure dispatch events.
-     * @param dispatch
-     * @param options
-     */
-    nvD3.prototype.configureEvents = function (dispatch, options) {
-        if (dispatch && options) {
-            for (var key in dispatch) {
-                if (!dispatch.hasOwnProperty(key))
-                    continue;
-                var value = dispatch[key];
-                if (options[key] === undefined || options[key] === null) {
-                }
-                else
-                    dispatch.on(key + '._', options[key]);
-            }
-        }
-    };
-    /**
-     * Cleanup an element.
-     */
-    nvD3.prototype.clearElement = function () {
-        var nv = this.nv;
-        this.el.innerHTML = '';
-        // remove tooltip if exists
-        if (this.chart && this.chart.tooltip && this.chart.tooltip.id) {
-            this.d3.select('#' + this.chart.tooltip.id()).remove();
-        }
-        // To be compatible with old nvd3 (v1.7.1)
-        if (nv['graphs'] && this.chart) {
-            for (var i = nv['graphs'].length - 1; i >= 0; i--) {
-                if (nv['graphs'][i] && (nv['graphs'][i].id === this.chart.id)) {
-                    nv['graphs'].splice(i, 1);
-                }
-            }
-        }
-        if (nv.tooltip && nv.tooltip.cleanup) {
-            nv.tooltip.cleanup();
-        }
-        if (this.chart && this.chart.resizeHandler)
-            this.chart.resizeHandler.clear();
-        this.chart = null;
-    };
-    return nvD3;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], nvD3.prototype, "options", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], nvD3.prototype, "data", void 0);
-nvD3 = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'nvd3',
-        template: ""
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__nvD3_service__["a" /* D3ChartService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__nvD3_service__["a" /* D3ChartService */]) === "function" && _b || Object])
-], nvD3);
-
-var _a, _b;
-//# sourceMappingURL=nvD3.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/charts/nvD3/nvD3.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3__ = __webpack_require__("../../../../d3/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_d3__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_nvd3__ = __webpack_require__("../../../../nvd3/build/nv.d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_nvd3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_nvd3__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return D3ChartService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var D3ChartService = (function () {
-    function D3ChartService() {
-    }
-    D3ChartService.prototype.getD3 = function () {
-        return __WEBPACK_IMPORTED_MODULE_1_d3__;
-    };
-    D3ChartService.prototype.getNv = function () {
-        return __WEBPACK_IMPORTED_MODULE_2_nvd3__;
-    };
-    return D3ChartService;
-}());
-D3ChartService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [])
-], D3ChartService);
-
-//# sourceMappingURL=nvD3.service.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/core.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_component__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sidenav_sidenav_item_sidenav_item_component__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav-item/sidenav-item.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sidenav_icon_sidenav_directive__ = __webpack_require__("../../../../../src/app/core/sidenav/icon-sidenav.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toolbar_search_search_component__ = __webpack_require__("../../../../../src/app/core/toolbar/search/search.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__breadcrumb_breadcrumb_component__ = __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__admin_admin_component__ = __webpack_require__("../../../../../src/app/core/admin/admin.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__quickpanel_quickpanel_component__ = __webpack_require__("../../../../../src/app/core/quickpanel/quickpanel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__toolbar_toolbar_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__toolbar_toolbar_user_button_toolbar_user_button_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_click_outside_directive__ = __webpack_require__("../../../../../src/app/core/utils/click-outside.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__toolbar_search_bar_search_bar_component__ = __webpack_require__("../../../../../src/app/core/toolbar/search-bar/search-bar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__toolbar_toolbar_notifications_toolbar_notifications_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__sidenav_sidenav_service__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__sidenav_mediareplay_media_replay_service__ = __webpack_require__("../../../../../src/app/core/sidenav/mediareplay/media-replay.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__breadcrumb_breadcrumb_service__ = __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__material_material_components_module__ = __webpack_require__("../../../../../src/app/material/material-components.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_ngx_perfect_scrollbar__ = __webpack_require__("../../../../ngx-perfect-scrollbar/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_ngx_perfect_scrollbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CoreModule; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var CoreModule = (function () {
-    function CoreModule() {
-    }
-    return CoreModule;
-}());
-CoreModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
-            __WEBPACK_IMPORTED_MODULE_19__angular_router__["a" /* RouterModule */],
-            __WEBPACK_IMPORTED_MODULE_17__material_material_components_module__["a" /* MaterialComponentsModule */],
-            __WEBPACK_IMPORTED_MODULE_20__angular_flex_layout__["a" /* FlexLayoutModule */],
-            __WEBPACK_IMPORTED_MODULE_21__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_18_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forChild()
-        ],
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_component__["a" /* SidenavComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__sidenav_sidenav_item_sidenav_item_component__["a" /* SidenavItemComponent */],
-            __WEBPACK_IMPORTED_MODULE_4__sidenav_icon_sidenav_directive__["a" /* IconSidenavDirective */],
-            __WEBPACK_IMPORTED_MODULE_5__toolbar_search_search_component__["a" /* SearchComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__breadcrumb_breadcrumb_component__["a" /* BreadcrumbsComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__admin_admin_component__["a" /* AdminComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__quickpanel_quickpanel_component__["a" /* QuickpanelComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__toolbar_toolbar_component__["a" /* ToolbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__toolbar_toolbar_user_button_toolbar_user_button_component__["a" /* ToolbarUserButtonComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__utils_click_outside_directive__["a" /* ClickOutsideDirective */],
-            __WEBPACK_IMPORTED_MODULE_12__toolbar_search_bar_search_bar_component__["a" /* SearchBarComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__toolbar_toolbar_notifications_toolbar_notifications_component__["a" /* ToolbarNotificationsComponent */]
-        ],
-        providers: [
-            __WEBPACK_IMPORTED_MODULE_14__sidenav_sidenav_service__["a" /* SidenavService */],
-            __WEBPACK_IMPORTED_MODULE_15__sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */],
-            __WEBPACK_IMPORTED_MODULE_16__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]
-        ]
-    })
-], CoreModule);
-
-//# sourceMappingURL=core.module.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/highlightjs/highlight.directive.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HighlightDirective; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var HighlightDirective = (function () {
-    function HighlightDirective(elem) {
-        this.elem = elem;
-    }
-    HighlightDirective.prototype.ngAfterViewInit = function () {
-        hljs.highlightBlock(this.elem.nativeElement);
-    };
-    return HighlightDirective;
-}());
-HighlightDirective = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
-        selector: 'code[msHighlight]'
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object])
-], HighlightDirective);
-
-var _a;
-//# sourceMappingURL=highlight.directive.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/highlightjs/highlight.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__highlight_directive__ = __webpack_require__("../../../../../src/app/core/highlightjs/highlight.directive.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HighlightModule; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-var HighlightModule = (function () {
-    function HighlightModule() {
-    }
-    return HighlightModule;
-}());
-HighlightModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-        imports: [],
-        declarations: [__WEBPACK_IMPORTED_MODULE_1__highlight_directive__["a" /* HighlightDirective */]],
-        exports: [__WEBPACK_IMPORTED_MODULE_1__highlight_directive__["a" /* HighlightDirective */]]
-    })
-], HighlightModule);
-
-//# sourceMappingURL=highlight.module.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/loading-overlay/loading-overlay.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"loading-overlay\" [class.show]=\"isLoading\">\r\n  <md-progress-bar mode=\"indeterminate\"></md-progress-bar>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/loading-overlay/loading-overlay.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".loading-overlay {\n  background-color: rgba(255, 255, 255, 0.7);\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 10;\n  transition: all .25s ease-in-out;\n  opacity: 0;\n  visibility: hidden; }\n  .loading-overlay.show {\n    opacity: 1;\n    visibility: visible; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/loading-overlay/loading-overlay.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoadingOverlayComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var LoadingOverlayComponent = (function () {
-    function LoadingOverlayComponent() {
-    }
-    LoadingOverlayComponent.prototype.ngOnInit = function () {
-    };
-    return LoadingOverlayComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('isLoading'),
-    __metadata("design:type", Boolean)
-], LoadingOverlayComponent.prototype, "isLoading", void 0);
-LoadingOverlayComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-loading-overlay',
-        template: __webpack_require__("../../../../../src/app/core/loading-overlay/loading-overlay.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/core/loading-overlay/loading-overlay.component.scss")]
-    }),
-    __metadata("design:paramtypes", [])
-], LoadingOverlayComponent);
-
-//# sourceMappingURL=loading-overlay.component.js.map
 
 /***/ }),
 
@@ -1542,48 +877,14 @@ var SidenavComponent = (function () {
             _this.items = _this.sortRecursive(items, 'position');
         });
         this._routerEventsSubscription = this.router.events.subscribe(function (event) {
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_3__angular_router__["d" /* NavigationEnd */]) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* NavigationEnd */]) {
                 _this.sidenavService.nextCurrentlyOpenByRoute(event.url);
                 setTimeout(function () {
                     window.dispatchEvent(new Event('resize'));
                 }, 400);
             }
         });
-        this.breadcrumbService.addFriendlyNameForRoute('/', "Dashboard");
-        //this.breadcrumbService.addFriendlyNameForRoute('/apps', "Apps");
-        //this.breadcrumbService.addFriendlyNameForRoute('/apps/inbox', "Inbox");
-        //this.breadcrumbService.addFriendlyNameForRoute('/apps/calendar', "Calendar");
-        //this.breadcrumbService.addFriendlyNameForRoute('/apps/chat', "Chat");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components', "Components");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/autocomplete', "Autocomplete");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/buttons', "Buttons");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/cards', "Cards");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/dialogs', "Dialogs");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/grid-list', "Grid List");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/lists', "Lists");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/menu', "Menu");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/slider', "Slider");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/snack-bar', "Snack-Bar");
-        //this.breadcrumbService.addFriendlyNameForRoute('/components/tooltips', "Tooltips");
-        this.breadcrumbService.addFriendlyNameForRoute('/forms', "Forms");
-        //this.breadcrumbService.addFriendlyNameForRoute('/forms/form-elements', "Form Elements");
-        //this.breadcrumbService.addFriendlyNameForRoute('/forms/form-wizard', "Form Wizard");
         this.breadcrumbService.addFriendlyNameForRoute('/projects', "Projects");
-        //this.breadcrumbService.addFriendlyNameForRoute('/tables', "Tables");
-        //this.breadcrumbService.addFriendlyNameForRoute('/tables/simple-table', "Simple Table");
-        //this.breadcrumbService.addFriendlyNameForRoute('/tables/fixed-header-table', "Fixed Header Table");
-        //this.breadcrumbService.addFriendlyNameForRoute('/maps', "Maps");
-        //this.breadcrumbService.addFriendlyNameForRoute('/maps/google-maps', "Google Maps");
-        //this.breadcrumbService.addFriendlyNameForRoute('/icons', "Material Icons");
-        //this.breadcrumbService.addFriendlyNameForRoute('/dashboard-v1', "Dashboard v1");
-        //this.breadcrumbService.addFriendlyNameForRoute('/drag-and-drop', "Drag & Drop");
-        //this.breadcrumbService.addFriendlyNameForRoute('/editor', "WYSISYG Editor");
-        //this.breadcrumbService.addFriendlyNameForRoute('/dynamic-menu', "Dynamic Menu");
-        //this.breadcrumbService.addFriendlyNameForRoute('/level1', "Level 1");
-        //this.breadcrumbService.addFriendlyNameForRoute('/level1/level2', "Level 2");
-        //this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3', "Level 3");
-        //this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3/level4', "Level 4");
-        //this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3/level4/level5', "Level 5");
     };
     SidenavComponent.prototype.toggleIconSidenav = function () {
         setTimeout(function () {
@@ -1626,7 +927,7 @@ SidenavComponent = __decorate([
         styles: [__webpack_require__("../../../../../src/app/core/sidenav/sidenav.component.scss")],
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["A" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["A" /* MdSnackBar */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MdSnackBar */]) === "function" && _d || Object])
 ], SidenavComponent);
 
 var _a, _b, _c, _d;
@@ -1669,56 +970,8 @@ var SidenavService = (function () {
         this._currentlyOpen = [];
         this.currentlyOpen$ = this._currentlyOpenSubject.asObservable();
         var menu = this;
-        var dashboard = menu.addItem('Dashboard', 'dashboard', '/', 1);
-        //menu.addItem('Inbox', 'mail', '/apps/inbox', 1, '22', '#7986CC');
-        //menu.addItem('Chat', 'chat', '/apps/chat', 2, '14', '#E15C74');
-        //menu.addItem('Calendar', 'date_range', '/apps/calendar', 3);
-        //let components =  menu.addItem('Components', 'layers', null, 3);
-        //menu.addSubItem(components, 'Autocomplete', '/components/autocomplete', 1);
-        //menu.addSubItem(components, 'Buttons', '/components/buttons', 2);
-        //menu.addSubItem(components, 'Cards', '/components/cards', 3);
-        //menu.addSubItem(components, 'Dialogs', '/components/dialogs', 4);
-        //menu.addSubItem(components, 'Grid List', '/components/grid-list', 5);
-        //menu.addSubItem(components, 'Lists', '/components/lists', 6);
-        //menu.addSubItem(components, 'Menu', '/components/menu', 7);
-        //menu.addSubItem(components, 'Slider', '/components/slider', 8);
-        //menu.addSubItem(components, 'Snack-Bar', '/components/snack-bar', 9);
-        //menu.addSubItem(components, 'Tooltips', '/components/tooltips', 10);
-        var forms = menu.addItem('Forms', 'insert_comment', null, 4);
-        //menu.addSubItem(forms, 'Form Elements', '/forms/form-elements', 1);
-        //menu.addSubItem(forms, 'Form Wizard', '/forms/form-wizard', 2);
-        menu.addSubItem(forms, 'Projects', '/projects', 3);
-        //let tables =  menu.addItem('Tables', 'format_line_spacing', null, 5);
-        //menu.addSubItem(tables, 'Simple Table', '/tables/simple-table', 1);
-        //menu.addSubItem(tables, 'Fixed Header Table', '/tables/fixed-header-table', 2);
-        //let maps =  menu.addItem('Maps', 'map', null, 6, '3', '#4CAF50');
-        //menu.addSubItem(maps, 'Google Maps', '/maps/google-maps', 1);
-        //let icons = menu.addItem('Material Icons', 'grade', '/icons', 7);
-        //let customPages = menu.addItem('Custom Pages', 'web', null, 8);
-        //menu.addSubItem(customPages, 'Login Page', '/login', 1);
-        //menu.addSubItem(customPages, 'Register Page', '/register', 2);
-        //menu.addSubItem(customPages, 'Forgot Password', '/forgot-password', 3);
-        //menu.addSubItem(customPages, 'Dashboard v1', '/dashboard-v1', 4);
-        //let dragAndDrop = menu.addItem('Drag & Drop', 'mouse', '/drag-and-drop', 9);
-        //let editor = menu.addItem('WYSIWYG Editor', 'format_shapes', '/editor', 10, 'NEW', '#3F51B5');
-        //let multiLevel = menu.addItem('Multi-Level Menu', 'menu', null, 11);
-        //let level1 = menu.addSubItem(multiLevel, 'Level 1', '/level1', 1);
-        //let level2 = menu.addSubItem(level1, 'Level 2', '/level1/level2', 2);
-        //let level3 = menu.addSubItem(level2, 'Level 3', '/level1/level2/level3', 3);
-        //let level4 = menu.addSubItem(level3, 'Level 4', '/level1/level2/level3/level4', 4);
-        //let level5 = menu.addSubItem(level4, 'Level 5', '/level1/level2/level3/level4/level5', 5);
-        var dynamicMenuFunctionDemo = function () {
-            var dynamicFunction = function () {
-                var snackbarRef = snackbar.open('This menu item got added dynamically!', 'Remove item', {
-                    duration: 5000
-                });
-                snackbarRef.onAction().subscribe(function () {
-                    menu.removeItem(dynamicMenu);
-                });
-            };
-            var dynamicMenu = menu.addItem('Dynamic Menu Item', 'extension', dynamicFunction, 12);
-        };
-        var addMenu = menu.addItem('Add Menu Item', 'add', dynamicMenuFunctionDemo, 99, null, null, 'add-dynamic-menu');
+        var projects = menu.addItem('Projects', 'insert_comment', null, 4);
+        menu.addSubItem(projects, 'Projects', '/projects', 3);
     }
     SidenavService.prototype.addItem = function (name, icon, route, position, badge, badgeColor, customClass) {
         var item = new __WEBPACK_IMPORTED_MODULE_1__sidenav_item_sidenav_item_model__["a" /* SidenavItem */]({
@@ -1828,7 +1081,7 @@ var SidenavService = (function () {
 }());
 SidenavService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["A" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["A" /* MdSnackBar */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdSnackBar */]) === "function" && _a || Object])
 ], SidenavService);
 
 var _a;
@@ -1839,7 +1092,7 @@ var _a;
 /***/ "../../../../../src/app/core/toolbar/search-bar/search-bar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"search-wrapper\" fxLayout=\"row\" [ngClass]=\"{ 'focus': focused, 'has-input': input }\" fxFlex (msClickOutside)=\"closeDropdown()\">\n  <md-icon class=\"search-icon\">search</md-icon>\n  <input type=\"search\"\n         autocomplete=\"off\"\n         spellcheck=\"false\"\n         class=\"search-input\"\n         [(ngModel)]=\"input\"\n         (focus)=\"openDropdown()\"\n         placeholder=\"Search...\">\n\n  <div class=\"search-dropdown mat-elevation-z1\">\n    <div class=\"content results\" *ngIf=\"input\" fxLayout=\"column\">\n      <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n        <md-icon class=\"icon\">search</md-icon>\n        Search results for: {{ input }}\n      </div>\n      <div class=\"items\">\n        <div class=\"item\" md-ripple>Form Elements</div>\n        <div class=\"item\" md-ripple>Form Wizard</div>\n        <div class=\"item\" md-ripple>Projects</div>\n        <div class=\"item\" md-ripple>Profile</div>\n        <div class=\"item\" md-ripple>Calendar</div>\n        <div class=\"item\" md-ripple>Profile page</div>\n      </div>\n    </div>\n\n    <div class=\"content recents\" fxLayout=\"row\" *ngIf=\"!input\">\n      <div class=\"recently\" fxLayout=\"column\" fxFlex>\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n          <md-icon class=\"icon\">restore</md-icon>\n          Recently Visited\n        </div>\n        <div class=\"items\">\n          <div class=\"item\" md-ripple *ngFor=\"let item of recentlyVisited\" [routerLink]=\"item.route\" (click)=\"closeDropdown()\">{{ item.name }}</div>\n        </div>\n      </div>\n      <div class=\"frequently\" fxLayout=\"column\" fxFlex fxFlexOffset=\"16px\">\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n          <md-icon class=\"icon\">youtube_searched_for</md-icon>\n          Frequently Visited\n        </div>\n        <div class=\"items\">\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-elements']\">Form Elements</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-wizard']\">Form Wizard</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/projects']\">Projects</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/editor']\">WYSIWYG Editor</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/maps/google-maps']\">Google Maps</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/components/dialogs']\">Material Dialog</div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"search-wrapper\" fxLayout=\"row\" [ngClass]=\"{ 'focus': focused, 'has-input': input }\" fxFlex (msClickOutside)=\"closeDropdown()\">\r\n  <md-icon class=\"search-icon\">search</md-icon>\r\n  <input type=\"search\"\r\n         autocomplete=\"off\"\r\n         spellcheck=\"false\"\r\n         class=\"search-input\"\r\n         [(ngModel)]=\"input\"\r\n         (focus)=\"openDropdown()\"\r\n         placeholder=\"Search...\">\r\n\r\n  <div class=\"search-dropdown mat-elevation-z1\">\r\n    <div class=\"content results\" *ngIf=\"input\" fxLayout=\"column\">\r\n      <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <md-icon class=\"icon\">search</md-icon>\r\n        Search results for: {{ input }}\r\n      </div>\r\n      <div class=\"items\">\r\n        <div class=\"item\" md-ripple>Form Elements</div>\r\n        <div class=\"item\" md-ripple>Form Wizard</div>\r\n        <div class=\"item\" md-ripple>Projects</div>\r\n        <div class=\"item\" md-ripple>Profile</div>\r\n        <div class=\"item\" md-ripple>Calendar</div>\r\n        <div class=\"item\" md-ripple>Profile page</div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"content recents\" fxLayout=\"row\" *ngIf=\"!input\">\r\n      <div class=\"recently\" fxLayout=\"column\" fxFlex>\r\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <md-icon class=\"icon\">restore</md-icon>\r\n          Recently Visited\r\n        </div>\r\n        <div class=\"items\">\r\n          <div class=\"item\" md-ripple *ngFor=\"let item of recentlyVisited\" [routerLink]=\"item.route\" (click)=\"closeDropdown()\">{{ item.name }}</div>\r\n        </div>\r\n      </div>\r\n      <div class=\"frequently\" fxLayout=\"column\" fxFlex fxFlexOffset=\"16px\">\r\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <md-icon class=\"icon\">youtube_searched_for</md-icon>\r\n          Frequently Visited\r\n        </div>\r\n        <div class=\"items\">\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-elements']\">Form Elements</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-wizard']\">Form Wizard</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/projects']\">Projects</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/editor']\">WYSIWYG Editor</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/maps/google-maps']\">Google Maps</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/components/dialogs']\">Material Dialog</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1897,7 +1150,7 @@ var SearchBarComponent = (function () {
         this.recentlyVisited.push(this.sidenavService.getSidenavItemByRoute('/apps/inbox'));
         // End Demo Data - You can safely remove this
         this.router.events.subscribe(function (event) {
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* NavigationEnd */]) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* NavigationEnd */]) {
                 var item = _this.sidenavService.getSidenavItemByRoute(event.urlAfterRedirects);
                 var index = _this.recentlyVisited.indexOf(item);
                 if (index > -1) {
@@ -1924,7 +1177,7 @@ SearchBarComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/core/toolbar/search-bar/search-bar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/core/toolbar/search-bar/search-bar.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__["a" /* SidenavService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__["a" /* SidenavService */]) === "function" && _b || Object])
 ], SearchBarComponent);
 
 var _a, _b;
@@ -2276,19 +1529,39 @@ var _a;
 
 /***/ }),
 
-/***/ "../../../../../src/app/core/widgets/activity/activity.component.html":
+/***/ "../../../../../src/app/main/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"activity-card mat-elevation-z2\">\r\n  <div class=\"title-container\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n    <div fxLayout=\"column\">\r\n      <span class=\"title\">{{ title }}</span>\r\n      <span class=\"extra\">{{ subTitle }}</span>\r\n    </div>\r\n    <span fxFlex></span>\r\n    <button md-icon-button (click)=\"reload()\">\r\n      <md-icon>refresh</md-icon>\r\n    </button>\r\n    <button md-icon-button [mdMenuTriggerFor]=\"options\">\r\n      <md-icon>more_vert</md-icon>\r\n    </button>\r\n  </div>\r\n  <div class=\"content\">\r\n    <md-nav-list>\r\n      <a href=\"javascript:\" md-list-item *ngFor=\"let feed of feeds\">\r\n        <img md-list-avatar [src]=\"feed.image\" alt=\"...\">\r\n        <h3 md-line> {{ feed.name }} </h3>\r\n        <p md-line>\r\n          <span class=\"title\"> {{ feed.subject }} </span>\r\n          <span class=\"extra\"> -- {{ feed.content }} </span>\r\n        </p>\r\n      </a>\r\n    </md-nav-list>\r\n  </div>\r\n  <ms-loading-overlay [isLoading]=\"isLoading\"></ms-loading-overlay>\r\n</div>\r\n\r\n<md-menu #options=\"mdMenu\">\r\n  <button md-menu-item>\r\n    <md-icon> settings </md-icon>\r\n    <span> Settings </span>\r\n  </button>\r\n  <button md-menu-item disabled>\r\n    <md-icon> more </md-icon>\r\n    <span> More Info </span>\r\n  </button>\r\n  <button md-menu-item>\r\n    <md-icon> remove_circle </md-icon>\r\n    <span> Remove Widget </span>\r\n  </button>\r\n</md-menu>\r\n"
+module.exports = "<md-sidenav-container>\r\n\r\n  <md-sidenav class=\"quickpanel\" [opened]=\"quickpanelOpen\" align=\"end\" mode=\"over\" #quickpanel>\r\n\r\n    <ms-quickpanel></ms-quickpanel>\r\n\r\n  </md-sidenav>\r\n\r\n  <md-sidenav class=\"sidenav\" [opened]=\"sidenavOpen\" align=\"start\" [mode]=\"sidenavMode\" msIconSidenav #sidenav>\r\n\r\n    <ms-sidenav></ms-sidenav>\r\n\r\n  </md-sidenav>\r\n\r\n  <div class=\"content-container\" fxLayout=\"column\">\r\n    <!--<ms-toolbar [quickpanel]=\"quickpanel\" [sidenav]=\"sidenav\"></ms-toolbar>-->\r\n\r\n    <div class=\"main-container\" #scrollContainer>\r\n      <router-outlet (activate)=\"onActivate($event, scrollContainer)\"></router-outlet>\r\n    </div>\r\n  </div>\r\n\r\n</md-sidenav-container>\r\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/core/widgets/activity/activity.component.ts":
+/***/ "../../../../../src/app/main/home/home.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "@-webkit-keyframes fadein {\n  0% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@keyframes fadein {\n  0% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@-webkit-keyframes fadeout {\n  0% {\n    opacity: 1; }\n  100% {\n    opacity: 0; } }\n\n@keyframes fadeout {\n  0% {\n    opacity: 1; }\n  100% {\n    opacity: 0; } }\n\n.main-toolbar {\n  background: #ffffff;\n  padding-right: 0;\n  height: 64px;\n  padding-left: 16px; }\n  .main-toolbar .user-button-container {\n    height: 100%; }\n  .main-toolbar button.fullscreen-toggle {\n    border-radius: 0;\n    padding: 0;\n    min-width: 50px;\n    max-width: 50px;\n    height: 100%; }\n  .main-toolbar button.quickpanel-toggle {\n    border-radius: 0;\n    padding: 0;\n    min-width: 75px;\n    max-width: 75px;\n    height: 100%; }\n\n.mat-sidenav.quickpanel {\n  z-index: 100;\n  width: 330px;\n  min-width: 330px;\n  max-width: 330px; }\n\n@media screen and (max-width: 959px) {\n  .mat-sidenav.quickpanel {\n    width: 250px;\n    min-width: 250px;\n    max-width: 250px; }\n  button.user-button {\n    min-width: 72px; } }\n\n@media screen and (min-width: 960px) {\n  .mat-sidenav-backdrop {\n    z-index: 50 !important; } }\n\n.sidenav {\n  width: 250px;\n  max-width: 250px;\n  background: #2B303B;\n  overflow-x: hidden;\n  z-index: 4; }\n\n.content-container {\n  height: 100%; }\n\n.main-container {\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: calc(100% - 64px);\n  position: relative; }\n\n@media screen and (min-width: 960px) {\n  .sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav + .mat-sidenav-content {\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition-property: max-width, margin-left, margin-right, -webkit-transform !important;\n    transition-property: transform, max-width, margin-left, margin-right !important;\n    transition-property: transform, max-width, margin-left, margin-right, -webkit-transform !important;\n    margin-left: 0 !important;\n    background: #EEE;\n    z-index: 5;\n    overflow: hidden;\n    box-shadow: inset 7px 0 9px -7px rgba(0, 0, 0, 0.4); }\n  .sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav + .mat-sidenav-content {\n    max-width: calc(100% - 250px);\n    -webkit-transform: translate3d(250px, 0, 0) !important;\n            transform: translate3d(250px, 0, 0) !important; }\n  .sidenav.icon-sidenav.collapsed + .cdk-visually-hidden + .mat-sidenav-content, .sidenav.icon-sidenav.collapsed + .mat-sidenav-content {\n    max-width: calc(100% - 68px);\n    -webkit-transform: translate3d(68px, 0, 0) !important;\n            transform: translate3d(68px, 0, 0) !important; }\n  .sidenav.icon-sidenav + .cdk-visually-hidden + .mat-sidenav-content, .sidenav.icon-sidenav + .mat-sidenav-content {\n    max-width: calc(100% - 68px); }\n  .sidenav.collapsed .fade-in-on-icon-sidenav {\n    -webkit-animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadeout;\n            animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadeout; }\n  .sidenav:not(.collapsed) .fade-in-on-icon-sidenav {\n    -webkit-animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;\n            animation: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein; } }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/home/home.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActivityComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_sidenav_mediareplay_media_replay_service__ = __webpack_require__("../../../../../src/app/core/sidenav/mediareplay/media-replay.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2299,896 +1572,55 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var ActivityComponent = (function () {
-    function ActivityComponent() {
-        this.title = 'Recent Activities';
-        this.subTitle = 'Your daily news feed';
-        this.isLoading = false;
+
+
+var HomeComponent = (function () {
+    function HomeComponent(router, mediaReplayService) {
+        this.router = router;
+        this.mediaReplayService = mediaReplayService;
+        this.quickpanelOpen = false;
+        this.sidenavOpen = true;
+        this.sidenavMode = 'side';
+        this.isMobile = false;
     }
-    ActivityComponent.prototype.ngOnInit = function () {
-    };
-    ActivityComponent.prototype.reload = function () {
+    HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.isLoading = true;
-        setTimeout(function () {
-            _this.isLoading = false;
-        }, 3000);
+        this._mediaSubscription = this.mediaReplayService.media$.subscribe(function (change) {
+            var isMobile = (change.mqAlias == 'xs') || (change.mqAlias == 'sm');
+            _this.isMobile = isMobile;
+            _this.sidenavMode = (isMobile) ? 'over' : 'side';
+            _this.sidenavOpen = !isMobile;
+        });
+        this._routerEventsSubscription = this.router.events.subscribe(function (event) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* NavigationEnd */] && _this.isMobile) {
+                _this.sidenav.close();
+            }
+        });
     };
-    return ActivityComponent;
+    HomeComponent.prototype.ngOnDestroy = function () {
+        this._mediaSubscription.unsubscribe();
+    };
+    HomeComponent.prototype.onActivate = function (e, scrollContainer) {
+        scrollContainer.scrollTop = 0;
+    };
+    return HomeComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('feeds'),
-    __metadata("design:type", Array)
-], ActivityComponent.prototype, "feeds", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('title'),
-    __metadata("design:type", String)
-], ActivityComponent.prototype, "title", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('subTitle'),
-    __metadata("design:type", String)
-], ActivityComponent.prototype, "subTitle", void 0);
-ActivityComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('sidenav'),
+    __metadata("design:type", Object)
+], HomeComponent.prototype, "sidenav", void 0);
+HomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-activity',
-        template: __webpack_require__("../../../../../src/app/core/widgets/activity/activity.component.html")
-    }),
-    __metadata("design:paramtypes", [])
-], ActivityComponent);
-
-//# sourceMappingURL=activity.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/bar-chart/bar-chart.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"chart-widget mat-elevation-z2\" [style.background]=\"bgColor\">\r\n  <div class=\"title-container\" [style.color]=\"textColor\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n    <div fxLayout=\"column\">\r\n      <span class=\"title\">{{ widgetTitle }}</span>\r\n      <span class=\"extra\">\r\n        <md-icon class=\"arrow\" *ngIf=\"gain > 0\">\r\n          arrow_upward\r\n        </md-icon>\r\n        <md-icon class=\"arrow\" *ngIf=\"gain < 0\">\r\n          arrow_downward\r\n        </md-icon>\r\n        <span>{{ gain }}{{ comparedTo }}</span>\r\n      </span>\r\n    </div>\r\n    <span fxFlex></span>\r\n    <button md-icon-button (click)=\"reload()\">\r\n      <md-icon>refresh</md-icon>\r\n    </button>\r\n    <button md-icon-button [mdMenuTriggerFor]=\"options\">\r\n      <md-icon>more_vert</md-icon>\r\n    </button>\r\n  </div>\r\n  <div class=\"chart-container\">\r\n    <nvd3 class=\"thin-discrete-bar\" [options]=\"chartOptions\" [data]=\"data\"></nvd3>\r\n  </div>\r\n  <ms-loading-overlay [isLoading]=\"isLoading\"></ms-loading-overlay>\r\n</div>\r\n\r\n<md-menu #options=\"mdMenu\">\r\n  <button md-menu-item>\r\n    <md-icon> settings </md-icon>\r\n    <span> Settings </span>\r\n  </button>\r\n  <button md-menu-item disabled>\r\n    <md-icon> more </md-icon>\r\n    <span> More Info </span>\r\n  </button>\r\n  <button md-menu-item>\r\n    <md-icon> remove_circle </md-icon>\r\n    <span> Remove Widget </span>\r\n  </button>\r\n</md-menu>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/bar-chart/bar-chart.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__ = __webpack_require__("../../../../../src/app/core/charts/nvD3/nvD3.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BarChartComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
-
-var BarChartComponent = (function () {
-    function BarChartComponent(d3ChartService) {
-        this.isLoading = false;
-        this.d3 = d3ChartService.getD3();
-    }
-    BarChartComponent.prototype.ngOnInit = function () {
-        var d3 = this.d3;
-        if (!this.chartOptions) {
-            this.chartOptions = {
-                chart: {
-                    type: 'discreteBarChart',
-                    height: 120,
-                    margin: {
-                        top: 0,
-                        right: 0,
-                        bottom: 0,
-                        left: 0
-                    },
-                    x: function (d) { return d.date; },
-                    y: function (d) { return d.value; },
-                    showXAxis: false,
-                    showYAxis: false,
-                    xAxis: {
-                        ticks: d3.time.days,
-                        axisLabel: '',
-                        tickFormat: function (d) {
-                            return d3.time.format('%a %d.%m.%Y')(new Date(d));
-                        }
-                    },
-                    showLegend: false,
-                    useInteractiveGuideline: true,
-                    color: [this.chartColor],
-                    rectClass: 'bar-rect'
-                },
-            };
-        }
-    };
-    BarChartComponent.prototype.reload = function () {
-        var _this = this;
-        this.isLoading = true;
-        setTimeout(function () {
-            _this.isLoading = false;
-        }, 3000);
-    };
-    return BarChartComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('data'),
-    __metadata("design:type", Object)
-], BarChartComponent.prototype, "data", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('chartOptions'),
-    __metadata("design:type", Object)
-], BarChartComponent.prototype, "chartOptions", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('widgetTitle'),
-    __metadata("design:type", String)
-], BarChartComponent.prototype, "widgetTitle", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('bgColor'),
-    __metadata("design:type", String)
-], BarChartComponent.prototype, "bgColor", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('textColor'),
-    __metadata("design:type", String)
-], BarChartComponent.prototype, "textColor", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('chartColor'),
-    __metadata("design:type", String)
-], BarChartComponent.prototype, "chartColor", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('gain'),
-    __metadata("design:type", Object)
-], BarChartComponent.prototype, "gain", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('comparedTo'),
-    __metadata("design:type", String)
-], BarChartComponent.prototype, "comparedTo", void 0);
-BarChartComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-bar-chart',
-        template: __webpack_require__("../../../../../src/app/core/widgets/bar-chart/bar-chart.component.html"),
+        selector: 'ms-home',
+        template: __webpack_require__("../../../../../src/app/main/home/home.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/main/home/home.component.scss")],
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None
     }),
-    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */])),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */]) === "function" && _a || Object])
-], BarChartComponent);
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__core_sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__core_sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */]) === "function" && _b || Object])
+], HomeComponent);
 
-var _a;
-//# sourceMappingURL=bar-chart.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/google-maps-widget/google-maps-widget.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<agm-map [style.height]=\"height\" [latitude]=\"lat\" [longitude]=\"lng\" [styles]=\"styles\" [scrollwheel]=\"false\"></agm-map>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/google-maps-widget/google-maps-widget.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GoogleMapsWidgetComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var GoogleMapsWidgetComponent = (function () {
-    function GoogleMapsWidgetComponent() {
-        this.height = '450px';
-        this.lat = 40.730610;
-        this.lng = -73.935242;
-        this.styles = [
-            {
-                "featureType": "water",
-                "elementType": "labels.text",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "invert_lightness": false
-                    },
-                    {
-                        "color": "#004963"
-                    },
-                    {
-                        "weight": 8
-                    }
-                ]
-            },
-            {
-                "featureType": "water",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "invert_lightness": false
-                    },
-                    {
-                        "color": "#b7ebeb"
-                    },
-                    {
-                        "saturation": -53
-                    },
-                    {
-                        "lightness": 2
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape.man_made",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    },
-                    {
-                        "invert_lightness": false
-                    },
-                    {
-                        "hue": "#767878"
-                    },
-                    {
-                        "saturation": -93
-                    },
-                    {
-                        "lightness": 56
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape.man_made",
-                "elementType": "geometry.stroke",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    },
-                    {
-                        "color": "#b8dbe0"
-                    },
-                    {
-                        "saturation": -7
-                    },
-                    {
-                        "lightness": 33
-                    }
-                ]
-            },
-            {
-                "featureType": "poi",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "saturation": -1
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.park",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#d1e6d7"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.sports_complex",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "saturation": -100
-                    },
-                    {
-                        "lightness": 61
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.school",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    },
-                    {
-                        "saturation": -100
-                    },
-                    {
-                        "lightness": 80
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.place_of_worship",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.business",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "administrative.land_parcel",
-                "elementType": "labels.text",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "color": "#d74340"
-                    },
-                    {
-                        "saturation": -32
-                    }
-                ]
-            },
-            {
-                "featureType": "transit.line",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "transit.station.rail",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#d74340"
-                    }
-                ]
-            },
-            {
-                "featureType": "transit.station.rail",
-                "elementType": "labels.icon",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "lightness": 0
-                    },
-                    {
-                        "gamma": 2.05
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "lightness": 100
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "geometry.stroke",
-                "stylers": [
-                    {
-                        "saturation": -100
-                    },
-                    {
-                        "lightness": 78
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    },
-                    {
-                        "color": "#000000"
-                    },
-                    {
-                        "lightness": 40
-                    }
-                ]
-            },
-            {
-                "featureType": "road.arterial",
-                "elementType": "geometry.stroke",
-                "stylers": [
-                    {
-                        "saturation": -100
-                    },
-                    {
-                        "lightness": 54
-                    }
-                ]
-            },
-            {
-                "featureType": "road.local",
-                "elementType": "geometry.stroke",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    },
-                    {
-                        "saturation": -100
-                    },
-                    {
-                        "lightness": 28
-                    }
-                ]
-            },
-            {
-                "featureType": "road.local",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#ffffff"
-                    }
-                ]
-            }
-        ];
-    }
-    GoogleMapsWidgetComponent.prototype.ngOnInit = function () {
-    };
-    return GoogleMapsWidgetComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('height'),
-    __metadata("design:type", String)
-], GoogleMapsWidgetComponent.prototype, "height", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('lat'),
-    __metadata("design:type", Number)
-], GoogleMapsWidgetComponent.prototype, "lat", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('lng'),
-    __metadata("design:type", Number)
-], GoogleMapsWidgetComponent.prototype, "lng", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('styles'),
-    __metadata("design:type", Object)
-], GoogleMapsWidgetComponent.prototype, "styles", void 0);
-GoogleMapsWidgetComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-google-maps-widget',
-        template: __webpack_require__("../../../../../src/app/core/widgets/google-maps-widget/google-maps-widget.component.html")
-    }),
-    __metadata("design:paramtypes", [])
-], GoogleMapsWidgetComponent);
-
-//# sourceMappingURL=google-maps-widget.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/pie-chart/pie-chart.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"piechart-widget chart-widget mat-elevation-z2\" [style.background]=\"bgColor\">\r\n  <div class=\"title-container\" [style.color]=\"textColor\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n    <div fxLayout=\"column\">\r\n      <span class=\"title\">{{ widgetTitle }}</span>\r\n      <span class=\"extra\">{{ subTitle }}</span>\r\n    </div>\r\n    <span fxFlex></span>\r\n    <button md-icon-button (click)=\"reload()\">\r\n      <md-icon>refresh</md-icon>\r\n    </button>\r\n    <button md-icon-button [mdMenuTriggerFor]=\"options\">\r\n      <md-icon>more_vert</md-icon>\r\n    </button>\r\n  </div>\r\n  <div class=\"chart-container\">\r\n    <nvd3 class=\"intense-colors-pie-chart white-labels-pie-chart\" [options]=\"chartOptions\" [data]=\"data\"></nvd3>\r\n  </div>\r\n  <div class=\"chart-footer\" fxLayout=\"row\">\r\n    <div class=\"border-right text-center\" fxFlex fxLayout=\"column\">\r\n      <span class=\"title\">1096</span>\r\n      <span class=\"extra\">Total Sales</span>\r\n    </div>\r\n    <div class=\"text-center\" fxFlex fxLayout=\"column\">\r\n      <span class=\"title\">598</span>\r\n      <span class=\"extra\">Sales from these Categories</span>\r\n    </div>\r\n  </div>\r\n  <ms-loading-overlay [isLoading]=\"isLoading\"></ms-loading-overlay>\r\n</div>\r\n\r\n<md-menu #options=\"mdMenu\">\r\n  <button md-menu-item>\r\n    <md-icon> settings </md-icon>\r\n    <span> Settings </span>\r\n  </button>\r\n  <button md-menu-item disabled>\r\n    <md-icon> more </md-icon>\r\n    <span> More Info </span>\r\n  </button>\r\n  <button md-menu-item>\r\n    <md-icon> remove_circle </md-icon>\r\n    <span> Remove Widget </span>\r\n  </button>\r\n</md-menu>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/pie-chart/pie-chart.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__ = __webpack_require__("../../../../../src/app/core/charts/nvD3/nvD3.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PieChartComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
-
-var PieChartComponent = (function () {
-    function PieChartComponent(d3ChartService) {
-        this.isLoading = false;
-        this.d3 = d3ChartService.getD3();
-    }
-    PieChartComponent.prototype.ngOnInit = function () {
-        var d3 = this.d3;
-        if (!this.chartOptions) {
-            this.chartOptions = {
-                chart: {
-                    type: 'pieChart',
-                    height: 400,
-                    margin: {
-                        top: 0,
-                        right: 0,
-                        bottom: 0,
-                        left: 0
-                    },
-                    x: function (d) { return d.label; },
-                    y: function (d) { return d.value; },
-                    showXAxis: false,
-                    showYAxis: false,
-                    showLegend: true,
-                    useInteractiveGuideline: true,
-                    donut: true,
-                    color: ['#1E88E5', '#D81B60', '#00897B', '#3949AB', '#e53935']
-                },
-            };
-        }
-    };
-    PieChartComponent.prototype.reload = function () {
-        var _this = this;
-        this.isLoading = true;
-        setTimeout(function () {
-            _this.isLoading = false;
-        }, 3000);
-    };
-    return PieChartComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('data'),
-    __metadata("design:type", Object)
-], PieChartComponent.prototype, "data", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('chartOptions'),
-    __metadata("design:type", Object)
-], PieChartComponent.prototype, "chartOptions", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('widgetTitle'),
-    __metadata("design:type", String)
-], PieChartComponent.prototype, "widgetTitle", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('subTitle'),
-    __metadata("design:type", String)
-], PieChartComponent.prototype, "subTitle", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('bgColor'),
-    __metadata("design:type", String)
-], PieChartComponent.prototype, "bgColor", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('textColor'),
-    __metadata("design:type", String)
-], PieChartComponent.prototype, "textColor", void 0);
-PieChartComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-pie-chart',
-        template: __webpack_require__("../../../../../src/app/core/widgets/pie-chart/pie-chart.component.html")
-    }),
-    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */])),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */]) === "function" && _a || Object])
-], PieChartComponent);
-
-var _a;
-//# sourceMappingURL=pie-chart.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/traffic-sources/traffic-sources.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"traffic-sources-card chart-widget mat-elevation-z2\">\r\n  <div class=\"title-container\" [style.color]=\"textColor\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n    <div fxLayout=\"column\">\r\n      <span class=\"title\">{{ title }}</span>\r\n      <span class=\"extra\">{{ subTitle }}</span>\r\n    </div>\r\n    <span fxFlex></span>\r\n    <button md-icon-button (click)=\"reload()\">\r\n      <md-icon>refresh</md-icon>\r\n    </button>\r\n    <button md-icon-button [mdMenuTriggerFor]=\"options\">\r\n      <md-icon>more_vert</md-icon>\r\n    </button>\r\n  </div>\r\n\r\n  <div class=\"content\" fxLayout=\"column\" fxLayoutAlign=\"space-around stretch\">\r\n\r\n    <div class=\"section\" fxLayout=\"row\" fxLayoutAlign=\"space-between center\" *ngFor=\"let data of chartData\">\r\n\r\n      <div class=\"source\" fxFlex=\"100px\" fxLayout=\"row\" fxLayoutAlign=\"center center\" [style.background-color]=\"data[0].color\">\r\n        {{ data[0].key }}\r\n      </div>\r\n\r\n      <span class=\"value\" fxFlex=\"80px\" fxFlex.gt-sm=\"150px\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n        {{ data[0].sum | number: '1.0-0' }}\r\n      </span>\r\n\r\n      <nvd3 fxFlex fxLayout=\"row\" fxLayoutAlign=\"center center\" [options]=\"chartOptions\" [data]=\"data\"></nvd3>\r\n\r\n    </div>\r\n\r\n  </div>\r\n  <ms-loading-overlay [isLoading]=\"isLoading\"></ms-loading-overlay>\r\n</div>\r\n\r\n<md-menu #options=\"mdMenu\">\r\n  <button md-menu-item>\r\n    <md-icon> settings </md-icon>\r\n    <span> Settings </span>\r\n  </button>\r\n  <button md-menu-item disabled>\r\n    <md-icon> more </md-icon>\r\n    <span> More Info </span>\r\n  </button>\r\n  <button md-menu-item>\r\n    <md-icon> remove_circle </md-icon>\r\n    <span> Remove Widget </span>\r\n  </button>\r\n</md-menu>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/traffic-sources/traffic-sources.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__ = __webpack_require__("../../../../../src/app/core/charts/nvD3/nvD3.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrafficSourcesComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var TrafficSourcesComponent = (function () {
-    function TrafficSourcesComponent(nvD3Service) {
-        this.title = 'Traffic Sources';
-        this.subTitle = 'Total Visits over the last week';
-        this.isLoading = false;
-        this.d3 = nvD3Service.getD3();
-    }
-    TrafficSourcesComponent.prototype.ngOnInit = function () {
-        var d3 = this.d3;
-        this.chartOptions = {
-            chart: {
-                type: 'lineChart',
-                height: 50,
-                margin: {
-                    top: 0,
-                    right: 0,
-                    bottom: 0,
-                    left: 0
-                },
-                x: function (d) { return d.date; },
-                y: function (d) { return d.value; },
-                showXAxis: false,
-                showYAxis: false,
-                xAxis: {
-                    ticks: d3.time.days,
-                    axisLabel: '',
-                    tickFormat: function (d) {
-                        return d3.time.format('%a %d.%m.%Y')(new Date(d));
-                    }
-                },
-                showLegend: false,
-                useInteractiveGuideline: true
-            },
-        };
-    };
-    TrafficSourcesComponent.prototype.reload = function () {
-        var _this = this;
-        this.isLoading = true;
-        setTimeout(function () {
-            _this.isLoading = false;
-        }, 3000);
-    };
-    return TrafficSourcesComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('title'),
-    __metadata("design:type", String)
-], TrafficSourcesComponent.prototype, "title", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('subTitle'),
-    __metadata("design:type", String)
-], TrafficSourcesComponent.prototype, "subTitle", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('chartData'),
-    __metadata("design:type", Array)
-], TrafficSourcesComponent.prototype, "chartData", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('chartOptions'),
-    __metadata("design:type", Object)
-], TrafficSourcesComponent.prototype, "chartOptions", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('textColor'),
-    __metadata("design:type", Object)
-], TrafficSourcesComponent.prototype, "textColor", void 0);
-TrafficSourcesComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-traffic-sources',
-        template: __webpack_require__("../../../../../src/app/core/widgets/traffic-sources/traffic-sources.component.html")
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */]) === "function" && _a || Object])
-], TrafficSourcesComponent);
-
-var _a;
-//# sourceMappingURL=traffic-sources.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/widgets-v1/source-overview-widget/source-overview-widget.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<md-card class=\"widget source-overview-widget\">\r\n  <md-card-title fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n    <span class=\"name\">{{ options.name }}</span>\r\n    <button md-icon-button [mdMenuTriggerFor]=\"menu\">\r\n      <md-icon>more_vert</md-icon>\r\n    </button>\r\n  </md-card-title>\r\n\r\n  <md-divider></md-divider>\r\n\r\n  <md-card-content>\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"space-around stretch\">\r\n\r\n      <div class=\"section\" fxLayout=\"row\" fxLayoutAlign=\"space-between center\" *ngFor=\"let chartData of chartDataArray\">\r\n        <div fxFlex=\"100px\" fxLayout=\"row\" fxLayoutAlign=\"center center\" class=\"source\" [style.background-color]=\"chartData[0].color\">\r\n          {{ chartData[0].key }}\r\n        </div>\r\n        <span fxFlex fxLayout=\"row\" fxLayoutAlign=\"center center\" class=\"value\">\r\n          {{ chartData[0].sum | number: '1.0-0' }}\r\n        </span>\r\n        <nvd3 fxFlex fxLayout=\"row\" fxLayoutAlign=\"center center\" [options]=\"chartOptions\" [data]=\"chartData\"></nvd3>\r\n      </div>\r\n\r\n    </div>\r\n  </md-card-content>\r\n</md-card>\r\n\r\n<md-menu #menu=\"mdMenu\">\r\n  <button md-menu-item>\r\n    <md-icon> settings </md-icon>\r\n    <span> Settings </span>\r\n  </button>\r\n  <button md-menu-item disabled>\r\n    <md-icon> more </md-icon>\r\n    <span> More Info </span>\r\n  </button>\r\n  <button md-menu-item>\r\n    <md-icon> remove_circle </md-icon>\r\n    <span> Remove Widget </span>\r\n  </button>\r\n</md-menu>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/widgets-v1/source-overview-widget/source-overview-widget.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".widget {\n  color: #333;\n  margin: 12px;\n  width: 100%; }\n  .widget .name {\n    font-size: 22px; }\n  .widget .source {\n    font-size: 16px;\n    color: #FFF;\n    background-color: #000;\n    padding: 5px 0;\n    border-radius: 15px; }\n  .widget .value {\n    color: #555;\n    font-size: 20px;\n    font-weight: 500; }\n  .widget md-card-content {\n    position: relative;\n    height: calc(100% - 57px); }\n  .widget md-card-content > div {\n    height: 100%; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/widgets-v1/source-overview-widget/source-overview-widget.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__ = __webpack_require__("../../../../../src/app/core/charts/nvD3/nvD3.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SourceOverviewWidgetComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var SourceOverviewWidgetComponent = (function () {
-    function SourceOverviewWidgetComponent(nvD3Service) {
-        this.d3 = nvD3Service.getD3();
-    }
-    SourceOverviewWidgetComponent.prototype.ngOnInit = function () {
-        var d3 = this.d3;
-        this.chartOptions = {
-            chart: {
-                type: 'lineChart',
-                height: 40,
-                margin: {
-                    top: 10,
-                    right: 0,
-                    bottom: 0,
-                    left: 0
-                },
-                x: function (d) { return d.date; },
-                y: function (d) { return d.value; },
-                showXAxis: false,
-                showYAxis: false,
-                xAxis: {
-                    ticks: d3.time.days,
-                    axisLabel: '',
-                    tickFormat: function (d) {
-                        return d3.time.format('%a %d.%m.%Y')(new Date(d));
-                    }
-                },
-                interpolate: 'cardinal',
-                showLegend: false,
-                useInteractiveGuideline: true
-            },
-        };
-    };
-    return SourceOverviewWidgetComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('chartDataArray'),
-    __metadata("design:type", Object)
-], SourceOverviewWidgetComponent.prototype, "chartDataArray", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('options'),
-    __metadata("design:type", Object)
-], SourceOverviewWidgetComponent.prototype, "options", void 0);
-SourceOverviewWidgetComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-source-overview-widget',
-        template: __webpack_require__("../../../../../src/app/core/widgets/widgets-v1/source-overview-widget/source-overview-widget.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/core/widgets/widgets-v1/source-overview-widget/source-overview-widget.component.scss")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */]) === "function" && _a || Object])
-], SourceOverviewWidgetComponent);
-
-var _a;
-//# sourceMappingURL=source-overview-widget.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/widgets-v1/widget-v1/widget-v1.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<md-card class=\"widget\">\r\n  <md-card-title fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n    <md-icon class=\"icon\">{{ options.icon }}</md-icon>\r\n    <span class=\"name\">{{ options.name }}</span>\r\n    <span fxFlex></span>\r\n    <span class=\"number\">{{ options.number | number: '1.0-0' }}</span>\r\n  </md-card-title>\r\n  <md-card-subtitle>\r\n    <md-icon class=\"arrow\"\r\n             [class.green]=\"options.gain > 0\"\r\n             [class.red]=\"options.gain < 0\">\r\n      {{ options.arrow }}\r\n    </md-icon>\r\n    <span class=\"description\">{{ options.gain }}{{ options.description }}</span>\r\n  </md-card-subtitle>\r\n\r\n  <md-card-content>\r\n    <nvd3 class=\"fill-bg-opacity\" [options]=\"chartOptions\" [data]=\"data\"></nvd3>\r\n  </md-card-content>\r\n</md-card>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/widgets-v1/widget-v1/widget-v1.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".widget {\n  margin: 12px;\n  color: #333; }\n  .widget .icon {\n    vertical-align: middle;\n    color: #7A8B93; }\n  .widget .name {\n    margin-left: 10px;\n    font-size: 18px; }\n  .widget .number {\n    font-size: 30px;\n    font-weight: 300;\n    letter-spacing: 0.05em; }\n  .widget .arrow {\n    width: 22px;\n    height: 22px;\n    font-size: 22px;\n    vertical-align: top; }\n    .widget .arrow.red {\n      color: red; }\n    .widget .arrow.green {\n      color: green; }\n  .widget .description {\n    font-size: 16px; }\n  .widget md-card-title {\n    margin-bottom: 10px; }\n  .widget md-card-subtitle {\n    margin-bottom: 20px; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/widgets/widgets-v1/widget-v1/widget-v1.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__ = __webpack_require__("../../../../../src/app/core/charts/nvD3/nvD3.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WidgetComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var WidgetComponent = (function () {
-    function WidgetComponent(d3ChartService) {
-        this.d3 = d3ChartService.getD3();
-    }
-    WidgetComponent.prototype.ngOnInit = function () {
-        var d3 = this.d3;
-        this.chartOptions = {
-            chart: {
-                type: 'lineChart',
-                height: 60,
-                margin: {
-                    top: 10,
-                    right: 0,
-                    bottom: 0,
-                    left: 0
-                },
-                x: function (d) { return d.date; },
-                y: function (d) { return d.value; },
-                showXAxis: false,
-                showYAxis: false,
-                xAxis: {
-                    ticks: d3.time.days,
-                    axisLabel: '',
-                    tickFormat: function (d) {
-                        return d3.time.format('%a %d.%m.%Y')(new Date(d));
-                    }
-                },
-                interpolate: 'cardinal',
-                showLegend: false,
-                useInteractiveGuideline: true
-            },
-        };
-    };
-    return WidgetComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('data'),
-    __metadata("design:type", Object)
-], WidgetComponent.prototype, "data", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('options'),
-    __metadata("design:type", Object)
-], WidgetComponent.prototype, "options", void 0);
-WidgetComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-widget-v1',
-        template: __webpack_require__("../../../../../src/app/core/widgets/widgets-v1/widget-v1/widget-v1.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/core/widgets/widgets-v1/widget-v1/widget-v1.component.scss")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__charts_nvD3_nvD3_service__["a" /* D3ChartService */]) === "function" && _a || Object])
-], WidgetComponent);
-
-var _a;
-//# sourceMappingURL=widget-v1.component.js.map
+var _a, _b;
+//# sourceMappingURL=home.component.js.map
 
 /***/ }),
 
@@ -3198,32 +1630,28 @@ var _a;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_widgets_widgets_v1_widget_v1_widget_v1_component__ = __webpack_require__("../../../../../src/app/core/widgets/widgets-v1/widget-v1/widget-v1.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__core_widgets_widgets_v1_source_overview_widget_source_overview_widget_component__ = __webpack_require__("../../../../../src/app/core/widgets/widgets-v1/source-overview-widget/source-overview-widget.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_charts_nvD3_nvD3_component__ = __webpack_require__("../../../../../src/app/core/charts/nvD3/nvD3.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_widgets_bar_chart_bar_chart_component__ = __webpack_require__("../../../../../src/app/core/widgets/bar-chart/bar-chart.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_widgets_pie_chart_pie_chart_component__ = __webpack_require__("../../../../../src/app/core/widgets/pie-chart/pie-chart.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_widgets_google_maps_widget_google_maps_widget_component__ = __webpack_require__("../../../../../src/app/core/widgets/google-maps-widget/google-maps-widget.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_widgets_activity_activity_component__ = __webpack_require__("../../../../../src/app/core/widgets/activity/activity.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__core_widgets_traffic_sources_traffic_sources_component__ = __webpack_require__("../../../../../src/app/core/widgets/traffic-sources/traffic-sources.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__core_loading_overlay_loading_overlay_component__ = __webpack_require__("../../../../../src/app/core/loading-overlay/loading-overlay.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular_sortablejs__ = __webpack_require__("../../../../angular-sortablejs/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular_sortablejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_angular_sortablejs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__core_charts_nvD3_nvD3_service__ = __webpack_require__("../../../../../src/app/core/charts/nvD3/nvD3.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular_calendar__ = __webpack_require__("../../../../angular-calendar/dist/esm/src/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__material_material_components_module__ = __webpack_require__("../../../../../src/app/material/material-components.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__core_highlightjs_highlight_module__ = __webpack_require__("../../../../../src/app/core/highlightjs/highlight.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ngx_perfect_scrollbar__ = __webpack_require__("../../../../ngx-perfect-scrollbar/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_ngx_perfect_scrollbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ngx_quill__ = __webpack_require__("../../../../ngx-quill/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__projects_projects_module__ = __webpack_require__("../../../../../src/app/main/projects/projects.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_sidenav_sidenav_component__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__core_sidenav_sidenav_item_sidenav_item_component__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav-item/sidenav-item.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_sidenav_icon_sidenav_directive__ = __webpack_require__("../../../../../src/app/core/sidenav/icon-sidenav.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_toolbar_search_search_component__ = __webpack_require__("../../../../../src/app/core/toolbar/search/search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_breadcrumb_breadcrumb_component__ = __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_quickpanel_quickpanel_component__ = __webpack_require__("../../../../../src/app/core/quickpanel/quickpanel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_toolbar_toolbar_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__core_toolbar_toolbar_user_button_toolbar_user_button_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__core_utils_click_outside_directive__ = __webpack_require__("../../../../../src/app/core/utils/click-outside.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__core_toolbar_search_bar_search_bar_component__ = __webpack_require__("../../../../../src/app/core/toolbar/search-bar/search-bar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__core_toolbar_toolbar_notifications_toolbar_notifications_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__core_sidenav_sidenav_service__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__core_sidenav_mediareplay_media_replay_service__ = __webpack_require__("../../../../../src/app/core/sidenav/mediareplay/media-replay.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__core_breadcrumb_breadcrumb_service__ = __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__material_material_components_module__ = __webpack_require__("../../../../../src/app/material/material-components.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__ = __webpack_require__("../../../../ngx-perfect-scrollbar/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__home_home_component__ = __webpack_require__("../../../../../src/app/main/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__projects_projects_module__ = __webpack_require__("../../../../../src/app/main/projects/projects.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3236,26 +1664,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //import { LoginComponent } from './custom-pages/login/login.component';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 var MainModule = (function () {
@@ -3267,39 +1692,32 @@ MainModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
-            __WEBPACK_IMPORTED_MODULE_15__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_16__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_16__angular_forms__["b" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_16__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_17__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_18__app_routing_module__["a" /* RoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_19__material_material_components_module__["a" /* MaterialComponentsModule */],
-            __WEBPACK_IMPORTED_MODULE_20__angular_flex_layout__["a" /* FlexLayoutModule */],
-            __WEBPACK_IMPORTED_MODULE_21__agm_core__["a" /* AgmCoreModule */].forRoot({
-                apiKey: __WEBPACK_IMPORTED_MODULE_11__environments_environment__["a" /* environment */].googleApi
-            }),
-            __WEBPACK_IMPORTED_MODULE_24_ngx_quill__["a" /* QuillModule */],
-            __WEBPACK_IMPORTED_MODULE_22__core_highlightjs_highlight_module__["a" /* HighlightModule */],
-            __WEBPACK_IMPORTED_MODULE_12_angular_sortablejs__["SortablejsModule"],
-            __WEBPACK_IMPORTED_MODULE_25__projects_projects_module__["a" /* ProjectsModule */],
-            __WEBPACK_IMPORTED_MODULE_14_angular_calendar__["a" /* CalendarModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_23_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forChild(),
-        ],
+            __WEBPACK_IMPORTED_MODULE_18__angular_router__["a" /* RouterModule */],
+            __WEBPACK_IMPORTED_MODULE_16__material_material_components_module__["a" /* MaterialComponentsModule */],
+            __WEBPACK_IMPORTED_MODULE_19__angular_flex_layout__["a" /* FlexLayoutModule */],
+            __WEBPACK_IMPORTED_MODULE_20__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forChild()
+        ].concat(__WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].imports),
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__core_widgets_widgets_v1_widget_v1_widget_v1_component__["a" /* WidgetComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__core_widgets_widgets_v1_source_overview_widget_source_overview_widget_component__["a" /* SourceOverviewWidgetComponent */],
-            __WEBPACK_IMPORTED_MODULE_4__core_charts_nvD3_nvD3_component__["a" /* nvD3 */],
-            //LoginComponent,
-            __WEBPACK_IMPORTED_MODULE_5__core_widgets_bar_chart_bar_chart_component__["a" /* BarChartComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__core_widgets_pie_chart_pie_chart_component__["a" /* PieChartComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__core_widgets_google_maps_widget_google_maps_widget_component__["a" /* GoogleMapsWidgetComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__core_widgets_activity_activity_component__["a" /* ActivityComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__core_widgets_traffic_sources_traffic_sources_component__["a" /* TrafficSourcesComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__core_loading_overlay_loading_overlay_component__["a" /* LoadingOverlayComponent */],
-        ],
+            __WEBPACK_IMPORTED_MODULE_2__core_sidenav_sidenav_component__["a" /* SidenavComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__core_sidenav_sidenav_item_sidenav_item_component__["a" /* SidenavItemComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__core_sidenav_icon_sidenav_directive__["a" /* IconSidenavDirective */],
+            __WEBPACK_IMPORTED_MODULE_5__core_toolbar_search_search_component__["a" /* SearchComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__core_breadcrumb_breadcrumb_component__["a" /* BreadcrumbsComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__core_quickpanel_quickpanel_component__["a" /* QuickpanelComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__core_toolbar_toolbar_component__["a" /* ToolbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__core_toolbar_toolbar_user_button_toolbar_user_button_component__["a" /* ToolbarUserButtonComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__core_utils_click_outside_directive__["a" /* ClickOutsideDirective */],
+            __WEBPACK_IMPORTED_MODULE_11__core_toolbar_search_bar_search_bar_component__["a" /* SearchBarComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__core_toolbar_toolbar_notifications_toolbar_notifications_component__["a" /* ToolbarNotificationsComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__home_home_component__["a" /* HomeComponent */]
+        ].concat(__WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].declarations),
+        entryComponents: __WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].entryComponents.slice(),
         providers: [
-            __WEBPACK_IMPORTED_MODULE_13__core_charts_nvD3_nvD3_service__["a" /* D3ChartService */]
-        ]
+            __WEBPACK_IMPORTED_MODULE_13__core_sidenav_sidenav_service__["a" /* SidenavService */],
+            __WEBPACK_IMPORTED_MODULE_14__core_sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */],
+            __WEBPACK_IMPORTED_MODULE_15__core_breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]
+        ].concat(__WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].providers)
     })
 ], MainModule);
 
@@ -3310,7 +1728,7 @@ MainModule = __decorate([
 /***/ "../../../../../src/app/main/projects/edit-project.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"start\">\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\n    <md-toolbar color=\"primary\">Edit Project</md-toolbar>\n    <md-card-content>\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\n        <div fxLayout fxLayoutWrap>\n          <md-input-container fxFlex=\"50\">\n            <input mdInput\n                   name=\"name\"\n                   placeholder=\"Name\"\n                   required\n                   [(ngModel)]=\"project.name\"\n                   formControlName=\"name\"\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\n            </md-hint>\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"title\"\n                   required\n                   placeholder=\"Title\"\n                   [(ngModel)]=\"project.title\"\n                   formControlName=\"title\"\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\n            </md-hint>\n\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"rootNamespace\"\n                   required\n                   placeholder=\"RootNamespace\"\n                   [(ngModel)]=\"project.rootNamespace\"\n                   formControlName=\"rootNamespace\"\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\n\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\n            </md-hint>\n\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"companyName\"\n                   required\n                   placeholder=\"CompanyName\"\n                   [(ngModel)]=\"project.companyName\"\n                   formControlName=\"companyName\"\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\n\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\n            </md-hint>\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"description\"\n                   placeholder=\"Description\"\n                   [(ngModel)]=\"project.description\"\n                   formControlName=\"description\" />\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\n            <label class=\"control-label\">\n             {{ serverErrorMessage}}             \n            </label>\n          </div>\n        </div>\n\n        <div fxLayout=\"column\">\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\n            <button md-raised-button\n                    type=\"button\" (click)=\"cancelChanges($event);\">\n              Cancel\n            </button>\n            <button md-button color=\"primary\"\n                    md-raised-button\n                    style=\"margin-left: 8px;\"\n                    type=\"submit\"\n                    [disabled]=\"!projForm.valid\">\n              Save\n            </button>\n          </div>\n        </div>\n      </form>\n    </md-card-content>\n  </md-card>\n</div>\n\n"
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"start\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Edit Project</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"project.name\"\r\n                   formControlName=\"name\"\r\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\r\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"project.title\"\r\n                   formControlName=\"title\"\r\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\r\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\r\n            </md-hint>\r\n\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   required\r\n                   placeholder=\"RootNamespace\"\r\n                   [(ngModel)]=\"project.rootNamespace\"\r\n                   formControlName=\"rootNamespace\"\r\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\r\n\r\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\r\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\r\n            </md-hint>\r\n\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   required\r\n                   placeholder=\"CompanyName\"\r\n                   [(ngModel)]=\"project.companyName\"\r\n                   formControlName=\"companyName\"\r\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\r\n\r\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\r\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"project.description\"\r\n                   formControlName=\"description\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n             {{ serverErrorMessage}}             \r\n            </label>\r\n          </div>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!projForm.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -3421,7 +1839,7 @@ EditProjectComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/main/projects/edit-project.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/projects/edit-project.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_projects_service__["a" /* ProjectsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_projects_service__["a" /* ProjectsService */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_projects_service__["a" /* ProjectsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_projects_service__["a" /* ProjectsService */]) === "function" && _d || Object])
 ], EditProjectComponent);
 
 var _a, _b, _c, _d;
@@ -3432,7 +1850,7 @@ var _a, _b, _c, _d;
 /***/ "../../../../../src/app/main/projects/list-project.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dashboard-container\" fxLayout=\"column\" fxLayoutAlign=\"start stretch\">\n\n  <div class=\"fixed-action-btn\" style=\"bottom: 45px; right: 24px;\">\n    <a class=\"btn-floating btn-large waves-effect waves-light green\"\n       routerLink=\"/projects/new\">\n      <i class=\"material-icons\">add</i>\n    </a>\n  </div>\n\n  <div fxLayout=\"column\" fxLayout.gt-md=\"row\" style=\"height: 100%;\">\n    <div fxFlex class=\"table-container mat-elevation-z2\">\n      <div class=\"table-header\" fxLayout=\"row\" [class.table-condensed]=\"tableCondensed\">\n        <div [style.width.px]=\"cellWidths[0]\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n          <span class=\"name\">Name</span>\n        </div>\n        <div [style.width.px]=\"cellWidths[1]\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n          <span class=\"name\">Title</span>\n        </div>\n        <div [style.width.px]=\"cellWidths[2]\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n          <span class=\"name\">Description</span>\n        </div>\n        <div [style.width.px]=\"cellWidths[3]\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n          <span class=\"name\">RootNamespace</span>\n        </div>\n        <div [style.width.px]=\"cellWidths[4]\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n          <span class=\"name\">CompanyName</span>\n        </div>\n        <div [style.width.px]=\"cellWidths[5]\"></div>\n        <div [style.width.px]=\"cellWidths[6]\"></div>\n        <div [style.width.px]=\"cellWidths[7]\"></div>\n      </div>\n\n      <div class=\"table-content\">\n        <table class=\"table\" [class.table-hover]=\"tableHover\" [class.table-striped]=\"tableStriped\" [class.table-condensed]=\"tableCondensed\" [class.table-bordered]=\"tableBordered\">\n          <tbody #tbody>\n            <tr *ngFor=\"let project of projects\">\n              <td>{{ project.name }}</td>\n              <td>{{ project.title }}</td>\n              <td>{{ project.description }}</td>\n              <td>{{ project.rootNamespace }}</td>\n              <td>{{ project.companyName }}</td>            \n\n              <td><button md-icon-button (click)=\"viewProject(project.id);\"><md-icon>pageview</md-icon></button></td>\n              <td><button md-icon-button (click)=\"editProject(project.id);\"><md-icon>edit</md-icon></button></td>\n              <td><button md-icon-button (click)=\"deleteProject(project.id);\"><md-icon>delete</md-icon></button></td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"dashboard-container\" fxLayout=\"column\" fxLayoutAlign=\"start stretch\">\r\n\r\n  <div class=\"fixed-action-btn\" style=\"bottom: 45px; right: 24px;\">\r\n    <a class=\"btn-floating btn-large waves-effect waves-light green\"\r\n       routerLink=\"/projects/new\">\r\n      <i class=\"material-icons\">add</i>\r\n    </a>\r\n  </div>\r\n\r\n  <div fxLayout=\"column\" fxLayout.gt-md=\"row\" style=\"height: 100%;\">\r\n    <div fxFlex class=\"table-container mat-elevation-z2\">\r\n      <div class=\"table-header\" fxLayout=\"row\" [class.table-condensed]=\"tableCondensed\">\r\n        <div [style.width.px]=\"cellWidths[0]\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <span class=\"name\">Name</span>\r\n        </div>\r\n        <div [style.width.px]=\"cellWidths[1]\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <span class=\"name\">Title</span>\r\n        </div>\r\n        <div [style.width.px]=\"cellWidths[2]\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <span class=\"name\">Description</span>\r\n        </div>\r\n        <div [style.width.px]=\"cellWidths[3]\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <span class=\"name\">RootNamespace</span>\r\n        </div>\r\n        <div [style.width.px]=\"cellWidths[4]\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <span class=\"name\">CompanyName</span>\r\n        </div>\r\n        <div [style.width.px]=\"cellWidths[5]\"></div>\r\n        <div [style.width.px]=\"cellWidths[6]\"></div>\r\n        <div [style.width.px]=\"cellWidths[7]\"></div>\r\n      </div>\r\n\r\n      <div class=\"table-content\">\r\n        <table class=\"table\" [class.table-hover]=\"tableHover\" [class.table-striped]=\"tableStriped\" [class.table-condensed]=\"tableCondensed\" [class.table-bordered]=\"tableBordered\">\r\n          <tbody #tbody>\r\n            <tr *ngFor=\"let project of projects\">\r\n              <td>{{ project.name }}</td>\r\n              <td>{{ project.title }}</td>\r\n              <td>{{ project.description }}</td>\r\n              <td>{{ project.rootNamespace }}</td>\r\n              <td>{{ project.companyName }}</td>            \r\n\r\n              <td><button md-icon-button (click)=\"viewProject(project.id);\"><md-icon>pageview</md-icon></button></td>\r\n              <td><button md-icon-button (click)=\"editProject(project.id);\"><md-icon>edit</md-icon></button></td>\r\n              <td><button md-icon-button (click)=\"deleteProject(project.id);\"><md-icon>delete</md-icon></button></td>\r\n            </tr>\r\n          </tbody>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -3547,7 +1965,7 @@ ListProjectComponent = __decorate([
         },
         animations: [__WEBPACK_IMPORTED_MODULE_2__route_animation__["a" /* routeAnimation */]]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__shared_projects_service__["a" /* ProjectsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_projects_service__["a" /* ProjectsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdDialog */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__shared_projects_service__["a" /* ProjectsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_projects_service__["a" /* ProjectsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["d" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["d" /* MdDialog */]) === "function" && _d || Object])
 ], ListProjectComponent);
 
 var DemoDialog = (function () {
@@ -3561,7 +1979,7 @@ DemoDialog = __decorate([
         selector: 'ms-demo-dialog',
         template: "<h1>Would you like to delete Project?</h1>\n  <md-dialog-actions align=\"end\">\n    <button md-button (click)=\"dialogRef.close('No')\">No</button>\n    <button md-button color=\"primary\" (click)=\"dialogRef.close('Yes')\">Yes</button>\n  </md-dialog-actions>"
     }),
-    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["d" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["d" /* MdDialogRef */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MdDialogRef */]) === "function" && _e || Object])
 ], DemoDialog);
 
 var _a, _b, _c, _d, _e;
@@ -3572,7 +1990,7 @@ var _a, _b, _c, _d, _e;
 /***/ "../../../../../src/app/main/projects/new-project.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"start\">\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\n    <md-toolbar color=\"primary\">Add Project</md-toolbar>\n    <md-card-content>\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\n        <div fxLayout fxLayoutWrap>\n          <md-input-container fxFlex=\"50\">\n            <input mdInput\n                   name=\"name\"\n                   placeholder=\"Name\"\n                   required\n                   [(ngModel)]=\"project.name\"\n                   formControlName=\"name\"\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\n            </md-hint>\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"title\"\n                   required\n                   placeholder=\"Title\"\n                   [(ngModel)]=\"project.title\"\n                   formControlName=\"title\"\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\n            </md-hint>\n\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"rootNamespace\"\n                   required\n                   placeholder=\"RootNamespace\"\n                   [(ngModel)]=\"project.rootNamespace\"\n                   formControlName=\"rootNamespace\"\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\n\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\n            </md-hint>\n\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"companyName\"\n                   required\n                   placeholder=\"CompanyName\"\n                   [(ngModel)]=\"project.companyName\"\n                   formControlName=\"companyName\"\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\n\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\n            </md-hint>\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"description\"\n                   placeholder=\"Description\"\n                   [(ngModel)]=\"project.description\"\n                   formControlName=\"description\" />\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\n            <label class=\"control-label\">\n              {{ serverErrorMessage}}\n            </label>\n          </div>\n        </div>\n\n        <div fxLayout=\"column\">\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\n            <button md-raised-button\n                    type=\"button\" (click)=\"cancelChanges($event);\">\n              Cancel\n            </button>\n            <button md-button color=\"primary\"\n                    md-raised-button\n                    style=\"margin-left: 8px;\"\n                    type=\"submit\"\n                    [disabled]=\"!projForm.valid\">\n              Save\n            </button>\n          </div>\n        </div>\n      </form>\n    </md-card-content>\n  </md-card>\n</div>\n\n"
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"start\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Add Project</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"project.name\"\r\n                   formControlName=\"name\"\r\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\r\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"project.title\"\r\n                   formControlName=\"title\"\r\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\r\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\r\n            </md-hint>\r\n\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   required\r\n                   placeholder=\"RootNamespace\"\r\n                   [(ngModel)]=\"project.rootNamespace\"\r\n                   formControlName=\"rootNamespace\"\r\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\r\n\r\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\r\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\r\n            </md-hint>\r\n\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   required\r\n                   placeholder=\"CompanyName\"\r\n                   [(ngModel)]=\"project.companyName\"\r\n                   formControlName=\"companyName\"\r\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\r\n\r\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\r\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"project.description\"\r\n                   formControlName=\"description\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n              {{ serverErrorMessage}}\r\n            </label>\r\n          </div>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!projForm.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -3673,7 +2091,7 @@ NewProjectComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/main/projects/new-project.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/projects/new-project.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_projects_service__["a" /* ProjectsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_projects_service__["a" /* ProjectsService */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_projects_service__["a" /* ProjectsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_projects_service__["a" /* ProjectsService */]) === "function" && _d || Object])
 ], NewProjectComponent);
 
 var _a, _b, _c, _d;
@@ -3685,72 +2103,53 @@ var _a, _b, _c, _d;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__list_project_component__ = __webpack_require__("../../../../../src/app/main/projects/list-project.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__new_project_component__ = __webpack_require__("../../../../../src/app/main/projects/new-project.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__edit_project_component__ = __webpack_require__("../../../../../src/app/main/projects/edit-project.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__view_project_component__ = __webpack_require__("../../../../../src/app/main/projects/view-project.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__shared_projects_service__ = __webpack_require__("../../../../../src/app/main/projects/shared/projects.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjectsModule; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__list_project_component__ = __webpack_require__("../../../../../src/app/main/projects/list-project.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__new_project_component__ = __webpack_require__("../../../../../src/app/main/projects/new-project.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__edit_project_component__ = __webpack_require__("../../../../../src/app/main/projects/edit-project.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__view_project_component__ = __webpack_require__("../../../../../src/app/main/projects/view-project.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared_projects_service__ = __webpack_require__("../../../../../src/app/main/projects/shared/projects.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return projectConfig; });
+
+
+
+
+
+
+
+
+
+
+
+var projectConfig = {
+    imports: [
+        __WEBPACK_IMPORTED_MODULE_0__angular_common__["CommonModule"],
+        __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormsModule */],
+        __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MaterialModule */],
+        __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* ReactiveFormsModule */],
+        __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* RouterModule */],
+        __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
+        __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__["a" /* FlexLayoutModule */],
+    ],
+    declarations: [
+        __WEBPACK_IMPORTED_MODULE_6__list_project_component__["a" /* ListProjectComponent */],
+        __WEBPACK_IMPORTED_MODULE_6__list_project_component__["b" /* DemoDialog */],
+        __WEBPACK_IMPORTED_MODULE_7__new_project_component__["a" /* NewProjectComponent */],
+        __WEBPACK_IMPORTED_MODULE_8__edit_project_component__["a" /* EditProjectComponent */],
+        __WEBPACK_IMPORTED_MODULE_9__view_project_component__["a" /* ViewProjectComponent */]
+    ],
+    entryComponents: [
+        __WEBPACK_IMPORTED_MODULE_6__list_project_component__["b" /* DemoDialog */]
+    ],
+    providers: [
+        __WEBPACK_IMPORTED_MODULE_10__shared_projects_service__["a" /* ProjectsService */]
+    ]
 };
-
-
-
-
-
-
-
-
-
-
-
-
-var ProjectsModule = (function () {
-    function ProjectsModule() {
-    }
-    return ProjectsModule;
-}());
-ProjectsModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_material__["b" /* MaterialModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__["a" /* FlexLayoutModule */],
-        ],
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_7__list_project_component__["a" /* ListProjectComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__list_project_component__["b" /* DemoDialog */],
-            __WEBPACK_IMPORTED_MODULE_8__new_project_component__["a" /* NewProjectComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__edit_project_component__["a" /* EditProjectComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__view_project_component__["a" /* ViewProjectComponent */]
-        ],
-        entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_7__list_project_component__["b" /* DemoDialog */]
-        ],
-        exports: [
-            __WEBPACK_IMPORTED_MODULE_7__list_project_component__["a" /* ListProjectComponent */]
-        ],
-        providers: [
-            __WEBPACK_IMPORTED_MODULE_11__shared_projects_service__["a" /* ProjectsService */]
-        ]
-    })
-], ProjectsModule);
-
 //# sourceMappingURL=projects.module.js.map
 
 /***/ }),
@@ -3840,7 +2239,7 @@ var _a;
 /***/ "../../../../../src/app/main/projects/view-project.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"start\">\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\n    <md-toolbar color=\"primary\">View Project</md-toolbar>\n    <md-card-content>\n      <form>\n        <div fxLayout fxLayoutWrap>\n          <md-input-container fxFlex=\"50\">\n            <input mdInput\n                   name=\"name\"\n                   [disabled]=\"true\"\n                   [(ngModel)]=\"project.name\" />\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"title\"\n                   [disabled]=\"true\"\n                   [(ngModel)]=\"project.title\" />\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"rootNamespace\"\n                   [disabled]=\"true\"\n                   [(ngModel)]=\"project.rootNamespace\" />\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"companyName\"\n                   [disabled]=\"true\"\n                   [(ngModel)]=\"project.companyName\" />\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <md-input-container>\n            <input mdInput\n                   name=\"description\"\n                   [disabled]=\"true\"\n                   [(ngModel)]=\"project.description\" />\n          </md-input-container>\n        </div>\n\n        <div fxLayout=\"column\">\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\n            <button md-raised-button\n                    type=\"button\" (click)=\"cancelChanges($event);\">\n              Go Back\n            </button>\n          </div>\n        </div>\n      </form>\n    </md-card-content>\n  </md-card>\n</div>\n\n"
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"start\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">View Project</md-toolbar>\r\n    <md-card-content>\r\n      <form>\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.name\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.title\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.rootNamespace\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.companyName\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.description\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Go Back\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -3918,7 +2317,7 @@ ViewProjectComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/main/projects/view-project.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/projects/view-project.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__shared_projects_service__["a" /* ProjectsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_projects_service__["a" /* ProjectsService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__shared_projects_service__["a" /* ProjectsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_projects_service__["a" /* ProjectsService */]) === "function" && _c || Object])
 ], ViewProjectComponent);
 
 var _a, _b, _c;
@@ -3955,28 +2354,28 @@ MaterialComponentsModule = __decorate([
         ],
         declarations: [],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MdInputModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MdTabsModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MdIconModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdListModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MdDialogModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["l" /* MdMenuModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MdGridListModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["n" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["o" /* MdSnackBarModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MdTooltipModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MdSliderModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MdAutocompleteModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MdDatepickerModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MdSlideToggleModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["u" /* MdSidenavModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["v" /* MdCheckboxModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["w" /* MdNativeDateModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["x" /* MdProgressBarModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["y" /* MdProgressSpinnerModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["z" /* MdSelectModule */]
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MdTabsModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MdListModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["l" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["n" /* MdGridListModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["o" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MdSnackBarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MdTooltipModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MdSliderModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MdAutocompleteModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MdDatepickerModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["u" /* MdSlideToggleModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["v" /* MdSidenavModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["w" /* MdCheckboxModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["x" /* MdNativeDateModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["y" /* MdProgressBarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["z" /* MdProgressSpinnerModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["A" /* MdSelectModule */]
         ]
     })
 ], MaterialComponentsModule);

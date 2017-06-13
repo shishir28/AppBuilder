@@ -12,7 +12,7 @@ import { EditProjectComponent } from './edit-project.component';
 import { ViewProjectComponent } from './view-project.component';
 import { ProjectsService } from './shared/projects.service';
 
-@NgModule({
+export const projectConfig: NgModule = {
     imports: [
         CommonModule,
         FormsModule,
@@ -21,8 +21,8 @@ import { ProjectsService } from './shared/projects.service';
         RouterModule,
         HttpModule,
         FlexLayoutModule,
-
     ],
+
     declarations: [
         ListProjectComponent,
         DemoDialog,
@@ -33,11 +33,9 @@ import { ProjectsService } from './shared/projects.service';
     entryComponents: [
         DemoDialog
     ],
-    exports: [
-        ListProjectComponent
-    ],
+  
     providers: [
         ProjectsService
     ]
-})
-export class ProjectsModule { }
+}
+

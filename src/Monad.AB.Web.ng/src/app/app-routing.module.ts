@@ -1,6 +1,6 @@
 ﻿import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from "./core/admin/admin.component";
+import { HomeComponent } from "./main/home//home.component";
 //import { LoginComponent } from "./demo/custom-pages/login/login.component";
 // -------------------
 import { ListProjectComponent } from "./main/projects/list-project.component";
@@ -23,13 +23,8 @@ const routes: Routes = [
     //},
     {
         path: '',
-        component: AdminComponent,
+        component: HomeComponent,
         children: [
-            //{
-            //    path: '',
-            //    component: DashboardComponent,
-            //    pathMatch: 'full'
-            //},
             {
                 path: 'projects',
                 component: ListProjectComponent

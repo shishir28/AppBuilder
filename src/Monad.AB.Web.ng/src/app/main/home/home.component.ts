@@ -1,6 +1,4 @@
-﻿import * as screenfull from 'screenfull';
-
-import {
+﻿import {
     Component, OnInit, ViewChild, ViewEncapsulation, AfterViewInit, ViewChildren, QueryList,
     ElementRef, OnDestroy
 } from '@angular/core';
@@ -15,7 +13,6 @@ import { MediaReplayService } from "../../core/sidenav/mediareplay/media-replay.
     styleUrls: ['./home.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-
 
 export class HomeComponent implements OnInit {
 
@@ -58,4 +55,3 @@ export class HomeComponent implements OnInit {
         scrollContainer.scrollTop = 0;
     }
 }
-
