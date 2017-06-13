@@ -7,7 +7,6 @@ import { IconSidenavDirective } from '../core/sidenav/icon-sidenav.directive';
 import { SearchComponent } from '../core/toolbar/search/search.component';
 import { BreadcrumbsComponent } from '../core/breadcrumb/breadcrumb.component';
 
-import { QuickpanelComponent } from '../core/quickpanel/quickpanel.component';
 import { ToolbarComponent } from '../core/toolbar/toolbar.component';
 import { ToolbarUserButtonComponent } from '../core/toolbar/toolbar-user-button/toolbar-user-button.component';
 import { ClickOutsideDirective } from '../core/utils/click-outside.directive';
@@ -21,7 +20,6 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-import { nvD3 } from '../core/charts/nvD3/nvD3.component';
 //import { LoginComponent } from './custom-pages/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { projectConfig } from './projects/projects.module'
@@ -44,7 +42,6 @@ import { projectsRouting } from './projects/projects.routing';
         IconSidenavDirective,
         SearchComponent,
         BreadcrumbsComponent,
-        QuickpanelComponent,
         ToolbarComponent,
         ToolbarUserButtonComponent,
         ClickOutsideDirective,
@@ -59,7 +56,7 @@ import { projectsRouting } from './projects/projects.routing';
     providers: [
         SidenavService,
         MediaReplayService,
-        BreadcrumbService
+        BreadcrumbService,
         ...projectConfig.providers
     ]
 })
