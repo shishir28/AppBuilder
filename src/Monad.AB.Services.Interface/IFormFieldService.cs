@@ -11,10 +11,11 @@ namespace Monad.AB.Services.Interface
         FormFieldView GetFieldView(int viewId);
 
         void AddFormFieldView(FormField fieldView);
-        void AddFields(FormField form);
-        void EditFields(FormField form);
+
+        void AddField(FormField field);
+        void EditField(FormField field);
         void EditFieldView(FormFieldView form);
-        void DeleteFormFields(FormField form);
+        void DeleteFormField(int formFieldId);
         IList<FieldType> GetFieldTypes();
     }
 }

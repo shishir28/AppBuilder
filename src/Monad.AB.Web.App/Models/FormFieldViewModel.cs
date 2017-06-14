@@ -3,8 +3,36 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Monad.AB.Web.App.Models
 {
+
+    public class FormViewTypeModel
+    {
+        public string Name { get; set; }
+        public string Description { get; set; }
+    }
+
+    public class FormFieldViewViewModel
+    {
+        public int Id { get; set; }
+        public int FormFieldId { get; set; }
+        public int ViewID { get; set; }
+        public int FieldID { get; set; }
+        public int Row { get; set; }
+        public int RowSpan { get; set; }
+        public int Column { get; set; }
+        public int ColumnSpan { get; set; }
+        public bool ReadOnly { get; set; }
+        public bool Hidden { get; set; }
+        public DateTime CreatedDateUtc { get; set; }
+        public DateTime LastModifiedDateUtc { get; set; }
+        public int LastModifiedBy { get; set; }
+        public string View { get; set; }
+    }
+
     public class FormFieldViewModel
     {
+        [Required]
+        [Display(Name = "Form Id")]
+        public int Id { get; set; }
         public int FormID { get; set; }
         public int FieldTypeID { get; set; }
         [RegularExpression(@"^\S*$")]
@@ -29,16 +57,12 @@ namespace Monad.AB.Web.App.Models
 
     public class EditFormFieldsViewModel : FormFieldViewModel
     {
-        [Required]
-        [Display(Name = "Form Id")]
-        public int Id { get; set; }
+
     }
 
     public class DeleteFormFieldsViewModel : FormFieldViewModel
     {
-        [Required]
-        [Display(Name = "Form Id")]
-        public int Id { get; set; }
+
     }
 
     public class EditFormFieldsViewViewModel : FormFieldViewModel

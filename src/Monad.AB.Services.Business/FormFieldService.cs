@@ -14,8 +14,8 @@ namespace Monad.AB.Services.Business
         private IFormFieldViewRepository _fieldViewRepository;
         private IFormViewTypeRepository _formViewTypeRepository;
 
-        public FormFieldService(IFormFieldRepository formFieldRepository, 
-            IFieldTypeRepository fieldTypeRepository, 
+        public FormFieldService(IFormFieldRepository formFieldRepository,
+            IFieldTypeRepository fieldTypeRepository,
             IFormFieldViewRepository fieldViewRepository,
             IFormViewTypeRepository formViewTypeRepository
             )
@@ -31,6 +31,17 @@ namespace Monad.AB.Services.Business
             form.CreatedDateUtc = DateTime.UtcNow;
             form.LastModifiedBy = 1;
             _formFieldRepository.Create(form);
+        }
+
+        public void AddField(FormField field)
+        {
+            field.LastModifiedDateUtc = DateTime.UtcNow;
+            field.CreatedDateUtc = DateTime.UtcNow;
+            field.LastModifiedBy = 1;
+            _formFieldRepository.Create(field);
+            // updatedFormField Can not be more than one 
+            var updatedFormField = _formFieldRepository.GetAll().Where(x => x.FormID == field.FormID && x.Name == field.Name).FirstOrDefault();
+            AddFormFieldView(updatedFormField);
         }
 
         public void AddFormFieldView(FormField formField)
@@ -56,17 +67,18 @@ namespace Monad.AB.Services.Business
             }
         }
 
-        public void DeleteFormFields(FormField form)
+        public void DeleteFormField(int formFieldId)
         {
-            _formFieldRepository.Delete(form);
+            var tobeDeleted = _formFieldRepository.GetById(formFieldId);
+            _formFieldRepository.Delete(tobeDeleted);
         }
 
-        public void EditFields(FormField form)
+        public void EditField(FormField field)
         {
-            form.LastModifiedDateUtc = DateTime.UtcNow;
-            form.CreatedDateUtc = DateTime.UtcNow;
-            form.LastModifiedBy = 1;
-            _formFieldRepository.Update(form);
+            field.LastModifiedDateUtc = DateTime.UtcNow;
+            field.CreatedDateUtc = DateTime.UtcNow;
+            field.LastModifiedBy = 1;
+            _formFieldRepository.Update(field);
         }
 
         public void EditFieldView(FormFieldView form)
@@ -93,10 +105,10 @@ namespace Monad.AB.Services.Business
             return _fieldViewRepository.GetAll().Where(x => x.Id == formFieldViewId).FirstOrDefault();
         }
 
-        public IList<FormFieldView> GetFieldViewById(int fieldID)
+        public IList<FormFieldView> GetFieldViewById(int fieldId)
         {
-            var viewTypes =  _formViewTypeRepository.GetAll().ToList();
-            var formFieldViews = _fieldViewRepository.GetAll().Where(x => x.FieldID == fieldID).ToList();
+            var viewTypes = _formViewTypeRepository.GetAll().ToList();
+            var formFieldViews = _fieldViewRepository.GetAll().Where(x => x.FieldID == fieldId).ToList();
             foreach (var view in formFieldViews)
             {
                 view.View = viewTypes.Where(x => x.Id == view.ViewID).SingleOrDefault();

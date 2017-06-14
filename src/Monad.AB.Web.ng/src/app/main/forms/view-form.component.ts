@@ -4,9 +4,9 @@ import { FormsService } from './shared/forms.service';
 import { Form } from './shared/form';
 
 @Component({
-  selector: 'ms-view-form',
-  templateUrl: './view-form.component.html',
-  styleUrls: ['./view-form.component.scss']
+    selector: 'ms-view-form',
+    templateUrl: './view-form.component.html',
+    styleUrls: ['./view-form.component.scss']
 })
 export class ViewFormComponent implements OnInit, AfterViewInit {
     projectId: number;
@@ -29,10 +29,10 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
             this.formId = params['formid'];
             this.projectId = params['projectid'];
 
-           if (!this.formId)
+            if (!this.formId)
                 return;
 
-           this.formsService.getForm(this.formId)
+            this.formsService.getForm(this.formId)
                 .subscribe(
                 form => {
                     this.form = form;
