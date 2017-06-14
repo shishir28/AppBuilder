@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+﻿import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditFieldComponent } from './edit-field.component';
+import { EditFieldComponent } from './edit-formField.component';
 
-describe('EditFieldComponent', () => {
+describe('EditFormFieldComponent', () => {
   let component: EditFieldComponent;
   let fixture: ComponentFixture<EditFieldComponent>;
 

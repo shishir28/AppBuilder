@@ -65,4 +65,26 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
         this.router.navigateByUrl('/projects/' + this.projectId);
 
     }
+
+    editProject(projectId): void {
+        this.router.navigateByUrl('/projects/edit/' + projectId);
+    }
+
+    viewFormField(projectId, formId, fieldId): void {
+        this.router.navigateByUrl('/projects/' + projectId + '/forms/' + formId);
+    }
+
+    addFormField(projectId, formId) {
+        this.router.navigateByUrl('/projects/' + projectId + '/forms/new');
+    }
+
+    editFormField(projectId, formId, fieldId): void {
+        this.router.navigateByUrl('/projects/' + projectId + '/forms/edit/' + formId);
+    }
+
+    deleteFormField(projectId, formId, fieldId): void {
+        // to do 
+    }
+
+
 }

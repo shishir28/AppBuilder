@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 // ---------Routes--------------------------------------------------
 import { projectsRoutes } from './projects/projects.routing';
 import { formsRoutes } from './forms/forms.routing';
+import { formFieldsRoutes } from './formFields/formFields.routing';
+
 // -----------------------------------------------------------------
 
 export const mainRoutes: Routes = [
@@ -12,5 +14,6 @@ export const mainRoutes: Routes = [
         pathMatch: 'full'
     },
     ...projectsRoutes,
-    ...formsRoutes
+    ...formsRoutes,
+    ...formFieldsRoutes
 ];

@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { projectConfig } from './projects/projects.module'
 import { formConfig } from './forms/forms.module';
+import { formFieldConfig } from './formFields/formFields.module';
 
 @NgModule({
     imports: [
@@ -34,7 +35,8 @@ import { formConfig } from './forms/forms.module';
         FormsModule,
         PerfectScrollbarModule.forChild(),
         ...projectConfig.imports,
-        ...formConfig.imports
+        ...formConfig.imports,
+        ...formFieldConfig.imports
     ],
 
     declarations: [
@@ -50,7 +52,9 @@ import { formConfig } from './forms/forms.module';
         ToolbarNotificationsComponent,
         HomeComponent,
         ...projectConfig.declarations,
-        ...formConfig.declarations
+        ...formConfig.declarations,
+        ...formFieldConfig.declarations
+
     ],
     entryComponents: [
         ...projectConfig.entryComponents
@@ -60,7 +64,8 @@ import { formConfig } from './forms/forms.module';
         MediaReplayService,
         BreadcrumbService,
         ...projectConfig.providers,
-        ...formConfig.providers
+        ...formConfig.providers,
+        ...formFieldConfig.providers
     ]
 })
 export class MainModule { }
