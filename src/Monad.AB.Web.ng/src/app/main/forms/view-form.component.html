@@ -1,3 +1,56 @@
-<p>
-  view-form works!
-</p>
+﻿<div fxLayout="column" fxLayout.gt-md="row">
+  <md-card style="padding: 16px;" fxFlex="90%">
+    <md-toolbar color="primary">View Form</md-toolbar>
+    <md-card-content>
+      <form>
+        <div fxLayout fxLayoutWrap>
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="formName"
+                   [disabled]="true"
+                   [(ngModel)]="form.formName" />
+          </md-input-container>
+        </div>
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="formTitle"
+                   [disabled]="true"
+                   [(ngModel)]="form.formTitle" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="formDescription"
+                   [disabled]="true"
+                   [(ngModel)]="form.formDescription" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="dependencyID"
+                   placeholder="Dependency"
+                   [(ngModel)]="form.dependencyID"
+                   formControlName="dependencyID" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
+          <button md-raised-button color="warn" style="margin-left: 8px;" type="button" (click)="cancelChanges($event);">
+            Delete
+          </button>
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="editForm(form.projectID,form.id);">
+            Edit
+          </button>
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="cancelChanges($event);">
+            Go Back
+          </button>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>

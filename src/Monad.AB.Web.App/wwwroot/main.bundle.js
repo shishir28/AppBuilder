@@ -1901,7 +1901,7 @@ var _a;
 /***/ "../../../../../src/app/main/forms/view-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  view-form works!\n</p>\n"
+module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">View Form</md-toolbar>\r\n    <md-card-content>\r\n      <form>\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"formName\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"form.formName\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"formTitle\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"form.formTitle\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"formDescription\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"form.formDescription\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"dependencyID\"\r\n                   placeholder=\"Dependency\"\r\n                   [(ngModel)]=\"form.dependencyID\"\r\n                   formControlName=\"dependencyID\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"warn\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Delete\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"editForm(form.projectID,form.id);\">\r\n            Edit\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Go Back\r\n          </button>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1913,7 +1913,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ":host {\n  display: block;\n  padding: 36px;\n  height: calc(100% - 72px);\n  background: url(\"/assets/img/backgrounds/2.jpg\") no-repeat center center fixed;\n  background-size: cover; }\n\nmd-input-container {\n  margin: 8px 0; }\n", ""]);
 
 // exports
 
@@ -1928,6 +1928,9 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_forms_service__ = __webpack_require__("../../../../../src/app/main/forms/shared/forms.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_form__ = __webpack_require__("../../../../../src/app/main/forms/shared/form.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewFormComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1939,22 +1942,70 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var ViewFormComponent = (function () {
-    function ViewFormComponent() {
+    function ViewFormComponent(router, route, formsService) {
+        this.router = router;
+        this.route = route;
+        this.formsService = formsService;
+        this.form = new __WEBPACK_IMPORTED_MODULE_3__shared_form__["a" /* Form */]();
+        //private forms: Form[];
+        this.cellWidths = [];
+        this.tableHover = true;
+        this.tableStriped = true;
+        this.tableCondensed = true;
     }
     ViewFormComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var id = this.route.params.subscribe(function (params) {
+            _this.formId = params['formid'];
+            _this.projectId = params['projectid'];
+            if (!_this.formId)
+                return;
+            _this.formsService.getForm(_this.formId)
+                .subscribe(function (form) {
+                _this.form = form;
+                _this.form.id = _this.formId;
+                //this.formsService.getForms(this.project.id)
+                //    .subscribe(data => {
+                //        this.forms = data;
+                //    });
+            }, function (response) {
+                if (response.status == 404) {
+                    _this.router.navigate(['NotFound']);
+                }
+            });
+        });
+    };
+    ViewFormComponent.prototype.ngAfterViewInit = function () {
+    };
+    ViewFormComponent.prototype.editForm = function (projectId, formId) {
+        this.router.navigateByUrl('/projects/' + projectId + '/forms/edit/' + formId);
+    };
+    ViewFormComponent.prototype.deleteForm = function (projectId, formId) {
+        // to do 
+    };
+    ViewFormComponent.prototype.cancelChanges = function (e) {
+        this.router.navigateByUrl('/projects/' + this.projectId);
     };
     return ViewFormComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('tbody'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+], ViewFormComponent.prototype, "tbody", void 0);
 ViewFormComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'ms-view-form',
         template: __webpack_require__("../../../../../src/app/main/forms/view-form.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/forms/view-form.component.scss")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__shared_forms_service__["a" /* FormsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_forms_service__["a" /* FormsService */]) === "function" && _d || Object])
 ], ViewFormComponent);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=view-form.component.js.map
 
 /***/ }),
