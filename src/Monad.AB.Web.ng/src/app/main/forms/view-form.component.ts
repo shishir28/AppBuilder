@@ -1,7 +1,10 @@
 ﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormsService } from './shared/forms.service';
+import { FormFieldsService } from '../formFields/shared/formFields.service';
+
 import { Form } from './shared/form';
+import { FormField } from '../formFields/shared/formField';
 
 @Component({
     selector: 'ms-view-form',
@@ -12,7 +15,7 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
     projectId: number;
     formId: number;
     form: Form = new Form();
-    //private forms: Form[];
+    private formFields: FormField[];
     cellWidths = [];
     tableHover: boolean = true;
     tableStriped: boolean = true;
@@ -21,7 +24,8 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
     @ViewChild('tbody')
     tbody: ElementRef;
     constructor(private router: Router, private route: ActivatedRoute,
-        private formsService: FormsService) {
+        private formsService: FormsService,
+        private formFieldsService: FormFieldsService) {
     }
 
     ngOnInit() {
@@ -37,10 +41,10 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
                 form => {
                     this.form = form;
                     this.form.id = this.formId;
-                    //this.formsService.getForms(this.project.id)
-                    //    .subscribe(data => {
-                    //        this.forms = data;
-                    //    });
+                    this.formFieldsService.getFormFields(this.formId)
+                        .subscribe(data => {
+                            this.formFields = data;
+                        });
                 },
                 response => {
                     if (response.status == 404) {
@@ -85,6 +89,4 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
     deleteFormField(projectId, formId, fieldId): void {
         // to do 
     }
-
-
 }

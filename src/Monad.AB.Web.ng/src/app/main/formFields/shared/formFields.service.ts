@@ -11,29 +11,29 @@ export class FormFieldsService {
         this.options = new RequestOptions({ headers: headers });
     }
 
-    getForms(projectId): Observable<any[]> {
-        return this.http.get('/api/form/GetForms?projectId=' + projectId, this.options)
+    getFormFields(formId): Observable<any[]> {
+        return this.http.get('/api/formField/GetFormFields?formId=' + formId, this.options)
             .map(this.extractData);
     }
 
-    getForm(formId) {
-        return this.http.get('/api/form/GetForm?formId=' + formId)
+    getFormField(fieldId) {
+        return this.http.get('/api/formField/GetFormField?fieldId=' + fieldId)
             .map(res => res.json());
     }
 
-    addForm(form) {
-        return this.http.post("/api/form/addform/", JSON.stringify(form), this.options)
+    addFormField(formField) {
+        return this.http.post('/api/formField/AddFormField', JSON.stringify(formField), this.options)
             .map(res => res.json());
     }
 
 
-    editForm(form) {
-        return this.http.put("/api/form/editform/", JSON.stringify(form), this.options)
+    editFormField(formField) {
+        return this.http.put('/api/formField/EditFormField', JSON.stringify(formField), this.options)
             .map(res => res.json());
     }
 
-    deleteForm(id) {
-        return this.http.delete("/api/form/deleteform?formid=" + id)
+    deleteFormForm(formFieldId) {
+        return this.http.delete('/api/formField/DeleteFormField?formFieldId=' + formFieldId)
             .map(res => res.json());
     }
 

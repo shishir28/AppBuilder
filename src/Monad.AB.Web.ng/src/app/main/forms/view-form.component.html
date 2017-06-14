@@ -53,8 +53,8 @@
       </form>
       <div fxLayout="row" fxLayout.gt-md="column" style="margin-top: 20px;">
         <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
-          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="addForm(project.id);">
-            Add Form
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="addFormField(form.projectID, form.id);">
+            Add Form Field
           </button>
         </div>
         <div fxLayout="row" class="table-container mat-elevation-z2" fxLayout.gt-sm="row" fxLayoutAlign="end center">
@@ -62,22 +62,27 @@
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Title</th>
-                <th hidden="hidden">Dependency</th>
-                <th>Action</th>
+                <th>Is Required</th>
+                <th>Modified by</th>
+                <th> Modified date</th>
+                <th> Action   </th>
               </tr>
             </thead>
             <tbody>
-              <!--<tr *ngFor="let form of forms">
-                <td>{{ form.name }}</td>
-                <td>{{ form.title }}</td>
+              <tr *ngFor="let formField of formFields">
+                <td>{{ formField.name }}</td>
+                <td><button md-icon-button> <md-icon>{{ formField.isRequired?"check":"close"}}</md-icon></button></td>
+
+                <td>{{ formField.lastModifiedBy }}</td>
+                <td>{{ formField.lastModifiedDateUtc |date }}</td>
+
                 <td hidden="hidden">{{ form.dependencyID }}</td>
                 <td>
-                  <button md-icon-button (click)="viewForm(project.id,form.id);" style="margin-left: 1px;"><md-icon>pageview</md-icon></button>
-                  <button md-icon-button (click)="editForm(project.id,form.id);" style="margin-left: 1px;"><md-icon>edit</md-icon></button>
-                  <button md-icon-button (click)="deleteForm(project.id,form.id);" style="margin-left: 1px;"><md-icon>delete</md-icon></button>
+                  <button md-icon-button (click)="viewFormField(project.id,form.id,formField.id);" style="margin-left: 1px;"><md-icon>pageview</md-icon></button>
+                  <button md-icon-button (click)="editFormField(project.id,form.id,formField.id);" style="margin-left: 1px;"><md-icon>edit</md-icon></button>
+                  <button md-icon-button (click)="deleteFormField(project.id,form.id,formField.id);" style="margin-left: 1px;"><md-icon>delete</md-icon></button>
                 </td>
-              </tr>-->
+              </tr>
             </tbody>
           </table>
         </div>
