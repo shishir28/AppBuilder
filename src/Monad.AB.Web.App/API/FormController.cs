@@ -24,9 +24,9 @@ namespace Monad.AB.Web.App.Controllers
 
         [HttpGet]
         [Route("GetForm")]
-        public Form GetForm(int formId)
+        public FormViewModel GetForm(int formId)
         {
-            return _formService.GetFormById(formId);
+            return Mapper.Map<Form, FormViewModel>(_formService.GetFormById(formId));
         }
 
 
@@ -66,11 +66,11 @@ namespace Monad.AB.Web.App.Controllers
                     form.LastModifiedDateUtc = System.DateTime.UtcNow;
                     form.LastModifiedBy = 1;
                     _formService.EditForm(form);
-                    return new ObjectResult(new { StatusCode = 204, Content = $@"Form {model.FormName} Created!" });
+                    return new ObjectResult(new { StatusCode = 204, Content = $@"Form {model.FormName} Saved!" });
                 }
                 catch (System.Exception ex)
                 {
-                    return new ObjectResult(new { StatusCode = 400, Content = $@"Form {model.FormName} could not Created! " });
+                    return new ObjectResult(new { StatusCode = 400, Content = $@"Form {model.FormName} could not Saved! " });
                 }
             }
             return new StatusCodeResult(412);

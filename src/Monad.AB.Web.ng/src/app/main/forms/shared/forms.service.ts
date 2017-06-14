@@ -11,15 +11,16 @@ export class FormsService {
         this.options = new RequestOptions({ headers: headers });
     }
 
-    getForms(projectId):Observable<any[]> {
+    getForms(projectId): Observable<any[]> {
         return this.http.get('/api/form/GetForms?projectId=' + projectId, this.options)
             .map(this.extractData);
     }
 
     getForm(formId) {
-        this.http.get('/api/form/GetForm?formId=' + formId)
+        return this.http.get('/api/form/GetForm?formId=' + formId)
             .map(res => res.json());
     }
+
 
     addForm(form) {
         return this.http.post("/api/form/addform/", JSON.stringify(form), this.options)
@@ -40,5 +41,5 @@ export class FormsService {
         let body = res.json();
         return body || {};
     }
-    
+
 }

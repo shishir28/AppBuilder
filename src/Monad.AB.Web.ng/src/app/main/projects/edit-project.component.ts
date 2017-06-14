@@ -36,16 +36,16 @@ export class EditProjectComponent implements OnInit {
 
     ngOnInit() {
         var id = this.route.params.subscribe(params => {
-            var id = params['id'];
+            var projectid = params['projectid'];
 
-            if (!id)
+            if (!projectid)
                 return;
 
-            this.projectsService.getProject(id)
+            this.projectsService.getProject(projectid)
                 .subscribe(
                 project => {
                     this.project = project;
-                    this.projForm.controls['id'].setValue(id);
+                    this.projForm.controls['id'].setValue(projectid);
                 },
                 response => {
                     if (response.status == 404) {

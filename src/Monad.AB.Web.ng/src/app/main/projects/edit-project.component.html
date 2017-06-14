@@ -1,4 +1,4 @@
-﻿<div fxLayout="row" fxLayoutAlign="start">
+﻿<div fxLayout="column" fxLayout.gt-md="row">
   <md-card style="padding: 16px;" fxFlex="90%">
     <md-toolbar color="primary">Edit Project</md-toolbar>
     <md-card-content>
@@ -17,7 +17,6 @@
             </md-hint>
           </md-input-container>
         </div>
-
         <div fxLayout="column">
           <md-input-container>
             <input mdInput
@@ -30,10 +29,8 @@
             <md-hint [hidden]="projForm.controls['title'].pristine || projForm.controls['title'].valid">
               <span [hidden]="!projForm.controls['title'].errors?.required">Project Title is required.</span>
             </md-hint>
-
           </md-input-container>
         </div>
-
         <div fxLayout="column">
           <md-input-container>
             <input mdInput
@@ -43,14 +40,11 @@
                    [(ngModel)]="project.rootNamespace"
                    formControlName="rootNamespace"
                    [class.invalid]="projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid" />
-
             <md-hint [hidden]="projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid">
               <span [hidden]="!projForm.controls['rootNamespace'].errors?.required">Project Root Namespace is required.</span>
             </md-hint>
-
           </md-input-container>
         </div>
-
         <div fxLayout="column">
           <md-input-container>
             <input mdInput
@@ -60,13 +54,11 @@
                    [(ngModel)]="project.companyName"
                    formControlName="companyName"
                    [class.invalid]="projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid" />
-
             <md-hint [hidden]="projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid">
               <span [hidden]="!projForm.controls['companyName'].errors?.required">Company Name is required.</span>
             </md-hint>
           </md-input-container>
         </div>
-
         <div fxLayout="column">
           <md-input-container>
             <input mdInput
@@ -76,15 +68,13 @@
                    formControlName="description" />
           </md-input-container>
         </div>
-
         <div fxLayout="column" *ngIf="serverErrorMessage">
           <div fxLayout="row" fxLayoutAlign="end center">
             <label class="control-label">
-             {{ serverErrorMessage}}             
+              {{ serverErrorMessage}}
             </label>
           </div>
         </div>
-
         <div fxLayout="column">
           <div fxLayout="row" fxLayoutAlign="end center">
             <button md-raised-button

@@ -41,7 +41,6 @@ export class ViewProjectComponent implements OnInit, AfterViewInit {
                     this.formsService.getForms(this.project.id)
                         .subscribe(data => {
                             this.forms = data;
-                            console.log(this.forms);
                         });
                 },
                 response => {
@@ -72,18 +71,18 @@ export class ViewProjectComponent implements OnInit, AfterViewInit {
 
 
     editProject(projectId): void {
-        this.router.navigateByUrl('projects/edit/' + projectId);
+        this.router.navigateByUrl('/projects/edit/' + projectId);
     }
 
-    viewForm(projectId,formId): void {
+    viewForm(projectId, formId): void {
         this.router.navigateByUrl('/projects/' + projectId + '/forms/' + formId);
     }
 
     editForm(projectId, formId): void {
-        this.router.navigateByUrl('/projects/edit' + projectId + '.forms/edit' + formId);
+        this.router.navigateByUrl('/projects/' + projectId + '/forms/edit/' + formId);
     }
 
-    deleteForm(projectId,formId): void {
+    deleteForm(projectId, formId): void {
         // to do 
     }
 

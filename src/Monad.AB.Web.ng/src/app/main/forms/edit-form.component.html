@@ -1,3 +1,109 @@
-<p>
-  edit-form works!
-</p>
+﻿<div fxLayout="column" fxLayout.gt-md="row">
+  <md-card style="padding: 16px;" fxFlex="90%">
+    <md-toolbar color="primary">Edit Form</md-toolbar>
+    <md-card-content>
+      <form [formGroup]="formGroup" novalidate (ngSubmit)="saveForm(formGroup.value)">
+        <div fxLayout fxLayoutWrap>
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="formName"
+                   placeholder="Name"
+                   required
+                   [(ngModel)]="form.formName"
+                   formControlName="formName"
+                   [class.invalid]="formGroup.controls['formName'].touched && !formGroup.controls['formName'].valid" />
+            <md-hint [hidden]="formGroup.controls['formName'].pristine || formGroup.controls['formName'].valid">
+              <span [hidden]="!formGroup.controls['formName'].errors?.required">Form Name is required.</span>
+            </md-hint>
+          </md-input-container>
+        </div>
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="formTitle"
+                   required
+                   placeholder="Title"
+                   [(ngModel)]="form.formTitle"
+                   formControlName="formTitle"
+                   [class.invalid]="formGroup.controls['formTitle'].touched && !formGroup.controls['formTitle'].valid" />
+            <md-hint [hidden]="formGroup.controls['formTitle'].pristine || formGroup.controls['formTitle'].valid">
+              <span [hidden]="!formGroup.controls['formTitle'].errors?.required">Form Title is required.</span>
+            </md-hint>
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="formDescription"
+                   placeholder="Description"
+                   [(ngModel)]="form.formDescription"
+                   formControlName="formDescription" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="dependencyID"
+                   placeholder="Dependency"
+                   [(ngModel)]="form.dependencyID"
+                   formControlName="dependencyID" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column" hidden="hidden">
+          <md-input-container>
+            <input mdInput
+                   name="createdDateUtc"
+                   placeholder="Created Date Utc"
+                   [(ngModel)]="form.createdDateUtc"
+                   formControlName="createdDateUtc" />
+          </md-input-container>
+        </div>
+        <div fxLayout="column" hidden="hidden">
+          <md-input-container>
+            <input mdInput
+                   name="lastModifiedDateUtc"
+                   placeholder="Last Modified Date Utc"
+                   [(ngModel)]="form.lastModifiedDateUtc"
+                   formControlName="lastModifiedDateUtc" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column" hidden="hidden">
+          <md-input-container>
+            <input mdInput
+                   name="lastModifiedBy"
+                   placeholder="Last Modified By"
+                   [(ngModel)]="form.lastModifiedBy"
+                   formControlName="lastModifiedBy" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column" *ngIf="serverErrorMessage">
+          <div fxLayout="row" fxLayoutAlign="end center">
+            <label class="control-label">
+              {{ serverErrorMessage}}
+            </label>
+          </div>
+        </div>
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutAlign="end center">
+            <button md-raised-button
+                    type="button" (click)="cancelChanges($event);">
+              Cancel
+            </button>
+            <button md-button color="primary"
+                    md-raised-button
+                    style="margin-left: 8px;"
+                    type="submit"
+                    [disabled]="!formGroup.valid">
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>
