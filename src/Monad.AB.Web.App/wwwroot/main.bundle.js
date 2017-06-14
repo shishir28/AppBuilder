@@ -1022,7 +1022,7 @@ var _a, _b;
 /***/ "../../../../../src/app/core/toolbar/search-bar/search-bar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"search-wrapper\" fxLayout=\"row\" [ngClass]=\"{ 'focus': focused, 'has-input': input }\" fxFlex (msClickOutside)=\"closeDropdown()\">\r\n  <md-icon class=\"search-icon\">search</md-icon>\r\n  <input type=\"search\"\r\n         autocomplete=\"off\"\r\n         spellcheck=\"false\"\r\n         class=\"search-input\"\r\n         [(ngModel)]=\"input\"\r\n         (focus)=\"openDropdown()\"\r\n         placeholder=\"Search...\">\r\n\r\n  <div class=\"search-dropdown mat-elevation-z1\">\r\n    <div class=\"content results\" *ngIf=\"input\" fxLayout=\"column\">\r\n      <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <md-icon class=\"icon\">search</md-icon>\r\n        Search results for: {{ input }}\r\n      </div>\r\n      <div class=\"items\">\r\n        <div class=\"item\" md-ripple>Form Elements</div>\r\n        <div class=\"item\" md-ripple>Form Wizard</div>\r\n        <div class=\"item\" md-ripple>Projects</div>\r\n        <div class=\"item\" md-ripple>Profile</div>\r\n        <div class=\"item\" md-ripple>Calendar</div>\r\n        <div class=\"item\" md-ripple>Profile page</div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"content recents\" fxLayout=\"row\" *ngIf=\"!input\">\r\n      <div class=\"recently\" fxLayout=\"column\" fxFlex>\r\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <md-icon class=\"icon\">restore</md-icon>\r\n          Recently Visited\r\n        </div>\r\n        <div class=\"items\">\r\n          <div class=\"item\" md-ripple *ngFor=\"let item of recentlyVisited\" [routerLink]=\"item.route\" (click)=\"closeDropdown()\">{{ item.name }}</div>\r\n        </div>\r\n      </div>\r\n      <div class=\"frequently\" fxLayout=\"column\" fxFlex fxFlexOffset=\"16px\">\r\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <md-icon class=\"icon\">youtube_searched_for</md-icon>\r\n          Frequently Visited\r\n        </div>\r\n        <div class=\"items\">\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-elements']\">Form Elements</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-wizard']\">Form Wizard</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/projects']\">Projects</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/editor']\">WYSIWYG Editor</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/maps/google-maps']\">Google Maps</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/components/dialogs']\">Material Dialog</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"search-wrapper\" fxLayout=\"row\" [ngClass]=\"{ 'focus': focused, 'has-input': input }\" fxFlex (msClickOutside)=\"closeDropdown()\">\n  <md-icon class=\"search-icon\">search</md-icon>\n  <input type=\"search\"\n         autocomplete=\"off\"\n         spellcheck=\"false\"\n         class=\"search-input\"\n         [(ngModel)]=\"input\"\n         (focus)=\"openDropdown()\"\n         placeholder=\"Search...\">\n\n  <div class=\"search-dropdown mat-elevation-z1\">\n    <div class=\"content results\" *ngIf=\"input\" fxLayout=\"column\">\n      <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n        <md-icon class=\"icon\">search</md-icon>\n        Search results for: {{ input }}\n      </div>\n      <div class=\"items\">\n        <div class=\"item\" md-ripple>Form Elements</div>\n        <div class=\"item\" md-ripple>Form Wizard</div>\n        <div class=\"item\" md-ripple>Projects</div>\n        <div class=\"item\" md-ripple>Profile</div>\n        <div class=\"item\" md-ripple>Calendar</div>\n        <div class=\"item\" md-ripple>Profile page</div>\n      </div>\n    </div>\n\n    <div class=\"content recents\" fxLayout=\"row\" *ngIf=\"!input\">\n      <div class=\"recently\" fxLayout=\"column\" fxFlex>\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n          <md-icon class=\"icon\">restore</md-icon>\n          Recently Visited\n        </div>\n        <div class=\"items\">\n          <div class=\"item\" md-ripple *ngFor=\"let item of recentlyVisited\" [routerLink]=\"item.route\" (click)=\"closeDropdown()\">{{ item.name }}</div>\n        </div>\n      </div>\n      <div class=\"frequently\" fxLayout=\"column\" fxFlex fxFlexOffset=\"16px\">\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n          <md-icon class=\"icon\">youtube_searched_for</md-icon>\n          Frequently Visited\n        </div>\n        <div class=\"items\">\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-elements']\">Form Elements</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-wizard']\">Form Wizard</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/projects']\">Projects</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/editor']\">WYSIWYG Editor</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/maps/google-maps']\">Google Maps</div>\n          <div class=\"item\" md-ripple [routerLink]=\"['/components/dialogs']\">Material Dialog</div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1530,13 +1530,11 @@ EditFormFieldComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__list_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/list-formField.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__new_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/new-formField.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__edit_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/edit-formField.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__view_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/view-formField.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared_formFields_service__ = __webpack_require__("../../../../../src/app/main/formFields/shared/formFields.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__new_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/new-formField.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__edit_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/edit-formField.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__view_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/view-formField.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared_formFields_service__ = __webpack_require__("../../../../../src/app/main/formFields/shared/formFields.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return formFieldConfig; });
-
 
 
 
@@ -1558,13 +1556,12 @@ var formFieldConfig = {
         __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__["a" /* FlexLayoutModule */],
     ],
     declarations: [
-        __WEBPACK_IMPORTED_MODULE_6__list_formField_component__["a" /* ListFormFieldComponent */],
-        __WEBPACK_IMPORTED_MODULE_7__new_formField_component__["a" /* NewFormFieldComponent */],
-        __WEBPACK_IMPORTED_MODULE_8__edit_formField_component__["a" /* EditFormFieldComponent */],
-        __WEBPACK_IMPORTED_MODULE_9__view_formField_component__["a" /* ViewFormFieldComponent */]
+        __WEBPACK_IMPORTED_MODULE_6__new_formField_component__["a" /* NewFormFieldComponent */],
+        __WEBPACK_IMPORTED_MODULE_7__edit_formField_component__["a" /* EditFormFieldComponent */],
+        __WEBPACK_IMPORTED_MODULE_8__view_formField_component__["a" /* ViewFormFieldComponent */]
     ],
     providers: [
-        __WEBPACK_IMPORTED_MODULE_10__shared_formFields_service__["a" /* FormFieldsService */]
+        __WEBPACK_IMPORTED_MODULE_9__shared_formFields_service__["a" /* FormFieldsService */]
     ]
 };
 //# sourceMappingURL=formFields.module.js.map
@@ -1575,83 +1572,19 @@ var formFieldConfig = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__list_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/list-formField.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__new_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/new-formField.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edit_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/edit-formField.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__view_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/view-formField.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__new_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/new-formField.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__edit_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/edit-formField.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_formField_component__ = __webpack_require__("../../../../../src/app/main/formFields/view-formField.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return formFieldsRoutes; });
 
 
 
-
 var formFieldsRoutes = [
-    { path: 'projects/:projectid/forms/:formid/fields', component: __WEBPACK_IMPORTED_MODULE_0__list_formField_component__["a" /* ListFormFieldComponent */], pathMatch: 'full' },
-    { path: 'projects/:projectid/forms/:formid/fields/new', component: __WEBPACK_IMPORTED_MODULE_1__new_formField_component__["a" /* NewFormFieldComponent */] },
-    { path: 'projects/:projectid/forms/:formid/fields/edit/:fieldid', component: __WEBPACK_IMPORTED_MODULE_2__edit_formField_component__["a" /* EditFormFieldComponent */] },
-    { path: 'projects/:projectid/forms/:formid/fields/:fieldid', component: __WEBPACK_IMPORTED_MODULE_3__view_formField_component__["a" /* ViewFormFieldComponent */] }
+    { path: 'projects/:projectid/forms/:formid/fields/new', component: __WEBPACK_IMPORTED_MODULE_0__new_formField_component__["a" /* NewFormFieldComponent */] },
+    { path: 'projects/:projectid/forms/:formid/fields/edit/:fieldid', component: __WEBPACK_IMPORTED_MODULE_1__edit_formField_component__["a" /* EditFormFieldComponent */] },
+    { path: 'projects/:projectid/forms/:formid/fields/:fieldid', component: __WEBPACK_IMPORTED_MODULE_2__view_formField_component__["a" /* ViewFormFieldComponent */] }
 ];
 //# sourceMappingURL=formFields.routing.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/main/formFields/list-formField.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\r\n  list-field works!\r\n</p>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/main/formFields/list-formField.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/main/formFields/list-formField.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListFormFieldComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ListFormFieldComponent = (function () {
-    function ListFormFieldComponent() {
-    }
-    ListFormFieldComponent.prototype.ngOnInit = function () {
-    };
-    return ListFormFieldComponent;
-}());
-ListFormFieldComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-list-formField',
-        template: __webpack_require__("../../../../../src/app/main/formFields/list-formField.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/main/formFields/list-formField.component.scss")]
-    }),
-    __metadata("design:paramtypes", [])
-], ListFormFieldComponent);
-
-//# sourceMappingURL=list-formField.component.js.map
 
 /***/ }),
 
@@ -1966,13 +1899,11 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__list_form_component__ = __webpack_require__("../../../../../src/app/main/forms/list-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__new_form_component__ = __webpack_require__("../../../../../src/app/main/forms/new-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__edit_form_component__ = __webpack_require__("../../../../../src/app/main/forms/edit-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__view_form_component__ = __webpack_require__("../../../../../src/app/main/forms/view-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared_forms_service__ = __webpack_require__("../../../../../src/app/main/forms/shared/forms.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__new_form_component__ = __webpack_require__("../../../../../src/app/main/forms/new-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__edit_form_component__ = __webpack_require__("../../../../../src/app/main/forms/edit-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__view_form_component__ = __webpack_require__("../../../../../src/app/main/forms/view-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared_forms_service__ = __webpack_require__("../../../../../src/app/main/forms/shared/forms.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return formConfig; });
-
 
 
 
@@ -1994,13 +1925,12 @@ var formConfig = {
         __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__["a" /* FlexLayoutModule */],
     ],
     declarations: [
-        __WEBPACK_IMPORTED_MODULE_6__list_form_component__["a" /* ListFormComponent */],
-        __WEBPACK_IMPORTED_MODULE_7__new_form_component__["a" /* NewFormComponent */],
-        __WEBPACK_IMPORTED_MODULE_8__edit_form_component__["a" /* EditFormComponent */],
-        __WEBPACK_IMPORTED_MODULE_9__view_form_component__["a" /* ViewFormComponent */]
+        __WEBPACK_IMPORTED_MODULE_6__new_form_component__["a" /* NewFormComponent */],
+        __WEBPACK_IMPORTED_MODULE_7__edit_form_component__["a" /* EditFormComponent */],
+        __WEBPACK_IMPORTED_MODULE_8__view_form_component__["a" /* ViewFormComponent */]
     ],
     providers: [
-        __WEBPACK_IMPORTED_MODULE_10__shared_forms_service__["a" /* FormsService */]
+        __WEBPACK_IMPORTED_MODULE_9__shared_forms_service__["a" /* FormsService */]
     ]
 };
 //# sourceMappingURL=forms.module.js.map
@@ -2011,83 +1941,19 @@ var formConfig = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__list_form_component__ = __webpack_require__("../../../../../src/app/main/forms/list-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__edit_form_component__ = __webpack_require__("../../../../../src/app/main/forms/edit-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__new_form_component__ = __webpack_require__("../../../../../src/app/main/forms/new-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__view_form_component__ = __webpack_require__("../../../../../src/app/main/forms/view-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__edit_form_component__ = __webpack_require__("../../../../../src/app/main/forms/edit-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__new_form_component__ = __webpack_require__("../../../../../src/app/main/forms/new-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_form_component__ = __webpack_require__("../../../../../src/app/main/forms/view-form.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return formsRoutes; });
 
 
 
-
 var formsRoutes = [
-    { path: 'projects/:projectid/forms', component: __WEBPACK_IMPORTED_MODULE_0__list_form_component__["a" /* ListFormComponent */], pathMatch: 'full' },
-    { path: 'projects/:projectid/forms/new', component: __WEBPACK_IMPORTED_MODULE_2__new_form_component__["a" /* NewFormComponent */] },
-    { path: 'projects/:projectid/forms/edit/:formid', component: __WEBPACK_IMPORTED_MODULE_1__edit_form_component__["a" /* EditFormComponent */] },
-    { path: 'projects/:projectid/forms/:formid', component: __WEBPACK_IMPORTED_MODULE_3__view_form_component__["a" /* ViewFormComponent */] }
+    { path: 'projects/:projectid/forms/new', component: __WEBPACK_IMPORTED_MODULE_1__new_form_component__["a" /* NewFormComponent */] },
+    { path: 'projects/:projectid/forms/edit/:formid', component: __WEBPACK_IMPORTED_MODULE_0__edit_form_component__["a" /* EditFormComponent */] },
+    { path: 'projects/:projectid/forms/:formid', component: __WEBPACK_IMPORTED_MODULE_2__view_form_component__["a" /* ViewFormComponent */] }
 ];
 //# sourceMappingURL=forms.routing.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/main/forms/list-form.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\r\n  list-form works!\r\n</p>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/main/forms/list-form.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/main/forms/list-form.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListFormComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ListFormComponent = (function () {
-    function ListFormComponent() {
-    }
-    ListFormComponent.prototype.ngOnInit = function () {
-    };
-    return ListFormComponent;
-}());
-ListFormComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-list-form',
-        template: __webpack_require__("../../../../../src/app/main/forms/list-form.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/main/forms/list-form.component.scss")]
-    }),
-    __metadata("design:paramtypes", [])
-], ListFormComponent);
-
-//# sourceMappingURL=list-form.component.js.map
 
 /***/ }),
 
@@ -2279,7 +2145,7 @@ var _a;
 /***/ "../../../../../src/app/main/forms/view-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">View Form</md-toolbar>\r\n    <md-card-content>\r\n      <form>\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"formName\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"form.formName\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"formTitle\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"form.formTitle\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"formDescription\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"form.formDescription\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"dependencyID\"\r\n                   placeholder=\"Dependency\"\r\n                   [(ngModel)]=\"form.dependencyID\"\r\n                   formControlName=\"dependencyID\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"warn\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Delete\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"editForm(form.projectID,form.id);\">\r\n            Edit\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Go Back\r\n          </button>\r\n        </div>\r\n      </form>\r\n      <div fxLayout=\"row\" fxLayout.gt-md=\"column\" style=\"margin-top: 20px;\">\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"addFormField(form.projectID, form.id);\">\r\n            Add Form Field\r\n          </button>\r\n        </div>\r\n        <div fxLayout=\"row\" class=\"table-container mat-elevation-z2\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <table class=\"table\" [class.table-hover]=\"tableHover\" [class.table-striped]=\"tableStriped\" [class.table-condensed]=\"tableCondensed\" [class.table-bordered]=\"tableBordered\">\r\n            <thead>\r\n              <tr>\r\n                <th>Name</th>\r\n                <th>Is Required</th>\r\n                <th>Modified by</th>\r\n                <th> Modified date</th>\r\n                <th> Action   </th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr *ngFor=\"let formField of formFields\">\r\n                <td>{{ formField.name }}</td>\r\n                <td><button md-icon-button> <md-icon>{{ formField.isRequired?\"check\":\"close\"}}</md-icon></button></td>\r\n\r\n                <td>{{ formField.lastModifiedBy }}</td>\r\n                <td>{{ formField.lastModifiedDateUtc |date }}</td>\r\n\r\n                <td hidden=\"hidden\">{{ form.dependencyID }}</td>\r\n                <td>\r\n                  <button md-icon-button (click)=\"viewFormField(project.id,form.id,formField.id);\" style=\"margin-left: 1px;\"><md-icon>pageview</md-icon></button>\r\n                  <button md-icon-button (click)=\"editFormField(project.id,form.id,formField.id);\" style=\"margin-left: 1px;\"><md-icon>edit</md-icon></button>\r\n                  <button md-icon-button (click)=\"deleteFormField(project.id,form.id,formField.id);\" style=\"margin-left: 1px;\"><md-icon>delete</md-icon></button>\r\n                </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n      </div>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>"
+module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">View Form</md-toolbar>\r\n    <md-card-content>\r\n      <form>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"formName\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"form.formName\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"formTitle\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"form.formTitle\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"formDescription\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"form.formDescription\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"dependencyID\"\r\n                   placeholder=\"Dependency\"\r\n                   [(ngModel)]=\"form.dependencyID\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"warn\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Delete\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"editForm(form.projectID,form.id);\">\r\n            Edit\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Go Back\r\n          </button>\r\n        </div>\r\n      </form>\r\n\r\n      <div fxLayout=\"row\" fxLayout.gt-md=\"column\" style=\"margin-top: 20px;\">\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"addFormField(form.projectID, form.id);\">\r\n            Add Form Field\r\n          </button>\r\n        </div>\r\n        <div fxLayout=\"row\" class=\"table-container mat-elevation-z2\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <table class=\"table\" [class.table-hover]=\"tableHover\" [class.table-striped]=\"tableStriped\" [class.table-condensed]=\"tableCondensed\" [class.table-bordered]=\"tableBordered\">\r\n            <thead>\r\n              <tr>\r\n                <th>Name</th>\r\n                <th>Is Required</th>\r\n                <th>Modified by</th>\r\n                <th> Modified date</th>\r\n                <th> Action   </th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr *ngFor=\"let formField of formFields\">\r\n                <td>{{ formField.name }}</td>\r\n                <td><button md-icon-button> <md-icon>{{ formField.isRequired?\"check\":\"close\"}}</md-icon></button></td>\r\n\r\n                <td>{{ formField.lastModifiedBy }}</td>\r\n                <td>{{ formField.lastModifiedDateUtc |date }}</td>\r\n\r\n                <td hidden=\"hidden\">{{ form.dependencyID }}</td>\r\n                <td>\r\n                  <button md-icon-button (click)=\"viewFormField(form.projectID,form.id,formField.id);\" style=\"margin-left: 1px;\"><md-icon>pageview</md-icon></button>\r\n                  <button md-icon-button (click)=\"editFormField(form.projectID,form.id,formField.id);\" style=\"margin-left: 1px;\"><md-icon>edit</md-icon></button>\r\n                  <button md-icon-button (click)=\"deleteFormField(form.projectID,form.id,formField.id);\" style=\"margin-left: 1px;\"><md-icon>delete</md-icon></button>\r\n                </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n      </div>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>"
 
 /***/ }),
 
@@ -2370,17 +2236,14 @@ var ViewFormComponent = (function () {
     ViewFormComponent.prototype.cancelChanges = function (e) {
         this.router.navigateByUrl('/projects/' + this.projectId);
     };
-    ViewFormComponent.prototype.editProject = function (projectId) {
-        this.router.navigateByUrl('/projects/edit/' + projectId);
-    };
     ViewFormComponent.prototype.viewFormField = function (projectId, formId, fieldId) {
-        this.router.navigateByUrl('/projects/' + projectId + '/forms/' + formId);
+        this.router.navigateByUrl('/projects/' + projectId + '/forms/' + formId + '/fields/' + fieldId);
     };
     ViewFormComponent.prototype.addFormField = function (projectId, formId) {
-        this.router.navigateByUrl('/projects/' + projectId + '/forms/new');
+        this.router.navigateByUrl('/projects/' + projectId + '/forms/' + formId + '/fields/new');
     };
     ViewFormComponent.prototype.editFormField = function (projectId, formId, fieldId) {
-        this.router.navigateByUrl('/projects/' + projectId + '/forms/edit/' + formId);
+        this.router.navigateByUrl('/projects/' + projectId + '/forms/' + formId + '/fields/edit/' + fieldId);
     };
     ViewFormComponent.prototype.deleteFormField = function (projectId, formId, fieldId) {
         // to do 
@@ -2629,7 +2492,7 @@ MainModule = __decorate([
 /***/ "../../../../../src/app/main/projects/edit-project.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Edit Project</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"project.name\"\r\n                   formControlName=\"name\"\r\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\r\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"project.title\"\r\n                   formControlName=\"title\"\r\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\r\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   required\r\n                   placeholder=\"RootNamespace\"\r\n                   [(ngModel)]=\"project.rootNamespace\"\r\n                   formControlName=\"rootNamespace\"\r\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\r\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   required\r\n                   placeholder=\"CompanyName\"\r\n                   [(ngModel)]=\"project.companyName\"\r\n                   formControlName=\"companyName\"\r\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\r\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"project.description\"\r\n                   formControlName=\"description\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n              {{ serverErrorMessage}}\r\n            </label>\r\n          </div>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!projForm.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n\r\n"
+module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Edit Project</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"project.name\"\r\n                   formControlName=\"name\"\r\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\r\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"project.title\"\r\n                   formControlName=\"title\"\r\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\r\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   required\r\n                   placeholder=\"RootNamespace\"\r\n                   [(ngModel)]=\"project.rootNamespace\"\r\n                   formControlName=\"rootNamespace\"\r\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\r\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   required\r\n                   placeholder=\"CompanyName\"\r\n                   [(ngModel)]=\"project.companyName\"\r\n                   formControlName=\"companyName\"\r\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\r\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"project.description\"\r\n                   formControlName=\"description\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n              {{ serverErrorMessage}}\r\n            </label>\r\n          </div>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!projForm.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\n\n"
 
 /***/ }),
 
@@ -2890,7 +2753,7 @@ var _a, _b, _c, _d, _e;
 /***/ "../../../../../src/app/main/projects/new-project.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Add Project</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"project.name\"\r\n                   formControlName=\"name\"\r\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\r\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"project.title\"\r\n                   formControlName=\"title\"\r\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\r\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   required\r\n                   placeholder=\"RootNamespace\"\r\n                   [(ngModel)]=\"project.rootNamespace\"\r\n                   formControlName=\"rootNamespace\"\r\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\r\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   required\r\n                   placeholder=\"CompanyName\"\r\n                   [(ngModel)]=\"project.companyName\"\r\n                   formControlName=\"companyName\"\r\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\r\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"project.description\"\r\n                   formControlName=\"description\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n              {{ serverErrorMessage}}\r\n            </label>\r\n          </div>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!projForm.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n\r\n"
+module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Add Project</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"project.name\"\r\n                   formControlName=\"name\"\r\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\r\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"project.title\"\r\n                   formControlName=\"title\"\r\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\r\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   required\r\n                   placeholder=\"RootNamespace\"\r\n                   [(ngModel)]=\"project.rootNamespace\"\r\n                   formControlName=\"rootNamespace\"\r\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\r\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   required\r\n                   placeholder=\"CompanyName\"\r\n                   [(ngModel)]=\"project.companyName\"\r\n                   formControlName=\"companyName\"\r\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\r\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"project.description\"\r\n                   formControlName=\"description\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n              {{ serverErrorMessage}}\r\n            </label>\r\n          </div>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!projForm.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\n\n"
 
 /***/ }),
 
@@ -3162,7 +3025,7 @@ var _a;
 /***/ "../../../../../src/app/main/projects/view-project.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">View Project</md-toolbar>\r\n    <md-card-content>\r\n      <form>\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.name\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.title\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.rootNamespace\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.companyName\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.description\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"primary\" disabled=\"disabled\" type=\"button\">\r\n            Build\r\n          </button>\r\n          <button md-raised-button color=\"warn\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Delete\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"editProject(project.id);\">\r\n            Edit\r\n          </button>\r\n          <button md-raised-button color=\"primary\" disabled=\"disabled\" style=\"margin-left: 8px;\" type=\"button\">\r\n            Build Status\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Go Back\r\n          </button>\r\n        </div>\r\n      </form>\r\n\r\n      <div fxLayout=\"row\" fxLayout.gt-md=\"column\" style=\"margin-top: 20px;\">\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"addForm(project.id);\">\r\n            Add Form\r\n          </button>\r\n        </div>       \r\n        <div fxLayout=\"row\"  class=\"table-container mat-elevation-z2\"  fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <table class=\"table\" [class.table-hover]=\"tableHover\" [class.table-striped]=\"tableStriped\" [class.table-condensed]=\"tableCondensed\" [class.table-bordered]=\"tableBordered\">\r\n            <thead>\r\n              <tr>\r\n                <th>Name</th>\r\n                <th>Title</th>\r\n                <th hidden=\"hidden\">Dependency</th>\r\n                <th>Action</th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr *ngFor=\"let form of forms\">\r\n                <td>{{ form.name }}</td>\r\n                <td>{{ form.title }}</td>\r\n                <td hidden=\"hidden\">{{ form.dependencyID }}</td>\r\n                <td>\r\n                  <button md-icon-button (click)=\"viewForm(project.id,form.id);\" style=\"margin-left: 1px;\"><md-icon>pageview</md-icon></button>\r\n                  <button md-icon-button (click)=\"editForm(project.id,form.id);\" style=\"margin-left: 1px;\"><md-icon>edit</md-icon></button>\r\n                  <button md-icon-button (click)=\"deleteForm(project.id,form.id);\" style=\"margin-left: 1px;\"><md-icon>delete</md-icon></button>\r\n                </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n        </div>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
+module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">View Project</md-toolbar>\r\n    <md-card-content>\r\n      <form>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.name\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.title\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.rootNamespace\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.companyName\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"project.description\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"primary\" disabled=\"disabled\" type=\"button\">\r\n            Build\r\n          </button>\r\n          <button md-raised-button color=\"warn\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Delete\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"editProject(project.id);\">\r\n            Edit\r\n          </button>\r\n          <button md-raised-button color=\"primary\" disabled=\"disabled\" style=\"margin-left: 8px;\" type=\"button\">\r\n            Build Status\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Go Back\r\n          </button>\r\n        </div>\r\n      </form>\r\n\r\n      <div fxLayout=\"row\" fxLayout.gt-md=\"column\" style=\"margin-top: 20px;\">\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"addForm(project.id);\">\r\n            Add Form\r\n          </button>\r\n        </div>       \r\n        <div fxLayout=\"row\"  class=\"table-container mat-elevation-z2\"  fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <table class=\"table\" [class.table-hover]=\"tableHover\" [class.table-striped]=\"tableStriped\" [class.table-condensed]=\"tableCondensed\" [class.table-bordered]=\"tableBordered\">\r\n            <thead>\r\n              <tr>\r\n                <th>Name</th>\r\n                <th>Title</th>\r\n                <th hidden=\"hidden\">Dependency</th>\r\n                <th>Action</th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr *ngFor=\"let form of forms\">\r\n                <td>{{ form.name }}</td>\r\n                <td>{{ form.title }}</td>\r\n                <td hidden=\"hidden\">{{ form.dependencyID }}</td>\r\n                <td>\r\n                  <button md-icon-button (click)=\"viewForm(project.id,form.id);\" style=\"margin-left: 1px;\"><md-icon>pageview</md-icon></button>\r\n                  <button md-icon-button (click)=\"editForm(project.id,form.id);\" style=\"margin-left: 1px;\"><md-icon>edit</md-icon></button>\r\n                  <button md-icon-button (click)=\"deleteForm(project.id,form.id);\" style=\"margin-left: 1px;\"><md-icon>delete</md-icon></button>\r\n                </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n        </div>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
 
 /***/ }),
 

@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { ListFormComponent } from './list-form.component';
 import { NewFormComponent } from './new-form.component';
 import { EditFormComponent } from './edit-form.component';
 import { ViewFormComponent } from './view-form.component';
@@ -24,7 +23,6 @@ export const formConfig: NgModule = {
     ],
 
     declarations: [
-        ListFormComponent,
         NewFormComponent,
         EditFormComponent,
         ViewFormComponent
