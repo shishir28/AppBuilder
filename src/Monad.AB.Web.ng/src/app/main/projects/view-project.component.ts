@@ -78,6 +78,10 @@ export class ViewProjectComponent implements OnInit, AfterViewInit {
         this.router.navigateByUrl('/projects/' + projectId + '/forms/' + formId);
     }
 
+    addForm(projectId) {
+        this.router.navigateByUrl('/projects/' + projectId + '/forms/new');
+    }
+
     editForm(projectId, formId): void {
         this.router.navigateByUrl('/projects/' + projectId + '/forms/edit/' + formId);
     }

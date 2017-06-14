@@ -27,10 +27,7 @@ export class EditFormComponent implements OnInit {
             formName: ['', [Validators.required]],
             formTitle: ['', [Validators.required]],
             formDescription: [''],
-            dependencyID: [''],
-            createdDateUtc: [''],
-            lastModifiedDateUtc: [''],
-            lastModifiedBy: [''],
+            dependencyID: ['']
         });
     }
 
@@ -58,10 +55,8 @@ export class EditFormComponent implements OnInit {
 
     saveForm(data) {
         this.serverErrorMessage = '';
-        console.log(data);
         data.id = this.formId;
         data.projectID = this.projectId;
-        console.log(data);
         this.formsService.editForm(data)
             .subscribe(response => {
                 if (response.statusCode == 204) {

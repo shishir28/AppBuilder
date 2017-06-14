@@ -36,8 +36,8 @@ export class NewProjectComponent implements OnInit {
 
     ngOnInit() {
         var id = this.route.params.subscribe(params => {
-            var id = params['id'];
-            if (id)
+            var projectid = params['projectid'];
+            if (projectid)
                 return;
         });
     }

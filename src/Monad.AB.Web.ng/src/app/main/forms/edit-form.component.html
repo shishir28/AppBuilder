@@ -52,35 +52,6 @@
           </md-input-container>
         </div>
 
-        <div fxLayout="column" hidden="hidden">
-          <md-input-container>
-            <input mdInput
-                   name="createdDateUtc"
-                   placeholder="Created Date Utc"
-                   [(ngModel)]="form.createdDateUtc"
-                   formControlName="createdDateUtc" />
-          </md-input-container>
-        </div>
-        <div fxLayout="column" hidden="hidden">
-          <md-input-container>
-            <input mdInput
-                   name="lastModifiedDateUtc"
-                   placeholder="Last Modified Date Utc"
-                   [(ngModel)]="form.lastModifiedDateUtc"
-                   formControlName="lastModifiedDateUtc" />
-          </md-input-container>
-        </div>
-
-        <div fxLayout="column" hidden="hidden">
-          <md-input-container>
-            <input mdInput
-                   name="lastModifiedBy"
-                   placeholder="Last Modified By"
-                   [(ngModel)]="form.lastModifiedBy"
-                   formControlName="lastModifiedBy" />
-          </md-input-container>
-        </div>
-
         <div fxLayout="column" *ngIf="serverErrorMessage">
           <div fxLayout="row" fxLayoutAlign="end center">
             <label class="control-label">

@@ -5,10 +5,7 @@ namespace Monad.AB.Web.App.Models
 {
     public class FormViewModel
     {
-        [Required]
-        [RegularExpression(@"^\S*$")]
-        [Display(Name = "Form Id")]
-        public int Id { get; set; }
+        
         public int ProjectID { get; set; }
         public string FormName { get; set; }
         public string FormTitle { get; set; }
@@ -21,6 +18,10 @@ namespace Monad.AB.Web.App.Models
 
     public class EditFormViewModel : FormViewModel
     {
+        [Required]
+        [RegularExpression(@"^\S*$")]
+        [Display(Name = "Form Id")]
+        public int Id { get; set; }
     }
    
 }
