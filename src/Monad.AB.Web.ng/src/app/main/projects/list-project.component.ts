@@ -2,7 +2,6 @@
 import { Router } from '@angular/router';
 import { routeAnimation } from "../../route.animation";
 import { MdDialog, MdDialogRef } from '@angular/material';
-import { SqaureComponent } from '../../core/widgets/sqaure/sqaure.component';
 import { ProjectsService } from './shared/projects.service';
 @Component({
     selector: 'ms-list-project',
@@ -18,11 +17,7 @@ export class ListProjectComponent implements OnInit, AfterViewInit {
     dialogRef: MdDialogRef<DemoDialog>;
     @ViewChild('tbody')
     tbody: ElementRef;
-    cellWidths = [];
-    tableHover: boolean = true;
-    tableStriped: boolean = true;
-    tableCondensed: boolean = true;
-    tableBordered: boolean;
+   
     private projects: any[];
     constructor(private projectsService: ProjectsService, private router: Router, private dialog: MdDialog) {
     }
@@ -35,6 +30,10 @@ export class ListProjectComponent implements OnInit, AfterViewInit {
             .subscribe(data => {
                 this.projects = data;
             });
+    }
+
+    addProject(): void {
+        this.router.navigateByUrl('/projects/new');
     }
 
     viewProject(projectId): void {

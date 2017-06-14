@@ -1,12 +1,9 @@
 ﻿<div class="dashboard-container" fxLayout="column" fxLayoutAlign="start stretch">
-
   <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large waves-effect waves-light green"
-       routerLink="/projects/new">
-      <i class="material-icons">add</i>
-    </a>
+    <button md-fab color="primary" (click)="addProject();">
+      <md-icon>add</md-icon>
+    </button>
   </div>
-
   <div fxLayout="column" fxLayoutAlign="center stretch">
     <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="space-between stretch">
       <div fxLayout="column" fxLayout.gt-md="row" fxFlex="100%" fxFlex.gt-sm>

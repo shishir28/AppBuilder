@@ -23,8 +23,9 @@ namespace Monad.AB.Services.Business
             _formRepository.Create(form);
         }
 
-        public void DeleteForm(Form form)
+        public void DeleteForm(int formId)
         {
+            var form = _formRepository.GetById(formId);
             _formRepository.Delete(form);
         }
 

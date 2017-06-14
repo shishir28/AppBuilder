@@ -2,6 +2,8 @@
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from "./main/home//home.component";
 //import { LoginComponent } from "./demo/custom-pages/login/login.component";
+// ---------Routes----------
+import { mainRoutes } from './main/main-routing.module'
 // -------------------
 import { ListProjectComponent } from "./main/projects/list-project.component";
 import { ViewProjectComponent } from "./main/projects/view-project.component";
@@ -25,28 +27,7 @@ const routes: Routes = [
         path: '',
         component: HomeComponent,
         children: [
-            {
-                path: '',
-                redirectTo: 'projects',
-                pathMatch: 'full'
-            },
-            {
-                path: 'projects',
-                component: ListProjectComponent
-            },
-            {
-                path: 'projects/new',
-                component: NewProjectComponent
-            },
-
-            {
-                path: 'projects/:id',
-                component: ViewProjectComponent
-            },
-            {
-                path: 'projects/edit/:id',
-                component: EditProjectComponent
-            }
+            ...mainRoutes
         ]
     }
 ];

@@ -1,4 +1,4 @@
-﻿<div fxLayout="row" fxLayoutAlign="start">
+﻿<div fxLayout="column" fxLayout.gt-md="row">
   <md-card style="padding: 16px;" fxFlex="90%">
     <md-toolbar color="primary">View Project</md-toolbar>
     <md-card-content>
@@ -11,7 +11,6 @@
                    [(ngModel)]="project.name" />
           </md-input-container>
         </div>
-
         <div fxLayout="column">
           <md-input-container>
             <input mdInput
@@ -20,7 +19,6 @@
                    [(ngModel)]="project.title" />
           </md-input-container>
         </div>
-
         <div fxLayout="column">
           <md-input-container>
             <input mdInput
@@ -29,7 +27,6 @@
                    [(ngModel)]="project.rootNamespace" />
           </md-input-container>
         </div>
-
         <div fxLayout="column">
           <md-input-container>
             <input mdInput
@@ -38,7 +35,6 @@
                    [(ngModel)]="project.companyName" />
           </md-input-container>
         </div>
-
         <div fxLayout="column">
           <md-input-container>
             <input mdInput
@@ -48,16 +44,48 @@
           </md-input-container>
         </div>
 
-        <div fxLayout="column">
-          <div fxLayout="row" fxLayoutAlign="end center">
-            <button md-raised-button
-                    type="button" (click)="cancelChanges($event);">
-              Go Back
-            </button>
-          </div>
+        <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
+          <button md-raised-button color="primary" disabled="disabled" type="button">
+            Build
+          </button>
+          <button md-raised-button color="warn" style="margin-left: 8px;" type="button" (click)="cancelChanges($event);">
+            Delete
+          </button>
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="editProject(project.id);">
+            Edit
+          </button>
+          <button md-raised-button color="primary" disabled="disabled" style="margin-left: 8px;" type="button">
+            Build Status
+          </button>
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="cancelChanges($event);">
+            Go Back
+          </button>
         </div>
       </form>
+      <div fxLayout="column" class="table-container mat-elevation-z2" fxLayout.gt-md="row" style="margin-top: 20px;">
+        <table class="table" [class.table-hover]="tableHover" [class.table-striped]="tableStriped" [class.table-condensed]="tableCondensed" [class.table-bordered]="tableBordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Title</th>
+              <th hidden="hidden">Dependency</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let form of forms">
+              <td>{{ form.name }}</td>
+              <td>{{ form.title }}</td>
+              <td hidden="hidden">{{ form.dependencyID }}</td>
+              <td>
+                <button md-icon-button (click)="viewForm(project.id,form.id);" style="margin-left: 1px;"><md-icon>pageview</md-icon></button>
+                <button md-icon-button (click)="editForm(project.id,form.id);" style="margin-left: 1px;"><md-icon>edit</md-icon></button>
+                <button md-icon-button (click)="deleteForm(project.id,form.id);" style="margin-left: 1px;"><md-icon>delete</md-icon></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </md-card-content>
   </md-card>
 </div>
-

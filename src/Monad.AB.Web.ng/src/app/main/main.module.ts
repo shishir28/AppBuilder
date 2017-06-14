@@ -23,7 +23,8 @@ import { FormsModule } from '@angular/forms';
 //import { LoginComponent } from './custom-pages/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { projectConfig } from './projects/projects.module'
-import { projectsRouting } from './projects/projects.routing';
+import { formConfig } from './forms/forms.module';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -32,7 +33,8 @@ import { projectsRouting } from './projects/projects.routing';
         FlexLayoutModule,
         FormsModule,
         PerfectScrollbarModule.forChild(),
-        ...projectConfig.imports
+        ...projectConfig.imports,
+        ...formConfig.imports
     ],
 
     declarations: [
@@ -47,7 +49,8 @@ import { projectsRouting } from './projects/projects.routing';
         SearchBarComponent,
         ToolbarNotificationsComponent,
         HomeComponent,
-        ...projectConfig.declarations
+        ...projectConfig.declarations,
+        ...formConfig.declarations
     ],
     entryComponents: [
         ...projectConfig.entryComponents
@@ -56,7 +59,8 @@ import { projectsRouting } from './projects/projects.routing';
         SidenavService,
         MediaReplayService,
         BreadcrumbService,
-        ...projectConfig.providers
+        ...projectConfig.providers,
+        ...formConfig.providers
     ]
 })
 export class MainModule { }

@@ -10,6 +10,6 @@ namespace Monad.AB.Services.Interface
 
         void AddForm(Form form);
         void EditForm(Form form);
-        void DeleteForm(Form form);
+        void DeleteForm(int formId);
     }
 }

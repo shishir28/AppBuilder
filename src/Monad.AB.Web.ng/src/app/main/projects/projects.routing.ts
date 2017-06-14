@@ -5,11 +5,10 @@ import {EditProjectComponent} from "./edit-project.component";
 import {NewProjectComponent} from "./new-project.component";
 import {ViewProjectComponent} from "./view-project.component";
 
-const projectsRoutes: Routes = [
+export const projectsRoutes: Routes = [
   { path: 'projects', component: ListProjectComponent, pathMatch: 'full' },
   { path: 'projects/new', component: NewProjectComponent},
-  { path: 'projects/edit/:id', component: EditProjectComponent},
-  { path: 'projects/:id', component: ViewProjectComponent}
+  { path: 'projects/edit/:projectid', component: EditProjectComponent},
+  { path: 'projects/:projectid', component: ViewProjectComponent}
 ];
 
-export const projectsRouting = RouterModule.forChild(projectsRoutes);
