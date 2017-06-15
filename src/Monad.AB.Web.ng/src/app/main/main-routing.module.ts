@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { projectsRoutes } from './projects/projects.routing';
 import { formsRoutes } from './forms/forms.routing';
 import { formFieldsRoutes } from './formFields/formFields.routing';
+import { formFieldViewsRoutes } from './formFieldViews/formFieldViews.routing';
+
 
 // -----------------------------------------------------------------
 
@@ -15,5 +17,6 @@ export const mainRoutes: Routes = [
     },
     ...projectsRoutes,
     ...formsRoutes,
-    ...formFieldsRoutes
+    ...formFieldsRoutes,
+    ...formFieldViewsRoutes
 ];

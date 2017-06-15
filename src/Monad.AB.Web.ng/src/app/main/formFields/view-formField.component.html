@@ -79,7 +79,7 @@
           <md-checkbox name="isRequired"
                        [disabled]="true"
                        [(ngModel)]="formField.isRequired"
-                        color="primary">
+                       color="primary">
             Is Required
           </md-checkbox>
         </div>
@@ -96,6 +96,39 @@
           </button>
         </div>
       </form>
+
+      <div fxLayout="row" fxLayout.gt-md="column" style="margin-top: 20px;">
+        <div fxLayout="row" class="table-container mat-elevation-z2" fxLayout.gt-sm="row" fxLayoutAlign="end center">
+          <table class="table" [class.table-hover]="tableHover" [class.table-striped]="tableStriped" [class.table-condensed]="tableCondensed" [class.table-bordered]="tableBordered">
+            <thead>
+              <tr>
+                <th>View Name</th>
+                <th>Row</th>
+                <th>Row Span</th>
+                <th>Column</th>
+                <th>Column Span</th>
+                <th>Read Only</th>
+                <th>Hidden</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let formFieldView of formFieldViews">
+                <td>{{ formFieldView.viewID }}</td>
+                <td>{{ formFieldView.row }}</td>
+                <td>{{ formFieldView.rowSpan }}</td>
+                <td>{{ formFieldView.column }}</td>
+                <td>{{ formFieldView.columnSpan }}</td>
+                <td><button md-icon-button> <md-icon>{{ formFieldView.readOnly?"check":"close"}}</md-icon></button></td>
+                <td><button md-icon-button> <md-icon>{{ formFieldView.hidden?"check":"close"}}</md-icon></button></td>
+                <td>
+                  <button md-icon-button (click)="editFormFieldView(this.projectId,formField.formID,formField.id, formFieldView.id);" style="margin-left: 1px;"><md-icon>edit</md-icon></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </md-card-content>
   </md-card>
 </div>

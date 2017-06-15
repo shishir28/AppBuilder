@@ -25,6 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { projectConfig } from './projects/projects.module'
 import { formConfig } from './forms/forms.module';
 import { formFieldConfig } from './formFields/formFields.module';
+import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
 
 @NgModule({
     imports: [
@@ -36,7 +37,8 @@ import { formFieldConfig } from './formFields/formFields.module';
         PerfectScrollbarModule.forChild(),
         ...projectConfig.imports,
         ...formConfig.imports,
-        ...formFieldConfig.imports
+        ...formFieldConfig.imports,
+        ...formFieldViewConfig.imports
     ],
 
     declarations: [
@@ -53,7 +55,9 @@ import { formFieldConfig } from './formFields/formFields.module';
         HomeComponent,
         ...projectConfig.declarations,
         ...formConfig.declarations,
-        ...formFieldConfig.declarations
+        ...formFieldConfig.declarations,
+        ...formFieldViewConfig.declarations
+
 
     ],
     entryComponents: [
@@ -65,7 +69,9 @@ import { formFieldConfig } from './formFields/formFields.module';
         BreadcrumbService,
         ...projectConfig.providers,
         ...formConfig.providers,
-        ...formFieldConfig.providers
+        ...formFieldConfig.providers,
+        ...formFieldViewConfig.providers
+
     ]
 })
 export class MainModule { }
