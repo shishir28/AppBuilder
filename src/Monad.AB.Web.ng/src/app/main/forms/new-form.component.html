@@ -3,7 +3,7 @@
     <md-toolbar color="primary">Add Form</md-toolbar>
     <md-card-content>
       <form [formGroup]="formGroup" novalidate (ngSubmit)="saveForm(formGroup.value)">
-        <div fxLayout fxLayoutWrap>
+        <div fxLayout="column">
           <md-input-container fxFlex="50">
             <input mdInput
                    name="formName"

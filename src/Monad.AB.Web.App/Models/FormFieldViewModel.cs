@@ -30,9 +30,7 @@ namespace Monad.AB.Web.App.Models
 
     public class FormFieldViewModel
     {
-        [Required]
-        [Display(Name = "Form Id")]
-        public int Id { get; set; }
+        
         public int FormID { get; set; }
         public int FieldTypeID { get; set; }
         [RegularExpression(@"^\S*$")]
@@ -57,7 +55,9 @@ namespace Monad.AB.Web.App.Models
 
     public class EditFormFieldsViewModel : FormFieldViewModel
     {
-
+        [Required]
+        [Display(Name = "Form Id")]
+        public int Id { get; set; }
     }
 
     public class DeleteFormFieldsViewModel : FormFieldViewModel

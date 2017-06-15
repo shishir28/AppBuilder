@@ -32,7 +32,7 @@ export class NewFormComponent implements OnInit {
     }
 
     ngOnInit() {
-        var id = this.route.params.subscribe(params => {
+        this.route.params.subscribe(params => {
             this.projectId = params['projectid'];
             this.formId = params['formid'];
             if (this.formId)

@@ -19,7 +19,6 @@ export class FormFieldView {
     public view: string;
 }
 export class FormField {
-
     public id: number;
     public formID: number;
     public fieldTypeID: number;
