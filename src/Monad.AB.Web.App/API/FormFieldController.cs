@@ -17,10 +17,10 @@ namespace Monad.AB.Web.App.Controllers
 
         [HttpGet]
         [Route("GetFormFields")]
-        public IEnumerable<FormFieldViewModel> GetFormFields(int formId)
+        public IEnumerable<EditFormFieldsViewModel> GetFormFields(int formId)
         {
             var result = _formFieldService.GetFormsFieldsByFormID(formId);
-            return Mapper.Map<IEnumerable<FormField>, IEnumerable<FormFieldViewModel>>(result);
+            return Mapper.Map<IEnumerable<FormField>, IEnumerable<EditFormFieldsViewModel>>(result);
         }
 
         [HttpGet]

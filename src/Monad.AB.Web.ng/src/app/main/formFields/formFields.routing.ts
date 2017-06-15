@@ -5,6 +5,6 @@ import { ViewFormFieldComponent } from './view-formField.component';
 
 export const formFieldsRoutes: Routes = [
     { path: 'projects/:projectid/forms/:formid/fields/new', component: NewFormFieldComponent },
-    { path: 'projects/:projectid/forms/:formid/fields/edit/:fieldid', component: EditFormFieldComponent },
-    { path: 'projects/:projectid/forms/:formid/fields/:fieldid', component: ViewFormFieldComponent }
+    { path: 'projects/:projectid/forms/:formid/fields/edit/:formfieldid', component: EditFormFieldComponent },
+    { path: 'projects/:projectid/forms/:formid/fields/:formfieldid', component: ViewFormFieldComponent }
 ];

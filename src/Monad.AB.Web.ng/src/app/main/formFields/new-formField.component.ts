@@ -53,7 +53,6 @@ export class NewFormFieldComponent implements OnInit {
         this.serverErrorMessage = '';
         data.projectID = this.projectId;
         data.formID = this.formId;
-        console.log(data);
         this.formFieldsService.addFormField(data)
             .subscribe(response => {
                 if (response.statusCode == 201) {
