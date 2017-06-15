@@ -25,9 +25,9 @@ namespace Monad.AB.Web.App.Controllers
 
         [HttpGet]
         [Route("GetFormField")]
-        public FormFieldViewModel GetFieldsById(int fieldId)
+        public EditFormFieldsViewModel GetFieldsById(int fieldId)
         {
-            return Mapper.Map<FormField, FormFieldViewModel>(_formFieldService.GetFieldsById(fieldId));
+            return Mapper.Map<FormField, EditFormFieldsViewModel>(_formFieldService.GetFieldsById(fieldId));
         }
 
         [HttpGet]

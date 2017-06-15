@@ -1,3 +1,101 @@
-<p>
-  view-field works!
-</p>
+﻿<div fxLayout="column" fxLayout.gt-md="row">
+  <md-card style="padding: 16px;" fxFlex="90%">
+    <md-toolbar color="primary">View Form Field</md-toolbar>
+    <md-card-content>
+      <form>
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="name"
+                   [disabled]="true"
+                   [(ngModel)]="formField.name" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="label"
+                   [disabled]="true"
+                   [(ngModel)]="formField.label" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="description"
+                   [disabled]="true"
+                   [(ngModel)]="formField.description" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="width"
+                   [disabled]="true"
+                   [(ngModel)]="formField.width" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="rowNumber"
+                   [disabled]="true"
+                   [(ngModel)]="formField.rowNumber" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="rowSpan"
+                   [disabled]="true"
+                   [(ngModel)]="formField.rowSpan" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="columnNumber"
+                   [disabled]="true"
+                   [(ngModel)]="formField.columnNumber" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="columnSpan"
+                   [disabled]="true"
+                   [(ngModel)]="formField.columnSpan" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-checkbox name="isRequired"
+                       [disabled]="true"
+                       [(ngModel)]="formField.isRequired"
+                        color="primary">
+            Is Required
+          </md-checkbox>
+        </div>
+
+        <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
+          <button md-raised-button color="warn" style="margin-left: 8px;" type="button" (click)="cancelChanges($event);">
+            Delete
+          </button>
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="editFormField(projectId,formField.formID,formField.id);">
+            Edit
+          </button>
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="cancelChanges($event);">
+            Go Back
+          </button>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>

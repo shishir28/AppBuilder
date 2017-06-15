@@ -1900,7 +1900,7 @@ var _a;
 /***/ "../../../../../src/app/main/formFields/view-formField.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  view-field works!\r\n</p>\r\n"
+module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">View Form Field</md-toolbar>\r\n    <md-card-content>\r\n      <form>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"formField.name\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"label\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"formField.label\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"formField.description\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"width\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"formField.width\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"rowNumber\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"formField.rowNumber\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"rowSpan\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"formField.rowSpan\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"columnNumber\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"formField.columnNumber\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"columnSpan\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"formField.columnSpan\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-checkbox name=\"isRequired\"\r\n                       [disabled]=\"true\"\r\n                       [(ngModel)]=\"formField.isRequired\"\r\n                        color=\"primary\">\r\n            Is Required\r\n          </md-checkbox>\r\n        </div>\r\n\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"warn\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Delete\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"editFormField(projectId,formField.formID,formField.id);\">\r\n            Edit\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Go Back\r\n          </button>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1927,6 +1927,10 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_formFields_service__ = __webpack_require__("../../../../../src/app/main/formFields/shared/formFields.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_formField__ = __webpack_require__("../../../../../src/app/main/formFields/shared/formField.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewFormFieldComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1938,10 +1942,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
 var ViewFormFieldComponent = (function () {
-    function ViewFormFieldComponent() {
+    function ViewFormFieldComponent(formBuilder, router, route, formFieldsService) {
+        this.formBuilder = formBuilder;
+        this.router = router;
+        this.route = route;
+        this.formFieldsService = formFieldsService;
+        this.formField = new __WEBPACK_IMPORTED_MODULE_4__shared_formField__["a" /* FormField */]();
     }
     ViewFormFieldComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            _this.projectId = params['projectid'];
+            _this.formId = params['formid'];
+            _this.formFieldId = params['formfieldid'];
+            if (!_this.formFieldId)
+                return;
+            _this.formFieldsService.getFormField(_this.formFieldId)
+                .subscribe(function (formField) {
+                _this.formField = formField;
+            }, function (response) {
+                if (response.status == 404) {
+                    _this.router.navigate(['NotFound']);
+                }
+            });
+        });
+    };
+    ViewFormFieldComponent.prototype.editFormField = function (projectId, formId, fieldId) {
+        this.router.navigateByUrl('/projects/' + projectId + '/forms/' + formId + '/fields/edit/' + fieldId);
+    };
+    ViewFormFieldComponent.prototype.cancelChanges = function (e) {
+        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId);
     };
     return ViewFormFieldComponent;
 }());
@@ -1951,9 +1986,10 @@ ViewFormFieldComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/main/formFields/view-formField.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/formFields/view-formField.component.scss")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_formFields_service__["a" /* FormFieldsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_formFields_service__["a" /* FormFieldsService */]) === "function" && _d || Object])
 ], ViewFormFieldComponent);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=view-formField.component.js.map
 
 /***/ }),
