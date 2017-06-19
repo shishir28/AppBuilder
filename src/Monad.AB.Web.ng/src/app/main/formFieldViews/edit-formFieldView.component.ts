@@ -17,6 +17,7 @@ export class EditFormFieldViewComponent implements OnInit {
     projectId: number;
     formId: number;
     formFieldViewId: number;
+    formfieldid: number;
 
     constructor(private formBuilder: FormBuilder,
         private router: Router,
@@ -25,16 +26,13 @@ export class EditFormFieldViewComponent implements OnInit {
     ) {
         this.formGroup = formBuilder.group({
             id: [''],
-            name: ['', [Validators.required]],
-            label: [''],
-            description: [''],
-            fieldTypeID: ['', [Validators.required]],
-            width: ['', [Validators.required]],
-            rowNumber: ['', [Validators.required]],
+            viewID: ['', [Validators.required]],
+            row: ['', [Validators.required]],
             rowSpan: ['', [Validators.required]],
-            columnNumber: ['', [Validators.required]],
+            column: ['', [Validators.required]],
             columnSpan: ['', [Validators.required]],
-            isRequired: [''],
+            readOnly: [''],
+            hidden: [''],
         });
     }
 
@@ -42,7 +40,10 @@ export class EditFormFieldViewComponent implements OnInit {
         this.route.params.subscribe(params => {
             this.projectId = params['projectid'];
             this.formId = params['formid'];
+            this.formfieldid = params['formfieldid'];
             this.formFieldViewId = params['formFieldViewid'];
+
+            
             if (!this.formFieldViewId)
                 return;
 
@@ -78,6 +79,7 @@ export class EditFormFieldViewComponent implements OnInit {
     }
 
     cancelChanges(e) {
-        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId);
+
+        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId + '/fields/' + this.formfieldid);
     }
 }

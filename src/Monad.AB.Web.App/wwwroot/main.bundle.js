@@ -1462,7 +1462,7 @@ var _a;
 /***/ "../../../../../src/app/main/formFieldViews/edit-formFieldView.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  edit-formFieldView works!\r\n</p>"
+module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Edit Form Field View</md-toolbar>\r\n    <md-card-content>\r\n\r\n      <form [formGroup]=\"formGroup\" novalidate (ngSubmit)=\"saveForm(formGroup.value)\">\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"viewID\"\r\n                   [disabled]=\"true\"\r\n                   [(ngModel)]=\"formFieldView.viewID\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"row\"\r\n                   placeholder=\"Row\"\r\n                   required\r\n                   [(ngModel)]=\"formFieldView.row\"\r\n                   formControlName=\"row\"\r\n                   [class.invalid]=\"formGroup.controls['row'].touched && !formGroup.controls['row'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['row'].pristine || formGroup.controls['row'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['row'].errors?.required\">Row Number is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rowSpan\"\r\n                   placeholder=\"Row Span\"\r\n                   required\r\n                   [(ngModel)]=\"formFieldView.rowSpan\"\r\n                   formControlName=\"row\"\r\n                   [class.invalid]=\"formGroup.controls['row'].touched && !formGroup.controls['rowSpan'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['rowSpan'].pristine || formGroup.controls['rowSpan'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['rowSpan'].errors?.required\">Row Span is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"column\"\r\n                   placeholder=\"Column\"\r\n                   required\r\n                   [(ngModel)]=\"formFieldView.column\"\r\n                   formControlName=\"row\"\r\n                   [class.invalid]=\"formGroup.controls['column'].touched && !formGroup.controls['column'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['column'].pristine || formGroup.controls['column'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['column'].errors?.required\">Column Number is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"columnSpan\"\r\n                   placeholder=\"Column Span\"\r\n                   required\r\n                   [(ngModel)]=\"formFieldView.columnSpan\"\r\n                   formControlName=\"row\"\r\n                   [class.invalid]=\"formGroup.controls['columnSpan'].touched && !formGroup.controls['columnSpan'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['columnSpan'].pristine || formGroup.controls['columnSpan'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['columnSpan'].errors?.required\">Column Span is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-checkbox name=\"readOnly\"\r\n                       [(ngModel)]=\"formFieldView.readOnly\"\r\n                       formControlName=\"readOnly\" color=\"primary\">\r\n            Read only\r\n          </md-checkbox>\r\n\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-checkbox name=\"hidden\"\r\n                       [(ngModel)]=\"formFieldView.hidden\"\r\n                       formControlName=\"hidden\" color=\"primary\">\r\n            Hidden\r\n          </md-checkbox>\r\n        </div>\r\n\r\n       \r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!formGroup.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1517,16 +1517,13 @@ var EditFormFieldViewComponent = (function () {
         this.formFieldView = new __WEBPACK_IMPORTED_MODULE_4__formFields_shared_formField__["a" /* FormFieldView */]();
         this.formGroup = formBuilder.group({
             id: [''],
-            name: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required]],
-            label: [''],
-            description: [''],
-            fieldTypeID: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required]],
-            width: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required]],
-            rowNumber: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required]],
+            viewID: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required]],
+            row: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required]],
             rowSpan: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required]],
-            columnNumber: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required]],
+            column: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required]],
             columnSpan: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required]],
-            isRequired: [''],
+            readOnly: [''],
+            hidden: [''],
         });
     }
     EditFormFieldViewComponent.prototype.ngOnInit = function () {
@@ -1534,6 +1531,7 @@ var EditFormFieldViewComponent = (function () {
         this.route.params.subscribe(function (params) {
             _this.projectId = params['projectid'];
             _this.formId = params['formid'];
+            _this.formfieldid = params['formfieldid'];
             _this.formFieldViewId = params['formFieldViewid'];
             if (!_this.formFieldViewId)
                 return;
@@ -1568,7 +1566,7 @@ var EditFormFieldViewComponent = (function () {
         });
     };
     EditFormFieldViewComponent.prototype.cancelChanges = function (e) {
-        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId);
+        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId + '/fields/' + this.formfieldid);
     };
     return EditFormFieldViewComponent;
 }());
@@ -1597,10 +1595,8 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__edit_formFieldView_component__ = __webpack_require__("../../../../../src/app/main/formFieldViews/edit-formFieldView.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__view_formFieldView_component__ = __webpack_require__("../../../../../src/app/main/formFieldViews/view-formFieldView.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_formFieldViews_service__ = __webpack_require__("../../../../../src/app/main/formFieldViews/shared/formFieldViews.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_formFieldViews_service__ = __webpack_require__("../../../../../src/app/main/formFieldViews/shared/formFieldViews.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return formFieldViewConfig; });
-
 
 
 
@@ -1620,11 +1616,10 @@ var formFieldViewConfig = {
         __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__["a" /* FlexLayoutModule */],
     ],
     declarations: [
-        __WEBPACK_IMPORTED_MODULE_6__edit_formFieldView_component__["a" /* EditFormFieldViewComponent */],
-        __WEBPACK_IMPORTED_MODULE_7__view_formFieldView_component__["a" /* ViewFormFieldViewComponent */]
+        __WEBPACK_IMPORTED_MODULE_6__edit_formFieldView_component__["a" /* EditFormFieldViewComponent */]
     ],
     providers: [
-        __WEBPACK_IMPORTED_MODULE_8__shared_formFieldViews_service__["a" /* FormFieldViewsService */]
+        __WEBPACK_IMPORTED_MODULE_7__shared_formFieldViews_service__["a" /* FormFieldViewsService */]
     ]
 };
 //# sourceMappingURL=formFieldViews.module.js.map
@@ -1636,13 +1631,10 @@ var formFieldViewConfig = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__edit_formFieldView_component__ = __webpack_require__("../../../../../src/app/main/formFieldViews/edit-formFieldView.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view_formFieldView_component__ = __webpack_require__("../../../../../src/app/main/formFieldViews/view-formFieldView.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return formFieldViewsRoutes; });
 
-
 var formFieldViewsRoutes = [
-    { path: 'projects/:projectid/forms/:formid/fields/:formfieldid/formFieldViews/edit/:formFieldViewid', component: __WEBPACK_IMPORTED_MODULE_0__edit_formFieldView_component__["a" /* EditFormFieldViewComponent */] },
-    { path: 'projects/:projectid/forms/:formid/fields/:formfieldid/formFieldViews/:formFieldViewid', component: __WEBPACK_IMPORTED_MODULE_1__view_formFieldView_component__["a" /* ViewFormFieldViewComponent */] }
+    { path: 'projects/:projectid/forms/:formid/fields/:formfieldid/formFieldViews/edit/:formFieldViewid', component: __WEBPACK_IMPORTED_MODULE_0__edit_formFieldView_component__["a" /* EditFormFieldViewComponent */] }
 ];
 //# sourceMappingURL=formFieldViews.routing.js.map
 
@@ -1697,104 +1689,6 @@ FormFieldViewsService = __decorate([
 
 var _a;
 //# sourceMappingURL=formFieldViews.service.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/main/formFieldViews/view-formFieldView.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\r\n  view-formFieldView works!\r\n</p>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/main/formFieldViews/view-formFieldView.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ":host {\n  display: block;\n  padding: 36px;\n  height: calc(100% - 72px);\n  background: url(\"/assets/img/backgrounds/2.jpg\") no-repeat center center fixed;\n  background-size: cover; }\n\nmd-input-container {\n  margin: 8px 0; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/main/formFieldViews/view-formFieldView.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_formFieldViews_service__ = __webpack_require__("../../../../../src/app/main/formFieldViews/shared/formFieldViews.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formFields_shared_formField__ = __webpack_require__("../../../../../src/app/main/formFields/shared/formField.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewFormFieldViewComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var ViewFormFieldViewComponent = (function () {
-    function ViewFormFieldViewComponent(formBuilder, router, route, formFieldViewsService) {
-        this.formBuilder = formBuilder;
-        this.router = router;
-        this.route = route;
-        this.formFieldViewsService = formFieldViewsService;
-        this.formFieldView = new __WEBPACK_IMPORTED_MODULE_4__formFields_shared_formField__["a" /* FormFieldView */]();
-    }
-    ViewFormFieldViewComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.route.params.subscribe(function (params) {
-            _this.projectId = params['projectid'];
-            _this.formId = params['formid'];
-            _this.formFieldViewId = params['formFieldViewid'];
-            if (!_this.formFieldViewId)
-                return;
-            _this.formFieldViewsService.getFormFieldView(_this.formFieldViewId)
-                .subscribe(function (formFieldView) {
-                _this.formFieldView = formFieldView;
-            }, function (response) {
-                if (response.status == 404) {
-                    _this.router.navigate(['NotFound']);
-                }
-            });
-            ;
-        });
-    };
-    ViewFormFieldViewComponent.prototype.editformFieldView = function (projectId, formId, fieldId) {
-        this.router.navigateByUrl('/projects/' + projectId + '/forms/' + formId + '/fields/edit/' + fieldId);
-    };
-    ViewFormFieldViewComponent.prototype.cancelChanges = function (e) {
-        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId);
-    };
-    return ViewFormFieldViewComponent;
-}());
-ViewFormFieldViewComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-view-formFieldView',
-        template: __webpack_require__("../../../../../src/app/main/formFieldViews/view-formFieldView.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/main/formFieldViews/view-formFieldView.component.scss")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_formFieldViews_service__["a" /* FormFieldViewsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_formFieldViews_service__["a" /* FormFieldViewsService */]) === "function" && _d || Object])
-], ViewFormFieldViewComponent);
-
-var _a, _b, _c, _d;
-//# sourceMappingURL=view-formFieldView.component.js.map
 
 /***/ }),
 

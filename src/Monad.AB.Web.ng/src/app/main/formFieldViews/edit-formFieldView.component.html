@@ -1,3 +1,113 @@
-﻿<p>
-  edit-formFieldView works!
-</p>
+﻿<div fxLayout="column" fxLayout.gt-md="row">
+  <md-card style="padding: 16px;" fxFlex="90%">
+    <md-toolbar color="primary">Edit Form Field View</md-toolbar>
+    <md-card-content>
+
+      <form [formGroup]="formGroup" novalidate (ngSubmit)="saveForm(formGroup.value)">
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="viewID"
+                   [disabled]="true"
+                   [(ngModel)]="formFieldView.viewID" />
+          </md-input-container>
+        </div>
+
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="row"
+                   placeholder="Row"
+                   required
+                   [(ngModel)]="formFieldView.row"
+                   formControlName="row"
+                   [class.invalid]="formGroup.controls['row'].touched && !formGroup.controls['row'].valid" />
+            <md-hint [hidden]="formGroup.controls['row'].pristine || formGroup.controls['row'].valid">
+              <span [hidden]="!formGroup.controls['row'].errors?.required">Row Number is required.</span>
+            </md-hint>
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="rowSpan"
+                   placeholder="Row Span"
+                   required
+                   [(ngModel)]="formFieldView.rowSpan"
+                   formControlName="row"
+                   [class.invalid]="formGroup.controls['row'].touched && !formGroup.controls['rowSpan'].valid" />
+            <md-hint [hidden]="formGroup.controls['rowSpan'].pristine || formGroup.controls['rowSpan'].valid">
+              <span [hidden]="!formGroup.controls['rowSpan'].errors?.required">Row Span is required.</span>
+            </md-hint>
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="column"
+                   placeholder="Column"
+                   required
+                   [(ngModel)]="formFieldView.column"
+                   formControlName="row"
+                   [class.invalid]="formGroup.controls['column'].touched && !formGroup.controls['column'].valid" />
+            <md-hint [hidden]="formGroup.controls['column'].pristine || formGroup.controls['column'].valid">
+              <span [hidden]="!formGroup.controls['column'].errors?.required">Column Number is required.</span>
+            </md-hint>
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="columnSpan"
+                   placeholder="Column Span"
+                   required
+                   [(ngModel)]="formFieldView.columnSpan"
+                   formControlName="row"
+                   [class.invalid]="formGroup.controls['columnSpan'].touched && !formGroup.controls['columnSpan'].valid" />
+            <md-hint [hidden]="formGroup.controls['columnSpan'].pristine || formGroup.controls['columnSpan'].valid">
+              <span [hidden]="!formGroup.controls['columnSpan'].errors?.required">Column Span is required.</span>
+            </md-hint>
+          </md-input-container>
+
+        </div>
+
+        <div fxLayout="column">
+          <md-checkbox name="readOnly"
+                       [(ngModel)]="formFieldView.readOnly"
+                       formControlName="readOnly" color="primary">
+            Read only
+          </md-checkbox>
+
+        </div>
+        <div fxLayout="column">
+          <md-checkbox name="hidden"
+                       [(ngModel)]="formFieldView.hidden"
+                       formControlName="hidden" color="primary">
+            Hidden
+          </md-checkbox>
+        </div>
+
+       
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutAlign="end center">
+            <button md-raised-button
+                    type="button" (click)="cancelChanges($event);">
+              Cancel
+            </button>
+            <button md-button color="primary"
+                    md-raised-button
+                    style="margin-left: 8px;"
+                    type="submit"
+                    [disabled]="!formGroup.valid">
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>

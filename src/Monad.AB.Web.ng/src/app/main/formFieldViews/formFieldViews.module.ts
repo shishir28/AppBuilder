@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EditFormFieldViewComponent } from './edit-formFieldView.component';
-import { ViewFormFieldViewComponent } from './view-formFieldView.component';
 import { FormFieldViewsService } from './shared/formFieldViews.service';
 
 export const formFieldViewConfig: NgModule = {
@@ -20,8 +19,7 @@ export const formFieldViewConfig: NgModule = {
         FlexLayoutModule,
     ],
     declarations: [
-        EditFormFieldViewComponent,
-        ViewFormFieldViewComponent
+        EditFormFieldViewComponent
     ],
 
     providers: [
