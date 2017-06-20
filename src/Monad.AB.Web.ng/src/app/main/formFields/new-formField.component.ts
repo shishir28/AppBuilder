@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { FormFieldsService } from './shared/formFields.service';
-import { FormField } from './shared/formField';
+import { FormField, FieldType } from './shared/formField';
 
 
 @Component({
@@ -12,6 +12,7 @@ import { FormField } from './shared/formField';
     styleUrls: ['./new-formField.component.scss']
 })
 export class NewFormFieldComponent implements OnInit {
+    private fieldTypes: FieldType[];
     formGroup: FormGroup;
     formField: FormField = new FormField();
     serverErrorMessage: string;
@@ -46,6 +47,11 @@ export class NewFormFieldComponent implements OnInit {
             this.formFieldId = params['formfieldid'];
             if (this.formFieldId)
                 return;
+
+            this.formFieldsService.getFieldTypes()
+                .subscribe(data => {
+                    this.fieldTypes = data;
+                });
         });
     }
 

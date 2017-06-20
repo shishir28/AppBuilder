@@ -56,3 +56,9 @@ export class EditFormFieldsView extends FormField {
     public fieldID: number;
     public formFieldViewID: number;
 }
+
+export class FieldType {
+    public Id: number;
+    public Name: string;
+    public Description: string;
+}

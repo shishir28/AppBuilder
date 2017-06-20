@@ -41,7 +41,6 @@ export class NewFormComponent implements OnInit {
             this.formsService.getForms(this.projectId)
                 .subscribe(data => {
                     this.forms = data;
-                    console.log(this.forms);
                 });
 
         });

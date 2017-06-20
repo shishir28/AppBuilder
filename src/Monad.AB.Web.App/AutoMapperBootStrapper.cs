@@ -36,6 +36,9 @@ namespace Monad.AB.Web.App
                 cfg.CreateMap<FormFieldView, FormFieldViewViewModel>();
                 cfg.CreateMap<FormFieldViewViewModel, FormFieldView>();
 
+                cfg.CreateMap<FieldType, FieldTypeViewModel>();
+                cfg.CreateMap<FieldTypeViewModel, FieldType>();
+
                 cfg.CreateMap<Form, FormViewModel>()
                   .ForMember(dest => dest.FormName, src => src.MapFrom(s => s.Name))
                 .ForMember(dest => dest.FormTitle, src => src.MapFrom(s => s.Title))

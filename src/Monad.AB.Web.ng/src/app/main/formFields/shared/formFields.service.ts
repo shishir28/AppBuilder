@@ -37,6 +37,11 @@ export class FormFieldsService {
             .map(res => res.json());
     }
 
+    getFieldTypes() {
+        return this.http.get('/api/formField/GetFieldTypes')
+            .map(res => res.json());
+    }
+
     private extractData(res: Response) {
         let body = res.json();
         return body || {};

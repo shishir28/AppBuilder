@@ -5,7 +5,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormFieldsService } from './shared/formFields.service';
 import { FormFieldViewsService } from '../formFieldViews/shared/formFieldViews.service';
 
-import { FormField } from './shared/formField';
+import { FormField, FieldType } from './shared/formField';
+
 import { FormFieldView } from './shared/formField';
 
 
@@ -15,7 +16,7 @@ import { FormFieldView } from './shared/formField';
     styleUrls: ['./view-formField.component.scss']
 })
 export class ViewFormFieldComponent implements OnInit {
-
+    private fieldTypes: FieldType[];
     formField: FormField = new FormField();
     private formFieldViews: FormFieldView[];
 
@@ -44,11 +45,13 @@ export class ViewFormFieldComponent implements OnInit {
                 .subscribe(
                 formField => {
                     this.formField = formField;
-
+                    this.formFieldsService.getFieldTypes()
+                        .subscribe(data => {
+                            this.fieldTypes = data;
+                        });
                     this.formFieldViewsService.getFormFieldViews(this.formField.id)
                         .subscribe(data => {
                             this.formFieldViews = data;
-                            console.log(data);
                         });
                 },
                 response => {

@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { FormFieldsService } from './shared/formFields.service';
-import { FormField } from './shared/formField';
+import { FormField, FieldType } from './shared/formField';
 
 @Component({
   selector: 'ms-edit-formField',
@@ -11,6 +11,8 @@ import { FormField } from './shared/formField';
   styleUrls: ['./edit-formField.component.scss']
 })
 export class EditFormFieldComponent implements OnInit {
+    private fieldTypes: FieldType[];
+
     formGroup: FormGroup;
     formField: FormField = new FormField();
     serverErrorMessage: string;
@@ -51,6 +53,11 @@ export class EditFormFieldComponent implements OnInit {
                 formField => {
                     this.formField = formField;
                     this.formGroup.controls['id'].setValue(this.formFieldId);
+                    this.formFieldsService.getFieldTypes()
+                        .subscribe(data => {
+                            this.fieldTypes = data;
+                        });
+
                 },
                 response => {
                     if (response.status == 404) {
