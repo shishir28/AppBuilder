@@ -11,6 +11,7 @@ import { Form } from './shared/form'
     styleUrls: ['./new-form.component.scss']
 })
 export class NewFormComponent implements OnInit {
+    private forms: Form[];
     formGroup: FormGroup;
     form: Form = new Form();
     serverErrorMessage: string;
@@ -37,6 +38,12 @@ export class NewFormComponent implements OnInit {
             this.formId = params['formid'];
             if (this.formId)
                 return;
+            this.formsService.getForms(this.projectId)
+                .subscribe(data => {
+                    this.forms = data;
+                    console.log(this.forms);
+                });
+
         });
     }
 

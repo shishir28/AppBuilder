@@ -32,13 +32,11 @@
           </md-input-container>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
-                   name="dependencyID"
-                   placeholder="Dependency"
-                   [(ngModel)]="form.dependencyID"
-                   formControlName="dependencyID" />
-          </md-input-container>
+          <md-select [(ngModel)]="form.dependencyID" placeholder="Dependency" formControlName="dependencyID">
+            <md-option *ngFor="let currentForm of forms" [value]="currentForm.id">
+              {{currentForm.title}}
+            </md-option>
+          </md-select>
         </div>
         <div fxLayout="column">
           <md-input-container>

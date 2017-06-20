@@ -11,6 +11,7 @@ import { Form } from './shared/form'
     styleUrls: ['./edit-form.component.scss']
 })
 export class EditFormComponent implements OnInit {
+    private forms: Form[];
     formGroup: FormGroup;
     form: Form = new Form();
     serverErrorMessage: string;
@@ -44,6 +45,11 @@ export class EditFormComponent implements OnInit {
                 form => {
                     this.form = form;
                     this.formGroup.controls['id'].setValue(this.formId);
+                    this.formsService.getForms(this.projectId)
+                        .subscribe(data => {
+                            this.forms = data.filter(x => x.id != this.formId);
+                        });
+
                 },
                 response => {
                     if (response.status == 404) {

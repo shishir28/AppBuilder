@@ -12,6 +12,7 @@ import { FormField } from '../formFields/shared/formField';
     styleUrls: ['./view-form.component.scss']
 })
 export class ViewFormComponent implements OnInit, AfterViewInit {
+    private forms: Form[];
     projectId: number;
     formId: number;
     form: Form = new Form();
@@ -41,6 +42,11 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
                 form => {
                     this.form = form;
                     this.form.id = this.formId;
+                    this.formsService.getForms(this.projectId)
+                        .subscribe(data => {
+                            this.forms = data.filter(x => x.id != this.formId);
+
+                        });
                     this.formFieldsService.getFormFields(this.formId)
                         .subscribe(data => {
                             this.formFields = data;
