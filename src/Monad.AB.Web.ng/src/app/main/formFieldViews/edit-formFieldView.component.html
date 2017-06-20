@@ -7,13 +7,12 @@
         <div fxLayout="column">
           <md-input-container>
             <input mdInput
-                   name="viewID"
+                   formControlName="name"
+                   placeholder="View Name"
                    [disabled]="true"
-                   formControlName="viewID"
-                   [(ngModel)]="formFieldView.viewID" />
+                   [(ngModel)]="formViewType.name" />
           </md-input-container>
         </div>
-
 
         <div fxLayout="column">
           <md-input-container>

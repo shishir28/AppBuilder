@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { FormFieldViewsService } from './shared/formFieldViews.service';
-import { FormFieldView } from '../formFields/shared/formField';
+import { FormFieldView, FormViewTypeModel } from '../formFields/shared/formField';
 
 @Component({
     selector: 'ms-edit-formFieldView',
@@ -13,6 +13,7 @@ import { FormFieldView } from '../formFields/shared/formField';
 export class EditFormFieldViewComponent implements OnInit {
     formGroup: FormGroup;
     formFieldView: FormFieldView = new FormFieldView();
+    formViewType: FormViewTypeModel = new FormViewTypeModel();
     serverErrorMessage: string;
     projectId: number;
     formId: number;
@@ -26,7 +27,7 @@ export class EditFormFieldViewComponent implements OnInit {
     ) {
         this.formGroup = formBuilder.group({
             id: [''],
-            viewID: ['', [Validators.required]],
+            name: this.formBuilder.control({ value: '', disabled: true }),
             row: ['', [Validators.required]],
             rowSpan: ['', [Validators.required]],
             column: ['', [Validators.required]],
@@ -51,6 +52,7 @@ export class EditFormFieldViewComponent implements OnInit {
                 .subscribe(
                 formFieldView => {
                     this.formFieldView = formFieldView;
+                    this.formViewType = formFieldView.view;
                     this.formGroup.controls['id'].setValue(this.formFieldViewId);
                 },
                 response => {

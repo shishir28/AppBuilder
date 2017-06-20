@@ -1,4 +1,5 @@
 ﻿export class FormViewTypeModel {
+    public id: number;
     public name: string;
     public description: string;
 }
@@ -16,7 +17,7 @@ export class FormFieldView {
     public createdDateUtc: Date;
     public lastModifiedDateUtc: Date;
     public lastModifiedBy: number;
-    public view: string;
+    public view: FormViewTypeModel;
 }
 export class FormField {
     public id: number;

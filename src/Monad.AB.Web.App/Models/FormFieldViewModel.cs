@@ -6,6 +6,7 @@ namespace Monad.AB.Web.App.Models
 
     public class FormViewTypeModel
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }
@@ -25,7 +26,7 @@ namespace Monad.AB.Web.App.Models
         public DateTime CreatedDateUtc { get; set; }
         public DateTime LastModifiedDateUtc { get; set; }
         public int LastModifiedBy { get; set; }
-        public string View { get; set; }
+        public FormViewTypeModel View { get; set; }
     }
 
     public class FormFieldViewModel
