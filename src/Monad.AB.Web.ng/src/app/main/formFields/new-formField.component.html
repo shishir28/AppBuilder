@@ -124,11 +124,9 @@
         </div>
 
         <div fxLayout="column">
-          <md-checkbox name="isRequired"
-                       [(ngModel)]="formField.isRequired"
-                       formControlName="isRequired" color="primary">
+          <md-slide-toggle  name="isRequired"  [(ngModel)]="formField.isRequired"  formControlName="isRequired" color="primary">
             Is Required
-          </md-checkbox>
+          </md-slide-toggle>
         </div>
 
         <div fxLayout="column">

@@ -31,17 +31,6 @@
             </md-hint>
           </md-input-container>
         </div>
-
-        <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
-                   name="formDescription"
-                   placeholder="Description"
-                   [(ngModel)]="form.formDescription"
-                   formControlName="formDescription" />
-          </md-input-container>
-        </div>
-
         <div fxLayout="column">
           <md-input-container>
             <input mdInput
@@ -49,6 +38,15 @@
                    placeholder="Dependency"
                    [(ngModel)]="form.dependencyID"
                    formControlName="dependencyID" />
+          </md-input-container>
+        </div>
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="formDescription"
+                   placeholder="Description"
+                   [(ngModel)]="form.formDescription"
+                   formControlName="formDescription" />
           </md-input-container>
         </div>
 

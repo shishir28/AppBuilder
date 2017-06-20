@@ -7,6 +7,7 @@
           <md-input-container fxFlex="50">
             <input mdInput
                    name="name"
+                   placeholder="Name"
                    [disabled]="true"
                    [(ngModel)]="project.name" />
           </md-input-container>
@@ -15,6 +16,7 @@
           <md-input-container>
             <input mdInput
                    name="title"
+                   placeholder="Title"
                    [disabled]="true"
                    [(ngModel)]="project.title" />
           </md-input-container>
@@ -23,6 +25,7 @@
           <md-input-container>
             <input mdInput
                    name="rootNamespace"
+                   placeholder="RootNamespace"
                    [disabled]="true"
                    [(ngModel)]="project.rootNamespace" />
           </md-input-container>
@@ -31,6 +34,7 @@
           <md-input-container>
             <input mdInput
                    name="companyName"
+                   placeholder="CompanyName"
                    [disabled]="true"
                    [(ngModel)]="project.companyName" />
           </md-input-container>
@@ -39,6 +43,7 @@
           <md-input-container>
             <input mdInput
                    name="description"
+                   placeholder="Description"
                    [disabled]="true"
                    [(ngModel)]="project.description" />
           </md-input-container>
@@ -67,8 +72,8 @@
           <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="addForm(project.id);">
             Add Form
           </button>
-        </div>       
-        <div fxLayout="row"  class="table-container mat-elevation-z2"  fxLayout.gt-sm="row" fxLayoutAlign="end center">
+        </div>
+        <div fxLayout="row" class="table-container mat-elevation-z2" fxLayout.gt-sm="row" fxLayoutAlign="end center">
           <table class="table" [class.table-hover]="tableHover" [class.table-striped]="tableStriped" [class.table-condensed]="tableCondensed" [class.table-bordered]="tableBordered">
             <thead>
               <tr>
@@ -92,7 +97,7 @@
             </tbody>
           </table>
         </div>
-        </div>
+      </div>
     </md-card-content>
   </md-card>
 </div>

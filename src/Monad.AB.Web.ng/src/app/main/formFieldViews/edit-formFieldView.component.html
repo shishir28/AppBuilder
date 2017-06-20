@@ -9,6 +9,7 @@
             <input mdInput
                    name="viewID"
                    [disabled]="true"
+                   formControlName="viewID"
                    [(ngModel)]="formFieldView.viewID" />
           </md-input-container>
         </div>
@@ -36,7 +37,7 @@
                    placeholder="Row Span"
                    required
                    [(ngModel)]="formFieldView.rowSpan"
-                   formControlName="row"
+                   formControlName="rowSpan"
                    [class.invalid]="formGroup.controls['row'].touched && !formGroup.controls['rowSpan'].valid" />
             <md-hint [hidden]="formGroup.controls['rowSpan'].pristine || formGroup.controls['rowSpan'].valid">
               <span [hidden]="!formGroup.controls['rowSpan'].errors?.required">Row Span is required.</span>
@@ -51,7 +52,7 @@
                    placeholder="Column"
                    required
                    [(ngModel)]="formFieldView.column"
-                   formControlName="row"
+                   formControlName="column"
                    [class.invalid]="formGroup.controls['column'].touched && !formGroup.controls['column'].valid" />
             <md-hint [hidden]="formGroup.controls['column'].pristine || formGroup.controls['column'].valid">
               <span [hidden]="!formGroup.controls['column'].errors?.required">Column Number is required.</span>
@@ -66,7 +67,7 @@
                    placeholder="Column Span"
                    required
                    [(ngModel)]="formFieldView.columnSpan"
-                   formControlName="row"
+                   formControlName="columnSpan"
                    [class.invalid]="formGroup.controls['columnSpan'].touched && !formGroup.controls['columnSpan'].valid" />
             <md-hint [hidden]="formGroup.controls['columnSpan'].pristine || formGroup.controls['columnSpan'].valid">
               <span [hidden]="!formGroup.controls['columnSpan'].errors?.required">Column Span is required.</span>
@@ -76,22 +77,19 @@
         </div>
 
         <div fxLayout="column">
-          <md-checkbox name="readOnly"
-                       [(ngModel)]="formFieldView.readOnly"
-                       formControlName="readOnly" color="primary">
+          <md-slide-toggle [(ngModel)]="formFieldView.readOnly"
+                           formControlName="readOnly" color="primary">
             Read only
-          </md-checkbox>
-
+          </md-slide-toggle>
         </div>
         <div fxLayout="column">
-          <md-checkbox name="hidden"
-                       [(ngModel)]="formFieldView.hidden"
-                       formControlName="hidden" color="primary">
+          <md-slide-toggle [(ngModel)]="formFieldView.hidden"
+                           formControlName="hidden" color="primary">
             Hidden
-          </md-checkbox>
+          </md-slide-toggle>
         </div>
 
-       
+
         <div fxLayout="column">
           <div fxLayout="row" fxLayoutAlign="end center">
             <button md-raised-button
