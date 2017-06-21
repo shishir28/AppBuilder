@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MaterialComponentsModule } from '../material/material-components.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { UsersService } from './shared/users.service';
 
@@ -15,6 +16,7 @@ import { ViewUserProfileComponent } from "./view-user-profile.component";
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         MaterialComponentsModule,
         RouterModule,
         HttpModule,

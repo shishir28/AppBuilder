@@ -13,6 +13,12 @@ export class UsersService {
         this.options = new RequestOptions({ headers: headers });
     }
 
+    getUserProfile(userName) {
+        return this.http.get('/api/user/GetUserDetails?userName=' + userName)
+            .map(res => res.json());
+    }
+
+
     private extractData(res: Response) {
         let body = res.json();
         return body || {};

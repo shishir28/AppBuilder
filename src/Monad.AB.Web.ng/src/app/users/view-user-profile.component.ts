@@ -2,7 +2,7 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from './shared/users.service';
-//import { RegisterDetail } from './shared/account';
+import { ApplicationUser } from './shared/user';
 
 @Component({
     selector: 'ms-edit-user-profile',
@@ -12,7 +12,8 @@ import { UsersService } from './shared/users.service';
 export class ViewUserProfileComponent implements OnInit, AfterViewInit {
     @ViewChild('tbody')
     tbody: ElementRef;
-
+    userName: string;
+    user: ApplicationUser = new ApplicationUser();
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
@@ -21,6 +22,18 @@ export class ViewUserProfileComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
+        this.userName = localStorage.getItem('currentUser');
+
+        this.usersService.getUserProfile(this.userName)
+            .subscribe(
+            user => {
+                this.user = user;
+            },
+            response => {
+                if (response.status == 404) {
+                    this.router.navigate(['NotFound']);
+                }
+            });
     }
 
     ngAfterViewInit() {

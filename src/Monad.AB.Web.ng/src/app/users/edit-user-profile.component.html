@@ -2,27 +2,133 @@
   <md-card style="padding: 16px;" fxFlex="90%">
     <md-toolbar color="primary">Edit User Profile</md-toolbar>
     <md-card-content>
-      <!--<form [formGroup]="formGroup" novalidate (ngSubmit)="saveUser(formGroup.value)">-->
-      <form >
+      <form [formGroup]="formGroup" novalidate (ngSubmit)="saveUser(formGroup.value)">
         <div fxLayout="column">
-          <!--<md-input-container fxFlex="50">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="userName"
+                   placeholder="UserName"
+                   readonly ="readonly"                   
+                   formControlName="userName"
+                   [(ngModel)]="user.userName" />
+          </md-input-container>
+        </div>
 
-          </md-input-container>-->
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="firstName"
+                   placeholder="First Name"
+                   required
+                   [(ngModel)]="user.firstName"
+                   formControlName="firstName"
+                   [class.invalid]="formGroup.controls['firstName'].touched && !formGroup.controls['firstName'].valid" />
+            <md-hint [hidden]="formGroup.controls['firstName'].pristine || formGroup.controls['firstName'].valid">
+              <span [hidden]="!formGroup.controls['firstName'].errors?.required">First Name is required.</span>
+            </md-hint>
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="lastName"
+                   placeholder="Last Name"
+                   required
+                   [(ngModel)]="user.lastName"
+                   formControlName="lastName"
+                   [class.invalid]="formGroup.controls['lastName'].touched && !formGroup.controls['lastName'].valid" />
+            <md-hint [hidden]="formGroup.controls['lastName'].pristine || formGroup.controls['lastName'].valid">
+              <span [hidden]="!formGroup.controls['lastName'].errors?.required">Last Name is required.</span>
+            </md-hint>
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="emailAddress"
+                   placeholder="Email Address"
+                   required
+                   [(ngModel)]="user.emailAddress"
+                   formControlName="emailAddress"
+                   [class.invalid]="formGroup.controls['emailAddress'].touched && !formGroup.controls['emailAddress'].valid" />
+            <md-hint [hidden]="formGroup.controls['emailAddress'].pristine || formGroup.controls['emailAddress'].valid">
+              <span [hidden]="!formGroup.controls['emailAddress'].errors?.required">Email is required.</span>
+            </md-hint>
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="designation"
+                   placeholder="Designation"
+                   [(ngModel)]="user.designation"
+                   formControlName="designation" />
+          </md-input-container>
+        </div>
+
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="addressLine1"
+                   placeholder="Address Line 1"
+                   [(ngModel)]="user.addressLine1"
+                   formControlName="addressLine1" />
+          </md-input-container>
+        </div>
+
+
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="addressLine2"
+                   placeholder="Address Line 2"
+                   [(ngModel)]="user.addressLine2"
+                   formControlName="addressLine2" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="zip"
+                   placeholder="Zip"
+                   [(ngModel)]="user.zip"
+                   formControlName="zip" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="city"
+                   placeholder="City"
+                   [(ngModel)]="user.city"
+                   formControlName="city" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container fxFlex="50">
+            <input mdInput
+                   name="state"
+                   placeholder="State"
+                   [(ngModel)]="user.state"
+                   formControlName="state" />
+          </md-input-container>
         </div>
 
         <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
-          <button md-raised-button
-                  type="button" (click)="cancelChanges($event);">
-            Cancel
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="cancelChanges($event);">
+            Go Back
           </button>
-          <button md-button color="primary"
-                  md-raised-button
-                  style="margin-left: 8px;"
-                  type="submit"
-                  [disabled]="!formGroup.valid">
-            Save
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="editUserProfile();">
+            Edit
           </button>
-
         </div>
       </form>
 

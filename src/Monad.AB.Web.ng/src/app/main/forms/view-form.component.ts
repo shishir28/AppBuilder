@@ -30,7 +30,7 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
-        var id = this.route.params.subscribe(params => {
+         this.route.params.subscribe(params => {
             this.formId = params['formid'];
             this.projectId = params['projectid'];
 
