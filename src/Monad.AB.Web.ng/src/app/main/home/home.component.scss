@@ -119,17 +119,13 @@
 
   .sidenav {
     &.collapsed {
-      //max-width: $max-width__icon-sidenav; // Padding width + icon width
-      //min-width: $max-width__icon-sidenav;
       .fade-in-on-icon-sidenav {
-        //noinspection CssInvalidPropertyValue
         animation: .5s cubic-bezier(.25,.8,.25,1) 0s normal forwards 1 fadeout;
       }
     }
 
     &:not(.collapsed) {
       .fade-in-on-icon-sidenav {
-        //noinspection CssInvalidPropertyValue
         animation: .5s cubic-bezier(.25,.8,.25,1) 0s normal forwards 1 fadein;
       }
     }

@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AuthGuard } from './shared/guards/index';
-
+import { MaterialComponentsModule } from './material/material-components.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { MdIconRegistry, } from "@angular/material";
 import { RoutingModule } from "./app-routing.module";
@@ -15,6 +16,7 @@ import { AccountsModule } from './accounts/accounts.module';
 import { UsersModule } from './users/users.module';
 
 import { SortablejsModule, SortablejsOptions } from 'angular-sortablejs';
+import { NotFoundComponent } from './shared/not-found.component';
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
@@ -26,7 +28,7 @@ const sortablejsConfig: SortablejsOptions = {
 };
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, NotFoundComponent],
     imports: [
         CommonModule,
         BrowserModule,
@@ -39,6 +41,8 @@ const sortablejsConfig: SortablejsOptions = {
         AccountsModule,
         UsersModule,
         SortablejsModule,
+        MaterialComponentsModule,
+        FlexLayoutModule,
         PerfectScrollbarModule.forRoot(perfectScrollbarConfig),
     ],
     providers: [

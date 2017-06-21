@@ -1,8 +1,8 @@
 ﻿import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from "./main/home/home.component";
-import { LoginComponent } from "./accounts/login.component";
-import { RegisterComponent } from "./accounts/register.component";
+import { NotFoundComponent } from "./shared/not-found.component";
+
 import { ForgotPasswordComponent } from "./accounts/forgot-password.component";
 import { AuthGuard } from './shared/guards/index';
 // ---------Routes----------
@@ -11,10 +11,7 @@ import { accountsRoutes } from './accounts/accounts-routing.module';
 import { usersRoutes } from './users/users-routing.module';
 
 // -------------------
-import { ListProjectComponent } from "./main/projects/list-project.component";
-import { ViewProjectComponent } from "./main/projects/view-project.component";
-import { EditProjectComponent } from "./main/projects/edit-project.component";
-import { NewProjectComponent } from "./main/projects/new-project.component";
+
 //-------------
 const routes: Routes = [
     ...accountsRoutes,
@@ -23,10 +20,12 @@ const routes: Routes = [
         component: HomeComponent,
         canActivate: [AuthGuard],
         children: [
-            ...mainRoutes, 
+            ...mainRoutes,
             ...usersRoutes
         ]
-    }
+    },
+    { path: '404', component: NotFoundComponent },
+    { path: '**', redirectTo: '/404' }
 ];
 
 @NgModule({
