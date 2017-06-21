@@ -6,7 +6,7 @@ import { SidenavItemComponent } from '../core/sidenav/sidenav-item/sidenav-item.
 import { IconSidenavDirective } from '../core/sidenav/icon-sidenav.directive';
 import { SearchComponent } from '../core/toolbar/search/search.component';
 import { BreadcrumbsComponent } from '../core/breadcrumb/breadcrumb.component';
-
+import { IconsComponent } from './icons/icons.component';
 import { ToolbarComponent } from '../core/toolbar/toolbar.component';
 import { ToolbarUserButtonComponent } from '../core/toolbar/toolbar-user-button/toolbar-user-button.component';
 import { ClickOutsideDirective } from '../core/utils/click-outside.directive';
@@ -20,7 +20,6 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-//import { LoginComponent } from './custom-pages/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { projectConfig } from './projects/projects.module'
 import { formConfig } from './forms/forms.module';
@@ -51,6 +50,7 @@ import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
         ToolbarUserButtonComponent,
         ClickOutsideDirective,
         SearchBarComponent,
+        IconsComponent,
         ToolbarNotificationsComponent,
         HomeComponent,
         ...projectConfig.declarations,

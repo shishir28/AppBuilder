@@ -1,27 +1,27 @@
-import { Component, Input, OnInit } from '@angular/core';
+﻿import { Component, Input, OnInit } from '@angular/core';
 import * as screenfull from 'screenfull';
 
 @Component({
-  selector: 'ms-toolbar',
-  templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+    selector: 'ms-toolbar',
+    templateUrl: './toolbar.component.html',
+    styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
 
-  @Input('quickpanel') quickpanel: any;
-  @Input('sidenav') sidenav: any;
-  isFullscreen: boolean = false;
+    @Input('quickpanel') quickpanel: any;
+    @Input('sidenav') sidenav: any;
+    isFullscreen: boolean = false;
 
-  showBreadcrumbs: boolean = false;
+    showBreadcrumbs: boolean = false;
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() { }
+    ngOnInit() { }
 
-  toggleFullscreen() {
-    if (screenfull.enabled) {
-      screenfull.toggle();
-      this.isFullscreen = !this.isFullscreen;
+    toggleFullscreen() {
+        if (screenfull.enabled) {
+            screenfull.toggle();
+            this.isFullscreen = !this.isFullscreen;
+        }
     }
-  }
 }

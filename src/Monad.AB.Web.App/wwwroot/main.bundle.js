@@ -1674,7 +1674,7 @@ ToolbarNotificationsComponent = __decorate([
 /***/ "../../../../../src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"user-button-container\" #userButton (msClickOutside)=\"onClickOutside()\">\n  <button class=\"user-button\" md-button (click)=\"toggleDropdown()\" [class.open]=\"isOpen\">\n    <span fxLayout=\"row\" fxLayoutAlign=\"start center\">\n      <img class=\"avatar\" src=\"assets/img/avatars/noavatar.png\">\n      <span class=\"name\" fxHide fxShow.gt-sm>David Smith</span>\n      <md-icon class=\"icon\" fxHide fxShow.gt-sm>keyboard_arrow_down</md-icon>\n    </span>\n  </button>\n\n  <div class=\"dropdown mat-elevation-z1\" [class.open]=\"isOpen\">\n    <div class=\"content\">\n      <div class=\"list\">\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">account_circle</md-icon>\n          <span class=\"title\">Profile</span>\n        </div>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">settings</md-icon>\n          <span class=\"title\">Settings</span>\n        </div>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">help</md-icon>\n          <span class=\"title\">Help</span>\n        </div>\n        <md-divider></md-divider>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple [routerLink]=\"['/login']\">\n          <md-icon class=\"icon\">exit_to_app</md-icon>\n          <span class=\"title\">Logout</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"user-button-container\" #userButton (msClickOutside)=\"onClickOutside()\">\n  <button class=\"user-button\" md-button (click)=\"toggleDropdown()\" [class.open]=\"isOpen\">\n    <span fxLayout=\"row\" fxLayoutAlign=\"start center\">\n      <img class=\"avatar\" src=\"assets/img/avatars/noavatar.png\">\n      <span class=\"name\" fxHide fxShow.gt-sm>{{userName}}</span>\n      <md-icon class=\"icon\" fxHide fxShow.gt-sm>keyboard_arrow_down</md-icon>\n    </span>\n  </button>\n\n  <div class=\"dropdown mat-elevation-z1\" [class.open]=\"isOpen\">\n    <div class=\"content\">\n      <div class=\"list\">\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">account_circle</md-icon>\n          <span class=\"title\">Profile</span>\n        </div>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">settings</md-icon>\n          <span class=\"title\">Settings</span>\n        </div>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">help</md-icon>\n          <span class=\"title\">Help</span>\n        </div>\n        <md-divider></md-divider>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple (click)=\"logout();\">         \n          <md-icon class=\"icon\">exit_to_app</md-icon>\n          <span class=\"title\">Logout</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1701,6 +1701,7 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToolbarUserButtonComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1712,13 +1713,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ToolbarUserButtonComponent = (function () {
-    function ToolbarUserButtonComponent() {
+    function ToolbarUserButtonComponent(router, route) {
+        this.router = router;
+        this.route = route;
     }
     ToolbarUserButtonComponent.prototype.ngOnInit = function () {
+        this.userName = localStorage.getItem('currentUser');
     };
     ToolbarUserButtonComponent.prototype.toggleDropdown = function () {
         this.isOpen = !this.isOpen;
+    };
+    ToolbarUserButtonComponent.prototype.logout = function () {
+        localStorage.setItem('currentUser', null);
+        //shishir need to call server side function 
+        this.router.navigateByUrl('/login');
     };
     ToolbarUserButtonComponent.prototype.onClickOutside = function () {
         this.isOpen = false;
@@ -1731,9 +1741,10 @@ ToolbarUserButtonComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.html"),
         styles: [__webpack_require__("../../../../../src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.scss")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */]) === "function" && _b || Object])
 ], ToolbarUserButtonComponent);
 
+var _a, _b;
 //# sourceMappingURL=toolbar-user-button.component.js.map
 
 /***/ }),
@@ -1741,7 +1752,7 @@ ToolbarUserButtonComponent = __decorate([
 /***/ "../../../../../src/app/core/toolbar/toolbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-toolbar mat-elevation-z2\">\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"start center\" fxHide=\"false\" fxHide.gt-sm>\r\n    <button (click)=\"sidenav.open()\" md-icon-button>\r\n      <md-icon>menu</md-icon>\r\n    </button>\r\n  </div>\r\n\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"start center\" fxFlex=\"500px\" fxHide fxShow.gt-md>\r\n    <ms-search-bar></ms-search-bar>\r\n  </div>\r\n\r\n  <ms-breadcrumbs *ngIf=\"showBreadcrumbs\" [fxHide]=\"true\" [fxHide.gt-sm]=\"false\"></ms-breadcrumbs>\r\n\r\n  <span fxFlex></span>\r\n\r\n  <button [fxHide]=\"true\" [fxHide.gt-sm]=\"false\" md-button class=\"fullscreen-toggle\" (click)=\"toggleFullscreen()\">\r\n    <md-icon *ngIf=\"!isFullscreen\">fullscreen</md-icon>\r\n    <md-icon *ngIf=\"isFullscreen\">fullscreen_exit</md-icon>\r\n  </button>\r\n\r\n  <ms-search></ms-search>\r\n\r\n  <div class=\"\">\r\n    <ms-toolbar-notifications></ms-toolbar-notifications>\r\n  </div>\r\n\r\n  <div class=\"user-button-container\">\r\n    <ms-toolbar-user-button></ms-toolbar-user-button>\r\n  </div>\r\n\r\n  <button md-button class=\"quickpanel-toggle\" (click)=\"quickpanel.open()\">\r\n    <md-icon>format_align_right</md-icon>\r\n  </button>\r\n</div>\r\n"
+module.exports = "<div class=\"main-toolbar mat-elevation-z2\">\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"start center\" fxHide=\"false\" fxHide.gt-sm>\r\n    <button (click)=\"sidenav.open()\" md-icon-button>\r\n      <md-icon>menu</md-icon>\r\n    </button>\r\n  </div>\r\n\r\n  <!--<div fxLayout=\"row\" fxLayoutAlign=\"start center\" fxFlex=\"500px\" fxHide fxShow.gt-md>\r\n    <ms-search-bar></ms-search-bar>\r\n  </div>-->\r\n\r\n  <ms-breadcrumbs *ngIf=\"showBreadcrumbs\" [fxHide]=\"true\" [fxHide.gt-sm]=\"false\"></ms-breadcrumbs>\r\n\r\n  <span fxFlex></span>\r\n\r\n  <button [fxHide]=\"true\" [fxHide.gt-sm]=\"false\" md-button class=\"fullscreen-toggle\" (click)=\"toggleFullscreen()\">\r\n    <md-icon *ngIf=\"!isFullscreen\">fullscreen</md-icon>\r\n    <md-icon *ngIf=\"isFullscreen\">fullscreen_exit</md-icon>\r\n  </button>\r\n\r\n  <ms-search></ms-search>\r\n\r\n  <div class=\"\">\r\n    <ms-toolbar-notifications></ms-toolbar-notifications>\r\n  </div>\r\n\r\n  <div class=\"user-button-container\">\r\n    <ms-toolbar-user-button></ms-toolbar-user-button>\r\n  </div>\r\n\r\n  <button md-button class=\"quickpanel-toggle\" (click)=\"quickpanel.open()\">\r\n    <md-icon>format_align_right</md-icon>\r\n  </button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -3187,7 +3198,7 @@ var _a, _b, _c, _d, _e;
 /***/ "../../../../../src/app/main/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-sidenav-container>\r\n  <md-sidenav class=\"sidenav\" [opened]=\"sidenavOpen\" align=\"start\" [mode]=\"sidenavMode\" msIconSidenav #sidenav>\r\n    <ms-sidenav></ms-sidenav>\r\n  </md-sidenav>\r\n  \r\n  <div class=\"content-container\" fxLayout=\"column\">\r\n    <div class=\"main-container\" #scrollContainer>\r\n      <router-outlet (activate)=\"onActivate($event, scrollContainer)\"></router-outlet>\r\n    </div>\r\n  </div>\r\n</md-sidenav-container>\r\n"
+module.exports = "<md-sidenav-container>\r\n  <md-sidenav class=\"sidenav\" [opened]=\"sidenavOpen\" align=\"start\" [mode]=\"sidenavMode\" msIconSidenav #sidenav>\r\n    <ms-sidenav></ms-sidenav>\r\n  </md-sidenav>\r\n  \r\n  <div class=\"content-container\" fxLayout=\"column\">\r\n    <ms-toolbar [quickpanel]=\"quickpanel\" [sidenav]=\"sidenav\"></ms-toolbar>\r\n    <div class=\"main-container\" #scrollContainer>\r\n      <router-outlet (activate)=\"onActivate($event, scrollContainer)\"></router-outlet>\r\n    </div>\r\n  </div>\r\n</md-sidenav-container>\r\n"
 
 /***/ }),
 
@@ -3279,6 +3290,877 @@ var _a, _b;
 
 /***/ }),
 
+/***/ "../../../../../src/app/main/icons/icons.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\" style=\"margin: 24px 0;\">\r\n  <md-card fxFlex=\"90%\">\r\n    <md-card-title>Material Buttons</md-card-title>\r\n\r\n    <md-divider></md-divider>\r\n\r\n    <md-card-content fxLayout=\"column\">\r\n\r\n      <div fxLayout=\"column\" fxLayout.gt-md=\"row\" fxLayoutAlign=\"start stretch\" fxLayoutAlign.gt-md=\"start start\" style=\"margin: 24px 0\">\r\n        <div fxFlex fxFlex.gt-md=\"30%\" style=\"margin-right: 24px;\">\r\n          <div fxLayout=\"column\">\r\n            <h3>Material Icons</h3>\r\n            <h4>&lt;md-icon&gt;</h4>\r\n            <p>Icons are a neat way to add some live to only-text lists. Our theme comes with a great variety of icons from the official Material Icons font.</p>\r\n            <h5>Example:</h5>\r\n            <p><code msHighlight class=\"html\">&lt;md-icon&gt;grade&lt;/md-icon&gt;</code></p>\r\n          </div>\r\n        </div>\r\n        <div class=\"demo-tabs mat-elevation-z2\" fxFlex>\r\n          <md-tab-group>\r\n            <md-tab label=\"PREVIEW\">\r\n              <div class=\"demo-preview\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n                <md-card fxFlex=\"80%\" fxFlex.sm=\"90%\">\r\n                  <md-card-content fxLayout=\"column\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"space-around center\" fxLayoutWrap=\"wrap\">\r\n                    <md-icon>grade</md-icon>\r\n                  </md-card-content>\r\n                </md-card>\r\n              </div>\r\n            </md-tab>\r\n            <md-tab label=\"HTML\">\r\n              <code [innerHTML]=\"getEscaped(iconsHTML)\" msHighlight class=\"html\"></code>\r\n            </md-tab>\r\n          </md-tab-group>\r\n        </div>\r\n      </div>\r\n\r\n      <md-divider></md-divider>\r\n\r\n      <div>\r\n        <h2>List of all Material Icons</h2>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-around center\" fxLayoutWrap=\"wrap\">\r\n          <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxFlex=\"20%\" *ngFor=\"let icon of icons\">\r\n            <md-icon>{{ icon }}</md-icon>\r\n            <span class=\"icon-name\">{{ icon }}</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n\r\n    </md-card-content>\r\n\r\n  </md-card>\r\n</div>\r\n\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/icons/icons.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  display: block; }\n\nmd-icon {\n  font-size: 50px;\n  height: 50px;\n  width: 50px;\n  margin: 24px 16px 8px;\n  color: #333; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/icons/icons.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__route_animation__ = __webpack_require__("../../../../../src/app/route.animation.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IconsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var IconsComponent = (function () {
+    function IconsComponent() {
+        this.iconsHTML = "<md-icon>grade</md-icon>";
+        this.icons = [
+            "3d_rotation",
+            "access_alarm",
+            "access_alarms",
+            "access_time",
+            "accessibility",
+            "account_balance",
+            "account_balance_wallet",
+            "account_box",
+            "account_circle",
+            "adb",
+            "add",
+            "add_alarm",
+            "add_alert",
+            "add_box",
+            "add_circle",
+            "add_circle_outline",
+            "add_shopping_cart",
+            "add_to_photos",
+            "adjust",
+            "airline_seat_flat",
+            "airline_seat_flat_angled",
+            "airline_seat_individual_suite",
+            "airline_seat_legroom_extra",
+            "airline_seat_legroom_normal",
+            "airline_seat_legroom_reduced",
+            "airline_seat_recline_extra",
+            "airline_seat_recline_normal",
+            "airplanemode_active",
+            "airplanemode_inactive",
+            "airplay",
+            "alarm",
+            "alarm_add",
+            "alarm_off",
+            "alarm_on",
+            "album",
+            "android",
+            "announcement",
+            "apps",
+            "archive",
+            "arrow_back",
+            "arrow_drop_down",
+            "arrow_drop_down_circle",
+            "arrow_drop_up",
+            "arrow_forward",
+            "aspect_ratio",
+            "assessment",
+            "assignment",
+            "assignment_ind",
+            "assignment_late",
+            "assignment_return",
+            "assignment_returned",
+            "assignment_turned_in",
+            "assistant",
+            "assistant_photo",
+            "attach_file",
+            "attach_money",
+            "attachment",
+            "audiotrack",
+            "autorenew",
+            "av_timer",
+            "backspace",
+            "backup",
+            "battery_alert",
+            "battery_charging_full",
+            "battery_full",
+            "battery_std",
+            "battery_unknown",
+            "beenhere",
+            "block",
+            "bluetooth",
+            "bluetooth_audio",
+            "bluetooth_connected",
+            "bluetooth_disabled",
+            "bluetooth_searching",
+            "blur_circular",
+            "blur_linear",
+            "blur_off",
+            "blur_on",
+            "book",
+            "bookmark",
+            "bookmark_border",
+            "border_all",
+            "border_bottom",
+            "border_clear",
+            "border_color",
+            "border_horizontal",
+            "border_inner",
+            "border_left",
+            "border_outer",
+            "border_right",
+            "border_style",
+            "border_top",
+            "border_vertical",
+            "brightness_1",
+            "brightness_2",
+            "brightness_3",
+            "brightness_4",
+            "brightness_5",
+            "brightness_6",
+            "brightness_7",
+            "brightness_auto",
+            "brightness_high",
+            "brightness_low",
+            "brightness_medium",
+            "broken_image",
+            "brush",
+            "bug_report",
+            "build",
+            "business",
+            "cached",
+            "cake",
+            "call",
+            "call_end",
+            "call_made",
+            "call_merge",
+            "call_missed",
+            "call_received",
+            "call_split",
+            "camera",
+            "camera_alt",
+            "camera_enhance",
+            "camera_front",
+            "camera_rear",
+            "camera_roll",
+            "cancel",
+            "card_giftcard",
+            "card_membership",
+            "card_travel",
+            "cast",
+            "cast_connected",
+            "center_focus_strong",
+            "center_focus_weak",
+            "change_history",
+            "chat",
+            "chat_bubble",
+            "chat_bubble_outline",
+            "check",
+            "check_box",
+            "check_box_outline_blank",
+            "check_circle",
+            "chevron_left",
+            "chevron_right",
+            "chrome_reader_mode",
+            "class",
+            "clear",
+            "clear_all",
+            "close",
+            "closed_caption",
+            "cloud",
+            "cloud_circle",
+            "cloud_done",
+            "cloud_download",
+            "cloud_off",
+            "cloud_queue",
+            "cloud_upload",
+            "code",
+            "collections",
+            "collections_bookmark",
+            "color_lens",
+            "colorize",
+            "comment",
+            "compare",
+            "computer",
+            "confirmation_number",
+            "contact_phone",
+            "contacts",
+            "content_copy",
+            "content_cut",
+            "content_paste",
+            "control_point",
+            "control_point_duplicate",
+            "create",
+            "credit_card",
+            "crop",
+            "crop_16_9",
+            "crop_3_2",
+            "crop_5_4",
+            "crop_7_5",
+            "crop_din",
+            "crop_free",
+            "crop_landscape",
+            "crop_original",
+            "crop_portrait",
+            "crop_square",
+            "dashboard",
+            "data_usage",
+            "dehaze",
+            "delete",
+            "description",
+            "desktop_mac",
+            "desktop_windows",
+            "details",
+            "developer_board",
+            "developer_mode",
+            "device_hub",
+            "devices",
+            "dialer_sip",
+            "dialpad",
+            "directions",
+            "directions_bike",
+            "directions_boat",
+            "directions_bus",
+            "directions_car",
+            "directions_railway",
+            "directions_run",
+            "directions_subway",
+            "directions_transit",
+            "directions_walk",
+            "disc_full",
+            "dns",
+            "do_not_disturb",
+            "do_not_disturb_alt",
+            "dock",
+            "domain",
+            "done",
+            "done_all",
+            "drafts",
+            "drive_eta",
+            "dvr",
+            "edit",
+            "eject",
+            "email",
+            "equalizer",
+            "error",
+            "error_outline",
+            "event",
+            "event_available",
+            "event_busy",
+            "event_note",
+            "event_seat",
+            "exit_to_app",
+            "expand_less",
+            "expand_more",
+            "explicit",
+            "explore",
+            "exposure",
+            "exposure_neg_1",
+            "exposure_neg_2",
+            "exposure_plus_1",
+            "exposure_plus_2",
+            "exposure_zero",
+            "extension",
+            "face",
+            "fast_forward",
+            "fast_rewind",
+            "favorite",
+            "favorite_border",
+            "feedback",
+            "file_download",
+            "file_upload",
+            "filter",
+            "filter_1",
+            "filter_2",
+            "filter_3",
+            "filter_4",
+            "filter_5",
+            "filter_6",
+            "filter_7",
+            "filter_8",
+            "filter_9",
+            "filter_9_plus",
+            "filter_b_and_w",
+            "filter_center_focus",
+            "filter_drama",
+            "filter_frames",
+            "filter_hdr",
+            "filter_list",
+            "filter_none",
+            "filter_tilt_shift",
+            "filter_vintage",
+            "find_in_page",
+            "find_replace",
+            "flag",
+            "flare",
+            "flash_auto",
+            "flash_off",
+            "flash_on",
+            "flight",
+            "flight_land",
+            "flight_takeoff",
+            "flip",
+            "flip_to_back",
+            "flip_to_front",
+            "folder",
+            "folder_open",
+            "folder_shared",
+            "folder_special",
+            "font_download",
+            "format_align_center",
+            "format_align_justify",
+            "format_align_left",
+            "format_align_right",
+            "format_bold",
+            "format_clear",
+            "format_color_fill",
+            "format_color_reset",
+            "format_color_text",
+            "format_indent_decrease",
+            "format_indent_increase",
+            "format_italic",
+            "format_line_spacing",
+            "format_list_bulleted",
+            "format_list_numbered",
+            "format_paint",
+            "format_quote",
+            "format_size",
+            "format_strikethrough",
+            "format_textdirection_l_to_r",
+            "format_textdirection_r_to_l",
+            "format_underlined",
+            "forum",
+            "forward",
+            "forward_10",
+            "forward_30",
+            "forward_5",
+            "fullscreen",
+            "fullscreen_exit",
+            "functions",
+            "gamepad",
+            "games",
+            "gesture",
+            "get_app",
+            "gif",
+            "gps_fixed",
+            "gps_not_fixed",
+            "gps_off",
+            "grade",
+            "gradient",
+            "grain",
+            "graphic_eq",
+            "grid_off",
+            "grid_on",
+            "group",
+            "group_add",
+            "group_work",
+            "hd",
+            "hdr_off",
+            "hdr_on",
+            "hdr_strong",
+            "hdr_weak",
+            "headset",
+            "headset_mic",
+            "healing",
+            "hearing",
+            "help",
+            "help_outline",
+            "high_quality",
+            "highlight_off",
+            "history",
+            "home",
+            "hotel",
+            "hourglass_empty",
+            "hourglass_full",
+            "http",
+            "https",
+            "image",
+            "image_aspect_ratio",
+            "import_export",
+            "inbox",
+            "indeterminate_check_box",
+            "info",
+            "info_outline",
+            "input",
+            "insert_chart",
+            "insert_comment",
+            "insert_drive_file",
+            "insert_emoticon",
+            "insert_invitation",
+            "insert_link",
+            "insert_photo",
+            "invert_colors",
+            "invert_colors_off",
+            "iso",
+            "keyboard",
+            "keyboard_arrow_down",
+            "keyboard_arrow_left",
+            "keyboard_arrow_right",
+            "keyboard_arrow_up",
+            "keyboard_backspace",
+            "keyboard_capslock",
+            "keyboard_hide",
+            "keyboard_return",
+            "keyboard_tab",
+            "keyboard_voice",
+            "label",
+            "label_outline",
+            "landscape",
+            "language",
+            "laptop",
+            "laptop_chromebook",
+            "laptop_mac",
+            "laptop_windows",
+            "launch",
+            "layers",
+            "layers_clear",
+            "leak_add",
+            "leak_remove",
+            "lens",
+            "library_add",
+            "library_books",
+            "library_music",
+            "link",
+            "list",
+            "live_help",
+            "live_tv",
+            "local_activity",
+            "local_airport",
+            "local_atm",
+            "local_bar",
+            "local_cafe",
+            "local_car_wash",
+            "local_convenience_store",
+            "local_dining",
+            "local_drink",
+            "local_florist",
+            "local_gas_station",
+            "local_grocery_store",
+            "local_hospital",
+            "local_hotel",
+            "local_laundry_service",
+            "local_library",
+            "local_mall",
+            "local_movies",
+            "local_offer",
+            "local_parking",
+            "local_pharmacy",
+            "local_phone",
+            "local_pizza",
+            "local_play",
+            "local_post_office",
+            "local_printshop",
+            "local_see",
+            "local_shipping",
+            "local_taxi",
+            "location_city",
+            "location_disabled",
+            "location_off",
+            "location_on",
+            "location_searching",
+            "lock",
+            "lock_open",
+            "lock_outline",
+            "looks",
+            "looks_3",
+            "looks_4",
+            "looks_5",
+            "looks_6",
+            "looks_one",
+            "looks_two",
+            "loop",
+            "loupe",
+            "loyalty",
+            "mail",
+            "map",
+            "markunread",
+            "markunread_mailbox",
+            "memory",
+            "menu",
+            "merge_type",
+            "message",
+            "mic",
+            "mic_none",
+            "mic_off",
+            "mms",
+            "mode_comment",
+            "mode_edit",
+            "money_off",
+            "monochrome_photos",
+            "mood",
+            "mood_bad",
+            "more",
+            "more_horiz",
+            "more_vert",
+            "mouse",
+            "movie",
+            "movie_creation",
+            "music_note",
+            "my_location",
+            "nature",
+            "nature_people",
+            "navigate_before",
+            "navigate_next",
+            "navigation",
+            "network_cell",
+            "network_locked",
+            "network_wifi",
+            "new_releases",
+            "nfc",
+            "no_sim",
+            "not_interested",
+            "note_add",
+            "notifications",
+            "notifications_active",
+            "notifications_none",
+            "notifications_off",
+            "notifications_paused",
+            "offline_pin",
+            "ondemand_video",
+            "open_in_browser",
+            "open_in_new",
+            "open_with",
+            "pages",
+            "pageview",
+            "palette",
+            "panorama",
+            "panorama_fish_eye",
+            "panorama_horizontal",
+            "panorama_vertical",
+            "panorama_wide_angle",
+            "party_mode",
+            "pause",
+            "pause_circle_filled",
+            "pause_circle_outline",
+            "payment",
+            "people",
+            "people_outline",
+            "perm_camera_mic",
+            "perm_contact_calendar",
+            "perm_data_setting",
+            "perm_device_information",
+            "perm_identity",
+            "perm_media",
+            "perm_phone_msg",
+            "perm_scan_wifi",
+            "person",
+            "person_add",
+            "person_outline",
+            "person_pin",
+            "personal_video",
+            "phone",
+            "phone_android",
+            "phone_bluetooth_speaker",
+            "phone_forwarded",
+            "phone_in_talk",
+            "phone_iphone",
+            "phone_locked",
+            "phone_missed",
+            "phone_paused",
+            "phonelink",
+            "phonelink_erase",
+            "phonelink_lock",
+            "phonelink_off",
+            "phonelink_ring",
+            "phonelink_setup",
+            "photo",
+            "photo_album",
+            "photo_camera",
+            "photo_library",
+            "photo_size_select_actual",
+            "photo_size_select_large",
+            "photo_size_select_small",
+            "picture_as_pdf",
+            "picture_in_picture",
+            "pin_drop",
+            "place",
+            "play_arrow",
+            "play_circle_filled",
+            "play_circle_outline",
+            "play_for_work",
+            "playlist_add",
+            "plus_one",
+            "poll",
+            "polymer",
+            "portable_wifi_off",
+            "portrait",
+            "power",
+            "power_input",
+            "power_settings_new",
+            "present_to_all",
+            "print",
+            "public",
+            "publish",
+            "query_builder",
+            "question_answer",
+            "queue",
+            "queue_music",
+            "radio",
+            "radio_button_checked",
+            "radio_button_unchecked",
+            "rate_review",
+            "receipt",
+            "recent_actors",
+            "redeem",
+            "redo",
+            "refresh",
+            "remove",
+            "remove_circle",
+            "remove_circle_outline",
+            "remove_red_eye",
+            "reorder",
+            "repeat",
+            "repeat_one",
+            "replay",
+            "replay_10",
+            "replay_30",
+            "replay_5",
+            "reply",
+            "reply_all",
+            "report",
+            "report_problem",
+            "restaurant_menu",
+            "restore",
+            "ring_volume",
+            "room",
+            "rotate_90_degrees_ccw",
+            "rotate_left",
+            "rotate_right",
+            "router",
+            "satellite",
+            "save",
+            "scanner",
+            "schedule",
+            "school",
+            "screen_lock_landscape",
+            "screen_lock_portrait",
+            "screen_lock_rotation",
+            "screen_rotation",
+            "sd_card",
+            "sd_storage",
+            "search",
+            "security",
+            "select_all",
+            "send",
+            "settings",
+            "settings_applications",
+            "settings_backup_restore",
+            "settings_bluetooth",
+            "settings_brightness",
+            "settings_cell",
+            "settings_ethernet",
+            "settings_input_antenna",
+            "settings_input_component",
+            "settings_input_composite",
+            "settings_input_hdmi",
+            "settings_input_svideo",
+            "settings_overscan",
+            "settings_phone",
+            "settings_power",
+            "settings_remote",
+            "settings_system_daydream",
+            "settings_voice",
+            "share",
+            "shop",
+            "shop_two",
+            "shopping_basket",
+            "shopping_cart",
+            "shuffle",
+            "signal_cellular_4_bar",
+            "signal_cellular_connected_no_internet_4_bar",
+            "signal_cellular_no_sim",
+            "signal_cellular_null",
+            "signal_cellular_off",
+            "signal_wifi_4_bar",
+            "signal_wifi_4_bar_lock",
+            "signal_wifi_off",
+            "sim_card",
+            "sim_card_alert",
+            "skip_next",
+            "skip_previous",
+            "slideshow",
+            "smartphone",
+            "sms",
+            "sms_failed",
+            "snooze",
+            "sort",
+            "sort_by_alpha",
+            "space_bar",
+            "speaker",
+            "speaker_group",
+            "speaker_notes",
+            "speaker_phone",
+            "spellcheck",
+            "star",
+            "star_border",
+            "star_half",
+            "stars",
+            "stay_current_landscape",
+            "stay_current_portrait",
+            "stay_primary_landscape",
+            "stay_primary_portrait",
+            "stop",
+            "storage",
+            "store",
+            "store_mall_directory",
+            "straighten",
+            "strikethrough_s",
+            "style",
+            "subject",
+            "subtitles",
+            "supervisor_account",
+            "surround_sound",
+            "swap_calls",
+            "swap_horiz",
+            "swap_vert",
+            "swap_vertical_circle",
+            "switch_camera",
+            "switch_video",
+            "sync",
+            "sync_disabled",
+            "sync_problem",
+            "system_update",
+            "system_update_alt",
+            "tab",
+            "tab_unselected",
+            "tablet",
+            "tablet_android",
+            "tablet_mac",
+            "tag_faces",
+            "tap_and_play",
+            "terrain",
+            "text_format",
+            "textsms",
+            "texture",
+            "theaters",
+            "thumb_down",
+            "thumb_up",
+            "thumbs_up_down",
+            "time_to_leave",
+            "timelapse",
+            "timer",
+            "timer_10",
+            "timer_3",
+            "timer_off",
+            "toc",
+            "today",
+            "toll",
+            "tonality",
+            "toys",
+            "track_changes",
+            "traffic",
+            "transform",
+            "translate",
+            "trending_down",
+            "trending_flat",
+            "trending_up",
+            "tune",
+            "turned_in",
+            "turned_in_not",
+            "tv",
+            "undo",
+            "unfold_less",
+            "unfold_more",
+            "usb",
+            "verified_user",
+            "vertical_align_bottom",
+            "vertical_align_center",
+            "vertical_align_top",
+            "vibration",
+            "video_library",
+            "videocam",
+            "videocam_off",
+            "view_agenda",
+            "view_array",
+            "view_carousel",
+            "view_column",
+            "view_comfy",
+            "view_compact",
+            "view_day",
+            "view_headline",
+            "view_list",
+            "view_module",
+            "view_quilt",
+            "view_stream",
+            "view_week",
+            "vignette",
+            "visibility",
+            "visibility_off",
+            "voice_chat",
+            "voicemail",
+            "volume_down",
+            "volume_mute",
+            "volume_off",
+            "volume_up",
+            "vpn_key",
+            "vpn_lock",
+            "wallpaper",
+            "warning",
+            "watch",
+            "wb_auto",
+            "wb_cloudy",
+            "wb_incandescent",
+            "wb_iridescent",
+            "wb_sunny",
+            "wc",
+            "web",
+            "whatshot",
+            "widgets",
+            "wifi",
+            "wifi_lock",
+            "wifi_tethering",
+            "work",
+            "wrap_text",
+            "youtube_searched_for",
+            "zoom_in",
+            "zoom_out"
+        ];
+    }
+    IconsComponent.prototype.ngOnInit = function () {
+    };
+    IconsComponent.prototype.getEscaped = function (text) {
+        return __WEBPACK_IMPORTED_MODULE_1_lodash__["escape"](text);
+    };
+    return IconsComponent;
+}());
+IconsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ms-icons',
+        template: __webpack_require__("../../../../../src/app/main/icons/icons.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/main/icons/icons.component.scss")],
+        host: {
+            '[@fadeInAnimation]': 'true'
+        },
+        animations: [__WEBPACK_IMPORTED_MODULE_2__route_animation__["a" /* fadeInAnimation */]]
+    }),
+    __metadata("design:paramtypes", [])
+], IconsComponent);
+
+//# sourceMappingURL=icons.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/main/main-routing.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3287,6 +4169,7 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__forms_forms_routing__ = __webpack_require__("../../../../../src/app/main/forms/forms.routing.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__formFields_formFields_routing__ = __webpack_require__("../../../../../src/app/main/formFields/formFields.routing.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formFieldViews_formFieldViews_routing__ = __webpack_require__("../../../../../src/app/main/formFieldViews/formFieldViews.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__icons_icons_component__ = __webpack_require__("../../../../../src/app/main/icons/icons.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mainRoutes; });
 // ---------Routes--------------------------------------------------
 
@@ -3294,11 +4177,16 @@ var _a, _b;
 
 
 // -----------------------------------------------------------------
+
 var mainRoutes = [
     {
         path: '',
         redirectTo: '/projects',
         pathMatch: 'full'
+    },
+    {
+        path: 'icons',
+        component: __WEBPACK_IMPORTED_MODULE_4__icons_icons_component__["a" /* IconsComponent */]
     }
 ].concat(__WEBPACK_IMPORTED_MODULE_0__projects_projects_routing__["a" /* projectsRoutes */], __WEBPACK_IMPORTED_MODULE_1__forms_forms_routing__["a" /* formsRoutes */], __WEBPACK_IMPORTED_MODULE_2__formFields_formFields_routing__["a" /* formFieldsRoutes */], __WEBPACK_IMPORTED_MODULE_3__formFieldViews_formFieldViews_routing__["a" /* formFieldViewsRoutes */]);
 //# sourceMappingURL=main-routing.module.js.map
@@ -3316,25 +4204,26 @@ var mainRoutes = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_sidenav_icon_sidenav_directive__ = __webpack_require__("../../../../../src/app/core/sidenav/icon-sidenav.directive.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_toolbar_search_search_component__ = __webpack_require__("../../../../../src/app/core/toolbar/search/search.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_breadcrumb_breadcrumb_component__ = __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_toolbar_toolbar_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_toolbar_toolbar_user_button_toolbar_user_button_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__core_utils_click_outside_directive__ = __webpack_require__("../../../../../src/app/core/utils/click-outside.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__core_toolbar_search_bar_search_bar_component__ = __webpack_require__("../../../../../src/app/core/toolbar/search-bar/search-bar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__core_toolbar_toolbar_notifications_toolbar_notifications_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__core_sidenav_sidenav_service__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__core_sidenav_mediareplay_media_replay_service__ = __webpack_require__("../../../../../src/app/core/sidenav/mediareplay/media-replay.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__core_breadcrumb_breadcrumb_service__ = __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__material_material_components_module__ = __webpack_require__("../../../../../src/app/material/material-components.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ngx_perfect_scrollbar__ = __webpack_require__("../../../../ngx-perfect-scrollbar/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_ngx_perfect_scrollbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__home_home_component__ = __webpack_require__("../../../../../src/app/main/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__projects_projects_module__ = __webpack_require__("../../../../../src/app/main/projects/projects.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__forms_forms_module__ = __webpack_require__("../../../../../src/app/main/forms/forms.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__formFields_formFields_module__ = __webpack_require__("../../../../../src/app/main/formFields/formFields.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__formFieldViews_formFieldViews_module__ = __webpack_require__("../../../../../src/app/main/formFieldViews/formFieldViews.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__icons_icons_component__ = __webpack_require__("../../../../../src/app/main/icons/icons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_toolbar_toolbar_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__core_toolbar_toolbar_user_button_toolbar_user_button_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__core_utils_click_outside_directive__ = __webpack_require__("../../../../../src/app/core/utils/click-outside.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__core_toolbar_search_bar_search_bar_component__ = __webpack_require__("../../../../../src/app/core/toolbar/search-bar/search-bar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__core_toolbar_toolbar_notifications_toolbar_notifications_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__core_sidenav_sidenav_service__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__core_sidenav_mediareplay_media_replay_service__ = __webpack_require__("../../../../../src/app/core/sidenav/mediareplay/media-replay.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__core_breadcrumb_breadcrumb_service__ = __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__material_material_components_module__ = __webpack_require__("../../../../../src/app/material/material-components.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__ = __webpack_require__("../../../../ngx-perfect-scrollbar/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__home_home_component__ = __webpack_require__("../../../../../src/app/main/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__projects_projects_module__ = __webpack_require__("../../../../../src/app/main/projects/projects.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__forms_forms_module__ = __webpack_require__("../../../../../src/app/main/forms/forms.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__formFields_formFields_module__ = __webpack_require__("../../../../../src/app/main/formFields/formFields.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__formFieldViews_formFieldViews_module__ = __webpack_require__("../../../../../src/app/main/formFieldViews/formFieldViews.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3362,7 +4251,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-//import { LoginComponent } from './custom-pages/login/login.component';
+
 
 
 
@@ -3377,31 +4266,32 @@ MainModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
-            __WEBPACK_IMPORTED_MODULE_17__angular_router__["b" /* RouterModule */],
-            __WEBPACK_IMPORTED_MODULE_15__material_material_components_module__["a" /* MaterialComponentsModule */],
-            __WEBPACK_IMPORTED_MODULE_18__angular_flex_layout__["a" /* FlexLayoutModule */],
-            __WEBPACK_IMPORTED_MODULE_19__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_16_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forChild()
-        ].concat(__WEBPACK_IMPORTED_MODULE_21__projects_projects_module__["a" /* projectConfig */].imports, __WEBPACK_IMPORTED_MODULE_22__forms_forms_module__["a" /* formConfig */].imports, __WEBPACK_IMPORTED_MODULE_23__formFields_formFields_module__["a" /* formFieldConfig */].imports, __WEBPACK_IMPORTED_MODULE_24__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].imports),
+            __WEBPACK_IMPORTED_MODULE_18__angular_router__["b" /* RouterModule */],
+            __WEBPACK_IMPORTED_MODULE_16__material_material_components_module__["a" /* MaterialComponentsModule */],
+            __WEBPACK_IMPORTED_MODULE_19__angular_flex_layout__["a" /* FlexLayoutModule */],
+            __WEBPACK_IMPORTED_MODULE_20__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forChild()
+        ].concat(__WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].imports, __WEBPACK_IMPORTED_MODULE_23__forms_forms_module__["a" /* formConfig */].imports, __WEBPACK_IMPORTED_MODULE_24__formFields_formFields_module__["a" /* formFieldConfig */].imports, __WEBPACK_IMPORTED_MODULE_25__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].imports),
         declarations: [
             __WEBPACK_IMPORTED_MODULE_2__core_sidenav_sidenav_component__["a" /* SidenavComponent */],
             __WEBPACK_IMPORTED_MODULE_3__core_sidenav_sidenav_item_sidenav_item_component__["a" /* SidenavItemComponent */],
             __WEBPACK_IMPORTED_MODULE_4__core_sidenav_icon_sidenav_directive__["a" /* IconSidenavDirective */],
             __WEBPACK_IMPORTED_MODULE_5__core_toolbar_search_search_component__["a" /* SearchComponent */],
             __WEBPACK_IMPORTED_MODULE_6__core_breadcrumb_breadcrumb_component__["a" /* BreadcrumbsComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__core_toolbar_toolbar_component__["a" /* ToolbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__core_toolbar_toolbar_user_button_toolbar_user_button_component__["a" /* ToolbarUserButtonComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__core_utils_click_outside_directive__["a" /* ClickOutsideDirective */],
-            __WEBPACK_IMPORTED_MODULE_10__core_toolbar_search_bar_search_bar_component__["a" /* SearchBarComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__core_toolbar_toolbar_notifications_toolbar_notifications_component__["a" /* ToolbarNotificationsComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__home_home_component__["a" /* HomeComponent */]
-        ].concat(__WEBPACK_IMPORTED_MODULE_21__projects_projects_module__["a" /* projectConfig */].declarations, __WEBPACK_IMPORTED_MODULE_22__forms_forms_module__["a" /* formConfig */].declarations, __WEBPACK_IMPORTED_MODULE_23__formFields_formFields_module__["a" /* formFieldConfig */].declarations, __WEBPACK_IMPORTED_MODULE_24__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].declarations),
-        entryComponents: __WEBPACK_IMPORTED_MODULE_21__projects_projects_module__["a" /* projectConfig */].entryComponents.slice(),
+            __WEBPACK_IMPORTED_MODULE_8__core_toolbar_toolbar_component__["a" /* ToolbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__core_toolbar_toolbar_user_button_toolbar_user_button_component__["a" /* ToolbarUserButtonComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__core_utils_click_outside_directive__["a" /* ClickOutsideDirective */],
+            __WEBPACK_IMPORTED_MODULE_11__core_toolbar_search_bar_search_bar_component__["a" /* SearchBarComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__icons_icons_component__["a" /* IconsComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__core_toolbar_toolbar_notifications_toolbar_notifications_component__["a" /* ToolbarNotificationsComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__home_home_component__["a" /* HomeComponent */]
+        ].concat(__WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].declarations, __WEBPACK_IMPORTED_MODULE_23__forms_forms_module__["a" /* formConfig */].declarations, __WEBPACK_IMPORTED_MODULE_24__formFields_formFields_module__["a" /* formFieldConfig */].declarations, __WEBPACK_IMPORTED_MODULE_25__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].declarations),
+        entryComponents: __WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].entryComponents.slice(),
         providers: [
-            __WEBPACK_IMPORTED_MODULE_12__core_sidenav_sidenav_service__["a" /* SidenavService */],
-            __WEBPACK_IMPORTED_MODULE_13__core_sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */],
-            __WEBPACK_IMPORTED_MODULE_14__core_breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]
-        ].concat(__WEBPACK_IMPORTED_MODULE_21__projects_projects_module__["a" /* projectConfig */].providers, __WEBPACK_IMPORTED_MODULE_22__forms_forms_module__["a" /* formConfig */].providers, __WEBPACK_IMPORTED_MODULE_23__formFields_formFields_module__["a" /* formFieldConfig */].providers, __WEBPACK_IMPORTED_MODULE_24__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].providers)
+            __WEBPACK_IMPORTED_MODULE_13__core_sidenav_sidenav_service__["a" /* SidenavService */],
+            __WEBPACK_IMPORTED_MODULE_14__core_sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */],
+            __WEBPACK_IMPORTED_MODULE_15__core_breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]
+        ].concat(__WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].providers, __WEBPACK_IMPORTED_MODULE_23__forms_forms_module__["a" /* formConfig */].providers, __WEBPACK_IMPORTED_MODULE_24__formFields_formFields_module__["a" /* formFieldConfig */].providers, __WEBPACK_IMPORTED_MODULE_25__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].providers)
     })
 ], MainModule);
 

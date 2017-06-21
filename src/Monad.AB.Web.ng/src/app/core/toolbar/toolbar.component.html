@@ -1,13 +1,13 @@
-<div class="main-toolbar mat-elevation-z2">
+﻿<div class="main-toolbar mat-elevation-z2">
   <div fxLayout="row" fxLayoutAlign="start center" fxHide="false" fxHide.gt-sm>
     <button (click)="sidenav.open()" md-icon-button>
       <md-icon>menu</md-icon>
     </button>
   </div>
 
-  <div fxLayout="row" fxLayoutAlign="start center" fxFlex="500px" fxHide fxShow.gt-md>
+  <!--<div fxLayout="row" fxLayoutAlign="start center" fxFlex="500px" fxHide fxShow.gt-md>
     <ms-search-bar></ms-search-bar>
-  </div>
+  </div>-->
 
   <ms-breadcrumbs *ngIf="showBreadcrumbs" [fxHide]="true" [fxHide.gt-sm]="false"></ms-breadcrumbs>
 
