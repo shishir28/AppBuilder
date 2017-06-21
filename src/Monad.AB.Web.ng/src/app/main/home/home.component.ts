@@ -5,7 +5,7 @@
 import { Subscription } from "rxjs";
 import { MediaChange } from "@angular/flex-layout";
 import { Router, NavigationEnd } from "@angular/router";
-import { MediaReplayService } from "../../core/sidenav/mediareplay/media-replay.service";
+import { MediaReplayService } from "../../widgets/sidenav/mediareplay/media-replay.service";
 
 @Component({
     selector: 'ms-home',

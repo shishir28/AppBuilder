@@ -8,7 +8,7 @@ import { formFieldsRoutes } from './formFields/formFields.routing';
 import { formFieldViewsRoutes } from './formFieldViews/formFieldViews.routing';
 
 // -----------------------------------------------------------------
-import { IconsComponent } from './icons/icons.component';
+import { IconsComponent } from '../widgets/icons/icons.component';
 
 export const mainRoutes: Routes = [
     {
