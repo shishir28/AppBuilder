@@ -1449,179 +1449,6 @@ var _a, _b;
 
 /***/ }),
 
-/***/ "../../../../../src/app/core/toolbar/search-bar/search-bar.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"search-wrapper\" fxLayout=\"row\" [ngClass]=\"{ 'focus': focused, 'has-input': input }\" fxFlex (msClickOutside)=\"closeDropdown()\">\r\n  <md-icon class=\"search-icon\">search</md-icon>\r\n  <input type=\"search\"\r\n         autocomplete=\"off\"\r\n         spellcheck=\"false\"\r\n         class=\"search-input\"\r\n         [(ngModel)]=\"input\"\r\n         (focus)=\"openDropdown()\"\r\n         placeholder=\"Search...\">\r\n\r\n  <div class=\"search-dropdown mat-elevation-z1\">\r\n    <div class=\"content results\" *ngIf=\"input\" fxLayout=\"column\">\r\n      <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <md-icon class=\"icon\">search</md-icon>\r\n        Search results for: {{ input }}\r\n      </div>\r\n      <div class=\"items\">\r\n        <div class=\"item\" md-ripple>Form Elements</div>\r\n        <div class=\"item\" md-ripple>Form Wizard</div>\r\n        <div class=\"item\" md-ripple>Projects</div>\r\n        <div class=\"item\" md-ripple>Profile</div>\r\n        <div class=\"item\" md-ripple>Calendar</div>\r\n        <div class=\"item\" md-ripple>Profile page</div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"content recents\" fxLayout=\"row\" *ngIf=\"!input\">\r\n      <div class=\"recently\" fxLayout=\"column\" fxFlex>\r\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <md-icon class=\"icon\">restore</md-icon>\r\n          Recently Visited\r\n        </div>\r\n        <div class=\"items\">\r\n          <div class=\"item\" md-ripple *ngFor=\"let item of recentlyVisited\" [routerLink]=\"item.route\" (click)=\"closeDropdown()\">{{ item.name }}</div>\r\n        </div>\r\n      </div>\r\n      <div class=\"frequently\" fxLayout=\"column\" fxFlex fxFlexOffset=\"16px\">\r\n        <div class=\"heading\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <md-icon class=\"icon\">youtube_searched_for</md-icon>\r\n          Frequently Visited\r\n        </div>\r\n        <div class=\"items\">\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-elements']\">Form Elements</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/forms/form-wizard']\">Form Wizard</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/projects']\">Projects</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/editor']\">WYSIWYG Editor</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/maps/google-maps']\">Google Maps</div>\r\n          <div class=\"item\" md-ripple [routerLink]=\"['/components/dialogs']\">Material Dialog</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/toolbar/search-bar/search-bar.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ":host {\n  display: block;\n  width: 100%; }\n\ninput[type=\"search\"] {\n  -webkit-appearance: none; }\n\n.search-wrapper {\n  position: relative;\n  width: 100%; }\n  .search-wrapper .search-icon {\n    position: absolute;\n    font-size: 24px;\n    top: 6px;\n    left: 24px;\n    transition: color 0.2s ease; }\n  .search-wrapper input.search-input {\n    display: block;\n    padding: 8px 8px 8px 72px;\n    box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.06), 0 1px 1px rgba(0, 0, 0, 0.12);\n    height: 36px;\n    transition: all 0.2s ease;\n    border: none;\n    font-size: 16px;\n    -webkit-appearance: textfield;\n       -moz-appearance: textfield;\n            appearance: textfield;\n    font-weight: 300;\n    outline: none;\n    border-radius: 3px;\n    box-sizing: border-box;\n    color: currentColor;\n    background: rgba(48, 52, 65, 0.05);\n    width: 100%; }\n    .search-wrapper input.search-input:hover {\n      background: rgba(48, 52, 65, 0.1); }\n    .search-wrapper input.search-input::-webkit-input-placeholder {\n      color: currentColor; }\n    .search-wrapper input.search-input:-moz-placeholder {\n      opacity: 1;\n      color: currentColor; }\n    .search-wrapper input.search-input::-moz-placeholder {\n      opacity: 1;\n      color: currentColor; }\n    .search-wrapper input.search-input:-ms-input-placeholder {\n      color: currentColor; }\n  .search-wrapper.focus .search-icon {\n    color: rgba(0, 0, 0, 0.87); }\n  .search-wrapper.focus input.search-input {\n    background: white;\n    background: rgba(48, 52, 65, 0.1); }\n    .search-wrapper.focus input.search-input::-webkit-input-placeholder {\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input:-moz-placeholder {\n      opacity: 1;\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input::-moz-placeholder {\n      opacity: 1;\n      color: rgba(0, 0, 0, 0.87); }\n    .search-wrapper.focus input.search-input:-ms-input-placeholder {\n      color: rgba(0, 0, 0, 0.87); }\n  .search-wrapper.focus .search-dropdown {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n    visibility: visible; }\n  .search-wrapper .search-dropdown {\n    background: white;\n    position: absolute;\n    top: 50px;\n    width: 100%;\n    z-index: -1;\n    -webkit-transform: translateY(-110%);\n            transform: translateY(-110%);\n    visibility: hidden;\n    transition: visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }\n    .search-wrapper .search-dropdown .content {\n      padding: 16px;\n      font-size: 14px; }\n      .search-wrapper .search-dropdown .content .heading {\n        font-size: 13px;\n        color: #888;\n        margin-bottom: 2px; }\n        .search-wrapper .search-dropdown .content .heading .icon {\n          font-size: 20px;\n          height: 20px;\n          width: 20px;\n          line-height: 20px;\n          margin-right: 6px; }\n      .search-wrapper .search-dropdown .content .items .item {\n        position: relative;\n        padding: 8px 0 6px 26px;\n        margin: 2px 0;\n        cursor: pointer;\n        transition: background .1s;\n        outline: none; }\n        .search-wrapper .search-dropdown .content .items .item:hover {\n          background: #EFEFEF; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/toolbar/search-bar/search-bar.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchBarComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var SearchBarComponent = (function () {
-    function SearchBarComponent(router, sidenavService) {
-        this.router = router;
-        this.sidenavService = sidenavService;
-        this.recentlyVisited = [];
-    }
-    SearchBarComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        // Start Demo Data - You can safely remove this
-        this.recentlyVisited.push(this.sidenavService.getSidenavItemByRoute('/'));
-        this.recentlyVisited.push(this.sidenavService.getSidenavItemByRoute('/apps/chat'));
-        this.recentlyVisited.push(this.sidenavService.getSidenavItemByRoute('/tables/fixed-header-table'));
-        this.recentlyVisited.push(this.sidenavService.getSidenavItemByRoute('/icons'));
-        this.recentlyVisited.push(this.sidenavService.getSidenavItemByRoute('/apps/inbox'));
-        // End Demo Data - You can safely remove this
-        this.router.events.subscribe(function (event) {
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* NavigationEnd */]) {
-                var item = _this.sidenavService.getSidenavItemByRoute(event.urlAfterRedirects);
-                var index = _this.recentlyVisited.indexOf(item);
-                if (index > -1) {
-                    _this.recentlyVisited.splice(index, 1);
-                }
-                _this.recentlyVisited.unshift(item);
-                if (_this.recentlyVisited.length > 5) {
-                    _this.recentlyVisited.pop();
-                }
-            }
-        });
-    };
-    SearchBarComponent.prototype.openDropdown = function () {
-        this.focused = true;
-    };
-    SearchBarComponent.prototype.closeDropdown = function () {
-        this.focused = false;
-    };
-    return SearchBarComponent;
-}());
-SearchBarComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-search-bar',
-        template: __webpack_require__("../../../../../src/app/core/toolbar/search-bar/search-bar.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/core/toolbar/search-bar/search-bar.component.scss")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__sidenav_sidenav_service__["a" /* SidenavService */]) === "function" && _b || Object])
-], SearchBarComponent);
-
-var _a, _b;
-//# sourceMappingURL=search-bar.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/toolbar/search/search.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center stretch\" style=\"height: 100%;\">\r\n  <button class=\"search-button\" md-button (click)=\"open()\">\r\n    <md-icon>search</md-icon>\r\n  </button>\r\n  <md-input-container class=\"search\" floatingPlaceholder=\"false\" [class.search-open]=\"isOpen\">\r\n    <input #input (blur)=\"close()\" mdInput placeholder=\"Search...\">\r\n  </md-input-container>\r\n</div>\r\n\r\n\r\n<!--<div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n  <div class=\"search-wrapper\" fxLayout=\"row\" [class.focus]=\"isFocused()\" fxShow=\"false\" fxShow.gt-md=\"true\">\r\n    <md-icon class=\"search-icon\">search</md-icon>\r\n    <input type=\"search\"\r\n           autocomplete=\"off\"\r\n           spellcheck=\"off\"\r\n           class=\"search-input\"\r\n           [(ngModel)]=\"search\"\r\n           (focus)=\"focus()\"\r\n           (blur)=\"blur()\"\r\n           placeholder=\"Search\">\r\n  </div>\r\n</div>\r\n-->\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/toolbar/search/search.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ":host {\n  height: 100%; }\n\n.search {\n  width: 0;\n  overflow: hidden;\n  opacity: 0;\n  visibility: hidden;\n  transition: all 0.4s cubic-bezier(0.35, 0, 0.25, 1);\n  margin-top: 7px; }\n  .search.search-open {\n    width: 250px;\n    visibility: visible;\n    opacity: 1;\n    margin-top: 11px; }\n\n.search-button {\n  border-radius: 0;\n  padding: 0;\n  min-width: 50px;\n  max-width: 50px; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/core/toolbar/search/search.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var SearchComponent = (function () {
-    function SearchComponent(renderer) {
-        this.renderer = renderer;
-    }
-    SearchComponent.prototype.ngOnInit = function () {
-    };
-    SearchComponent.prototype.open = function () {
-        var _this = this;
-        this.isOpen = true;
-        setTimeout(function () {
-            _this.renderer.invokeElementMethod(_this.input.nativeElement, 'focus', []);
-        }, 100);
-    };
-    SearchComponent.prototype.close = function () {
-        this.isOpen = false;
-    };
-    return SearchComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('input'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
-], SearchComponent.prototype, "input", void 0);
-SearchComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'ms-search',
-        template: __webpack_require__("../../../../../src/app/core/toolbar/search/search.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/core/toolbar/search/search.component.scss")]
-    }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]) === "function" && _b || Object])
-], SearchComponent);
-
-var _a, _b;
-//# sourceMappingURL=search.component.js.map
-
-/***/ }),
-
 /***/ "../../../../../src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.html":
 /***/ (function(module, exports) {
 
@@ -1692,7 +1519,7 @@ ToolbarNotificationsComponent = __decorate([
 /***/ "../../../../../src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"user-button-container\" #userButton (msClickOutside)=\"onClickOutside()\">\r\n  <button class=\"user-button\" md-button (click)=\"toggleDropdown()\" [class.open]=\"isOpen\">\r\n    <span fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <img class=\"avatar\" src=\"assets/img/avatars/noavatar.png\">\r\n      <span class=\"name\" fxHide fxShow.gt-sm>{{userName}}</span>\r\n      <md-icon class=\"icon\" fxHide fxShow.gt-sm>keyboard_arrow_down</md-icon>\r\n    </span>\r\n  </button>\r\n\r\n  <div class=\"dropdown mat-elevation-z1\" [class.open]=\"isOpen\">\r\n    <div class=\"content\">\r\n      <div class=\"list\">\r\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple (click)=\"viewUserProfile();\">\r\n          <md-icon class=\"icon\">account_circle</md-icon>\r\n          <span class=\"title\">Profile</span>\r\n        </div>\r\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\r\n          <md-icon class=\"icon\">settings</md-icon>\r\n          <span class=\"title\">Settings</span>\r\n        </div>\r\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\r\n          <md-icon class=\"icon\">help</md-icon>\r\n          <span class=\"title\">Help</span>\r\n        </div>\r\n        <md-divider></md-divider>\r\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple (click)=\"logout();\">         \r\n          <md-icon class=\"icon\">exit_to_app</md-icon>\r\n          <span class=\"title\">Logout</span>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"user-button-container\" #userButton (msClickOutside)=\"onClickOutside()\">\n  <button class=\"user-button\" md-button (click)=\"toggleDropdown()\" [class.open]=\"isOpen\">\n    <span fxLayout=\"row\" fxLayoutAlign=\"start center\">\n      <img class=\"avatar\" src=\"assets/img/avatars/noavatar.png\">\n      <span class=\"name\" fxHide fxShow.gt-sm>{{userName}}</span>\n      <md-icon class=\"icon\" fxHide fxShow.gt-sm>keyboard_arrow_down</md-icon>\n    </span>\n  </button>\n\n  <div class=\"dropdown mat-elevation-z1\" [class.open]=\"isOpen\">\n    <div class=\"content\">\n      <div class=\"list\">\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple (click)=\"viewUserProfile();\">\n          <md-icon class=\"icon\">account_circle</md-icon>\n          <span class=\"title\">Profile</span>\n        </div>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">settings</md-icon>\n          <span class=\"title\">Settings</span>\n        </div>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple>\n          <md-icon class=\"icon\">help</md-icon>\n          <span class=\"title\">Help</span>\n        </div>\n        <md-divider></md-divider>\n        <div class=\"item\" fxLayout=\"row\" fxLayoutAlign=\"start center\" md-ripple (click)=\"logout();\">         \n          <md-icon class=\"icon\">exit_to_app</md-icon>\n          <span class=\"title\">Logout</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1773,7 +1600,7 @@ var _a, _b;
 /***/ "../../../../../src/app/core/toolbar/toolbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-toolbar mat-elevation-z2\">\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"start center\" fxHide=\"false\" fxHide.gt-sm>\r\n    <button (click)=\"sidenav.open()\" md-icon-button>\r\n      <md-icon>menu</md-icon>\r\n    </button>\r\n  </div>\r\n\r\n  <!--<div fxLayout=\"row\" fxLayoutAlign=\"start center\" fxFlex=\"500px\" fxHide fxShow.gt-md>\r\n    <ms-search-bar></ms-search-bar>\r\n  </div>-->\r\n\r\n  <ms-breadcrumbs *ngIf=\"showBreadcrumbs\" [fxHide]=\"true\" [fxHide.gt-sm]=\"false\"></ms-breadcrumbs>\r\n\r\n  <span fxFlex></span>\r\n\r\n  <button [fxHide]=\"true\" [fxHide.gt-sm]=\"false\" md-button class=\"fullscreen-toggle\" (click)=\"toggleFullscreen()\">\r\n    <md-icon *ngIf=\"!isFullscreen\">fullscreen</md-icon>\r\n    <md-icon *ngIf=\"isFullscreen\">fullscreen_exit</md-icon>\r\n  </button>\r\n\r\n  <ms-search></ms-search>\r\n\r\n  <div class=\"\">\r\n    <ms-toolbar-notifications></ms-toolbar-notifications>\r\n  </div>\r\n\r\n  <div class=\"user-button-container\">\r\n    <ms-toolbar-user-button></ms-toolbar-user-button>\r\n  </div>\r\n\r\n  <button md-button class=\"quickpanel-toggle\" (click)=\"quickpanel.open()\">\r\n    <md-icon>format_align_right</md-icon>\r\n  </button>\r\n</div>\r\n"
+module.exports = "<div class=\"main-toolbar mat-elevation-z2\">\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"start center\" fxHide=\"false\" fxHide.gt-sm>\r\n    <button (click)=\"sidenav.open()\" md-icon-button>\r\n      <md-icon>menu</md-icon>\r\n    </button>\r\n  </div>\r\n\r\n\r\n  <ms-breadcrumbs *ngIf=\"showBreadcrumbs\" [fxHide]=\"true\" [fxHide.gt-sm]=\"false\"></ms-breadcrumbs>\r\n\r\n  <span fxFlex></span>\r\n\r\n  <button [fxHide]=\"true\" [fxHide.gt-sm]=\"false\" md-button class=\"fullscreen-toggle\" (click)=\"toggleFullscreen()\">\r\n    <md-icon *ngIf=\"!isFullscreen\">fullscreen</md-icon>\r\n    <md-icon *ngIf=\"isFullscreen\">fullscreen_exit</md-icon>\r\n  </button>\r\n\r\n  <div class=\"\">\r\n    <ms-toolbar-notifications></ms-toolbar-notifications>\r\n  </div>\r\n\r\n  <div class=\"user-button-container\">\r\n    <ms-toolbar-user-button></ms-toolbar-user-button>\r\n  </div>\r\n \r\n</div>\r\n"
 
 /***/ }),
 
@@ -3358,7 +3185,7 @@ var _a, _b;
 /***/ "../../../../../src/app/main/icons/icons.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\" style=\"margin: 24px 0;\">\r\n  <md-card fxFlex=\"90%\">\r\n    <md-card-title>Material Buttons</md-card-title>\r\n\r\n    <md-divider></md-divider>\r\n\r\n    <md-card-content fxLayout=\"column\">\r\n\r\n      <div fxLayout=\"column\" fxLayout.gt-md=\"row\" fxLayoutAlign=\"start stretch\" fxLayoutAlign.gt-md=\"start start\" style=\"margin: 24px 0\">\r\n        <div fxFlex fxFlex.gt-md=\"30%\" style=\"margin-right: 24px;\">\r\n          <div fxLayout=\"column\">\r\n            <h3>Material Icons</h3>\r\n            <h4>&lt;md-icon&gt;</h4>\r\n            <p>Icons are a neat way to add some live to only-text lists. Our theme comes with a great variety of icons from the official Material Icons font.</p>\r\n            <h5>Example:</h5>\r\n            <p><code msHighlight class=\"html\">&lt;md-icon&gt;grade&lt;/md-icon&gt;</code></p>\r\n          </div>\r\n        </div>\r\n        <div class=\"demo-tabs mat-elevation-z2\" fxFlex>\r\n          <md-tab-group>\r\n            <md-tab label=\"PREVIEW\">\r\n              <div class=\"demo-preview\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n                <md-card fxFlex=\"80%\" fxFlex.sm=\"90%\">\r\n                  <md-card-content fxLayout=\"column\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"space-around center\" fxLayoutWrap=\"wrap\">\r\n                    <md-icon>grade</md-icon>\r\n                  </md-card-content>\r\n                </md-card>\r\n              </div>\r\n            </md-tab>\r\n            <md-tab label=\"HTML\">\r\n              <code [innerHTML]=\"getEscaped(iconsHTML)\" msHighlight class=\"html\"></code>\r\n            </md-tab>\r\n          </md-tab-group>\r\n        </div>\r\n      </div>\r\n\r\n      <md-divider></md-divider>\r\n\r\n      <div>\r\n        <h2>List of all Material Icons</h2>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-around center\" fxLayoutWrap=\"wrap\">\r\n          <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxFlex=\"20%\" *ngFor=\"let icon of icons\">\r\n            <md-icon>{{ icon }}</md-icon>\r\n            <span class=\"icon-name\">{{ icon }}</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n\r\n    </md-card-content>\r\n\r\n  </md-card>\r\n</div>\r\n\r\n"
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\" style=\"margin: 24px 0;\">\r\n  <md-card fxFlex=\"90%\">\r\n    <md-card-title>Material Buttons</md-card-title>\r\n\r\n    <md-divider></md-divider>\r\n\r\n    <md-card-content fxLayout=\"column\">\r\n\r\n      <div fxLayout=\"column\" fxLayout.gt-md=\"row\" fxLayoutAlign=\"start stretch\" fxLayoutAlign.gt-md=\"start start\" style=\"margin: 24px 0\">\r\n        <div fxFlex fxFlex.gt-md=\"30%\" style=\"margin-right: 24px;\">\r\n          <div fxLayout=\"column\">\r\n            <h3>Material Icons</h3>\r\n            <h4>&lt;md-icon&gt;</h4>\r\n            <p>Icons are a neat way to add some live to only-text lists. Our theme comes with a great variety of icons from the official Material Icons font.</p>\r\n            \r\n          </div>\r\n        </div>\r\n        <div class=\"demo-tabs mat-elevation-z2\" fxFlex>\r\n          <md-tab-group>\r\n            <md-tab label=\"PREVIEW\">\r\n              <div class=\"demo-preview\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n                <md-card fxFlex=\"80%\" fxFlex.sm=\"90%\">\r\n                  <md-card-content fxLayout=\"column\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"space-around center\" fxLayoutWrap=\"wrap\">\r\n                    <md-icon>grade</md-icon>\r\n                  </md-card-content>\r\n                </md-card>\r\n              </div>\r\n            </md-tab>\r\n            <md-tab label=\"HTML\">\r\n            </md-tab>\r\n          </md-tab-group>\r\n        </div>\r\n      </div>\r\n\r\n      <md-divider></md-divider>\r\n\r\n      <div>\r\n        <h2>List of all Material Icons</h2>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-around center\" fxLayoutWrap=\"wrap\">\r\n          <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxFlex=\"20%\" *ngFor=\"let icon of icons\">\r\n            <md-icon>{{ icon }}</md-icon>\r\n            <span class=\"icon-name\">{{ icon }}</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n\r\n    </md-card-content>\r\n\r\n  </md-card>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -4267,28 +4094,26 @@ var mainRoutes = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_sidenav_sidenav_component__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__core_sidenav_sidenav_item_sidenav_item_component__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav-item/sidenav-item.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_sidenav_icon_sidenav_directive__ = __webpack_require__("../../../../../src/app/core/sidenav/icon-sidenav.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_toolbar_search_search_component__ = __webpack_require__("../../../../../src/app/core/toolbar/search/search.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_breadcrumb_breadcrumb_component__ = __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__icons_icons_component__ = __webpack_require__("../../../../../src/app/main/icons/icons.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_toolbar_toolbar_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__core_toolbar_toolbar_user_button_toolbar_user_button_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__core_utils_click_outside_directive__ = __webpack_require__("../../../../../src/app/core/utils/click-outside.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__core_toolbar_search_bar_search_bar_component__ = __webpack_require__("../../../../../src/app/core/toolbar/search-bar/search-bar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__core_toolbar_toolbar_notifications_toolbar_notifications_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__core_sidenav_sidenav_service__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__core_sidenav_mediareplay_media_replay_service__ = __webpack_require__("../../../../../src/app/core/sidenav/mediareplay/media-replay.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__core_breadcrumb_breadcrumb_service__ = __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__material_material_components_module__ = __webpack_require__("../../../../../src/app/material/material-components.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__ = __webpack_require__("../../../../ngx-perfect-scrollbar/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__home_home_component__ = __webpack_require__("../../../../../src/app/main/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__projects_projects_module__ = __webpack_require__("../../../../../src/app/main/projects/projects.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__forms_forms_module__ = __webpack_require__("../../../../../src/app/main/forms/forms.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__formFields_formFields_module__ = __webpack_require__("../../../../../src/app/main/formFields/formFields.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__formFieldViews_formFieldViews_module__ = __webpack_require__("../../../../../src/app/main/formFieldViews/formFieldViews.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_breadcrumb_breadcrumb_component__ = __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__icons_icons_component__ = __webpack_require__("../../../../../src/app/main/icons/icons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_toolbar_toolbar_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_toolbar_toolbar_user_button_toolbar_user_button_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-user-button/toolbar-user-button.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__core_utils_click_outside_directive__ = __webpack_require__("../../../../../src/app/core/utils/click-outside.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__core_toolbar_toolbar_notifications_toolbar_notifications_component__ = __webpack_require__("../../../../../src/app/core/toolbar/toolbar-notifications/toolbar-notifications.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__core_sidenav_sidenav_service__ = __webpack_require__("../../../../../src/app/core/sidenav/sidenav.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__core_sidenav_mediareplay_media_replay_service__ = __webpack_require__("../../../../../src/app/core/sidenav/mediareplay/media-replay.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__core_breadcrumb_breadcrumb_service__ = __webpack_require__("../../../../../src/app/core/breadcrumb/breadcrumb.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__material_material_components_module__ = __webpack_require__("../../../../../src/app/material/material-components.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ngx_perfect_scrollbar__ = __webpack_require__("../../../../ngx-perfect-scrollbar/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_ngx_perfect_scrollbar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__home_home_component__ = __webpack_require__("../../../../../src/app/main/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__projects_projects_module__ = __webpack_require__("../../../../../src/app/main/projects/projects.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__forms_forms_module__ = __webpack_require__("../../../../../src/app/main/forms/forms.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__formFields_formFields_module__ = __webpack_require__("../../../../../src/app/main/formFields/formFields.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__formFieldViews_formFieldViews_module__ = __webpack_require__("../../../../../src/app/main/formFieldViews/formFieldViews.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4296,8 +4121,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
 
 
 
@@ -4331,32 +4154,30 @@ MainModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
-            __WEBPACK_IMPORTED_MODULE_18__angular_router__["b" /* RouterModule */],
-            __WEBPACK_IMPORTED_MODULE_16__material_material_components_module__["a" /* MaterialComponentsModule */],
-            __WEBPACK_IMPORTED_MODULE_19__angular_flex_layout__["a" /* FlexLayoutModule */],
-            __WEBPACK_IMPORTED_MODULE_20__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_17_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forChild()
-        ].concat(__WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].imports, __WEBPACK_IMPORTED_MODULE_23__forms_forms_module__["a" /* formConfig */].imports, __WEBPACK_IMPORTED_MODULE_24__formFields_formFields_module__["a" /* formFieldConfig */].imports, __WEBPACK_IMPORTED_MODULE_25__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].imports),
+            __WEBPACK_IMPORTED_MODULE_16__angular_router__["b" /* RouterModule */],
+            __WEBPACK_IMPORTED_MODULE_14__material_material_components_module__["a" /* MaterialComponentsModule */],
+            __WEBPACK_IMPORTED_MODULE_17__angular_flex_layout__["a" /* FlexLayoutModule */],
+            __WEBPACK_IMPORTED_MODULE_18__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_15_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forChild()
+        ].concat(__WEBPACK_IMPORTED_MODULE_20__projects_projects_module__["a" /* projectConfig */].imports, __WEBPACK_IMPORTED_MODULE_21__forms_forms_module__["a" /* formConfig */].imports, __WEBPACK_IMPORTED_MODULE_22__formFields_formFields_module__["a" /* formFieldConfig */].imports, __WEBPACK_IMPORTED_MODULE_23__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].imports),
         declarations: [
             __WEBPACK_IMPORTED_MODULE_2__core_sidenav_sidenav_component__["a" /* SidenavComponent */],
             __WEBPACK_IMPORTED_MODULE_3__core_sidenav_sidenav_item_sidenav_item_component__["a" /* SidenavItemComponent */],
             __WEBPACK_IMPORTED_MODULE_4__core_sidenav_icon_sidenav_directive__["a" /* IconSidenavDirective */],
-            __WEBPACK_IMPORTED_MODULE_5__core_toolbar_search_search_component__["a" /* SearchComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__core_breadcrumb_breadcrumb_component__["a" /* BreadcrumbsComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__core_toolbar_toolbar_component__["a" /* ToolbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__core_toolbar_toolbar_user_button_toolbar_user_button_component__["a" /* ToolbarUserButtonComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__core_utils_click_outside_directive__["a" /* ClickOutsideDirective */],
-            __WEBPACK_IMPORTED_MODULE_11__core_toolbar_search_bar_search_bar_component__["a" /* SearchBarComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__icons_icons_component__["a" /* IconsComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__core_toolbar_toolbar_notifications_toolbar_notifications_component__["a" /* ToolbarNotificationsComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__home_home_component__["a" /* HomeComponent */]
-        ].concat(__WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].declarations, __WEBPACK_IMPORTED_MODULE_23__forms_forms_module__["a" /* formConfig */].declarations, __WEBPACK_IMPORTED_MODULE_24__formFields_formFields_module__["a" /* formFieldConfig */].declarations, __WEBPACK_IMPORTED_MODULE_25__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].declarations),
-        entryComponents: __WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].entryComponents.slice(),
+            __WEBPACK_IMPORTED_MODULE_5__core_breadcrumb_breadcrumb_component__["a" /* BreadcrumbsComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__core_toolbar_toolbar_component__["a" /* ToolbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__core_toolbar_toolbar_user_button_toolbar_user_button_component__["a" /* ToolbarUserButtonComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__core_utils_click_outside_directive__["a" /* ClickOutsideDirective */],
+            __WEBPACK_IMPORTED_MODULE_6__icons_icons_component__["a" /* IconsComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__core_toolbar_toolbar_notifications_toolbar_notifications_component__["a" /* ToolbarNotificationsComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__home_home_component__["a" /* HomeComponent */]
+        ].concat(__WEBPACK_IMPORTED_MODULE_20__projects_projects_module__["a" /* projectConfig */].declarations, __WEBPACK_IMPORTED_MODULE_21__forms_forms_module__["a" /* formConfig */].declarations, __WEBPACK_IMPORTED_MODULE_22__formFields_formFields_module__["a" /* formFieldConfig */].declarations, __WEBPACK_IMPORTED_MODULE_23__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].declarations),
+        entryComponents: __WEBPACK_IMPORTED_MODULE_20__projects_projects_module__["a" /* projectConfig */].entryComponents.slice(),
         providers: [
-            __WEBPACK_IMPORTED_MODULE_13__core_sidenav_sidenav_service__["a" /* SidenavService */],
-            __WEBPACK_IMPORTED_MODULE_14__core_sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */],
-            __WEBPACK_IMPORTED_MODULE_15__core_breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]
-        ].concat(__WEBPACK_IMPORTED_MODULE_22__projects_projects_module__["a" /* projectConfig */].providers, __WEBPACK_IMPORTED_MODULE_23__forms_forms_module__["a" /* formConfig */].providers, __WEBPACK_IMPORTED_MODULE_24__formFields_formFields_module__["a" /* formFieldConfig */].providers, __WEBPACK_IMPORTED_MODULE_25__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].providers)
+            __WEBPACK_IMPORTED_MODULE_11__core_sidenav_sidenav_service__["a" /* SidenavService */],
+            __WEBPACK_IMPORTED_MODULE_12__core_sidenav_mediareplay_media_replay_service__["a" /* MediaReplayService */],
+            __WEBPACK_IMPORTED_MODULE_13__core_breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]
+        ].concat(__WEBPACK_IMPORTED_MODULE_20__projects_projects_module__["a" /* projectConfig */].providers, __WEBPACK_IMPORTED_MODULE_21__forms_forms_module__["a" /* formConfig */].providers, __WEBPACK_IMPORTED_MODULE_22__formFields_formFields_module__["a" /* formFieldConfig */].providers, __WEBPACK_IMPORTED_MODULE_23__formFieldViews_formFieldViews_module__["a" /* formFieldViewConfig */].providers)
     })
 ], MainModule);
 
@@ -4367,7 +4188,7 @@ MainModule = __decorate([
 /***/ "../../../../../src/app/main/projects/edit-project.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Edit Project</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"project.name\"\r\n                   formControlName=\"name\"\r\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\r\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"project.title\"\r\n                   formControlName=\"title\"\r\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\r\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   required\r\n                   placeholder=\"RootNamespace\"\r\n                   [(ngModel)]=\"project.rootNamespace\"\r\n                   formControlName=\"rootNamespace\"\r\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\r\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   required\r\n                   placeholder=\"CompanyName\"\r\n                   [(ngModel)]=\"project.companyName\"\r\n                   formControlName=\"companyName\"\r\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\r\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"project.description\"\r\n                   formControlName=\"description\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n              {{ serverErrorMessage}}\r\n            </label>\r\n          </div>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!projForm.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n\r\n"
+module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Edit Project</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"project.name\"\r\n                   formControlName=\"name\"\r\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\r\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"project.title\"\r\n                   formControlName=\"title\"\r\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\r\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   required\r\n                   placeholder=\"RootNamespace\"\r\n                   [(ngModel)]=\"project.rootNamespace\"\r\n                   formControlName=\"rootNamespace\"\r\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\r\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   required\r\n                   placeholder=\"CompanyName\"\r\n                   [(ngModel)]=\"project.companyName\"\r\n                   formControlName=\"companyName\"\r\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\r\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"project.description\"\r\n                   formControlName=\"description\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n              {{ serverErrorMessage}}\r\n            </label>\r\n          </div>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!projForm.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\n\n"
 
 /***/ }),
 
@@ -4636,7 +4457,7 @@ var _a, _b, _c, _d, _e;
 /***/ "../../../../../src/app/main/projects/new-project.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Add Project</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"project.name\"\r\n                   formControlName=\"name\"\r\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\r\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"project.title\"\r\n                   formControlName=\"title\"\r\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\r\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   required\r\n                   placeholder=\"RootNamespace\"\r\n                   [(ngModel)]=\"project.rootNamespace\"\r\n                   formControlName=\"rootNamespace\"\r\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\r\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   required\r\n                   placeholder=\"CompanyName\"\r\n                   [(ngModel)]=\"project.companyName\"\r\n                   formControlName=\"companyName\"\r\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\r\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"project.description\"\r\n                   formControlName=\"description\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n              {{ serverErrorMessage}}\r\n            </label>\r\n          </div>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!projForm.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n\r\n"
+module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Add Project</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"projForm\" novalidate (ngSubmit)=\"saveProject(projForm.value)\">\r\n        <div fxLayout fxLayoutWrap>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"name\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"project.name\"\r\n                   formControlName=\"name\"\r\n                   [class.invalid]=\"projForm.controls['name'].touched && !projForm.controls['name'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['name'].pristine || projForm.controls['name'].valid\">\r\n              <span [hidden]=\"!projForm.controls['name'].errors?.required\">Project Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"title\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"project.title\"\r\n                   formControlName=\"title\"\r\n                   [class.invalid]=\"projForm.controls['title'].touched && !projForm.controls['title'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['title'].pristine || projForm.controls['title'].valid\">\r\n              <span [hidden]=\"!projForm.controls['title'].errors?.required\">Project Title is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"rootNamespace\"\r\n                   required\r\n                   placeholder=\"RootNamespace\"\r\n                   [(ngModel)]=\"project.rootNamespace\"\r\n                   formControlName=\"rootNamespace\"\r\n                   [class.invalid]=\"projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid\">\r\n              <span [hidden]=\"!projForm.controls['rootNamespace'].errors?.required\">Project Root Namespace is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"companyName\"\r\n                   required\r\n                   placeholder=\"CompanyName\"\r\n                   [(ngModel)]=\"project.companyName\"\r\n                   formControlName=\"companyName\"\r\n                   [class.invalid]=\"projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid\" />\r\n            <md-hint [hidden]=\"projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid\">\r\n              <span [hidden]=\"!projForm.controls['companyName'].errors?.required\">Company Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"description\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"project.description\"\r\n                   formControlName=\"description\" />\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n              {{ serverErrorMessage}}\r\n            </label>\r\n          </div>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!projForm.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\n\n"
 
 /***/ }),
 
@@ -5214,7 +5035,7 @@ var _a;
 /***/ "../../../../../src/app/shared/not-found.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\" style=\"height: 100%;\">\r\n  <md-card-content fxLayout=\"column\">\r\n    <div class=\"content-container\" fxLayout=\"column\">\r\n\r\n\r\n      <h1 class=\"error-number\">404</h1>\r\n      <h2>Houston, we have a problem </h2>\r\n      <p>\r\n        We can't seem to find you are looking for.\r\n      </p>\r\n      <p>\r\n        <a href=\"/\">Let us take you home.</a>\r\n      </p>\r\n\r\n    </div>\r\n  </md-card-content>\r\n</div>\r\n"
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\" style=\"height: 100%;\">\r\n  <md-card-content fxLayout=\"column\">\r\n    <div class=\"content-container\" fxLayout=\"column\">\r\n      <h1 class=\"error-number\">404</h1>\r\n      <h2>Houston, we have a problem </h2>\r\n      <p>\r\n        We can't seem to find you are looking for.\r\n      </p>\r\n      <p>\r\n        <a href=\"/\">Let us take you home.</a>\r\n      </p>\r\n    </div>\r\n  </md-card-content>\r\n</div>\r\n"
 
 /***/ }),
 

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import {ReplaySubject} from "rxjs/ReplaySubject";
 import {MediaChange, ObservableMedia} from "@angular/flex-layout";
 import {Observable} from "rxjs/Observable";

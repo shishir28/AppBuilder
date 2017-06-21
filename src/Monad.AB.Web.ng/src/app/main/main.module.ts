@@ -4,13 +4,11 @@ import { CommonModule } from '@angular/common';
 import { SidenavComponent } from '../core/sidenav/sidenav.component';
 import { SidenavItemComponent } from '../core/sidenav/sidenav-item/sidenav-item.component';
 import { IconSidenavDirective } from '../core/sidenav/icon-sidenav.directive';
-import { SearchComponent } from '../core/toolbar/search/search.component';
 import { BreadcrumbsComponent } from '../core/breadcrumb/breadcrumb.component';
 import { IconsComponent } from './icons/icons.component';
 import { ToolbarComponent } from '../core/toolbar/toolbar.component';
 import { ToolbarUserButtonComponent } from '../core/toolbar/toolbar-user-button/toolbar-user-button.component';
 import { ClickOutsideDirective } from '../core/utils/click-outside.directive';
-import { SearchBarComponent } from '../core/toolbar/search-bar/search-bar.component';
 import { ToolbarNotificationsComponent } from '../core/toolbar/toolbar-notifications/toolbar-notifications.component';
 import { SidenavService } from '../core/sidenav/sidenav.service';
 import { MediaReplayService } from '../core/sidenav/mediareplay/media-replay.service';
@@ -44,12 +42,10 @@ import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
         SidenavComponent,
         SidenavItemComponent,
         IconSidenavDirective,
-        SearchComponent,
         BreadcrumbsComponent,
         ToolbarComponent,
         ToolbarUserButtonComponent,
         ClickOutsideDirective,
-        SearchBarComponent,
         IconsComponent,
         ToolbarNotificationsComponent,
         HomeComponent,

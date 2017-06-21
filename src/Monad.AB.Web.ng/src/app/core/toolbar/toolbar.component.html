@@ -5,9 +5,6 @@
     </button>
   </div>
 
-  <!--<div fxLayout="row" fxLayoutAlign="start center" fxFlex="500px" fxHide fxShow.gt-md>
-    <ms-search-bar></ms-search-bar>
-  </div>-->
 
   <ms-breadcrumbs *ngIf="showBreadcrumbs" [fxHide]="true" [fxHide.gt-sm]="false"></ms-breadcrumbs>
 
@@ -18,8 +15,6 @@
     <md-icon *ngIf="isFullscreen">fullscreen_exit</md-icon>
   </button>
 
-  <ms-search></ms-search>
-
   <div class="">
     <ms-toolbar-notifications></ms-toolbar-notifications>
   </div>
@@ -27,8 +22,5 @@
   <div class="user-button-container">
     <ms-toolbar-user-button></ms-toolbar-user-button>
   </div>
-
-  <button md-button class="quickpanel-toggle" (click)="quickpanel.open()">
-    <md-icon>format_align_right</md-icon>
-  </button>
+ 
 </div>
