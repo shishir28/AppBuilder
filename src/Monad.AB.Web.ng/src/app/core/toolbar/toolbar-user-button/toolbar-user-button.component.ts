@@ -27,6 +27,10 @@ export class ToolbarUserButtonComponent implements OnInit {
         this.router.navigateByUrl('/login');
     }
 
+    viewUserProfile() {
+        this.router.navigateByUrl('/user-profile/view');
+    }
+
     onClickOutside() {
         this.isOpen = false;
     }

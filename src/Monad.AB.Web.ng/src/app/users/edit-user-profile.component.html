@@ -1,0 +1,31 @@
+﻿<div fxLayout="column" fxLayout.gt-md="row">
+  <md-card style="padding: 16px;" fxFlex="90%">
+    <md-toolbar color="primary">Edit User Profile</md-toolbar>
+    <md-card-content>
+      <!--<form [formGroup]="formGroup" novalidate (ngSubmit)="saveUser(formGroup.value)">-->
+      <form >
+        <div fxLayout="column">
+          <!--<md-input-container fxFlex="50">
+
+          </md-input-container>-->
+        </div>
+
+        <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
+          <button md-raised-button
+                  type="button" (click)="cancelChanges($event);">
+            Cancel
+          </button>
+          <button md-button color="primary"
+                  md-raised-button
+                  style="margin-left: 8px;"
+                  type="submit"
+                  [disabled]="!formGroup.valid">
+            Save
+          </button>
+
+        </div>
+      </form>
+
+    </md-card-content>
+  </md-card>
+</div>

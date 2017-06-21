@@ -11,7 +11,9 @@ import { CommonModule } from "@angular/common";
 import { PerfectScrollbarConfigInterface, PerfectScrollbarModule } from "ngx-perfect-scrollbar";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MainModule } from './main/main.module';
-import { AccountModule } from './account/account.module';
+import { AccountsModule } from './accounts/accounts.module';
+import { UsersModule } from './users/users.module';
+
 import { SortablejsModule, SortablejsOptions } from 'angular-sortablejs';
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
@@ -34,7 +36,8 @@ const sortablejsConfig: SortablejsOptions = {
         RoutingModule,
         BrowserAnimationsModule,
         MainModule,
-        AccountModule,
+        AccountsModule,
+        UsersModule,
         SortablejsModule,
         PerfectScrollbarModule.forRoot(perfectScrollbarConfig),
     ],
