@@ -1,4 +1,5 @@
 ﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from './shared/users.service';
@@ -15,6 +16,7 @@ export class ViewUserProfileComponent implements OnInit, AfterViewInit {
     userName: string;
     user: ApplicationUser = new ApplicationUser();
     constructor(
+        private location: Location,
         private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,
@@ -38,8 +40,13 @@ export class ViewUserProfileComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit() {
     }
+
+
     editUserProfile() {
         this.router.navigateByUrl('/user-profile/edit');
+    }
 
+    cancelChanges(e) {
+        this.location.back();
     }
 }

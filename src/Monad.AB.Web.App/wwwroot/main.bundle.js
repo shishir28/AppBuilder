@@ -5414,10 +5414,11 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_users_service__ = __webpack_require__("../../../../../src/app/users/shared/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_user__ = __webpack_require__("../../../../../src/app/users/shared/user.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_users_service__ = __webpack_require__("../../../../../src/app/users/shared/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_user__ = __webpack_require__("../../../../../src/app/users/shared/user.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewUserProfileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5433,13 +5434,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ViewUserProfileComponent = (function () {
-    function ViewUserProfileComponent(formBuilder, router, route, usersService) {
+    function ViewUserProfileComponent(location, formBuilder, router, route, usersService) {
+        this.location = location;
         this.formBuilder = formBuilder;
         this.router = router;
         this.route = route;
         this.usersService = usersService;
-        this.user = new __WEBPACK_IMPORTED_MODULE_4__shared_user__["a" /* ApplicationUser */]();
+        this.user = new __WEBPACK_IMPORTED_MODULE_5__shared_user__["a" /* ApplicationUser */]();
     }
     ViewUserProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -5458,6 +5461,9 @@ var ViewUserProfileComponent = (function () {
     ViewUserProfileComponent.prototype.editUserProfile = function () {
         this.router.navigateByUrl('/user-profile/edit');
     };
+    ViewUserProfileComponent.prototype.cancelChanges = function (e) {
+        this.location.back();
+    };
     return ViewUserProfileComponent;
 }());
 __decorate([
@@ -5470,10 +5476,10 @@ ViewUserProfileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/users/view-user-profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/users/view-user-profile.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__shared_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_users_service__["a" /* UsersService */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common__["Location"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common__["Location"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["i" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__shared_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_users_service__["a" /* UsersService */]) === "function" && _f || Object])
 ], ViewUserProfileComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=view-user-profile.component.js.map
 
 /***/ }),
