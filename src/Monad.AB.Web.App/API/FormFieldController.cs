@@ -10,9 +10,12 @@ namespace Monad.AB.Web.App.Controllers
     public class FormFieldController : Controller
     {
         private IFormFieldService _formFieldService;
-        public FormFieldController(IFormFieldService formFieldService)
+        private IFormFieldViewService _formFieldViewService;
+
+        public FormFieldController(IFormFieldService formFieldService, IFormFieldViewService formFieldViewService)
         {
             _formFieldService = formFieldService;
+            _formFieldViewService = formFieldViewService;
         }
 
         [HttpGet]
@@ -105,12 +108,12 @@ namespace Monad.AB.Web.App.Controllers
                     var formFieldView = Mapper.Map<EditFormFieldsViewViewModel, FormFieldView>(model);
                     formFieldView.LastModifiedDateUtc = System.DateTime.UtcNow;
                     formFieldView.LastModifiedBy = 1;
-                    _formFieldService.EditFieldView(formFieldView);
-                    return new ObjectResult(new { StatusCode = 204, Content = $@"Field {model.Name} was modified!" });
+                    _formFieldViewService.EditFormFieldView(formFieldView);
+                    return new ObjectResult(new { StatusCode = 204, Content = $@"Field {model.View.Name} was modified!" });
                 }
                 catch (System.Exception ex)
                 {
-                    return new ObjectResult(new { StatusCode = 400, Content = $@"Field {model.Name} could not be modified!" });
+                    return new ObjectResult(new { StatusCode = 400, Content = $@"Field {model.View.Name} could not be modified!" });
                 }
             }
             return new StatusCodeResult(412);

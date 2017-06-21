@@ -70,6 +70,8 @@ namespace Monad.AB.Infrastructure.DependencyResolver
             services.AddTransient<IProjectService, ProjectService>();
             services.AddTransient<IFormService, FormService>();
             services.AddTransient<IFormFieldService, FormFieldService>();
+            services.AddTransient<IFormFieldViewService, FormFieldViewService>();
+
             services.AddTransient<IPublishService, PublishService>();
             //services.AddTransient<ISolutionBuilder, SolutionBuilder>();
             //services.AddTransient<IBuildScriptBuilder, BuildScriptBuilder>();

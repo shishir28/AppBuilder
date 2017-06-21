@@ -18,7 +18,7 @@ export class EditFormFieldViewComponent implements OnInit {
     projectId: number;
     formId: number;
     formFieldViewId: number;
-    formfieldid: number;
+    formfieldId: number;
 
     constructor(
         private snackBar: MdSnackBar,
@@ -29,6 +29,7 @@ export class EditFormFieldViewComponent implements OnInit {
     ) {
         this.formGroup = formBuilder.group({
             id: [''],
+    
             name: this.formBuilder.control({ value: '', disabled: true }),
             row: ['', [Validators.required]],
             rowSpan: ['', [Validators.required]],
@@ -43,7 +44,7 @@ export class EditFormFieldViewComponent implements OnInit {
         this.route.params.subscribe(params => {
             this.projectId = params['projectid'];
             this.formId = params['formid'];
-            this.formfieldid = params['formfieldid'];
+            this.formfieldId = params['formfieldid'];
             this.formFieldViewId = params['formFieldViewid'];
 
             
@@ -54,7 +55,8 @@ export class EditFormFieldViewComponent implements OnInit {
                 .subscribe(
                 formFieldView => {
                     this.formFieldView = formFieldView;
-                    this.formViewType = formFieldView.view;
+                    this.formViewType = formFieldView.view
+                    console.log(formFieldView.view);
                     this.formGroup.controls['id'].setValue(this.formFieldViewId);
                 },
                 response => {
@@ -70,6 +72,9 @@ export class EditFormFieldViewComponent implements OnInit {
         data.projectID = this.projectId;
         data.formID = this.formId;
         data.id = this.formFieldViewId;
+        data.view = this.formViewType;
+        data.formFieldId = this.formfieldId;
+        data.fieldID = this.formfieldId;
         this.formFieldViewsService.editFormFieldView(data)
             .subscribe(response => {
                 if (response.statusCode == 204) {
@@ -77,7 +82,7 @@ export class EditFormFieldViewComponent implements OnInit {
                         duration: 500
                     });
                     snackBarRef.afterDismissed().subscribe(() => {
-                        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId + '/fields/' + this.formfieldid);
+                        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId + '/fields/' + this.formfieldId);
                     });
                     
                 } else if (response.statusCode == 412) {
@@ -90,6 +95,6 @@ export class EditFormFieldViewComponent implements OnInit {
 
     cancelChanges(e) {
 
-        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId + '/fields/' + this.formfieldid);
+        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId + '/fields/' + this.formfieldId);
     }
 }
