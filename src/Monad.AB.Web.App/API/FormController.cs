@@ -47,7 +47,7 @@ namespace Monad.AB.Web.App.Controllers
                 }
                 catch (System.Exception ex)
                 {
-                    return new ObjectResult(new { StatusCode = 400, Content = $@"Form {model.FormName} could not Created!" });
+                    return new ObjectResult(new { StatusCode = 400, Content = $@"Form {model.FormName} could not be Created!" });
                 }
 
             }

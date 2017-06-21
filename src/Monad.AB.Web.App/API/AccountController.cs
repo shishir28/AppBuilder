@@ -30,30 +30,32 @@ namespace Monad.AB.Web.App.Controllers
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody]LoginViewModel model, string returnUrl = null)
         {
-            AccountsApiModel accountsWebApiModel = new AccountsApiModel();
-
+            AccountsApiModel accountsWebApiModel = new AccountsApiModel { Authenticated = false };
+            accountsWebApiModel.User.UserName = string.Empty;
             if (ModelState.IsValid)
             {
                 var result = await _accountService.Login(model.UserName, model.Password, model.RememberMe);
                 if (result.Succeeded)
                 {
-                    var token = await _accountService.GetLoginToken(model.UserName, model.Password);
+                    //var token = await _accountService.GetLoginToken(model.UserName, model.Password);
                     accountsWebApiModel.User.UserName = model.UserName;
-                    accountsWebApiModel.Token = token;
-                    return new ObjectResult(accountsWebApiModel);
+                    //accountsWebApiModel.Token = token;
+                    accountsWebApiModel.Authenticated = true;
+
+                    return new ObjectResult(new { StatusCode = 200, Content = accountsWebApiModel });
                 }
-                if (result.RequiresTwoFactor)
-                {
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                }
-                if (result.IsLockedOut)
-                {
-                    return View("Lockout");
-                }
-                else
-                {
-                    return new ObjectResult("Invalid username or password.");
-                }
+                //if (result.RequiresTwoFactor)
+                //{
+                //    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                //}
+                //if (result.IsLockedOut)
+                //{
+                //    return View("Lockout");
+                //}
+                //else
+                //{
+                    return new StatusCodeResult(412);
+                //}
             }
             // If we got this far, something failed, redisplay form
             return View(model);
@@ -90,16 +92,14 @@ namespace Monad.AB.Web.App.Controllers
                 var result = await _accountService.Register(model.Email, model.Password);
                 if (result.Succeeded)
                 {
-                    //TO DO 
-                    return new StatusCodeResult(200);
+                    return new ObjectResult(new { StatusCode = 201, Content = $@"User with email address  {model.Email} Created!" });
                 }
                 else
                 {
-                    return new ObjectResult(result.Errors);
+                    return new ObjectResult(new { StatusCode = 400, Content = $@"User with email address  {model.Email} could not be Created!" });
                 }
-
             }
-            return new StatusCodeResult(204);
+            return new StatusCodeResult(412);
         }
 
         [HttpGet]

@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.IO;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 using Monad.AB.Web.App.Middlewares;
 using Monad.AB.Infrastructure.DependencyResolver;
 
@@ -27,7 +26,18 @@ namespace Monad.AB.Web.App
 
         public IConfigurationRoot Configuration { get; }
 
+        public static readonly CookieAuthenticationOptions cookieAuthenticationOptions = new CookieAuthenticationOptions
+        {
+
+            AuthenticationScheme = "MyAuthScheme",
+            LoginPath = "/login",
+            AutomaticAuthenticate = true,
+            AutomaticChallenge = true,
+            SlidingExpiration = true
+        };
+
         // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
@@ -40,6 +50,7 @@ namespace Monad.AB.Web.App
         {
             app.Use(new UnhandledExceptionMiddleware().Process);
             app.Use(new PerformanceLoggingMiddleware().Process);
+            //app.UseCookieAuthentication(cookieAuthenticationOptions);
 
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -65,6 +76,7 @@ namespace Monad.AB.Web.App
                     await next();
                 }
             });
+            app.UseIdentity();
             app.UseMvc();
             app.UseStaticFiles();
             AutoMapperBootStrapper.Bootstrap();
