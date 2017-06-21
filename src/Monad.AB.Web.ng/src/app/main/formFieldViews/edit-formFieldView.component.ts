@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { MdSnackBar } from "@angular/material";
 import { FormFieldViewsService } from './shared/formFieldViews.service';
 import { FormFieldView, FormViewTypeModel } from '../formFields/shared/formField';
 
@@ -20,7 +20,9 @@ export class EditFormFieldViewComponent implements OnInit {
     formFieldViewId: number;
     formfieldid: number;
 
-    constructor(private formBuilder: FormBuilder,
+    constructor(
+        private snackBar: MdSnackBar,
+        private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,
         private formFieldViewsService: FormFieldViewsService
@@ -63,7 +65,7 @@ export class EditFormFieldViewComponent implements OnInit {
         });
     }
 
-    saveForm(data) {
+    saveFormFieldView(data) {
         this.serverErrorMessage = '';
         data.projectID = this.projectId;
         data.formID = this.formId;
@@ -71,7 +73,13 @@ export class EditFormFieldViewComponent implements OnInit {
         this.formFieldViewsService.editFormFieldView(data)
             .subscribe(response => {
                 if (response.statusCode == 204) {
-                    this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId);
+                    let snackBarRef = this.snackBar.open('Field View saved Successfully!', 'Close', {
+                        duration: 500
+                    });
+                    snackBarRef.afterDismissed().subscribe(() => {
+                        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId + '/fields/' + this.formfieldid);
+                    });
+                    
                 } else if (response.statusCode == 412) {
                     this.serverErrorMessage = "Some details were missing!";
                 } else {

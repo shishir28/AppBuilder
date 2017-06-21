@@ -68,6 +68,7 @@ namespace Monad.AB.Web.App.Models
 
     public class EditFormFieldsViewViewModel : FormFieldViewModel
     {
+        public int Id { get; set; }
         public bool ReadOnly { get; set; }
         public bool Hidden { get; set; }
         public int ViewName { get; set; }

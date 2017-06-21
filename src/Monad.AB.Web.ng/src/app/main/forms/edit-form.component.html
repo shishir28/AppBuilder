@@ -2,7 +2,7 @@
   <md-card style="padding: 16px;" fxFlex="90%">
     <md-toolbar color="primary">Edit Form</md-toolbar>
     <md-card-content>
-      <form [formGroup]="formGroup" novalidate (ngSubmit)="saveUser(formGroup.value)">
+      <form [formGroup]="formGroup" novalidate (ngSubmit)="saveForm(formGroup.value)">
         <div fxLayout column>
           <md-input-container fxFlex="50">
             <input mdInput

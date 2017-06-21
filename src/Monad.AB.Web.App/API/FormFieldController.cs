@@ -108,7 +108,7 @@ namespace Monad.AB.Web.App.Controllers
                     _formFieldService.EditFieldView(formFieldView);
                     return new ObjectResult(new { StatusCode = 204, Content = $@"Field {model.Name} was modified!" });
                 }
-                catch (System.Exception)
+                catch (System.Exception ex)
                 {
                     return new ObjectResult(new { StatusCode = 400, Content = $@"Field {model.Name} could not be modified!" });
                 }

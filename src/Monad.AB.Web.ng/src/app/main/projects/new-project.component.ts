@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MdSnackBar } from "@angular/material";
 
 import { ProjectsService } from './shared/projects.service'
 import { Project } from './shared/project'
@@ -15,6 +16,7 @@ export class NewProjectComponent implements OnInit {
     project: Project = new Project();
     serverErrorMessage: string;
     constructor(
+        private snackBar: MdSnackBar,
         private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,
@@ -48,7 +50,13 @@ export class NewProjectComponent implements OnInit {
         this.projectsService.addProject(data)
             .subscribe(response => {
                 if (response.statusCode == 201) {
-                    this.router.navigateByUrl('/projects');
+                    let snackBarRef = this.snackBar.open('Project information saved Successfully!', 'Close', {
+                        duration: 500
+                    });
+                    snackBarRef.afterDismissed().subscribe(() => {
+                        this.router.navigateByUrl('/projects');
+                    });
+                    
                 } else if (response.statusCode == 412) {
                     this.serverErrorMessage = "Some details were missing!";
                 } else {

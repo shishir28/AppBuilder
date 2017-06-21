@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MdSnackBar } from "@angular/material";
 
 import { FormFieldsService } from './shared/formFields.service';
 import { FormField, FieldType } from './shared/formField';
@@ -20,7 +21,9 @@ export class EditFormFieldComponent implements OnInit {
     formId: number;
     formFieldId: number;
 
-    constructor(private formBuilder: FormBuilder,
+    constructor(
+        private snackBar: MdSnackBar,
+        private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,
         private formFieldsService: FormFieldsService
@@ -75,7 +78,12 @@ export class EditFormFieldComponent implements OnInit {
         this.formFieldsService.editFormField(data)
             .subscribe(response => {
                 if (response.statusCode == 204) {
-                    this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId);
+                    let snackBarRef = this.snackBar.open('Form Field saved Successfully!', 'Close', {
+                        duration: 500
+                    });
+                    snackBarRef.afterDismissed().subscribe(() => {
+                        this.router.navigateByUrl('/projects/' + this.projectId + '/forms/' + this.formId);
+                    });
                 } else if (response.statusCode == 412) {
                     this.serverErrorMessage = "Some details were missing!";
                 } else {

@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { MdSnackBar } from "@angular/material";
 import { FormsService } from './shared/forms.service'
 import { Form } from './shared/form'
 
@@ -18,6 +18,7 @@ export class EditFormComponent implements OnInit {
     projectId: string;
     formId: string;
     constructor(
+        private snackBar: MdSnackBar,
         private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,
@@ -66,7 +67,13 @@ export class EditFormComponent implements OnInit {
         this.formsService.editForm(data)
             .subscribe(response => {
                 if (response.statusCode == 204) {
-                    this.router.navigateByUrl('/projects/' + this.projectId);
+                    let snackBarRef = this.snackBar.open('Form information saved Successfully!', 'Close', {
+                        duration: 500
+                    });
+                    snackBarRef.afterDismissed().subscribe(() => {
+                        this.router.navigateByUrl('/projects/' + this.projectId)
+                    });
+
                 } else if (response.statusCode == 412) {
                     this.serverErrorMessage = "Some details were missing!";
                 } else {
