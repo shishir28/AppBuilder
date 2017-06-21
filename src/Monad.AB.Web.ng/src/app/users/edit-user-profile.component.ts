@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MdSnackBar } from "@angular/material";
 import { UsersService } from './shared/users.service';
 import { ApplicationUser } from './shared/user';
 
@@ -15,8 +16,10 @@ export class EditUserProfileComponent implements OnInit {
     tbody: ElementRef;
     userName: string;
     user: ApplicationUser = new ApplicationUser();
+    serverErrorMessage: string;
 
     constructor(
+        private snackBar: MdSnackBar,
         private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,
@@ -52,11 +55,27 @@ export class EditUserProfileComponent implements OnInit {
             });
     }
 
-    saveForm(data) {
+    saveUser(data) {
+        this.serverErrorMessage = '';
+        this.usersService.editUserProfile(data)
+            .subscribe(response => {
+                if (response.statusCode == 204) {
+                    let snackBarRef  = this.snackBar.open('User Profile data saved Successfully!', 'Close', {
+                        duration: 500
+                    });
+                    snackBarRef.afterDismissed().subscribe(() => {
+                        this.router.navigateByUrl('/user-profile/view');
+                    });
+                    
+                } else if (response.statusCode == 412) {
+                    this.serverErrorMessage = "Some details were missing!";
+                } else {
+                    this.serverErrorMessage = response.content;
+                }
+            });
     }
 
     cancelChanges(e) {
         this.router.navigateByUrl('/user-profile/view');
     }
-
 }

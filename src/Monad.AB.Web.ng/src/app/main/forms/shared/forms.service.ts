@@ -26,7 +26,6 @@ export class FormsService {
             .map(res => res.json());
     }
 
-
     editForm(form) {
         return this.http.put("/api/form/editform/", JSON.stringify(form), this.options)
             .map(res => res.json());

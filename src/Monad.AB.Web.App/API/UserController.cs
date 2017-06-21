@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using Monad.AB.Domain.Entities;
 
 namespace Monad.AB.Web.App.Controllers
 {
@@ -48,33 +49,39 @@ namespace Monad.AB.Web.App.Controllers
             };
         }
 
-        [HttpPost]
+        [HttpPut]
         [AllowAnonymous]
         [Route("EditUserProfile")]
         public IActionResult EditUserProfile([FromBody]ApplicationUserViewModel model)
         {
             if (ModelState.IsValid)
             {
-                //var user = new ApplicationUser
-                //{
-                //    Id = model.Id,
-                //    UserName = model.UserName,
-                //    FirstName = model.FirstName,
-                //    LastName = model.LastName,
-                //    EmailAddress = model.EmailAddress,
-                //    Designation = model.Designation,
-                //    AddressLine1 = model.AddressLine1,
-                //    AddressLine2 = model.AddressLine2,
-                //    Zip = model.Zip,
-                //    City = model.City,
-                //    State = model.State,
-                //    ProfilePicture = model.ProfilePicture
-                //};
-                //_userService.EditUser(user);
+                try
+                {
+                    var user = new ApplicationUser
+                    {
+                        Id = model.Id,
+                        UserName = model.UserName,
+                        FirstName = model.FirstName,
+                        LastName = model.LastName,
+                        EmailAddress = model.EmailAddress,
+                        Designation = model.Designation,
+                        AddressLine1 = model.AddressLine1,
+                        AddressLine2 = model.AddressLine2,
+                        Zip = model.Zip,
+                        City = model.City,
+                        State = model.State,
+                        ProfilePicture = model.ProfilePicture
+                    };
+                    _userService.EditUser(user);
+                    return new ObjectResult(new { StatusCode = 204, Content = $@"User {model.UserName} Saved!" });
+                }
+                catch (System.Exception ex)
+                {
+                    return new ObjectResult(new { StatusCode = 400, Content = $@"User {model.UserName} could not be Saved! " });
+                }
             }
-            return new StatusCodeResult(200);
+            return new StatusCodeResult(412);
         }
-
-
     }
 }

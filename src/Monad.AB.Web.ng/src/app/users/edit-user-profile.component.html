@@ -126,8 +126,12 @@
           <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="cancelChanges($event);">
             Go Back
           </button>
-          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="editUserProfile();">
-            Edit
+          <button md-button color="primary"
+                  md-raised-button
+                  style="margin-left: 8px;"
+                  type="submit"
+                  [disabled]="!formGroup.valid">
+            Save
           </button>
         </div>
       </form>

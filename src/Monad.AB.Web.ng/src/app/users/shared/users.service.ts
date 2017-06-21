@@ -18,6 +18,10 @@ export class UsersService {
             .map(res => res.json());
     }
 
+    editUserProfile(user) {
+        return this.http.put("/api/user/EditUserProfile/", JSON.stringify(user), this.options)
+            .map(res => res.json());
+    }
 
     private extractData(res: Response) {
         let body = res.json();

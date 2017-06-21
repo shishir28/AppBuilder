@@ -1252,7 +1252,7 @@ SidenavComponent = __decorate([
         styles: [__webpack_require__("../../../../../src/app/core/sidenav/sidenav.component.scss")],
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["x" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["x" /* MdSnackBar */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__sidenav_service__["a" /* SidenavService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__breadcrumb_breadcrumb_service__["a" /* BreadcrumbService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MdSnackBar */]) === "function" && _d || Object])
 ], SidenavComponent);
 
 var _a, _b, _c, _d;
@@ -1428,7 +1428,7 @@ var SidenavService = (function () {
 }());
 SidenavService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["x" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["x" /* MdSnackBar */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdSnackBar */]) === "function" && _b || Object])
 ], SidenavService);
 
 var _a, _b;
@@ -2696,7 +2696,7 @@ var _a, _b, _c, _d, _e;
 /***/ "../../../../../src/app/main/forms/edit-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Edit Form</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"formGroup\" novalidate (ngSubmit)=\"saveForm(formGroup.value)\">\r\n        <div fxLayout column>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"formName\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"form.formName\"\r\n                   formControlName=\"formName\"\r\n                   [class.invalid]=\"formGroup.controls['formName'].touched && !formGroup.controls['formName'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['formName'].pristine || formGroup.controls['formName'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['formName'].errors?.required\">Form Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"formTitle\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"form.formTitle\"\r\n                   formControlName=\"formTitle\"\r\n                   [class.invalid]=\"formGroup.controls['formTitle'].touched && !formGroup.controls['formTitle'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['formTitle'].pristine || formGroup.controls['formTitle'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['formTitle'].errors?.required\">Form Title is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-select [(ngModel)]=\"form.dependencyID\" placeholder=\"Dependency\" formControlName=\"dependencyID\">\r\n            <md-option *ngFor=\"let currentForm of forms\" [value]=\"currentForm.id\">\r\n              {{currentForm.title}}\r\n            </md-option>\r\n          </md-select>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"formDescription\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"form.formDescription\"\r\n                   formControlName=\"formDescription\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n\r\n\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n              {{ serverErrorMessage}}\r\n            </label>\r\n          </div>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!formGroup.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
+module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Edit Form</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"formGroup\" novalidate (ngSubmit)=\"saveUser(formGroup.value)\">\r\n        <div fxLayout column>\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"formName\"\r\n                   placeholder=\"Name\"\r\n                   required\r\n                   [(ngModel)]=\"form.formName\"\r\n                   formControlName=\"formName\"\r\n                   [class.invalid]=\"formGroup.controls['formName'].touched && !formGroup.controls['formName'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['formName'].pristine || formGroup.controls['formName'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['formName'].errors?.required\">Form Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"formTitle\"\r\n                   required\r\n                   placeholder=\"Title\"\r\n                   [(ngModel)]=\"form.formTitle\"\r\n                   formControlName=\"formTitle\"\r\n                   [class.invalid]=\"formGroup.controls['formTitle'].touched && !formGroup.controls['formTitle'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['formTitle'].pristine || formGroup.controls['formTitle'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['formTitle'].errors?.required\">Form Title is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-select [(ngModel)]=\"form.dependencyID\" placeholder=\"Dependency\" formControlName=\"dependencyID\">\r\n            <md-option *ngFor=\"let currentForm of forms\" [value]=\"currentForm.id\">\r\n              {{currentForm.title}}\r\n            </md-option>\r\n          </md-select>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <md-input-container>\r\n            <input mdInput\r\n                   name=\"formDescription\"\r\n                   placeholder=\"Description\"\r\n                   [(ngModel)]=\"form.formDescription\"\r\n                   formControlName=\"formDescription\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\" *ngIf=\"serverErrorMessage\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <label class=\"control-label\">\r\n              {{ serverErrorMessage}}\r\n            </label>\r\n          </div>\r\n        </div>\r\n        <div fxLayout=\"column\">\r\n          <div fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n            <button md-raised-button\r\n                    type=\"button\" (click)=\"cancelChanges($event);\">\r\n              Cancel\r\n            </button>\r\n            <button md-button color=\"primary\"\r\n                    md-raised-button\r\n                    style=\"margin-left: 8px;\"\r\n                    type=\"submit\"\r\n                    [disabled]=\"!formGroup.valid\">\r\n              Save\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -5002,28 +5002,28 @@ MaterialComponentsModule = __decorate([
         ],
         declarations: [],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdInputModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdTabsModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["d" /* MdIconModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MdListModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdDialogModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MdMenuModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MdGridListModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["l" /* MdSnackBarModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MdTooltipModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["n" /* MdSliderModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["o" /* MdAutocompleteModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MdDatepickerModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MdSlideToggleModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MdSidenavModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MdCheckboxModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MdNativeDateModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["u" /* MdProgressBarModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["v" /* MdProgressSpinnerModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["w" /* MdSelectModule */]
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["d" /* MdTabsModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MdListModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MdGridListModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["l" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MdSnackBarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["n" /* MdTooltipModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["o" /* MdSliderModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MdAutocompleteModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MdDatepickerModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MdSlideToggleModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MdSidenavModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MdCheckboxModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["u" /* MdNativeDateModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["v" /* MdProgressBarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["w" /* MdProgressSpinnerModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["x" /* MdSelectModule */]
         ]
     })
 ], MaterialComponentsModule);
@@ -5141,7 +5141,7 @@ var _a;
 /***/ "../../../../../src/app/users/edit-user-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Edit User Profile</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"formGroup\" novalidate (ngSubmit)=\"saveUser(formGroup.value)\">\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"userName\"\r\n                   placeholder=\"UserName\"\r\n                   readonly =\"readonly\"                   \r\n                   formControlName=\"userName\"\r\n                   [(ngModel)]=\"user.userName\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"firstName\"\r\n                   placeholder=\"First Name\"\r\n                   required\r\n                   [(ngModel)]=\"user.firstName\"\r\n                   formControlName=\"firstName\"\r\n                   [class.invalid]=\"formGroup.controls['firstName'].touched && !formGroup.controls['firstName'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['firstName'].pristine || formGroup.controls['firstName'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['firstName'].errors?.required\">First Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"lastName\"\r\n                   placeholder=\"Last Name\"\r\n                   required\r\n                   [(ngModel)]=\"user.lastName\"\r\n                   formControlName=\"lastName\"\r\n                   [class.invalid]=\"formGroup.controls['lastName'].touched && !formGroup.controls['lastName'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['lastName'].pristine || formGroup.controls['lastName'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['lastName'].errors?.required\">Last Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"emailAddress\"\r\n                   placeholder=\"Email Address\"\r\n                   required\r\n                   [(ngModel)]=\"user.emailAddress\"\r\n                   formControlName=\"emailAddress\"\r\n                   [class.invalid]=\"formGroup.controls['emailAddress'].touched && !formGroup.controls['emailAddress'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['emailAddress'].pristine || formGroup.controls['emailAddress'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['emailAddress'].errors?.required\">Email is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"designation\"\r\n                   placeholder=\"Designation\"\r\n                   [(ngModel)]=\"user.designation\"\r\n                   formControlName=\"designation\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"addressLine1\"\r\n                   placeholder=\"Address Line 1\"\r\n                   [(ngModel)]=\"user.addressLine1\"\r\n                   formControlName=\"addressLine1\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"addressLine2\"\r\n                   placeholder=\"Address Line 2\"\r\n                   [(ngModel)]=\"user.addressLine2\"\r\n                   formControlName=\"addressLine2\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"zip\"\r\n                   placeholder=\"Zip\"\r\n                   [(ngModel)]=\"user.zip\"\r\n                   formControlName=\"zip\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"city\"\r\n                   placeholder=\"City\"\r\n                   [(ngModel)]=\"user.city\"\r\n                   formControlName=\"city\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"state\"\r\n                   placeholder=\"State\"\r\n                   [(ngModel)]=\"user.state\"\r\n                   formControlName=\"state\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Go Back\r\n          </button>\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"editUserProfile();\">\r\n            Edit\r\n          </button>\r\n        </div>\r\n      </form>\r\n\r\n    </md-card-content>\r\n  </md-card>\r\n</div>"
+module.exports = "<div fxLayout=\"column\" fxLayout.gt-md=\"row\">\r\n  <md-card style=\"padding: 16px;\" fxFlex=\"90%\">\r\n    <md-toolbar color=\"primary\">Edit User Profile</md-toolbar>\r\n    <md-card-content>\r\n      <form [formGroup]=\"formGroup\" novalidate (ngSubmit)=\"saveUser(formGroup.value)\">\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"userName\"\r\n                   placeholder=\"UserName\"\r\n                   readonly =\"readonly\"                   \r\n                   formControlName=\"userName\"\r\n                   [(ngModel)]=\"user.userName\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"firstName\"\r\n                   placeholder=\"First Name\"\r\n                   required\r\n                   [(ngModel)]=\"user.firstName\"\r\n                   formControlName=\"firstName\"\r\n                   [class.invalid]=\"formGroup.controls['firstName'].touched && !formGroup.controls['firstName'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['firstName'].pristine || formGroup.controls['firstName'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['firstName'].errors?.required\">First Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"lastName\"\r\n                   placeholder=\"Last Name\"\r\n                   required\r\n                   [(ngModel)]=\"user.lastName\"\r\n                   formControlName=\"lastName\"\r\n                   [class.invalid]=\"formGroup.controls['lastName'].touched && !formGroup.controls['lastName'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['lastName'].pristine || formGroup.controls['lastName'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['lastName'].errors?.required\">Last Name is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"emailAddress\"\r\n                   placeholder=\"Email Address\"\r\n                   required\r\n                   [(ngModel)]=\"user.emailAddress\"\r\n                   formControlName=\"emailAddress\"\r\n                   [class.invalid]=\"formGroup.controls['emailAddress'].touched && !formGroup.controls['emailAddress'].valid\" />\r\n            <md-hint [hidden]=\"formGroup.controls['emailAddress'].pristine || formGroup.controls['emailAddress'].valid\">\r\n              <span [hidden]=\"!formGroup.controls['emailAddress'].errors?.required\">Email is required.</span>\r\n            </md-hint>\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"designation\"\r\n                   placeholder=\"Designation\"\r\n                   [(ngModel)]=\"user.designation\"\r\n                   formControlName=\"designation\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"addressLine1\"\r\n                   placeholder=\"Address Line 1\"\r\n                   [(ngModel)]=\"user.addressLine1\"\r\n                   formControlName=\"addressLine1\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"addressLine2\"\r\n                   placeholder=\"Address Line 2\"\r\n                   [(ngModel)]=\"user.addressLine2\"\r\n                   formControlName=\"addressLine2\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"zip\"\r\n                   placeholder=\"Zip\"\r\n                   [(ngModel)]=\"user.zip\"\r\n                   formControlName=\"zip\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"city\"\r\n                   placeholder=\"City\"\r\n                   [(ngModel)]=\"user.city\"\r\n                   formControlName=\"city\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"column\">\r\n          <md-input-container fxFlex=\"50\">\r\n            <input mdInput\r\n                   name=\"state\"\r\n                   placeholder=\"State\"\r\n                   [(ngModel)]=\"user.state\"\r\n                   formControlName=\"state\" />\r\n          </md-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"row\" fxLayout.gt-sm=\"row\" fxLayoutAlign=\"end center\">\r\n          <button md-raised-button color=\"primary\" style=\"margin-left: 8px;\" type=\"button\" (click)=\"cancelChanges($event);\">\r\n            Go Back\r\n          </button>\r\n          <button md-button color=\"primary\"\r\n                  md-raised-button\r\n                  style=\"margin-left: 8px;\"\r\n                  type=\"submit\"\r\n                  [disabled]=\"!formGroup.valid\">\r\n            Save\r\n          </button>\r\n        </div>\r\n      </form>\r\n\r\n    </md-card-content>\r\n  </md-card>\r\n</div>"
 
 /***/ }),
 
@@ -5170,8 +5170,9 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_users_service__ = __webpack_require__("../../../../../src/app/users/shared/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_user__ = __webpack_require__("../../../../../src/app/users/shared/user.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_users_service__ = __webpack_require__("../../../../../src/app/users/shared/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_user__ = __webpack_require__("../../../../../src/app/users/shared/user.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditUserProfileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5187,13 +5188,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EditUserProfileComponent = (function () {
-    function EditUserProfileComponent(formBuilder, router, route, usersService) {
+    function EditUserProfileComponent(snackBar, formBuilder, router, route, usersService) {
+        this.snackBar = snackBar;
         this.formBuilder = formBuilder;
         this.router = router;
         this.route = route;
         this.usersService = usersService;
-        this.user = new __WEBPACK_IMPORTED_MODULE_4__shared_user__["a" /* ApplicationUser */]();
+        this.user = new __WEBPACK_IMPORTED_MODULE_5__shared_user__["a" /* ApplicationUser */]();
         this.formGroup = formBuilder.group({
             id: [''],
             userName: [''],
@@ -5221,7 +5224,26 @@ var EditUserProfileComponent = (function () {
             }
         });
     };
-    EditUserProfileComponent.prototype.saveForm = function (data) {
+    EditUserProfileComponent.prototype.saveUser = function (data) {
+        var _this = this;
+        this.serverErrorMessage = '';
+        this.usersService.editUserProfile(data)
+            .subscribe(function (response) {
+            if (response.statusCode == 204) {
+                var snackBarRef = _this.snackBar.open('User Profile data saved Successfully!', 'Close', {
+                    duration: 500
+                });
+                snackBarRef.afterDismissed().subscribe(function () {
+                    _this.router.navigateByUrl('/user-profile/view');
+                });
+            }
+            else if (response.statusCode == 412) {
+                _this.serverErrorMessage = "Some details were missing!";
+            }
+            else {
+                _this.serverErrorMessage = response.content;
+            }
+        });
     };
     EditUserProfileComponent.prototype.cancelChanges = function (e) {
         this.router.navigateByUrl('/user-profile/view');
@@ -5238,10 +5260,10 @@ EditUserProfileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/users/edit-user-profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/users/edit-user-profile.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__shared_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_users_service__["a" /* UsersService */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["b" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["b" /* MdSnackBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__shared_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_users_service__["a" /* UsersService */]) === "function" && _f || Object])
 ], EditUserProfileComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=edit-user-profile.component.js.map
 
 /***/ }),
@@ -5287,6 +5309,10 @@ var UsersService = (function () {
     }
     UsersService.prototype.getUserProfile = function (userName) {
         return this.http.get('/api/user/GetUserDetails?userName=' + userName)
+            .map(function (res) { return res.json(); });
+    };
+    UsersService.prototype.editUserProfile = function (user) {
+        return this.http.put("/api/user/EditUserProfile/", JSON.stringify(user), this.options)
             .map(function (res) { return res.json(); });
     };
     UsersService.prototype.extractData = function (res) {
