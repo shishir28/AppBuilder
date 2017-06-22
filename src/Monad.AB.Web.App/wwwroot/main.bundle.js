@@ -2383,7 +2383,7 @@ var EditProjectComponent = (function () {
     EditProjectComponent.prototype.saveProject = function (data) {
         var _this = this;
         this.serverErrorMessage = '';
-        data.userName = "a@b.com"; // need to come from cache
+        data.userName = localStorage.getItem('currentUser');
         this.projectsService.updateProject(data)
             .subscribe(function (response) {
             if (response.statusCode == 204) {
@@ -2477,7 +2477,7 @@ var ListProjectComponent = (function () {
     };
     ListProjectComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.projectsService.getProjects('a@b.com')
+        this.projectsService.getProjects(localStorage.getItem('currentUser'))
             .subscribe(function (data) {
             _this.projects = data;
         });
@@ -2594,7 +2594,7 @@ var NewProjectComponent = (function () {
     NewProjectComponent.prototype.saveProject = function (data) {
         var _this = this;
         this.serverErrorMessage = '';
-        data.userName = "a@b.com"; // need to come from cache
+        data.userName = localStorage.getItem('currentUser');
         this.projectsService.addProject(data)
             .subscribe(function (response) {
             if (response.statusCode == 201) {
@@ -5185,7 +5185,7 @@ var SidenavComponent = (function () {
     }
     SidenavComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.sidenavService.buildMenu('a@b.com');
+        this.sidenavService.buildMenu(localStorage.getItem('currentUser'));
         this._itemsSubscription = this.sidenavService.items$
             .subscribe(function (items) {
             _this.items = _this.sortRecursive(items, 'position');
@@ -5480,7 +5480,7 @@ var ToolbarUserButtonComponent = (function () {
         this.isOpen = !this.isOpen;
     };
     ToolbarUserButtonComponent.prototype.logout = function () {
-        localStorage.setItem('currentUser', null);
+        localStorage.removeItem('currentUser');
         //shishir need to call server side function 
         this.router.navigateByUrl('/login');
     };

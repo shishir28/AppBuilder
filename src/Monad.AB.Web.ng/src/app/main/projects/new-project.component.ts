@@ -7,9 +7,9 @@ import { ProjectsService } from './shared/projects.service'
 import { Project } from './shared/project'
 
 @Component({
-  selector: 'ms-new-project',
-  templateUrl: './new-project.component.html',
-  styleUrls: ['./new-project.component.scss']
+    selector: 'ms-new-project',
+    templateUrl: './new-project.component.html',
+    styleUrls: ['./new-project.component.scss']
 })
 export class NewProjectComponent implements OnInit {
     projForm: FormGroup;
@@ -46,7 +46,7 @@ export class NewProjectComponent implements OnInit {
 
     saveProject(data) {
         this.serverErrorMessage = '';
-        data.userName = "a@b.com";// need to come from cache
+        data.userName = localStorage.getItem('currentUser');
         this.projectsService.addProject(data)
             .subscribe(response => {
                 if (response.statusCode == 201) {
@@ -56,7 +56,7 @@ export class NewProjectComponent implements OnInit {
                     snackBarRef.afterDismissed().subscribe(() => {
                         this.router.navigateByUrl('/projects');
                     });
-                    
+
                 } else if (response.statusCode == 412) {
                     this.serverErrorMessage = "Some details were missing!";
                 } else {

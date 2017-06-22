@@ -58,7 +58,7 @@ export class EditProjectComponent implements OnInit {
 
     saveProject(data) {
         this.serverErrorMessage = '';
-        data.userName = "a@b.com";// need to come from cache
+        data.userName = localStorage.getItem('currentUser');
         this.projectsService.updateProject(data)
             .subscribe(response => {
                 if (response.statusCode == 204) {
@@ -68,7 +68,7 @@ export class EditProjectComponent implements OnInit {
                     snackBarRef.afterDismissed().subscribe(() => {
                         this.router.navigateByUrl('/projects');
                     });
-                    
+
                 } else if (response.statusCode == 412) {
                     this.serverErrorMessage = "Some details were missing!";
                 } else {
@@ -77,7 +77,7 @@ export class EditProjectComponent implements OnInit {
             });
     }
 
-    cancelChanges(e) {   
+    cancelChanges(e) {
         this.router.navigateByUrl('/projects');
     }
 }

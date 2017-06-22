@@ -22,7 +22,7 @@ export class ToolbarUserButtonComponent implements OnInit {
     }
 
     logout() {
-        localStorage.setItem('currentUser', null);
+        localStorage.removeItem('currentUser');
         //shishir need to call server side function 
         this.router.navigateByUrl('/login');
     }

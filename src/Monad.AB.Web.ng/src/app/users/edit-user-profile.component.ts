@@ -60,13 +60,13 @@ export class EditUserProfileComponent implements OnInit {
         this.usersService.editUserProfile(data)
             .subscribe(response => {
                 if (response.statusCode == 204) {
-                    let snackBarRef  = this.snackBar.open('User Profile data saved Successfully!', 'Close', {
+                    let snackBarRef = this.snackBar.open('User Profile data saved Successfully!', 'Close', {
                         duration: 500
                     });
                     snackBarRef.afterDismissed().subscribe(() => {
                         this.router.navigateByUrl('/user-profile/view');
                     });
-                    
+
                 } else if (response.statusCode == 412) {
                     this.serverErrorMessage = "Some details were missing!";
                 } else {

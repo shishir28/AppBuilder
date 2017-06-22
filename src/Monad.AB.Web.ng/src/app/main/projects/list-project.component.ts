@@ -15,7 +15,7 @@ import { ProjectsService } from './shared/projects.service';
 export class ListProjectComponent implements OnInit, AfterViewInit {
     @ViewChild('tbody')
     tbody: ElementRef;
-   
+
     private projects: any[];
     constructor(private projectsService: ProjectsService, private router: Router) {
     }
@@ -24,7 +24,7 @@ export class ListProjectComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
-        this.projectsService.getProjects('a@b.com')
+        this.projectsService.getProjects(localStorage.getItem('currentUser'))
             .subscribe(data => {
                 this.projects = data;
             });
