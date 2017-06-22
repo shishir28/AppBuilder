@@ -12,7 +12,7 @@ export class ToolbarComponent implements OnInit {
     @Input('sidenav') sidenav: any;
     isFullscreen: boolean = false;
 
-    showBreadcrumbs: boolean = false;
+    showBreadcrumbs: boolean = true;
 
     constructor() { }
 

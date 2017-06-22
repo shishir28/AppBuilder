@@ -5553,7 +5553,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ToolbarComponent = (function () {
     function ToolbarComponent() {
         this.isFullscreen = false;
-        this.showBreadcrumbs = false;
+        this.showBreadcrumbs = true;
     }
     ToolbarComponent.prototype.ngOnInit = function () { };
     ToolbarComponent.prototype.toggleFullscreen = function () {
