@@ -9,7 +9,6 @@ import { IconsComponent } from '../widgets/icons/icons.component';
 import { ToolbarComponent } from '../widgets/toolbar/toolbar.component';
 import { ToolbarUserButtonComponent } from '../widgets/toolbar/toolbar-user-button/toolbar-user-button.component';
 import { ClickOutsideDirective } from '../widgets/utils/click-outside.directive';
-import { ToolbarNotificationsComponent } from '../widgets/toolbar/toolbar-notifications/toolbar-notifications.component';
 import { SidenavService } from '../widgets/sidenav/sidenav.service';
 import { MediaReplayService } from '../widgets/sidenav/mediareplay/media-replay.service';
 import { BreadcrumbService } from '../widgets/breadcrumb/breadcrumb.service';
@@ -50,7 +49,6 @@ import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
         ToolbarUserButtonComponent,
         ClickOutsideDirective,
         IconsComponent,
-        ToolbarNotificationsComponent,
         HomeComponent,
         ...projectConfig.declarations,
         ...formConfig.declarations,
