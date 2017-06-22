@@ -1,8 +1,10 @@
 ﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MdSnackBar } from "@angular/material";
+
+import { DialogService } from '../../widgets/dialogs/dialog.service';
 import { FormsService } from './shared/forms.service';
 import { FormFieldsService } from '../formFields/shared/formFields.service';
-
 import { Form } from './shared/form';
 import { FormField } from '../formFields/shared/formField';
 
@@ -18,19 +20,23 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
     form: Form = new Form();
     private formFields: FormField[];
     cellWidths = [];
+    serverErrorMessage: string;
     tableHover: boolean = true;
     tableStriped: boolean = true;
     tableCondensed: boolean = true;
     tableBordered: boolean;
     @ViewChild('tbody')
     tbody: ElementRef;
-    constructor(private router: Router, private route: ActivatedRoute,
+    constructor(private router: Router,
+        private route: ActivatedRoute,
+        private snackBar: MdSnackBar,
+        private dialogService: DialogService,
         private formsService: FormsService,
         private formFieldsService: FormFieldsService) {
     }
 
     ngOnInit() {
-         this.route.params.subscribe(params => {
+        this.route.params.subscribe(params => {
             this.formId = params['formid'];
             this.projectId = params['projectid'];
 
@@ -68,12 +74,32 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
     }
 
     deleteForm(projectId, formId): void {
-        // to do 
+        this.dialogService.confirm('Delete Form', 'Are you sure want to delete this form?')
+            .subscribe(result => {
+                let res: any = result;
+                if (res == 'yes') {
+                    this.formsService.deleteForm(formId)
+                        .subscribe(response => {
+                            if (response.statusCode == 204) {
+                                let snackBarRef = this.snackBar.open('Form deleted Successfully!', 'Close', {
+                                    duration: 500
+                                });
+                                snackBarRef.afterDismissed().subscribe(() => {
+                                    this.router.navigateByUrl('/projects/' + this.projectId);
+                                });
+
+                            } else if (response.statusCode == 412) {
+                                this.serverErrorMessage = "Some details were missing!";
+                            } else {
+                                this.serverErrorMessage = response.content;
+                            }
+                        });
+                }
+            });
     }
 
     cancelChanges(e) {
         this.router.navigateByUrl('/projects/' + this.projectId);
-
     }
 
     viewFormField(projectId, formId, fieldId): void {
@@ -89,6 +115,30 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
     }
 
     deleteFormField(projectId, formId, fieldId): void {
-        // to do 
+        this.dialogService.confirm('Delete Field', 'Are you sure want to delete this Field?')
+            .subscribe(result => {
+                let res: any = result;
+                if (res == 'yes') {
+                    this.formFieldsService.deleteFormField(fieldId)
+                        .subscribe(response => {
+                            if (response.statusCode == 204) {
+                                let snackBarRef = this.snackBar.open('Field deleted Successfully!', 'Close', {
+                                    duration: 500
+                                });
+                                snackBarRef.afterDismissed().subscribe(() => {
+                                    this.formFieldsService.getFormFields(formId)
+                                        .subscribe(data => {
+                                            this.formFields = data;
+                                        });
+                                });
+
+                            } else if (response.statusCode == 412) {
+                                this.serverErrorMessage = "Some details were missing!";
+                            } else {
+                                this.serverErrorMessage = response.content;
+                            }
+                        });
+                }
+            });
     }
 }

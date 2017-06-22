@@ -32,7 +32,7 @@ export class FormFieldsService {
             .map(res => res.json());
     }
 
-    deleteFormForm(formFieldId) {
+    deleteFormField(formFieldId) {
         return this.http.delete('/api/formField/DeleteFormField?formFieldId=' + formFieldId)
             .map(res => res.json());
     }

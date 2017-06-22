@@ -80,6 +80,4 @@ export class EditProjectComponent implements OnInit {
     cancelChanges(e) {   
         this.router.navigateByUrl('/projects');
     }
-
-
 }

@@ -51,13 +51,9 @@
             <input mdInput
                    name="width"
                    placeholder="Width"
-                   required
                    [(ngModel)]="formField.width"
-                   formControlName="width"
-                   [class.invalid]="formGroup.controls['width'].touched && !formGroup.controls['width'].valid" />
-            <md-hint [hidden]="formGroup.controls['width'].pristine || formGroup.controls['width'].valid">
-              <span [hidden]="!formGroup.controls['width'].errors?.required">Field Width is required.</span>
-            </md-hint>
+                   formControlName="width"/>
+            
           </md-input-container>
         </div>
 

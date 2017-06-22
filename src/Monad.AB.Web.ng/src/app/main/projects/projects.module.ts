@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { ListProjectComponent,DemoDialog } from './list-project.component';
+import { ListProjectComponent } from './list-project.component';
 import { NewProjectComponent } from './new-project.component';
 import { EditProjectComponent } from './edit-project.component';
 import { ViewProjectComponent } from './view-project.component';
@@ -25,13 +25,11 @@ export const projectConfig: NgModule = {
 
     declarations: [
         ListProjectComponent,
-        DemoDialog,
         NewProjectComponent,
         EditProjectComponent,
         ViewProjectComponent
     ],
     entryComponents: [
-        DemoDialog
     ],
   
     providers: [

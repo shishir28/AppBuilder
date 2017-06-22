@@ -101,7 +101,7 @@
         </div>
 
         <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
-          <button md-raised-button color="warn" style="margin-left: 8px;" type="button" (click)="cancelChanges($event);">
+          <button md-raised-button color="warn" style="margin-left: 8px;" type="button" (click)="deleteFormField(projectId,formField.formID,formField.id)">
             Delete
           </button>
           <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="editFormField(projectId,formField.formID,formField.id);">

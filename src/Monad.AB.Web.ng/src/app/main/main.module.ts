@@ -13,12 +13,14 @@ import { ToolbarNotificationsComponent } from '../widgets/toolbar/toolbar-notifi
 import { SidenavService } from '../widgets/sidenav/sidenav.service';
 import { MediaReplayService } from '../widgets/sidenav/mediareplay/media-replay.service';
 import { BreadcrumbService } from '../widgets/breadcrumb/breadcrumb.service';
-import { MaterialComponentsModule } from '../material-components.module';
+import { MaterialComponentsModule } from '../material/material-components.module';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { DialogModule } from '../widgets/dialogs/dialog.module';
 import { HomeComponent } from './home/home.component';
+
 import { projectConfig } from './projects/projects.module'
 import { formConfig } from './forms/forms.module';
 import { formFieldConfig } from './formFields/formFields.module';
@@ -31,6 +33,7 @@ import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
         MaterialComponentsModule,
         FlexLayoutModule,
         FormsModule,
+        DialogModule,
         PerfectScrollbarModule.forChild(),
         ...projectConfig.imports,
         ...formConfig.imports,

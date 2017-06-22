@@ -34,7 +34,7 @@ export class NewFormFieldComponent implements OnInit {
             label: [''],
             description: [''],
             fieldTypeID: ['', [Validators.required]],
-            width: ['', [Validators.required]],
+            width: [''],
             rowNumber: ['', [Validators.required]],
             rowSpan: ['', [Validators.required]],
             columnNumber: ['', [Validators.required]],

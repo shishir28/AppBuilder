@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AuthGuard } from './shared/guards/index';
-import { MaterialComponentsModule } from './material-components.module';
+import { MaterialComponentsModule } from './material/material-components.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { MdIconRegistry, } from "@angular/material";

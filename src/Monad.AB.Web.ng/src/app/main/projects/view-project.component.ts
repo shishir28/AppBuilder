@@ -1,5 +1,7 @@
 ﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MdSnackBar } from "@angular/material";
+import { DialogService } from '../../widgets/dialogs/dialog.service';
 import { ProjectsService } from './shared/projects.service';
 import { FormsService } from '../forms/shared/forms.service';
 import { Project } from './shared/project'
@@ -15,6 +17,7 @@ export class ViewProjectComponent implements OnInit, AfterViewInit {
     project: Project = new Project();
     private forms: Form[];
     cellWidths = [];
+    serverErrorMessage: string;
     tableHover: boolean = true;
     tableStriped: boolean = true;
     tableCondensed: boolean = true;
@@ -22,7 +25,10 @@ export class ViewProjectComponent implements OnInit, AfterViewInit {
     @ViewChild('tbody')
     tbody: ElementRef;
 
-    constructor(private router: Router, private route: ActivatedRoute,
+    constructor(private router: Router,
+        private route: ActivatedRoute,
+        private snackBar: MdSnackBar,
+        private dialogService: DialogService,
         private projectsService: ProjectsService,
         private formsService: FormsService) {
     }
@@ -52,26 +58,36 @@ export class ViewProjectComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        //console.log(this.tbody.nativeElement.children);
-        //console.log(this.tbody.nativeElement.children.length);
-        //let cells = this.tbody.nativeElement.children[0].children;
 
-        //for (let cell of cells) {
-        //    this.cellWidths.push(cell.offsetWidth);
-        //}
-
-        //let resizeSensor = new ResizeSensor(this.tbody.nativeElement, () => {
-        //    this.cellWidths.length = 0;
-
-        //    for (let cell of cells) {
-        //        this.cellWidths.push(cell.offsetWidth);
-        //    }
-        //});
     }
-
 
     editProject(projectId): void {
         this.router.navigateByUrl('/projects/edit/' + projectId);
+    }
+
+    deleteProject(projectId): void {
+        this.dialogService.confirm('Delete Project', 'Are you sure want to delete this project?')
+            .subscribe(result => {
+                let res: any = result;
+                if (res == 'yes') {
+                    this.projectsService.deleteProject(projectId)
+                        .subscribe(response => {
+                            if (response.statusCode == 204) {
+                                let snackBarRef = this.snackBar.open('Project deleted Successfully!', 'Close', {
+                                    duration: 500
+                                });
+                                snackBarRef.afterDismissed().subscribe(() => {
+                                    this.router.navigateByUrl('/projects');
+                                });
+
+                            } else if (response.statusCode == 412) {
+                                this.serverErrorMessage = "Some details were missing!";
+                            } else {
+                                this.serverErrorMessage = response.content;
+                            }
+                        });
+                }
+            });
     }
 
     viewForm(projectId, formId): void {
@@ -87,7 +103,31 @@ export class ViewProjectComponent implements OnInit, AfterViewInit {
     }
 
     deleteForm(projectId, formId): void {
-        // to do 
+        this.dialogService.confirm('Delete Form', 'Are you sure want to delete this form?')
+            .subscribe(result => {
+                let res: any = result;
+                if (res == 'yes') {
+                    this.formsService.deleteForm(formId)
+                        .subscribe(response => {
+                            if (response.statusCode == 204) {
+                                let snackBarRef = this.snackBar.open('Form deleted Successfully!', 'Close', {
+                                    duration: 500
+                                });
+                                snackBarRef.afterDismissed().subscribe(() => {
+                                    this.formsService.getForms(projectId)
+                                        .subscribe(data => {
+                                            this.forms = data;
+                                        });
+                                });
+
+                            } else if (response.statusCode == 412) {
+                                this.serverErrorMessage = "Some details were missing!";
+                            } else {
+                                this.serverErrorMessage = response.content;
+                            }
+                        });
+                }
+            });
     }
 
     cancelChanges(e) {
