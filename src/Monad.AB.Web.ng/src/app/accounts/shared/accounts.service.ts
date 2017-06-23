@@ -5,19 +5,16 @@ import { Observable } from 'rxjs/Observable'
 @Injectable()
 
 export class AccountsService {
-    options: RequestOptions;
     constructor(private http: Http) {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        this.options = new RequestOptions({ headers: headers });
     }
 
     login(loginUser) {
-        return this.http.post("/api/account/login", JSON.stringify(loginUser), this.options)
+        return this.http.post("/api/account/login", JSON.stringify(loginUser))
             .map(res => res.json());
     }
 
     register(registerUser) {
-        return this.http.post("/api/account/register", JSON.stringify(registerUser), this.options)
+        return this.http.post("/api/account/register", JSON.stringify(registerUser))
             .map(res => res.json());
     }
 

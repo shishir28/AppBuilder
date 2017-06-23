@@ -64,9 +64,10 @@ namespace Monad.AB.Web.App.Controllers
                 //}
                 //else
                 //{
-                return new StatusCodeResult(412);
+              
                 //}
             }
+            return new StatusCodeResult(412);
         }
 
         [HttpGet]

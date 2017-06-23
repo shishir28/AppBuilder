@@ -234,6 +234,8 @@ var LoginComponent = (function () {
             .subscribe(function (response) {
             if (response.statusCode == 200) {
                 localStorage.setItem('currentUser', response.content.user.userName);
+                localStorage.setItem('isCurrentUserAuthenticated', response.content.authenticated);
+                localStorage.setItem('currentUserToken', response.content.token);
                 _this.router.navigateByUrl('/projects');
             }
             else if (response.statusCode == 412) {
@@ -401,15 +403,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AccountsService = (function () {
     function AccountsService(http) {
         this.http = http;
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
-        this.options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers });
     }
     AccountsService.prototype.login = function (loginUser) {
-        return this.http.post("/api/account/login", JSON.stringify(loginUser), this.options)
+        return this.http.post("/api/account/login", JSON.stringify(loginUser))
             .map(function (res) { return res.json(); });
     };
     AccountsService.prototype.register = function (registerUser) {
-        return this.http.post("/api/account/register", JSON.stringify(registerUser), this.options)
+        return this.http.post("/api/account/register", JSON.stringify(registerUser))
             .map(function (res) { return res.json(); });
     };
     AccountsService.prototype.extractData = function (res) {
@@ -436,10 +436,12 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_home_home_component__ = __webpack_require__("../../../../../src/app/main/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_not_found_component__ = __webpack_require__("../../../../../src/app/shared/not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_guards_index__ = __webpack_require__("../../../../../src/app/shared/guards/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_main_routing_module__ = __webpack_require__("../../../../../src/app/main/main-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__accounts_accounts_routing_module__ = __webpack_require__("../../../../../src/app/accounts/accounts-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__users_users_routing_module__ = __webpack_require__("../../../../../src/app/users/users-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_access_denied_component__ = __webpack_require__("../../../../../src/app/shared/access-denied.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_internal_server_error_component__ = __webpack_require__("../../../../../src/app/shared/internal-server-error.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_guards_index__ = __webpack_require__("../../../../../src/app/shared/guards/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__main_main_routing_module__ = __webpack_require__("../../../../../src/app/main/main-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__accounts_accounts_routing_module__ = __webpack_require__("../../../../../src/app/accounts/accounts-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__users_users_routing_module__ = __webpack_require__("../../../../../src/app/users/users-routing.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -452,21 +454,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 // ---------Routes----------
 
 
 
 // -------------------
 //-------------
-var routes = __WEBPACK_IMPORTED_MODULE_6__accounts_accounts_routing_module__["a" /* accountsRoutes */].concat([
+var routes = __WEBPACK_IMPORTED_MODULE_8__accounts_accounts_routing_module__["a" /* accountsRoutes */].concat([
     {
         path: '',
         component: __WEBPACK_IMPORTED_MODULE_2__main_home_home_component__["a" /* HomeComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_4__shared_guards_index__["a" /* AuthGuard */]],
-        children: __WEBPACK_IMPORTED_MODULE_5__main_main_routing_module__["a" /* mainRoutes */].concat(__WEBPACK_IMPORTED_MODULE_7__users_users_routing_module__["a" /* usersRoutes */])
+        canActivate: [__WEBPACK_IMPORTED_MODULE_6__shared_guards_index__["a" /* AuthGuard */]],
+        children: __WEBPACK_IMPORTED_MODULE_7__main_main_routing_module__["a" /* mainRoutes */].concat(__WEBPACK_IMPORTED_MODULE_9__users_users_routing_module__["a" /* usersRoutes */])
     },
-    { path: '404', component: __WEBPACK_IMPORTED_MODULE_3__shared_not_found_component__["a" /* NotFoundComponent */] },
-    { path: '**', redirectTo: '/404' }
+    { path: 'notFound', component: __WEBPACK_IMPORTED_MODULE_3__shared_not_found_component__["a" /* NotFoundComponent */] },
+    { path: 'accessDenied', component: __WEBPACK_IMPORTED_MODULE_4__shared_access_denied_component__["a" /* AccessDeniedComponent */] },
+    { path: 'internalServerError', component: __WEBPACK_IMPORTED_MODULE_5__shared_internal_server_error_component__["a" /* InternalServerErrorComponent */] },
+    { path: '**', redirectTo: '/notFound' }
 ]);
 var RoutingModule = (function () {
     function RoutingModule() {
@@ -536,23 +542,26 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_guards_index__ = __webpack_require__("../../../../../src/app/shared/guards/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__material_material_components_module__ = __webpack_require__("../../../../../src/app/material/material-components.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ngx_perfect_scrollbar__ = __webpack_require__("../../../../ngx-perfect-scrollbar/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_ngx_perfect_scrollbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__main_main_module__ = __webpack_require__("../../../../../src/app/main/main.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__accounts_accounts_module__ = __webpack_require__("../../../../../src/app/accounts/accounts.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__users_users_module__ = __webpack_require__("../../../../../src/app/users/users.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_guards_index__ = __webpack_require__("../../../../../src/app/shared/guards/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__material_material_components_module__ = __webpack_require__("../../../../../src/app/material/material-components.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__ = __webpack_require__("../../../flex-layout/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ngx_perfect_scrollbar__ = __webpack_require__("../../../../ngx-perfect-scrollbar/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ngx_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_ngx_perfect_scrollbar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__main_main_module__ = __webpack_require__("../../../../../src/app/main/main.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__accounts_accounts_module__ = __webpack_require__("../../../../../src/app/accounts/accounts.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__users_users_module__ = __webpack_require__("../../../../../src/app/users/users.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular_sortablejs__ = __webpack_require__("../../../../angular-sortablejs/dist/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular_sortablejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_angular_sortablejs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__shared_not_found_component__ = __webpack_require__("../../../../../src/app/shared/not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__shared_httpFactory__ = __webpack_require__("../../../../../src/app/shared/httpFactory.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__shared_access_denied_component__ = __webpack_require__("../../../../../src/app/shared/access-denied.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__shared_internal_server_error_component__ = __webpack_require__("../../../../../src/app/shared/internal-server-error.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -560,6 +569,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -592,27 +604,32 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
-        declarations: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_17__shared_not_found_component__["a" /* NotFoundComponent */]],
+        declarations: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_17__shared_not_found_component__["a" /* NotFoundComponent */], __WEBPACK_IMPORTED_MODULE_19__shared_access_denied_component__["a" /* AccessDeniedComponent */], __WEBPACK_IMPORTED_MODULE_20__shared_internal_server_error_component__["a" /* InternalServerErrorComponent */]],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_10__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_9__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_9__app_routing_module__["a" /* RoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_12__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_13__main_main_module__["a" /* MainModule */],
-            __WEBPACK_IMPORTED_MODULE_14__accounts_accounts_module__["a" /* AccountsModule */],
-            __WEBPACK_IMPORTED_MODULE_15__users_users_module__["a" /* UsersModule */],
+            __WEBPACK_IMPORTED_MODULE_15__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_8__app_routing_module__["a" /* RoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_12__main_main_module__["a" /* MainModule */],
+            __WEBPACK_IMPORTED_MODULE_13__accounts_accounts_module__["a" /* AccountsModule */],
+            __WEBPACK_IMPORTED_MODULE_14__users_users_module__["a" /* UsersModule */],
             __WEBPACK_IMPORTED_MODULE_16_angular_sortablejs__["SortablejsModule"],
-            __WEBPACK_IMPORTED_MODULE_5__material_material_components_module__["a" /* MaterialComponentsModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__["a" /* FlexLayoutModule */],
-            __WEBPACK_IMPORTED_MODULE_11_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forRoot(perfectScrollbarConfig),
+            __WEBPACK_IMPORTED_MODULE_4__material_material_components_module__["a" /* MaterialComponentsModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__["a" /* FlexLayoutModule */],
+            __WEBPACK_IMPORTED_MODULE_10_ngx_perfect_scrollbar__["PerfectScrollbarModule"].forRoot(perfectScrollbarConfig),
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_8__angular_material__["a" /* MdIconRegistry */], __WEBPACK_IMPORTED_MODULE_4__shared_guards_index__["a" /* AuthGuard */]
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["a" /* MdIconRegistry */], __WEBPACK_IMPORTED_MODULE_3__shared_guards_index__["a" /* AuthGuard */],
+            {
+                provide: __WEBPACK_IMPORTED_MODULE_15__angular_http__["b" /* Http */],
+                useFactory: __WEBPACK_IMPORTED_MODULE_18__shared_httpFactory__["a" /* httpFactory */],
+                deps: [__WEBPACK_IMPORTED_MODULE_15__angular_http__["c" /* XHRBackend */], __WEBPACK_IMPORTED_MODULE_15__angular_http__["d" /* RequestOptions */]]
+            }
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -836,11 +853,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var FormFieldViewsService = (function () {
     function FormFieldViewsService(http) {
         this.http = http;
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
-        this.options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers });
     }
     FormFieldViewsService.prototype.getFormFieldViews = function (fieldId) {
-        return this.http.get('/api/formField/GetFormFieldView?fieldId=' + fieldId, this.options)
+        return this.http.get('/api/formField/GetFormFieldView?fieldId=' + fieldId)
             .map(this.extractData);
     };
     FormFieldViewsService.prototype.getFormFieldView = function (formFieldViewId) {
@@ -848,7 +863,7 @@ var FormFieldViewsService = (function () {
             .map(function (res) { return res.json(); });
     };
     FormFieldViewsService.prototype.editFormFieldView = function (formFieldView) {
-        return this.http.put('/api/formField/EditFormFieldView', JSON.stringify(formFieldView), this.options)
+        return this.http.put('/api/formField/EditFormFieldView', JSON.stringify(formFieldView))
             .map(function (res) { return res.json(); });
     };
     FormFieldViewsService.prototype.extractData = function (res) {
@@ -1297,11 +1312,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var FormFieldsService = (function () {
     function FormFieldsService(http) {
         this.http = http;
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
-        this.options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers });
     }
     FormFieldsService.prototype.getFormFields = function (formId) {
-        return this.http.get('/api/formField/GetFormFields?formId=' + formId, this.options)
+        return this.http.get('/api/formField/GetFormFields?formId=' + formId)
             .map(this.extractData);
     };
     FormFieldsService.prototype.getFormField = function (fieldId) {
@@ -1309,11 +1322,11 @@ var FormFieldsService = (function () {
             .map(function (res) { return res.json(); });
     };
     FormFieldsService.prototype.addFormField = function (formField) {
-        return this.http.post('/api/formField/AddFormField', JSON.stringify(formField), this.options)
+        return this.http.post('/api/formField/AddFormField', JSON.stringify(formField))
             .map(function (res) { return res.json(); });
     };
     FormFieldsService.prototype.editFormField = function (formField) {
-        return this.http.put('/api/formField/EditFormField', JSON.stringify(formField), this.options)
+        return this.http.put('/api/formField/EditFormField', JSON.stringify(formField))
             .map(function (res) { return res.json(); });
     };
     FormFieldsService.prototype.deleteFormField = function (formFieldId) {
@@ -1840,11 +1853,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var FormsService = (function () {
     function FormsService(http) {
         this.http = http;
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
-        this.options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers });
     }
     FormsService.prototype.getForms = function (projectId) {
-        return this.http.get('/api/form/GetForms?projectId=' + projectId, this.options)
+        return this.http.get('/api/form/GetForms?projectId=' + projectId)
             .map(this.extractData);
     };
     FormsService.prototype.getForm = function (formId) {
@@ -1852,11 +1863,11 @@ var FormsService = (function () {
             .map(function (res) { return res.json(); });
     };
     FormsService.prototype.addForm = function (form) {
-        return this.http.post("/api/form/addform/", JSON.stringify(form), this.options)
+        return this.http.post("/api/form/addform/", JSON.stringify(form))
             .map(function (res) { return res.json(); });
     };
     FormsService.prototype.editForm = function (form) {
-        return this.http.put("/api/form/editform/", JSON.stringify(form), this.options)
+        return this.http.put("/api/form/editform/", JSON.stringify(form))
             .map(function (res) { return res.json(); });
     };
     FormsService.prototype.deleteForm = function (id) {
@@ -2744,12 +2755,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ProjectsService = (function () {
     function ProjectsService(http) {
         this.http = http;
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
-        this.options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        this.options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]();
     }
     ProjectsService.prototype.getProjects = function (userName) {
         var result;
-        var params = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["e" /* URLSearchParams */]();
+        var params = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["g" /* URLSearchParams */]();
         params.set('userName', userName);
         var options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({
             search: params
@@ -2762,11 +2772,11 @@ var ProjectsService = (function () {
             .map(function (res) { return res.json(); });
     };
     ProjectsService.prototype.addProject = function (project) {
-        return this.http.post("/api/project/addproject/", JSON.stringify(project), this.options)
+        return this.http.post("/api/project/addproject/", JSON.stringify(project))
             .map(function (res) { return res.json(); });
     };
     ProjectsService.prototype.updateProject = function (project) {
-        return this.http.put("/api/project/editproject/", JSON.stringify(project), this.options)
+        return this.http.put("/api/project/editproject/", JSON.stringify(project))
             .map(function (res) { return res.json(); });
     };
     ProjectsService.prototype.deleteProject = function (id) {
@@ -3081,6 +3091,204 @@ var fadeInAnimation = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular
 
 /***/ }),
 
+/***/ "../../../../../src/app/shared/HttpInterceptor.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpInterceptor; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var HttpInterceptor = (function (_super) {
+    __extends(HttpInterceptor, _super);
+    function HttpInterceptor(backend, defaultOptions, router) {
+        var _this = _super.call(this, backend, defaultOptions) || this;
+        _this.router = router;
+        _this.numberOfAttempts = 3;
+        return _this;
+    }
+    HttpInterceptor.prototype.request = function (url, options) {
+        var _this = this;
+        return _super.prototype.request.call(this, url, this.getRequestOptions(options))
+            .catch(function (error) {
+            return _this.interceptErrors(error);
+        });
+    };
+    HttpInterceptor.prototype.get = function (url, options) {
+        var _this = this;
+        return _super.prototype.get.call(this, url, this.getRequestOptions(options))
+            .catch(function (error) {
+            return _this.interceptErrors(error);
+        });
+    };
+    HttpInterceptor.prototype.post = function (url, body, options) {
+        var _this = this;
+        return _super.prototype.post.call(this, url, body, this.getRequestOptions(options))
+            .catch(function (error) {
+            return _this.interceptErrors(error);
+        });
+    };
+    HttpInterceptor.prototype.put = function (url, body, options) {
+        var _this = this;
+        return _super.prototype.put.call(this, url, body, this.getRequestOptions(options))
+            .catch(function (error) {
+            return _this.interceptErrors(error);
+        });
+    };
+    HttpInterceptor.prototype.delete = function (url, options) {
+        var _this = this;
+        return _super.prototype.delete.call(this, url, this.getRequestOptions(options))
+            .catch(function (error) {
+            return _this.interceptErrors(error);
+        });
+    };
+    HttpInterceptor.prototype.patch = function (url, body, options) {
+        return _super.prototype.delete.call(this, url, this.getRequestOptions(options));
+    };
+    HttpInterceptor.prototype.head = function (url, options) {
+        var _this = this;
+        return _super.prototype.head.call(this, url, this.getRequestOptions(options))
+            .catch(function (error) {
+            return _this.interceptErrors(error);
+        });
+    };
+    HttpInterceptor.prototype.options = function (url, options) {
+        var _this = this;
+        return _super.prototype.options.call(this, url, this.getRequestOptions(options))
+            .catch(function (error) {
+            return _this.interceptErrors(error);
+        });
+    };
+    HttpInterceptor.prototype.getRequestOptions = function (options) {
+        if (!options) {
+            options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]();
+        }
+        if (!options.headers) {
+            options.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Headers */]();
+        }
+        options.headers.append('Content-Type', 'application/json');
+        if (localStorage.getItem('currentUser')) {
+            options.headers.append('x-access-token', localStorage.getItem('currentUserToken'));
+        }
+        return options;
+    };
+    HttpInterceptor.prototype.interceptErrors = function (err) {
+        if (err.status === 404) {
+            this.router.navigateByUrl('/notFound');
+            return __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["Observable"].empty();
+        }
+        else if (err.status === 401 || err.status === 403) {
+            this.router.navigateByUrl('/accessDenied');
+            return __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["Observable"].empty();
+        }
+        else if (err.status >= 500) {
+            this.router.navigateByUrl('/internalServerError');
+            return __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["Observable"].empty();
+        }
+        else {
+            return __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["Observable"].throw(err);
+        }
+    };
+    return HttpInterceptor;
+}(__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]));
+HttpInterceptor = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
+    // mimicking intercptor of angualrjs. Adding  token and centralized error handling 
+    ,
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* ConnectionBackend */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* ConnectionBackend */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _c || Object])
+], HttpInterceptor);
+
+var _a, _b, _c;
+//# sourceMappingURL=HttpInterceptor.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/access-denied.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\" style=\"height: 100%;\">\r\n  <md-card-content fxLayout=\"column\">\r\n    <div class=\"content-container\" fxLayout=\"column\">\r\n      <h1 class=\"error-number\">404</h1>\r\n      <h2>Houston, we have a problem </h2>\r\n      <p>\r\n        You are not authorized to  view this page. \r\n      </p>\r\n      <p>\r\n        <a href=\"/\">Let us take you home.</a>\r\n      </p>\r\n    </div>\r\n  </md-card-content>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/access-denied.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/access-denied.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccessDeniedComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AccessDeniedComponent = (function () {
+    function AccessDeniedComponent() {
+    }
+    AccessDeniedComponent.prototype.ngOnInit = function () {
+    };
+    return AccessDeniedComponent;
+}());
+AccessDeniedComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ms-access-denied',
+        template: __webpack_require__("../../../../../src/app/shared/access-denied.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/access-denied.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], AccessDeniedComponent);
+
+//# sourceMappingURL=access-denied.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/shared/guards/auth.guard.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3104,7 +3312,7 @@ var AuthGuard = (function () {
         this.router = router;
     }
     AuthGuard.prototype.canActivate = function (next, state) {
-        if (localStorage.getItem('currentUser')) {
+        if (localStorage.getItem('isCurrentUserAuthenticated') == 'true') {
             return true;
         }
         this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
@@ -3130,6 +3338,81 @@ var _a;
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__auth_guard__["a"]; });
 
 //# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/httpFactory.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__HttpInterceptor__ = __webpack_require__("../../../../../src/app/shared/HttpInterceptor.ts");
+/* harmony export (immutable) */ __webpack_exports__["a"] = httpFactory;
+
+function httpFactory(xhrBackend, requestOptions, router) {
+    return new __WEBPACK_IMPORTED_MODULE_0__HttpInterceptor__["a" /* HttpInterceptor */](xhrBackend, requestOptions, router);
+}
+//# sourceMappingURL=httpFactory.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/internal-server-error.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\" style=\"height: 100%;\">\r\n  <md-card-content fxLayout=\"column\">\r\n    <div class=\"content-container\" fxLayout=\"column\">\r\n      <h1 class=\"error-number\">404</h1>\r\n      <h2>Houston, we have a problem </h2>\r\n      <p>\r\n        We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.\r\n      </p>\r\n      <p>\r\n        <a href=\"/\">Let us take you home.</a>\r\n      </p>\r\n    </div>\r\n  </md-card-content>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/internal-server-error.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/internal-server-error.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InternalServerErrorComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var InternalServerErrorComponent = (function () {
+    function InternalServerErrorComponent() {
+    }
+    InternalServerErrorComponent.prototype.ngOnInit = function () {
+    };
+    return InternalServerErrorComponent;
+}());
+InternalServerErrorComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ms-internal-server-error',
+        template: __webpack_require__("../../../../../src/app/shared/internal-server-error.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/internal-server-error.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], InternalServerErrorComponent);
+
+//# sourceMappingURL=internal-server-error.component.js.map
 
 /***/ }),
 
@@ -3360,7 +3643,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UsersService = (function () {
     function UsersService(http) {
         this.http = http;
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["e" /* Headers */]({ 'Content-Type': 'application/json' });
         this.options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers });
     }
     UsersService.prototype.getUserProfile = function (userName) {
@@ -5295,7 +5578,7 @@ var SidenavService = (function () {
         var menu = this;
         var projects = menu.addItem('Projects', 'insert_comment', null, 4);
         var result;
-        var params = new __WEBPACK_IMPORTED_MODULE_5__angular_http__["e" /* URLSearchParams */]();
+        var params = new __WEBPACK_IMPORTED_MODULE_5__angular_http__["g" /* URLSearchParams */]();
         params.set('userName', userName);
         var options = new __WEBPACK_IMPORTED_MODULE_5__angular_http__["d" /* RequestOptions */]({
             search: params

@@ -5,14 +5,11 @@ import { Observable } from 'rxjs/Observable'
 @Injectable()
 
 export class FormFieldsService {
-    options: RequestOptions;
     constructor(private http: Http) {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        this.options = new RequestOptions({ headers: headers });
     }
 
     getFormFields(formId): Observable<any[]> {
-        return this.http.get('/api/formField/GetFormFields?formId=' + formId, this.options)
+        return this.http.get('/api/formField/GetFormFields?formId=' + formId)
             .map(this.extractData);
     }
 
@@ -22,13 +19,13 @@ export class FormFieldsService {
     }
 
     addFormField(formField) {
-        return this.http.post('/api/formField/AddFormField', JSON.stringify(formField), this.options)
+        return this.http.post('/api/formField/AddFormField', JSON.stringify(formField))
             .map(res => res.json());
     }
 
 
     editFormField(formField) {
-        return this.http.put('/api/formField/EditFormField', JSON.stringify(formField), this.options)
+        return this.http.put('/api/formField/EditFormField', JSON.stringify(formField))
             .map(res => res.json());
     }
 

@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
             .subscribe(response => {
                 if (response.statusCode == 200) {
                     localStorage.setItem('currentUser', response.content.user.userName);
+                    localStorage.setItem('isCurrentUserAuthenticated', response.content.authenticated);
+                    localStorage.setItem('currentUserToken', response.content.token);
                     this.router.navigateByUrl('/projects');
                 } else if (response.statusCode == 412) {
                     this.serverErrorMessage = "Invalid Credentials!";

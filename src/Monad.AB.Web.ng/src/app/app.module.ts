@@ -1,7 +1,6 @@
 ﻿import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { AuthGuard } from './shared/guards/index';
 import { MaterialComponentsModule } from './material/material-components.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -14,10 +13,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MainModule } from './main/main.module';
 import { AccountsModule } from './accounts/accounts.module';
 import { UsersModule } from './users/users.module';
-
+import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 import { SortablejsModule, SortablejsOptions } from 'angular-sortablejs';
 import { NotFoundComponent } from './shared/not-found.component';
-
+import {httpFactory } from './shared/httpFactory';
+import { AccessDeniedComponent } from './shared/access-denied.component';
+import { InternalServerErrorComponent } from './shared/internal-server-error.component';
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
     swipePropagation: false
@@ -28,7 +29,7 @@ const sortablejsConfig: SortablejsOptions = {
 };
 
 @NgModule({
-    declarations: [AppComponent, NotFoundComponent],
+    declarations: [AppComponent, NotFoundComponent, AccessDeniedComponent, InternalServerErrorComponent],
     imports: [
         CommonModule,
         BrowserModule,
@@ -46,7 +47,12 @@ const sortablejsConfig: SortablejsOptions = {
         PerfectScrollbarModule.forRoot(perfectScrollbarConfig),
     ],
     providers: [
-        MdIconRegistry, AuthGuard
+        MdIconRegistry, AuthGuard,
+        {
+            provide: Http,
+            useFactory: httpFactory,
+            deps: [XHRBackend, RequestOptions]
+        }
     ],
     bootstrap: [AppComponent]
 })

@@ -7,8 +7,7 @@ import { Observable } from 'rxjs/Observable'
 export class ProjectsService {
     options: RequestOptions;
     constructor(private http: Http) {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        this.options = new RequestOptions({ headers: headers });
+        this.options = new RequestOptions();
     }
 
     getProjects(userName): Observable<any[]> {
@@ -28,12 +27,12 @@ export class ProjectsService {
     }
 
     addProject(project) {
-        return this.http.post("/api/project/addproject/", JSON.stringify(project), this.options)
+        return this.http.post("/api/project/addproject/", JSON.stringify(project))
             .map(res => res.json());
     }
 
     updateProject(project) {
-        return this.http.put("/api/project/editproject/", JSON.stringify(project), this.options)
+        return this.http.put("/api/project/editproject/", JSON.stringify(project))
             .map(res => res.json());
     }
 

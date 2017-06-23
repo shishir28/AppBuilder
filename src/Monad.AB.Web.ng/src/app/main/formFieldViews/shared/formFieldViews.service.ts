@@ -5,15 +5,11 @@ import { Observable } from 'rxjs/Observable'
 @Injectable()
 
 export class FormFieldViewsService {
-    options: RequestOptions;
     constructor(private http: Http) {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        this.options = new RequestOptions({ headers: headers });
     }
-
    
     getFormFieldViews(fieldId): Observable<any[]> {
-        return this.http.get('/api/formField/GetFormFieldView?fieldId=' + fieldId, this.options)
+        return this.http.get('/api/formField/GetFormFieldView?fieldId=' + fieldId)
             .map(this.extractData);
     }
 
@@ -24,7 +20,7 @@ export class FormFieldViewsService {
 
 
     editFormFieldView(formFieldView) {
-        return this.http.put('/api/formField/EditFormFieldView', JSON.stringify(formFieldView), this.options)
+        return this.http.put('/api/formField/EditFormFieldView', JSON.stringify(formFieldView))
             .map(res => res.json());
     }
 
