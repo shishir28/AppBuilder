@@ -16,9 +16,11 @@ namespace Monad.AB.Web.App.Security
             // add more path as per requirement in the project
             return (nonAPIPath ||
                 path.Contains("/api/account/Login") ||
+                path.Contains("/api/account/LogOff") ||
+                path.Contains("/api/account/ForgotPassword") ||
+                path.Contains("/api/account/ResetPassword") ||
                 path.Contains("/api/account/Register"));
         }
-
         internal static bool HasAllowAnonymous(this ActionContext actionContext)
         {
             return actionContext.ActionDescriptor.FilterDescriptors.Any(item => item.Filter is IAllowAnonymous);

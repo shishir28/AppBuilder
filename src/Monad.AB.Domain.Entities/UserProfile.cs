@@ -1,6 +1,6 @@
 ﻿namespace Monad.AB.Domain.Entities
 {
-    public class ApplicationUser : BaseEntity
+    public class UserProfile : BaseEntity
     {
         public string UserName { get; set; }
         public string FirstName { get; set; }

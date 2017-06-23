@@ -14,12 +14,12 @@ export class UsersService {
     }
 
     getUserProfile(userName) {
-        return this.http.get('/api/user/GetUserDetails?userName=' + userName)
+        return this.http.get('/api/userprofile/GetUserDetails?userName=' + userName)
             .map(res => res.json());
     }
 
     editUserProfile(user) {
-        return this.http.put("/api/user/EditUserProfile/", JSON.stringify(user), this.options)
+        return this.http.put("/api/userprofile/EditUserProfile/", JSON.stringify(user), this.options)
             .map(res => res.json());
     }
 

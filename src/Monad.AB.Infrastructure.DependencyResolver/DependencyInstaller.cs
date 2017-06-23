@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Monad.AB.Common;
 
 namespace Monad.AB.Infrastructure.DependencyResolver
 {
@@ -29,6 +30,7 @@ namespace Monad.AB.Infrastructure.DependencyResolver
         {
             services
               .AddDbContext<CustomDBContext>(options => options.UseSqlServer(configuration["Data:ApplicationDB:ConnectionString"]));
+
             services.AddIdentity<User, Role>()
                     .AddEntityFrameworkStores<CustomDBContext>()
                     .AddDefaultTokenProviders();
@@ -49,7 +51,7 @@ namespace Monad.AB.Infrastructure.DependencyResolver
             services.AddTransient<IProjectRepository, ProjectRepository>();
             services.AddTransient<IProjectPublishStatusRepository, ProjectPublishStatusRepository>();
             services.AddTransient<IUserClaimRepository, UserClaimRepository>();
-            services.AddTransient<IApplicationUserRepository, ApplicationUserRepository>();
+            services.AddTransient<IUserProfileRepository, UserProfileRepository>();
 
             services.AddTransient<IActivityRepository, ActivityRepository>();
             services.AddTransient<IActivityRoleRepository, ActivityRoleRepository>();
@@ -66,13 +68,14 @@ namespace Monad.AB.Infrastructure.DependencyResolver
         private static void InjectDependenciesForBL(IServiceCollection services)
         {
             services.AddTransient<IAccountService, AccountService>();
-            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserProfileService, UserProfileService>();
             services.AddTransient<IProjectService, ProjectService>();
             services.AddTransient<IFormService, FormService>();
             services.AddTransient<IFormFieldService, FormFieldService>();
             services.AddTransient<IFormFieldViewService, FormFieldViewService>();
 
             services.AddTransient<IPublishService, PublishService>();
+            services.AddTransient<IAuthService, AuthService>();
             //services.AddTransient<ISolutionBuilder, SolutionBuilder>();
             //services.AddTransient<IBuildScriptBuilder, BuildScriptBuilder>();
             services.AddTransient<IActivityService, ActivityService>();

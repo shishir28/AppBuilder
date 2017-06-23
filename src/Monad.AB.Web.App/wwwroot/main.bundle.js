@@ -3364,11 +3364,11 @@ var UsersService = (function () {
         this.options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers });
     }
     UsersService.prototype.getUserProfile = function (userName) {
-        return this.http.get('/api/user/GetUserDetails?userName=' + userName)
+        return this.http.get('/api/userprofile/GetUserDetails?userName=' + userName)
             .map(function (res) { return res.json(); });
     };
     UsersService.prototype.editUserProfile = function (user) {
-        return this.http.put("/api/user/EditUserProfile/", JSON.stringify(user), this.options)
+        return this.http.put("/api/userprofile/EditUserProfile/", JSON.stringify(user), this.options)
             .map(function (res) { return res.json(); });
     };
     UsersService.prototype.extractData = function (res) {

@@ -53,7 +53,6 @@ namespace Monad.AB.Infrastructure.Data
                 b.Property(u => u.Id).HasColumnName("ProjectID");
                 b.Ignore(u => u.WebServerConfiguration);
                 b.Ignore(u => u.DatabaseConfiguration);
-
             });
            
             modelBuilder.Entity<DatabaseConfiguration>(b =>
@@ -80,7 +79,7 @@ namespace Monad.AB.Infrastructure.Data
                 b.Property(u => u.Id).HasColumnName("ClaimID");
             });
 
-            modelBuilder.Entity<ApplicationUser>(b =>
+            modelBuilder.Entity<UserProfile>(b =>
             {
                 b.ToTable("User");
                 b.HasKey(u => u.Id);

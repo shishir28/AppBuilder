@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace Monad.AB.Services.Interface
 {
-    public interface IUserService : IService
+    public interface IUserProfileService : IService
     {
-        IList<ApplicationUser> GetUsers();
-        ApplicationUser GetUserById(int userId);
-        ApplicationUser GetUserByName(string userName);
-        void AddUser(ApplicationUser user);
-        void EditUser(ApplicationUser user);
-        void DeleteUser(ApplicationUser user);
+        IList<UserProfile> GetUsers();
+        UserProfile GetUserById(int userId);
+        UserProfile GetUserByName(string userName);
+        void AddUser(UserProfile user);
+        void EditUser(UserProfile user);
+        void DeleteUser(UserProfile user);
     }
 }

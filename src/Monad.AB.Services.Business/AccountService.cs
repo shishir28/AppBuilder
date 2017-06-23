@@ -14,7 +14,7 @@ namespace Monad.AB.Services.Business
 {
     public class AccountService : IAccountService
     {
-        private IUserService _userService;
+        private IUserProfileService _userService;
         private IIdentityRepository _store;
         private IActivityService _activityService;
         private IRoleRightRepository _roleRightRepository;
@@ -27,7 +27,7 @@ namespace Monad.AB.Services.Business
             SignInManager<User> signInManager,
             IIdentityRepository store,
             IActivityService activityService,
-            IUserService userService,
+            IUserProfileService userService,
             IRoleRightRepository roleRightRepository,
              IActivityRepository activityRepository,
              IResourceRepository resourceRepository,
@@ -59,8 +59,10 @@ namespace Monad.AB.Services.Business
         public async Task<string> GetLoginToken(string userName, string password)
         {
             var user = UserManager.FindByNameAsync(userName).Result;
+            // Shishir Need to write custome token provider as following code will throw runtime exceptio, this is why I have written token generation in account controller using JwtSecurityTokenHandler 
             return await UserManager.GenerateUserTokenAsync(user, "CustomToken", "Token Check");
         }
+
 
         public void LogOff()
         {
@@ -75,7 +77,7 @@ namespace Monad.AB.Services.Business
             if (createdUser.Succeeded)
             {
                 var code = await UserManager.GenerateEmailConfirmationTokenAsync(targetUser);
-                _userService.AddUser(new ApplicationUser() { UserName = user });
+                _userService.AddUser(new UserProfile() { UserName = user });
                 var newUser = UserManager.FindByNameAsync(user).Result;
 
                 var userRoleResult = await UserManager.AddToRoleAsync(newUser, "Administrator");

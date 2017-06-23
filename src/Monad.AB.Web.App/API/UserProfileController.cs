@@ -11,11 +11,11 @@ using Monad.AB.Domain.Entities;
 namespace Monad.AB.Web.App.Controllers
 {
     [Route("api/[controller]")]
-    public class UserController : Controller
+    public class UserProfileController : Controller
     {
-        private IUserService _userService;
+        private IUserProfileService _userService;
         // private IOptions<AppSettings> _appSettings;
-        public UserController(IUserService userService)//, IOptions<AppSettings> appSettings)
+        public UserProfileController(IUserProfileService userService)//, IOptions<AppSettings> appSettings)
         {
             _userService = userService;
             //_appSettings = appSettings;
@@ -58,7 +58,7 @@ namespace Monad.AB.Web.App.Controllers
             {
                 try
                 {
-                    var user = new ApplicationUser
+                    var user = new UserProfile
                     {
                         Id = model.Id,
                         UserName = model.UserName,
