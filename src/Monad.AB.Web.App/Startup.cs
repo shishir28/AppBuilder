@@ -41,6 +41,7 @@ namespace Monad.AB.Web.App
         {
             // Add framework services.
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            services.Configure<AccountSecuritySettings>(Configuration.GetSection("AccountSecuritySettings"));
             services.AddOptions();
             var serviceProvider = services.BuildServiceProvider();
             var options = serviceProvider.GetRequiredService<IOptions<AppSettings>>();
