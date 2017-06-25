@@ -18,6 +18,12 @@ export class AccountsService {
             .map(res => res.json());
     }
 
+
+    logout(logoutUser) {
+        return this.http.post("/api/account/LogOff", JSON.stringify(logoutUser))
+            .map(res => res.json());
+    }
+
     private extractData(res: Response) {
         let body = res.json();
         return body || {};

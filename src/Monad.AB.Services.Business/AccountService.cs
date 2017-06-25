@@ -64,7 +64,7 @@ namespace Monad.AB.Services.Business
         }
 
 
-        public void LogOff()
+        public void LogOff(string userName)
         {
             SignInManager.SignOutAsync();
         }

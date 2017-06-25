@@ -4,6 +4,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Monad.AB.Web.App.Models
 {
+
+    public class LogoutViewModel
+    {
+        [Required]
+        [Display(Name = "User name")]
+        public string UserName { get; set; }
+    }
+
     public class LoginViewModel
     {
         [Required]

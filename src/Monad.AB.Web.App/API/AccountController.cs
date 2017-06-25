@@ -80,10 +80,10 @@ namespace Monad.AB.Web.App.Controllers
 
         [HttpPost]
         [Route("LogOff")]
-        public IActionResult LogOff()
+        public IActionResult LogOff([FromBody]LogoutViewModel model)
         {
-            _accountService.LogOff();
-            return new StatusCodeResult(200);
+            _accountService.LogOff(model.UserName);
+            return new ObjectResult(new { StatusCode = 200, Content = $@"User  {model.UserName} logged out successfully!" });
         }
 
         //ForgotPassword

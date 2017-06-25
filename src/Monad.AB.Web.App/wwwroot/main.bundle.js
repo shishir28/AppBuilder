@@ -366,6 +366,7 @@ var _a, _b;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return LoginDetail; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterDetail; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return LogoutDetail; });
 var LoginDetail = (function () {
     function LoginDetail() {
     }
@@ -376,6 +377,12 @@ var RegisterDetail = (function () {
     function RegisterDetail() {
     }
     return RegisterDetail;
+}());
+
+var LogoutDetail = (function () {
+    function LogoutDetail() {
+    }
+    return LogoutDetail;
 }());
 
 //# sourceMappingURL=account.js.map
@@ -410,6 +417,10 @@ var AccountsService = (function () {
     };
     AccountsService.prototype.register = function (registerUser) {
         return this.http.post("/api/account/register", JSON.stringify(registerUser))
+            .map(function (res) { return res.json(); });
+    };
+    AccountsService.prototype.logout = function (logoutUser) {
+        return this.http.post("/api/account/LogOff", JSON.stringify(logoutUser))
             .map(function (res) { return res.json(); });
     };
     AccountsService.prototype.extractData = function (res) {
@@ -5739,6 +5750,8 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accounts_shared_accounts_service__ = __webpack_require__("../../../../../src/app/accounts/shared/accounts.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accounts_shared_account__ = __webpack_require__("../../../../../src/app/accounts/shared/account.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToolbarUserButtonComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5751,10 +5764,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var ToolbarUserButtonComponent = (function () {
-    function ToolbarUserButtonComponent(router, route) {
+    function ToolbarUserButtonComponent(router, route, accountService) {
         this.router = router;
         this.route = route;
+        this.accountService = accountService;
+        this.logoutDetail = new __WEBPACK_IMPORTED_MODULE_3__accounts_shared_account__["c" /* LogoutDetail */]();
     }
     ToolbarUserButtonComponent.prototype.ngOnInit = function () {
         this.userName = localStorage.getItem('currentUser');
@@ -5763,9 +5780,15 @@ var ToolbarUserButtonComponent = (function () {
         this.isOpen = !this.isOpen;
     };
     ToolbarUserButtonComponent.prototype.logout = function () {
-        localStorage.removeItem('currentUser');
-        //shishir need to call server side function 
-        this.router.navigateByUrl('/login');
+        var _this = this;
+        this.logoutDetail.UserName = this.userName;
+        this.accountService.logout(this.logoutDetail)
+            .subscribe(function (response) {
+            if (response.statusCode == 200) {
+                localStorage.removeItem('currentUser');
+                _this.router.navigateByUrl('/login');
+            }
+        });
     };
     ToolbarUserButtonComponent.prototype.viewUserProfile = function () {
         this.router.navigateByUrl('/user-profile/view');
@@ -5781,10 +5804,10 @@ ToolbarUserButtonComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/widgets/toolbar/toolbar-user-button/toolbar-user-button.component.html"),
         styles: [__webpack_require__("../../../../../src/app/widgets/toolbar/toolbar-user-button/toolbar-user-button.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__accounts_shared_accounts_service__["a" /* AccountsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__accounts_shared_accounts_service__["a" /* AccountsService */]) === "function" && _c || Object])
 ], ToolbarUserButtonComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=toolbar-user-button.component.js.map
 
 /***/ }),

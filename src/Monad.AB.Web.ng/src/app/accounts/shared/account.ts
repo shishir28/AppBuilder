@@ -9,3 +9,7 @@ export class RegisterDetail {
     public password: string;
     public confirmPassword: string;
 }
+
+export class LogoutDetail {
+    public UserName: string;
+}

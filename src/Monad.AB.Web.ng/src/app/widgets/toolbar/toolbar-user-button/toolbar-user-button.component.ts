@@ -1,5 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AccountsService } from '../../../accounts/shared/accounts.service';
+import { LogoutDetail } from '../../../accounts/shared/account';
 
 @Component({
     selector: 'ms-toolbar-user-button',
@@ -9,7 +11,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ToolbarUserButtonComponent implements OnInit {
     userName: string;
     isOpen: boolean;
-    constructor(private router: Router, private route: ActivatedRoute) {
+    logoutDetail: LogoutDetail = new LogoutDetail();
+    constructor(private router: Router, private route: ActivatedRoute, private accountService: AccountsService) {
 
     }
 
@@ -22,9 +25,14 @@ export class ToolbarUserButtonComponent implements OnInit {
     }
 
     logout() {
-        localStorage.removeItem('currentUser');
-        //shishir need to call server side function 
-        this.router.navigateByUrl('/login');
+        this.logoutDetail.UserName = this.userName;
+        this.accountService.logout(this.logoutDetail)
+            .subscribe(response => {
+                if (response.statusCode == 200) {
+                    localStorage.removeItem('currentUser');
+                    this.router.navigateByUrl('/login');
+                }
+            });
     }
 
     viewUserProfile() {

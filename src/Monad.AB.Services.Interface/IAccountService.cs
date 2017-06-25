@@ -13,6 +13,6 @@ namespace Monad.AB.Services.Interface
         Task<IdentityResult> Register(string user, string password);
         Task<IList<Claim>> GetClaims(User user);
         Task<User> GetUser(string userName);
-        void LogOff();
+        void LogOff(string userName);
     }
 }
