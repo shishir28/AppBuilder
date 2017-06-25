@@ -13,7 +13,7 @@ import { Router } from "@angular/router";
 })
 export class ForgotPasswordComponent implements OnInit {
 
-    email: string;
+    userName: string;
     password: string;
 
     constructor(
@@ -23,7 +23,7 @@ export class ForgotPasswordComponent implements OnInit {
     ngOnInit() {
     }
 
-    send() {
+    forgotPassword() {
         this.router.navigate(['/']);
     }
 
