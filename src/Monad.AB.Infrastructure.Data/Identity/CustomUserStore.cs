@@ -17,14 +17,14 @@ using Monad.AB.Domain.Interfaces;
 
 namespace Monad.AB.Infrastructure.Data.Identity
 {
-    public class CustomUserStore : CustomUserStore<CustomDBContext>
+    public class CustomUserStore : CustomUserStore<SecurityDBContext>
     {
-        public CustomUserStore(CustomDBContext context, IdentityErrorDescriber describer = null) : base(context, describer) { }
+        public CustomUserStore(SecurityDBContext context, IdentityErrorDescriber describer = null) : base(context, describer) { }
     }
 
 
     public class CustomUserStore< TContext> : CustomUserStore<User, Role, TContext, string>
-        where TContext : CustomDBContext
+        where TContext : SecurityDBContext
     {
         public CustomUserStore(TContext context, IdentityErrorDescriber describer = null) : base(context, describer) { }
     }

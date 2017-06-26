@@ -5,7 +5,7 @@ namespace Monad.AB.Infrastructure.Data
 {
     public class DatabaseConfigurationRepository : Repository<DatabaseConfiguration>, IDatabaseConfigurationRepository
     {
-        public DatabaseConfigurationRepository(CustomDBContext dataContext):base(dataContext)
+        public DatabaseConfigurationRepository(ApplicationDBContext dataContext):base(dataContext)
         {
         }
     }

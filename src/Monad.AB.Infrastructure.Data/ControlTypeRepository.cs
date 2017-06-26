@@ -6,7 +6,7 @@ namespace Monad.AB.Infrastructure.Data
 {
     public class ControlTypeRepository : Repository<ControlType>, IControlTypeRepository
     {
-        public ControlTypeRepository(CustomDBContext dataContext):base(dataContext)
+        public ControlTypeRepository(ApplicationDBContext dataContext):base(dataContext)
         {
         }
     }

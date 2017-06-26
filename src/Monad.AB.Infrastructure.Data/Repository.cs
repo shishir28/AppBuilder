@@ -8,9 +8,9 @@ namespace Monad.AB.Infrastructure.Data
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {
         protected DbSet<T> DbSet;
-        private CustomDBContext _dbContext;
+        private DbContext _dbContext;
 
-        public Repository(CustomDBContext dataContext)
+        public Repository(DbContext dataContext)
         {
             _dbContext = dataContext;
             DbSet = _dbContext.Set<T>();

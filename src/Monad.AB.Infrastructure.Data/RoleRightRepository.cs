@@ -5,7 +5,7 @@ namespace  Monad.AB.Infrastructure.Data
 {
     public class RoleRightRepository : Repository<RoleRight>, IRoleRightRepository
     {
-        public RoleRightRepository(CustomDBContext dataContext) : base(dataContext)
+        public RoleRightRepository(SecurityDBContext dataContext) : base(dataContext)
         {
         }
     }

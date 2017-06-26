@@ -5,7 +5,7 @@ namespace  Monad.AB.Infrastructure.Data
 {
     public class ResourceTypeRepository : Repository<ResourceType>, IResourceTypeRepository
     {
-        public ResourceTypeRepository(CustomDBContext dataContext) : base(dataContext)
+        public ResourceTypeRepository(SecurityDBContext dataContext) : base(dataContext)
         {
         }
     }

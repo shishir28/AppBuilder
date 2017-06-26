@@ -5,7 +5,7 @@ namespace Monad.AB.Infrastructure.Data
 {
     public class FormFieldRepository : Repository<FormField>, IFormFieldRepository
     {
-        public FormFieldRepository(CustomDBContext dataContext):base(dataContext)
+        public FormFieldRepository(ApplicationDBContext dataContext):base(dataContext)
         {
          //   base.DbSet.Include(c => c.FieldType);
         }

@@ -29,10 +29,11 @@ namespace Monad.AB.Infrastructure.DependencyResolver
         private static void InjectDependenciesForDAL(IServiceCollection services, IConfiguration configuration)
         {
             services
-              .AddDbContext<CustomDBContext>(options => options.UseSqlServer(configuration["Data:ApplicationDB:ConnectionString"]));
+              .AddDbContext<SecurityDBContext>(options => options.UseSqlServer(configuration["Data:SecurityDB:ConnectionString"]))
+              .AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(configuration["Data:ApplicationDB:ConnectionString"]));
 
             services.AddIdentity<User, Role>()
-                    .AddEntityFrameworkStores<CustomDBContext>()
+                    .AddEntityFrameworkStores<SecurityDBContext>()
                     .AddDefaultTokenProviders();
 
 
@@ -52,6 +53,7 @@ namespace Monad.AB.Infrastructure.DependencyResolver
             services.AddTransient<IProjectPublishStatusRepository, ProjectPublishStatusRepository>();
             services.AddTransient<IUserClaimRepository, UserClaimRepository>();
             services.AddTransient<IUserProfileRepository, UserProfileRepository>();
+            services.AddTransient<IUserPasswordHistoryRepository, UserPasswordHistoryRepository>();
 
             services.AddTransient<IActivityRepository, ActivityRepository>();
             services.AddTransient<IActivityRoleRepository, ActivityRoleRepository>();
@@ -73,7 +75,6 @@ namespace Monad.AB.Infrastructure.DependencyResolver
             services.AddTransient<IFormService, FormService>();
             services.AddTransient<IFormFieldService, FormFieldService>();
             services.AddTransient<IFormFieldViewService, FormFieldViewService>();
-
             services.AddTransient<IPublishService, PublishService>();
             services.AddTransient<IAuthService, AuthService>();
             //services.AddTransient<ISolutionBuilder, SolutionBuilder>();

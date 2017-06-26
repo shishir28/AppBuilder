@@ -5,7 +5,7 @@ namespace Monad.AB.Infrastructure.Data
 {
     public class FormViewTypeRepository : Repository<FormViewType>, IFormViewTypeRepository
     {
-        public FormViewTypeRepository(CustomDBContext dataContext):base(dataContext)
+        public FormViewTypeRepository(ApplicationDBContext dataContext):base(dataContext)
         {
         }
     }

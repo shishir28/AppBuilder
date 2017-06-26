@@ -5,7 +5,7 @@ namespace Monad.AB.Infrastructure.Data
 {
     public class ProjectRepository:Repository<Project>, IProjectRepository
     {
-        public ProjectRepository(CustomDBContext dataContext):base(dataContext)
+        public ProjectRepository(ApplicationDBContext dataContext):base(dataContext)
         {
         }
     }

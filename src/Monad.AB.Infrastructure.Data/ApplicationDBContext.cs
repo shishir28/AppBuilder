@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Monad.AB.Domain.Entities.Identity;
 namespace Monad.AB.Infrastructure.Data
 {
-    public class CustomDBContext : IdentityDbContext<User, Role, string>
+    public class ApplicationDBContext : DbContext
     {
-        public CustomDBContext(DbContextOptions options) : base(options) { }
+        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -72,46 +72,12 @@ namespace Monad.AB.Infrastructure.Data
                 b.Property(u => u.Id).HasColumnName("ProjectPublishStatusID");
             });
 
-          
-            modelBuilder.Entity<UserClaim>(b =>
-            {
-                b.HasKey(u => u.Id);
-                b.Property(u => u.Id).HasColumnName("ClaimID");
-            });
-
             modelBuilder.Entity<UserProfile>(b =>
             {
                 b.ToTable("User");
                 b.HasKey(u => u.Id);
             });
 
-            modelBuilder.Entity<Activity>(b =>
-            {
-                b.HasKey(u => u.Id);
-                b.Property(u => u.Id).HasColumnName("ActivityID");
-            });
-
-            modelBuilder.Entity<ActivityRole>(b =>
-            {
-                b.HasKey(u => u.Id);
-                b.Property(u => u.Id).HasColumnName("ActivityRoleID");
-            });
-
-            modelBuilder.Entity<Resource>(b =>
-            {
-                b.HasKey(u => u.Id);
-                b.Property(u => u.Id).HasColumnName("ResourceID");
-            });
-            modelBuilder.Entity<ResourceType>(b =>
-            {
-                b.HasKey(u => u.Id);
-                b.Property(u => u.Id).HasColumnName("ResourceTypeID");
-            });
-            modelBuilder.Entity<RoleRight>(b =>
-            {
-                b.HasKey(u => u.Id);
-                b.Property(u => u.Id).HasColumnName("RoleRightID");
-            });
             base.OnModelCreating(modelBuilder);
         }
 

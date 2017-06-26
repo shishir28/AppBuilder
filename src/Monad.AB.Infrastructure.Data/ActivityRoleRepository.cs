@@ -5,7 +5,7 @@ namespace Monad.AB.Infrastructure.Data
 {
     public class ActivityRoleRepository : Repository<ActivityRole>, IActivityRoleRepository
     {
-        public ActivityRoleRepository(CustomDBContext dataContext):base(dataContext)
+        public ActivityRoleRepository(SecurityDBContext dataContext):base(dataContext)
         {
 
         }

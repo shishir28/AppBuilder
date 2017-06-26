@@ -5,7 +5,7 @@ namespace Monad.AB.Infrastructure.Data
 {
     public class UserClaimRepository : Repository<UserClaim>, IUserClaimRepository
     {
-        public UserClaimRepository(CustomDBContext dataContext) : base(dataContext)
+        public UserClaimRepository(SecurityDBContext dataContext) : base(dataContext)
         {
         }
     }

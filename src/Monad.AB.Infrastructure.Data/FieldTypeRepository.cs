@@ -5,7 +5,7 @@ namespace Monad.AB.Infrastructure.Data
 {
     public class FieldTypeRepository : Repository<FieldType>, IFieldTypeRepository
     {
-        public FieldTypeRepository(CustomDBContext dataContext):base(dataContext)
+        public FieldTypeRepository(ApplicationDBContext dataContext):base(dataContext)
         {
         }
     }

@@ -5,7 +5,7 @@ namespace Monad.AB.Infrastructure.Data
 {
     public class ProjectPublishStatusRepository : Repository<ProjectPublishStatus>, IProjectPublishStatusRepository
     {
-        public ProjectPublishStatusRepository(CustomDBContext dataContext):base(dataContext)
+        public ProjectPublishStatusRepository(ApplicationDBContext dataContext):base(dataContext)
         {
         }
     }

@@ -15,9 +15,9 @@ using Monad.AB.Domain.Entities.Identity;
 namespace Monad.AB.Infrastructure.Data.Identity
 {
 
-    public class CustomRoleStore : CustomRoleStore<Role, CustomDBContext, string>
+    public class CustomRoleStore : CustomRoleStore<Role, SecurityDBContext, string>
     {
-        public CustomRoleStore(CustomDBContext context, IdentityErrorDescriber describer = null) : base(context, describer) { }
+        public CustomRoleStore(SecurityDBContext context, IdentityErrorDescriber describer = null) : base(context, describer) { }
     }
     
         
