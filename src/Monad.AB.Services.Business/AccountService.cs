@@ -58,11 +58,10 @@ namespace Monad.AB.Services.Business
 
         public async Task<string> GetLoginToken(string userName, string password)
         {
-            var user = UserManager.FindByNameAsync(userName).Result;
-            // Shishir Need to write custome token provider as following code will throw runtime exceptio, this is why I have written token generation in account controller using JwtSecurityTokenHandler 
-            return await UserManager.GenerateUserTokenAsync(user, "CustomToken", "Token Check");
+            //do nothing
+            return await Task.FromResult<string>("");
+          
         }
-
 
         public void LogOff(string userName)
         {
@@ -97,14 +96,14 @@ namespace Monad.AB.Services.Business
                                              select r.Name + "." + a.Value;
 
                     //// assign claims (activities)  for current role to this user
-                    await UserManager.AddClaimsAsync(newUser, formElementsClaims.Select(x => new System.Security.Claims.Claim(x, "Allowed")));
+                    await UserManager.AddClaimsAsync(newUser, formElementsClaims.Select(x => new System.Security.Claims.Claim("Custom", x)));
 
                     var URLElementsClaims = from r in _resourceRepository.GetAll().Where(x => x.ResourceTypeId == URLResourceTypeId)
                                             join rr in roleRights on r.Id equals rr.ResourceId
                                             join a in _activityRepository.GetAll().Where(x => x.ResourceTypeId == URLResourceTypeId) on rr.ActivityId equals a.Id
                                             select "/" + a.Value.ToCamelCase() + r.Name;
 
-                    await UserManager.AddClaimsAsync(newUser, URLElementsClaims.Select(x => new System.Security.Claims.Claim(x, "Allowed")));
+                    await UserManager.AddClaimsAsync(newUser, URLElementsClaims.Select(x => new System.Security.Claims.Claim("Custom", x)));
 
 
                     var apiClaims = from r in _resourceRepository.GetAll().Where(x => x.ResourceTypeId == APIResourceTypeId)
@@ -112,7 +111,7 @@ namespace Monad.AB.Services.Business
                                     join a in _activityRepository.GetAll().Where(x => x.ResourceTypeId == APIResourceTypeId) on rr.ActivityId equals a.Id
                                     select r.Name + "/" + a.Value;
 
-                    await UserManager.AddClaimsAsync(newUser, apiClaims.Select(x => new System.Security.Claims.Claim(x, "Allowed")));
+                    await UserManager.AddClaimsAsync(newUser, apiClaims.Select(x => new System.Security.Claims.Claim("Custom", x)));
                 }
             }
             return (createdUser);

@@ -12,6 +12,7 @@ using System;
 using Monad.AB.Common.StateManagement;
 using System.Security.Principal;
 using Monad.AB.Web.App.Policies;
+using Monad.AB.Domain.Entities.Identity;
 
 namespace Monad.AB.Web.App.Controllers
 {
@@ -46,12 +47,13 @@ namespace Monad.AB.Web.App.Controllers
                 var result = await _accountService.Login(model.UserName, model.Password, model.RememberMe);
                 if (result.Succeeded)
                 {
-                  //  var token = await _accountService.GetLoginToken(model.UserName, model.Password);
+                    var token = await _accountService.GetLoginToken(model.UserName, model.Password);
                     DateTime? expires = DateTime.UtcNow.AddDays(1);
+                    var currentUser = _accountService.GetUser(model.UserName).Result;
                     accountsWebApiModel.User.UserName = model.UserName;
-                    accountsWebApiModel.Token = this.GetToken(model.UserName, expires);
+                    accountsWebApiModel.Token = GetToken(model.UserName, currentUser, expires);
+                    CacheAccessClaims(model.UserName, currentUser, expires);
                     accountsWebApiModel.Authenticated = true;
-
                     return new ObjectResult(new { StatusCode = 200, Content = accountsWebApiModel });
                 }
                 //if (result.RequiresTwoFactor)
@@ -120,13 +122,16 @@ namespace Monad.AB.Web.App.Controllers
             return this.HttpContext.User.Claims.Select(x => new ClaimViewModel { ClaimType = x.Type, ClaimValue = x.Value }).ToList();
         }
 
-        private string GetToken(string user, DateTime? expires)
+        private void CacheAccessClaims(string user, User currentUser, DateTime? expires)
         {
-            // Shishir need to reconsider JwtSecurityTokenHandler from system.Idenetity . cosnider this as throw away code
+            var currentCacheKey = string.Format("UserClaims-{0}", currentUser);
+            _cacheInstance.Set(currentCacheKey, currentUser.Claims.Select(x => new Claim(x.ClaimType, x.ClaimValue)).ToList());
+        }
+
+        private string GetToken(string user, User currentUser, DateTime? expires)
+        {
             var handler = new JwtSecurityTokenHandler();
-            var currentUser = _accountService.GetUser(user);
-            var currentCacheKey = string.Format("UserClaims-{0}", user);
-            _cacheInstance.Set(currentCacheKey, currentUser.Result.Claims.Select(x => new Claim(x.ClaimType, x.ClaimValue)).ToList());
+                   
             ClaimsIdentity identity = new ClaimsIdentity(new GenericIdentity(user, "TokenAuth"));
             var descriptor = new SecurityTokenDescriptor
             {
@@ -138,5 +143,6 @@ namespace Monad.AB.Web.App.Controllers
             };
             return handler.WriteToken(handler.CreateToken(descriptor));
         }
+
     }
 }

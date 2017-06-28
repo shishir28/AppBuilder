@@ -10,10 +10,13 @@ using Monad.AB.Services.Business;
 using Monad.AB.Services.Interface;
 using Monad.AB.Services.Interface.CodeGenerators;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Monad.AB.Common;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Monad.AB.Infrastructure.DependencyResolver
 {
@@ -29,10 +32,10 @@ namespace Monad.AB.Infrastructure.DependencyResolver
         private static void InjectDependenciesForDAL(IServiceCollection services, IConfiguration configuration)
         {
             services
-              .AddDbContext<SecurityDBContext>(options => options.UseSqlServer(configuration["Data:SecurityDB:ConnectionString"]))
-              .AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(configuration["Data:ApplicationDB:ConnectionString"]));
+              .AddDbContext<SecurityDBContext>(options => options.UseSqlServer(configuration.GetConnectionString("SecurityDB")))
+              .AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(configuration.GetConnectionString("ApplicationDB")));
 
-            services.AddIdentity<User, Role>()
+            var builder = services.AddIdentity<User, Role>()
                     .AddEntityFrameworkStores<SecurityDBContext>()
                     .AddDefaultTokenProviders();
 

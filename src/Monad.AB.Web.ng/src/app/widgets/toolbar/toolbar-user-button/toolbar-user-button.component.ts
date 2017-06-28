@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AccountsService } from '../../../accounts/shared/accounts.service';
 import { LogoutDetail } from '../../../accounts/shared/account';
@@ -30,6 +30,8 @@ export class ToolbarUserButtonComponent implements OnInit {
             .subscribe(response => {
                 if (response.statusCode == 200) {
                     localStorage.removeItem('currentUser');
+                    localStorage.removeItem('currentUserToken');
+                    localStorage.removeItem('isCurrentUserAuthenticated');
                     this.router.navigateByUrl('/login');
                 }
             });

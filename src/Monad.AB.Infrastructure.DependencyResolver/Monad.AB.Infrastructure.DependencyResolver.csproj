@@ -1,13 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+       <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
+ <ItemGroup>
+       <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0-preview1-final" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Monad.AB.Common\Monad.AB.Common.csproj" />
     <ProjectReference Include="..\Monad.AB.Domain.Entities\Monad.AB.Domain.Entities.csproj" />
-    <ProjectReference Include="..\Monad.AB.Domain.Interfaces\Monad.AB.Domain.Interfaces.csproj" />
     <ProjectReference Include="..\Monad.AB.Infrastructure.Data\Monad.AB.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\Monad.AB.Infrastructure.StateManagement\Monad.AB.Infrastructure.StateManagement.csproj" />
     <ProjectReference Include="..\Monad.AB.Services.Business\Monad.AB.Services.Business.csproj" />

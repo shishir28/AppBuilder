@@ -1,12 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+      <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Monad.AB.Domain.Entities\Monad.AB.Domain.Entities.csproj" />
-    <ProjectReference Include="..\Monad.AB.Domain.Interfaces\Monad.AB.Domain.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

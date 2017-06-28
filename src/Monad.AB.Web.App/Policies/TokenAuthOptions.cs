@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Monad.AB.Web.App.Policies
@@ -11,8 +11,8 @@ namespace Monad.AB.Web.App.Policies
         public SigningCredentials SigningCredentials { get; set; }
         public TokenAuthOptions(string audience, string issuer, RsaSecurityKey key)
         {
-            AuthenticationScheme = Scheme;
-            AutomaticChallenge = true;
+            //AuthenticationScheme = Scheme;
+            //AutomaticChallenge = true;
             Audience = audience;
             Issuer = issuer;
             SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.RsaSha256Signature);

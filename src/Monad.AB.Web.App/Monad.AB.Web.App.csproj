@@ -1,22 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
-    <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    
   </PropertyGroup>
 
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="1.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />    
+   <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0-preview1-final" />
   </ItemGroup>
 
 
@@ -27,7 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Monad.AB.Domain.Entities\Monad.AB.Domain.Entities.csproj" />
-    <ProjectReference Include="..\Monad.AB.Domain.Interfaces\Monad.AB.Domain.Interfaces.csproj" />
     <ProjectReference Include="..\Monad.AB.Infrastructure.DependencyResolver\Monad.AB.Infrastructure.DependencyResolver.csproj" />
     <ProjectReference Include="..\Monad.AB.Services.Interface\Monad.AB.Services.Interface.csproj" />
   </ItemGroup>
