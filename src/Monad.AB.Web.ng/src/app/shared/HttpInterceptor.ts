@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core'
 import { ConnectionBackend, RequestOptions, Request, RequestOptionsArgs, Response, Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-import { Router, ActivatedRoute } from '@angular/router';
 @Injectable()
 // mimicking intercptor of angualrjs. Adding  token and centralized error handling 
 export class HttpInterceptor extends Http {
     private numberOfAttempts: number;
-    constructor(backend: ConnectionBackend, defaultOptions: RequestOptions, public router: Router) {
+    constructor(backend: ConnectionBackend, defaultOptions: RequestOptions) {
         super(backend, defaultOptions);
         this.numberOfAttempts = 3;
     }
@@ -81,15 +80,15 @@ export class HttpInterceptor extends Http {
     }
 
     private interceptErrors(err: any): Observable<Response> {
+        console.log(err);
         if (err.status === 404) {
-            this.router.navigateByUrl('/notFound');
+            window.location.href = '/notFound';
             return Observable.empty();
-
         } else if (err.status === 401 || err.status === 403) {
-            this.router.navigateByUrl('/accessDenied');
+            window.location.href = '/accessDenied';
             return Observable.empty();
         } else if (err.status >= 500) {
-            this.router.navigateByUrl('/internalServerError');
+            window.location.href = '/internalServerError';
             return Observable.empty();
         } else {
             return Observable.throw(err);

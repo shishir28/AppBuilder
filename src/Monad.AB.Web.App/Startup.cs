@@ -52,16 +52,65 @@ namespace Monad.AB.Web.App
             tokenOptions = new TokenAuthOptions("ExampleAudience", "ExampleIssuer", key);
             services.AddSingleton<TokenAuthOptions>(tokenOptions);
             services.AddScoped<IUserClaimsPrincipalFactory<User>, CustomClaimsPrincipalFactory>();
-            //services.AddAuthorization(auth =>
-            //{
-            //    auth.AddPolicy(TokenAuthOptions.Scheme, new AuthorizationPolicyBuilder()
-            //        .AddAuthenticationSchemes(TokenAuthOptions.Scheme)
-            //        .RequireAuthenticatedUser()
-            //        .AddRequirements(new TokenAuthRequirement())
-            //        .Build());
-            //});
+            this.ConfigureAuthentication(services);
+            this.ConfigureAuthorization(services);
             services.AddMvc();
             DependencyInstaller.InjectDependencies(services, this.Configuration);
+        }
+
+        private void ConfigureAuthentication(IServiceCollection services)
+        {
+            services.AddAuthentication(o =>
+            {
+                o.DefaultAuthenticateScheme = tokenOptions.DefaultAuthenticateScheme;
+                o.DefaultChallengeScheme = tokenOptions.DefaultChallengeScheme;
+            });
+
+            services.AddJwtBearerAuthentication(o =>
+            {
+                o.TokenValidationParameters.IssuerSigningKey = key;
+                o.TokenValidationParameters.ValidAudience = tokenOptions.Audience;
+                o.TokenValidationParameters.ValidIssuer = tokenOptions.Issuer;
+                o.TokenValidationParameters.ValidateLifetime = true;
+                o.TokenValidationParameters.ValidateLifetime = true;
+
+                o.Events = new JwtBearerEvents()
+                {
+                    //writing plumbing 
+                    //OnAuthenticationFailed
+                    //OnAuthenticationFailed = context =>
+                    
+                    OnMessageReceived = context =>
+                    {
+                        context.Token = Convert.ToString(context.HttpContext.Items["x-access-token"]);
+                        return Task.FromResult(0);
+                    },
+                    //OnChallenge
+                    OnTokenValidated = context =>
+                    {
+                        //string authHeader = context.HttpContext.Request.Headers["Authorization"];
+                        //authHeader = authHeader ?? "";
+                        //string path = context.HttpContext.Request.Path.ToString() ?? "";
+                        //var identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Authentication, authHeader), new Claim(ClaimTypes.Uri, path) },
+                        //                       TokenAuthOptions.Scheme);
+                        //context.Ticket.Principal.AddIdentity(identity);
+                      
+                        return Task.FromResult(0);
+                    },
+                    
+                };
+            });
+        }
+
+        private void ConfigureAuthorization(IServiceCollection services)
+        {
+            services.AddAuthorization(auth =>
+            {
+                auth.AddPolicy(TokenAuthOptions.Scheme, new AuthorizationPolicyBuilder()
+                    .AddAuthenticationSchemes(TokenAuthOptions.Scheme)
+                    .AddRequirements(new TokenAuthRequirement())
+                    .Build());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,39 +119,7 @@ namespace Monad.AB.Web.App
             app.Use(new UnhandledExceptionMiddleware().Process);
             app.Use(new PerformanceLoggingMiddleware().Process);
             app.Use(new TokenReaderMiddleware().Process);
-            //var options = new JwtBearerOptions()
-            //{
-            //    TokenValidationParameters = new TokenValidationParameters
-            //    {
-            //        IssuerSigningKey = key,
-            //        ValidAudience = tokenOptions.Audience,
-            //        ValidIssuer = tokenOptions.Issuer,
-            //        ValidateIssuerSigningKey = true,
-            //        ValidateLifetime = true,
-            //        ClockSkew = TimeSpan.FromMinutes(0),
-            //    },
-            //    AuthenticationScheme = TokenAuthOptions.Scheme,
-            //    Events = new JwtBearerEvents
-            //    {
-            //        OnMessageReceived = context =>
-            //        {
-            //            context.Token = Convert.ToString(context.HttpContext.Items["x-access-token"]);
-            //            return Task.FromResult(0);
-            //        },
-            //        OnTokenValidated = context =>
-            //        {
-            //            string authHeader = context.HttpContext.Request.Headers["Authorization"];
-            //            authHeader = authHeader ?? "";
-            //            string path = context.HttpContext.Request.Path.ToString() ?? "";
-            //            var identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Authentication, authHeader), new Claim(ClaimTypes.Uri, path) },
-            //                                   TokenAuthOptions.Scheme);
-            //            context.Ticket.Principal.AddIdentity(identity);
-            //            return Task.FromResult(0);
-            //        }
-            //    }
-            //};
-            
-            //app.UseJwtBearerAuthentication(options);
+           
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -124,10 +141,9 @@ namespace Monad.AB.Web.App
                     await next();
                 }
             });
-        
-            app.UseAuthentication();
-            app.UseMvc();
             app.UseStaticFiles();
+            app.UseAuthentication();            
+            app.UseMvc();
             AutoMapperBootStrapper.Bootstrap();
         }
     }

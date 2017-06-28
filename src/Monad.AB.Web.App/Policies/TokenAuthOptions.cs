@@ -11,8 +11,8 @@ namespace Monad.AB.Web.App.Policies
         public SigningCredentials SigningCredentials { get; set; }
         public TokenAuthOptions(string audience, string issuer, RsaSecurityKey key)
         {
-            //AuthenticationScheme = Scheme;
-            //AutomaticChallenge = true;
+            DefaultAuthenticateScheme = Scheme;
+            DefaultChallengeScheme = Scheme;            
             Audience = audience;
             Issuer = issuer;
             SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.RsaSha256Signature);

@@ -39,42 +39,37 @@ namespace Monad.AB.Web.App.Policies
         private bool IsAuthorizedForRequestedAction(AuthorizationHandlerContext context, TokenAuthRequirement requirement)
         {
             var httpContext = (context.Resource as ActionContext).HttpContext;
+            var routeData = (context.Resource as ActionContext).RouteData;
             var cacheInstance = httpContext.RequestServices.GetService(typeof(ICacheProvider)) as ICacheProvider;
             var authService = httpContext.RequestServices.GetService(typeof(IAuthService)) as IAuthService;
-            var tokenAuthIdentities = context.User.Identities.Where(x => x.AuthenticationType == TokenAuthOptions.Scheme).FirstOrDefault();
+            var requestedUserName =Convert.ToString( httpContext.Items["x-access-username"]);
+            if (string.IsNullOrEmpty(requestedUserName))
+                return false;
 
-            if (tokenAuthIdentities == null) return false;
+            var controllerName = Convert.ToString(routeData.Values["controller"]);
+            var actionName = Convert.ToString(routeData.Values["action"]);
 
-            var authHeaderClaim = tokenAuthIdentities.Claims.Where(x => x.Type == ClaimTypes.Authentication).FirstOrDefault();
-
-            var uriClaim = context.User.Claims.Where(x => x.Type == ClaimTypes.Uri).FirstOrDefault();
-            var userName = context.User.Identities.Where(x => x.AuthenticationType == "AuthenticationTypes.Federation").FirstOrDefault().Name;
-            if (authHeaderClaim == null || uriClaim == null) return false;
-            var claimComponents = uriClaim.Value.Split('/').Skip(2).ToList();
-            var tobeMathedClaim = claimComponents[0].ToLower() + "/" + claimComponents[1].ToLower();
-            var currentCacheKey = string.Format("User-{0}-{1}", userName, tobeMathedClaim);
+            var tobeMathedClaim = controllerName.ToLower() + "/" + actionName.ToLower();
+            var currentCacheKey = string.Format("User-{0}-{1}", requestedUserName, tobeMathedClaim);
             if (!cacheInstance.Contains(currentCacheKey))
             {
-                var handler = new JwtSecurityTokenHandler();
-                var securityToken = handler.ReadJwtToken(Convert.ToString(httpContext.Items["x-access-token"]));
-                var clm = securityToken.Claims.Where(x => string.Equals(x.Type, "unique_name", StringComparison.CurrentCultureIgnoreCase)).SingleOrDefault();
-                var currentUserCacheKey = string.Format("User-{0}", userName);
+                var currentUserCacheKey = string.Format("User-{0}", requestedUserName);
                 if (!cacheInstance.Contains(currentUserCacheKey))
                 {
-                    var usr = authService.GetUser(userName).Result;
+                    var usr = authService.GetUser(requestedUserName).Result;
                     cacheInstance.Set<User>(currentUserCacheKey, usr, 1200);
                 }
-                var currentUserClaimsCacheKey = string.Format("**UserClaims-{0}", userName);
+                var currentUserClaimsCacheKey = string.Format("**UserClaims-{0}", requestedUserName);
                 if (!cacheInstance.Contains(currentUserClaimsCacheKey))
                 {
                     var claims = authService.GetClaims(cacheInstance.Get<User>(currentUserCacheKey)).Result;
                     cacheInstance.Set<IList<Claim>>(currentUserClaimsCacheKey, claims, 1200);
                 }
-                var permission = cacheInstance.Get<IList<Claim>>(currentUserClaimsCacheKey).Where(x => tobeMathedClaim.Contains(x.Type.ToLower())).Select(y => y.Value).FirstOrDefault();
+                var permission = cacheInstance.Get<IList<Claim>>(currentUserClaimsCacheKey).Where(x => tobeMathedClaim.Contains(x.Value.ToLower())).Select(y => y.Value).FirstOrDefault();
                 cacheInstance.Set<string>(currentCacheKey, permission, 1200);
             }
             var result = cacheInstance.Get<string>(currentCacheKey);
-            return ((!string.IsNullOrWhiteSpace(result)) && (result.ToLower() == "allowed"));
+            return (!string.IsNullOrWhiteSpace(result));
         }
     }
 }
