@@ -1,4 +1,4 @@
-﻿<div fxLayout="column" fxLayout.gt-md="row">
+<div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'FormField.Add'">
   <md-card style="padding: 16px;" fxFlex="90%">
     <md-toolbar color="primary">Add Form Field</md-toolbar>
     <md-card-content>
@@ -52,8 +52,8 @@
                    name="width"
                    placeholder="Width"
                    [(ngModel)]="formField.width"
-                   formControlName="width"/>
-            
+                   formControlName="width" />
+
           </md-input-container>
         </div>
 
@@ -118,7 +118,7 @@
         </div>
 
         <div fxLayout="column">
-          <md-slide-toggle  name="isRequired"  [(ngModel)]="formField.isRequired"  formControlName="isRequired" color="primary">
+          <md-slide-toggle name="isRequired" [(ngModel)]="formField.isRequired" formControlName="isRequired" color="primary">
             Is Required
           </md-slide-toggle>
         </div>

@@ -1,5 +1,4 @@
 <div class="sidenav-container" fxLayout="column">
-
   <md-toolbar color="primary" class="sidenav-toolbar mat-elevation-z2">
     <div fxLayout="row" style="width: 100%;">
       <span style="width: 22px; text-align: center; margin-left: -3px;" fxFlexAlign="center"><img src="assets/img/icon.png" style="width: 25px; vertical-align: text-top;"></span>
@@ -12,11 +11,9 @@
       </div>
     </div>
   </md-toolbar>
-
   <div class="sidenav-scrollbar-container" fxLayout="column">
       <md-nav-list [perfect-scrollbar] fxLayout="column" class="sidenav-list sidenav-toplevel">
         <ms-sidenav-item *ngFor="let item of items" [item]="item"></ms-sidenav-item>
       </md-nav-list>
   </div>
-
 </div>

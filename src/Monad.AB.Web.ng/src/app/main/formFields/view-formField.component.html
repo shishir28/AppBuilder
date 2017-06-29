@@ -1,4 +1,4 @@
-﻿<div fxLayout="column" fxLayout.gt-md="row">
+<div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'FormField.View'">
   <md-card style="padding: 16px;" fxFlex="90%">
     <md-toolbar color="primary">View Form Field</md-toolbar>
     <md-card-content>
@@ -101,10 +101,10 @@
         </div>
 
         <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
-          <button md-raised-button color="warn" style="margin-left: 8px;" type="button" (click)="deleteFormField(projectId,formField.formID,formField.id)">
+          <button md-raised-button color="warn" style="margin-left: 8px;" type="button" (click)="deleteFormField(projectId,formField.formID,formField.id)" *msElementAccess="'FormField.Delete'">
             Delete
           </button>
-          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="editFormField(projectId,formField.formID,formField.id);">
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="editFormField(projectId,formField.formID,formField.id);" *msElementAccess="'FormField.Edit'">
             Edit
           </button>
           <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="cancelChanges($event);">

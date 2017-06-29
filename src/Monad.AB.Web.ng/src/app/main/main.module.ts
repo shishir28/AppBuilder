@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SidenavComponent } from '../widgets/sidenav/sidenav.component';
@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from '../widgets/dialogs/dialog.module';
+import {ElementAccessDirective } from '../widgets/element-access.directive';
 import { HomeComponent } from './home/home.component';
 
 import { projectConfig } from './projects/projects.module'
@@ -41,6 +42,7 @@ import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
     ],
 
     declarations: [
+        ElementAccessDirective,
         SidenavComponent,
         SidenavItemComponent,
         IconSidenavDirective,
@@ -54,8 +56,9 @@ import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
         ...formConfig.declarations,
         ...formFieldConfig.declarations,
         ...formFieldViewConfig.declarations
-
-
+    ],
+    exports: [
+        ElementAccessDirective
     ],
     entryComponents: [
         ...projectConfig.entryComponents

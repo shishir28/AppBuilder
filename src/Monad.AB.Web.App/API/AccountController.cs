@@ -21,12 +21,14 @@ namespace Monad.AB.Web.App.Controllers
     {
         private IAccountService _accountService;
         private ICacheProvider _cacheInstance;
+        private IAuthService _authService;
         private readonly TokenAuthOptions _tokenOptions;
-        public AccountController(IAccountService accountService, TokenAuthOptions tokenOptions, ICacheProvider cacheInstance)
+        public AccountController(IAccountService accountService, IAuthService authService, TokenAuthOptions tokenOptions, ICacheProvider cacheInstance)
         {
             _accountService = accountService;
             _cacheInstance = cacheInstance;
             _tokenOptions = tokenOptions;
+            _authService = authService;
         }
         [HttpGet]
         [AllowAnonymous]
@@ -54,6 +56,7 @@ namespace Monad.AB.Web.App.Controllers
                     accountsWebApiModel.Token = GetToken(model.UserName, currentUser, expires);
                     CacheAccessClaims(model.UserName, currentUser, expires);
                     accountsWebApiModel.Authenticated = true;
+                    accountsWebApiModel.Claims = this.GetClaims(model.UserName);
                     return new ObjectResult(new { StatusCode = 200, Content = accountsWebApiModel });
                 }
                 //if (result.RequiresTwoFactor)
@@ -113,19 +116,19 @@ namespace Monad.AB.Web.App.Controllers
             return new StatusCodeResult(412);
         }
 
-        [HttpGet]
-        [AllowAnonymous]
-
-        [Route("GetClaims")]
-        public IList<ClaimViewModel> GetClaims()
+        
+        private IList<ClaimViewModel> GetClaims(string userName)
         {
-            return this.HttpContext.User.Claims.Select(x => new ClaimViewModel { ClaimType = x.Type, ClaimValue = x.Value }).ToList();
+            var currentCacheKey = string.Format("UserClaims-{0}", userName);
+            var claims = _cacheInstance.Get<IList<Claim>>(currentCacheKey);
+            return claims.Select(x=>new ClaimViewModel { ClaimType = x.Type, ClaimValue=x.Value}).ToList();
         }
 
-        private void CacheAccessClaims(string user, User currentUser, DateTime? expires)
+        private void CacheAccessClaims(string userName, User currentUser, DateTime? expires)
         {
-            var currentCacheKey = string.Format("UserClaims-{0}", currentUser);
-            _cacheInstance.Set(currentCacheKey, currentUser.Claims.Select(x => new Claim(x.ClaimType, x.ClaimValue)).ToList());
+            var currentCacheKey = string.Format("UserClaims-{0}", userName);
+            var claims = _authService.GetClaims(currentUser).Result;
+            _cacheInstance.Set(currentCacheKey, claims );
         }
 
         private string GetToken(string user, User currentUser, DateTime? expires)
@@ -146,3 +149,4 @@ namespace Monad.AB.Web.App.Controllers
 
     }
 }
+

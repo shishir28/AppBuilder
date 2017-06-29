@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { SidenavItem } from "./sidenav-item/sidenav-item.model";
 import { SidenavService } from "./sidenav.service";
 import * as _ from 'lodash';
@@ -42,9 +42,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
                 }, 400);
             }
         });
-
         this.breadcrumbService.addFriendlyNameForRoute('/projects', "Projects");
-
     }
 
     toggleIconSidenav() {
@@ -69,7 +67,6 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
     sortRecursive(array: SidenavItem[], propertyName: string) {
         let that = this;
-
         array.forEach(function (item) {
             let keys = _.keys(item);
             keys.forEach(function (key) {
@@ -78,7 +75,6 @@ export class SidenavComponent implements OnInit, OnDestroy {
                 }
             });
         });
-
         return _.sortBy(array, propertyName);
     };
 

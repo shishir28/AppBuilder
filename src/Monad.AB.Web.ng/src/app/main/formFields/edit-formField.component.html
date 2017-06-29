@@ -1,4 +1,4 @@
-﻿<div fxLayout="column" fxLayout.gt-md="row">
+<div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'FormField.Edit'">
   <md-card style="padding: 16px;" fxFlex="90%">
     <md-toolbar color="primary">Edit Form Field</md-toolbar>
     <md-card-content>
@@ -51,7 +51,7 @@
                    name="width"
                    placeholder="Width"
                    [(ngModel)]="formField.width"
-                   formControlName="width"/>
+                   formControlName="width" />
           </md-input-container>
         </div>
 

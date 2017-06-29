@@ -1,4 +1,4 @@
-﻿<div fxLayout="column" fxLayout.gt-md="row">
+<div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'Project.View'">
   <md-card style="padding: 16px;" fxFlex="90%">
     <md-toolbar color="primary">View Project</md-toolbar>
     <md-card-content>
@@ -52,10 +52,10 @@
           <button md-raised-button color="primary" disabled="disabled" type="button">
             Build
           </button>
-          <button md-raised-button color="warn" style="margin-left: 8px;" type="button" (click)="deleteProject(project.id);">
+          <button md-raised-button color="warn" style="margin-left: 8px;" type="button" (click)="deleteProject(project.id);" *msElementAccess="'Project.Delete'">
             Delete
           </button>
-          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="editProject(project.id);">
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="editProject(project.id);" *msElementAccess="'Project.Edit'">
             Edit
           </button>
           <button md-raised-button color="primary" disabled="disabled" style="margin-left: 8px;" type="button">
@@ -68,12 +68,12 @@
       </form>
 
       <div fxLayout="row" fxLayout.gt-md="column" style="margin-top: 20px;">
-        <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
-          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="addForm(project.id);">
+        <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center" *msElementAccess="'Form.Add'">
+          <button md-raised-button color="primary" style="margin-left: 8px;" type="button" (click)="addForm(project.id);" >
             Add Form
           </button>
         </div>
-        <div fxLayout="row" class="table-container mat-elevation-z2" fxLayout.gt-sm="row" fxLayoutAlign="end center">
+        <div fxLayout="row" class="table-container mat-elevation-z2" fxLayout.gt-sm="row" fxLayoutAlign="end center" *msElementAccess="'Form.List'">
           <table class="table" [class.table-hover]="tableHover" [class.table-striped]="tableStriped" [class.table-condensed]="tableCondensed" [class.table-bordered]="tableBordered">
             <thead>
               <tr>
@@ -89,9 +89,9 @@
                 <td>{{ form.title }}</td>
                 <td hidden="hidden">{{ form.dependencyID }}</td>
                 <td>
-                  <button md-icon-button (click)="viewForm(project.id,form.id);" style="margin-left: 1px;"><md-icon>pageview</md-icon></button>
-                  <button md-icon-button (click)="editForm(project.id,form.id);" style="margin-left: 1px;"><md-icon>edit</md-icon></button>
-                  <button md-icon-button (click)="deleteForm(project.id,form.id);" style="margin-left: 1px;"><md-icon>delete</md-icon></button>
+                  <button md-icon-button (click)="viewForm(project.id,form.id);" style="margin-left: 1px;" *msElementAccess="'Form.View'"><md-icon>pageview</md-icon></button>
+                  <button md-icon-button (click)="editForm(project.id,form.id);" style="margin-left: 1px;" *msElementAccess="'Form.Edit'"><md-icon>edit</md-icon></button>
+                  <button md-icon-button (click)="deleteForm(project.id,form.id);" style="margin-left: 1px;" *msElementAccess="'Form.Delete'"><md-icon>delete</md-icon></button>
                 </td>
               </tr>
             </tbody>

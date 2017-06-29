@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { SidenavItem } from "./sidenav-item/sidenav-item.model";
 import { BehaviorSubject, Observable } from "rxjs";
 import * as _ from 'lodash';

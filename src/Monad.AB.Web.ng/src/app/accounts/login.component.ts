@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { fadeInAnimation } from "../route.animation";
 import { AccountsService } from './shared/accounts.service';
@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
                     localStorage.setItem('currentUser', response.content.user.userName);
                     localStorage.setItem('isCurrentUserAuthenticated', response.content.authenticated);
                     localStorage.setItem('currentUserToken', response.content.token);
+                    localStorage.setItem('accessRights', JSON.stringify(response.content.claims));
                     this.router.navigateByUrl('/projects');
                 } else if (response.statusCode == 412) {
                     this.serverErrorMessage = "Invalid Credentials!";
@@ -39,5 +40,4 @@ export class LoginComponent implements OnInit {
                 }
             });
     }
-
 }

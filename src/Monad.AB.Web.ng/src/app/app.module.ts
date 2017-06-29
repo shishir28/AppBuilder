@@ -1,4 +1,4 @@
-﻿import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './shared/guards/index';
@@ -15,10 +15,13 @@ import { AccountsModule } from './accounts/accounts.module';
 import { UsersModule } from './users/users.module';
 import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 import { SortablejsModule, SortablejsOptions } from 'angular-sortablejs';
+
+import { httpFactory } from './shared/httpFactory';
+
 import { NotFoundComponent } from './shared/not-found.component';
-import {httpFactory } from './shared/httpFactory';
 import { AccessDeniedComponent } from './shared/access-denied.component';
 import { InternalServerErrorComponent } from './shared/internal-server-error.component';
+
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
     swipePropagation: false
