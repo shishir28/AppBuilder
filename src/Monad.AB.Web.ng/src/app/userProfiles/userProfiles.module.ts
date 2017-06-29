@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MaterialComponentsModule } from '../material/material-components.module';
@@ -32,4 +32,4 @@ import { ViewUserProfileComponent } from "./view-user-profile.component";
     ]
 })
 
-export class UsersModule { }
+export class UserProfilesModule { }

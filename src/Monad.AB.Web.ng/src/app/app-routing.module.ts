@@ -10,7 +10,7 @@ import { AuthGuard } from './shared/guards/index';
 // ---------Routes----------
 import { mainRoutes } from './main/main-routing.module';
 import { accountsRoutes } from './accounts/accounts-routing.module';
-import { usersRoutes } from './users/users-routing.module';
+import { userProfilesRoutes } from './userProfiles/userProfiles.routing';
 
 // -------------------
 
@@ -23,7 +23,7 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         children: [
             ...mainRoutes,
-            ...usersRoutes
+            ...userProfilesRoutes
         ]
     },
     { path: 'notFound', component: NotFoundComponent },

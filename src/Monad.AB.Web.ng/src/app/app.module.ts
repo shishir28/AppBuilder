@@ -12,7 +12,7 @@ import { PerfectScrollbarConfigInterface, PerfectScrollbarModule } from "ngx-per
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MainModule } from './main/main.module';
 import { AccountsModule } from './accounts/accounts.module';
-import { UsersModule } from './users/users.module';
+import { UserProfilesModule } from './userProfiles/userProfiles.module';
 import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 import { SortablejsModule, SortablejsOptions } from 'angular-sortablejs';
 
@@ -43,7 +43,7 @@ const sortablejsConfig: SortablejsOptions = {
         BrowserAnimationsModule,
         MainModule,
         AccountsModule,
-        UsersModule,
+        UserProfilesModule,
         SortablejsModule,
         MaterialComponentsModule,
         FlexLayoutModule,
