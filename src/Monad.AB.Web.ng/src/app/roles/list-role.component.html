@@ -13,16 +13,20 @@
             <thead>
               <tr>
                 <th>Name</th>
+                <th>Description</th>
+                <th>Is Active</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let role of roles">
                 <td>{{ role.name }}</td>
+                <td>{{ role.description }}</td>
+                <td><button md-icon-button> <md-icon>{{ role.isActive?"check":"close"}}</md-icon></button></td>
                 <td>
-                  <button md-icon-button (click)="viewRole(role.id);" style="margin-left: 1px;" *msElementAccess="'Role.View'"><md-icon>pageview</md-icon></button>
-                  <button md-icon-button (click)="editRole(role.id);" style="margin-left: 1px;" *msElementAccess="'Role.Edit'"><md-icon>edit</md-icon></button>
-                  <button md-icon-button (click)="deleteRole(role.id);" style="margin-left: 1px;" *msElementAccess="'Role.Delete'"><md-icon>delete</md-icon></button>
+                  <button md-icon-button (click)="viewRole(role.roleId);" style="margin-left: 1px;" *msElementAccess="'Role.View'"><md-icon>pageview</md-icon></button>
+                  <button md-icon-button (click)="editRole(role.roleId);" style="margin-left: 1px;" *msElementAccess="'Role.Edit'"><md-icon>edit</md-icon></button>
+                  <button md-icon-button (click)="deleteRole(role.roleId);" style="margin-left: 1px;" *msElementAccess="'Role.Delete'"><md-icon>delete</md-icon></button>
                 </td>
               </tr>
             </tbody>

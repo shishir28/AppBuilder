@@ -1,3 +1,54 @@
-<p>
-  edit-role works!
-</p>
+<div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'Role.Edit'">
+  <md-card style="padding: 16px;" fxFlex="90%">
+    <md-toolbar color="primary">Edit Role</md-toolbar>
+    <md-card-content>
+      <form [formGroup]="formGroup" novalidate (ngSubmit)="saveRole(formGroup.value)">
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="name"
+                   placeholder="Name"
+                   required
+                   [(ngModel)]="role.name"
+                   formControlName="name"
+                   [class.invalid]="formGroup.controls['name'].touched && !formGroup.controls['name'].valid" />
+            <md-hint [hidden]="formGroup.controls['name'].pristine || formGroup.controls['name'].valid">
+              <span [hidden]="!formGroup.controls['name'].errors?.required">Field Name is required.</span>
+            </md-hint>
+          </md-input-container>
+        </div>
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput
+                   name="description"
+                   placeholder="Description"
+                   [(ngModel)]="role.description"
+                   formControlName="description" />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-slide-toggle name="isActive" [(ngModel)]="role.isActive" formControlName="isActive" color="primary">
+            Is Active
+          </md-slide-toggle>
+        </div>
+
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutAlign="end center">
+            <button md-raised-button
+                    type="button" (click)="cancelChanges($event);">
+              Cancel
+            </button>
+            <button md-button color="primary"
+                    md-raised-button
+                    style="margin-left: 8px;"
+                    type="submit"
+                    [disabled]="!formGroup.valid">
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>

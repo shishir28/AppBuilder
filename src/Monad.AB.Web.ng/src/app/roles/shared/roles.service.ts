@@ -15,20 +15,20 @@ export class RolesService {
             .map(res => res.json());
     }
 
-    //getRole(id) {
-    //    return this.http.get("/api/role/GetProject?projectId=" + id)
-    //        .map(res => res.json());
-    //}
+    getRole(id) {
+        return this.http.get("/api/role/GetRoleById?roleId=" + id)
+            .map(res => res.json());
+    }
 
     //addRole(role) {
     //    return this.http.post("/api/role/addproject/", JSON.stringify(role))
     //        .map(res => res.json());
     //}
 
-    //updateRole(role) {
-    //    return this.http.put("/api/role/editproject/", JSON.stringify(role))
-    //        .map(res => res.json());
-    //}
+    updateRole(role) {
+        return this.http.put("/api/role/editrole/", JSON.stringify(role))
+            .map(res => res.json());
+    }
 
     deleteRole(id) {
         return this.http.delete("/api/role/deleteproject?projectId=" + id)

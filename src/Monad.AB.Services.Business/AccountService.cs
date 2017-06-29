@@ -139,9 +139,8 @@ namespace Monad.AB.Services.Business
             if (tempRole == null)
                 return IdentityResult.Failed(new IdentityError[] { new IdentityError { Code = "", Description = "Role Not Found!" } });
 
-            //tempRole.IsActive = role.IsActive;
-            //tempRole.TenantId = role.TenantId;
-            //tempRole.Description = role.Description;
+            tempRole.IsActive = role.IsActive;
+            tempRole.Description = role.Description;
             return await RoleManager.UpdateAsync(tempRole);
         }
     }

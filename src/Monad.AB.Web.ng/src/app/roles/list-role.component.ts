@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MdSnackBar } from "@angular/material";
 import { DialogService } from '../widgets/dialogs/dialog.service';
 import { RolesService } from './shared/roles.service';
+import { RoleViewModel } from './shared/role';
+
 
 @Component({
     selector: 'ms-list-role',
@@ -13,7 +15,7 @@ export class ListRoleComponent implements OnInit {
     serverErrorMessage: string;
     @ViewChild('tbody')
     tbody: ElementRef;
-    private roles: any[];
+    private roles: RoleViewModel[];
     constructor(private router: Router,
         private route: ActivatedRoute,
         private snackBar: MdSnackBar,

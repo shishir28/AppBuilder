@@ -6,13 +6,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Monad.AB.Web.App.Models
 {
-    public class UserRoleViewModel : LookupTypeViewModel
+    public class UserRoleViewModel : RoleViewModel
     {
         public bool IsSelected { get; set; }
     }
-    public class LookupTypeViewModel : AddRoleViewModel
+    public class RoleViewModel : AddRoleViewModel
     {
-        public string ApplicationRoleId { get; set; }
+        public string RoleId { get; set; }
     }
 
     public class AddRoleViewModel
@@ -31,10 +31,10 @@ namespace Monad.AB.Web.App.Models
         [NotMapped]
         [Display(Name = "Role Description")]
         public string Description { get; set; }
-
-        public int TenantId { get; set; }
+        
         public bool IsActive { get; set; }
     }
+
     public class RoleRightsViewModel
     {
         public string Id { get; set; }

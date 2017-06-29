@@ -72,11 +72,11 @@ namespace Monad.AB.Web.App
                .ForMember(dest => dest.FormTitle, src => src.MapFrom(s => s.Title))
                .ForMember(dest => dest.FormDescription, src => src.MapFrom(s => s.Description));
 
-                cfg.CreateMap<Role, LookupTypeViewModel>()
-               .ForMember(dest => dest.ApplicationRoleId, src => src.MapFrom(s => s.Id));
+                cfg.CreateMap<Role, RoleViewModel>()
+               .ForMember(dest => dest.RoleId, src => src.MapFrom(s => s.Id));
 
-                cfg.CreateMap<LookupTypeViewModel, Role>()
-              .ForMember(dest => dest.Id, src => src.MapFrom(s => s.ApplicationRoleId));
+                cfg.CreateMap<RoleViewModel, Role>()
+              .ForMember(dest => dest.Id, src => src.MapFrom(s => s.RoleId));
             });
         }
     }

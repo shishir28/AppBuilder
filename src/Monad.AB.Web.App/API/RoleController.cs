@@ -26,26 +26,26 @@ namespace Monad.AB.Web.App.Controllers
 
         [HttpGet]
         [Route("GetAllRoles")]
-        public IEnumerable<LookupTypeViewModel> GetAllRoles()
+        public IEnumerable<RoleViewModel> GetAllRoles()
         {
             var roles = _roleService.GetAll();
-            return Mapper.Map<IEnumerable<Role>, IEnumerable<LookupTypeViewModel>>(roles);
+            return Mapper.Map<IEnumerable<Role>, IEnumerable<RoleViewModel>>(roles);
         }
 
         [HttpGet]
         [Route("GetRoleById")]
-        public LookupTypeViewModel GetRoleById(string roleId)
+        public RoleViewModel GetRoleById(string roleId)
         {
             var role = _roleService.GetRoleById(roleId);
-            return Mapper.Map<Role, LookupTypeViewModel>(role.Result);
+            return Mapper.Map<Role, RoleViewModel>(role.Result);
         }
 
         [HttpGet]
         [Route("GetRoleByName")]
-        public LookupTypeViewModel GetRoleByName(string roleName)
+        public RoleViewModel GetRoleByName(string roleName)
         {
             var role = _roleService.GetRoleByName(roleName);
-            return Mapper.Map<Role, LookupTypeViewModel>(role.Result);
+            return Mapper.Map<Role, RoleViewModel>(role.Result);
         }
 
         [HttpPost]
@@ -61,8 +61,7 @@ namespace Monad.AB.Web.App.Controllers
 
                 if (result.Succeeded)
                 {
-                    HttpContext.Response.StatusCode = 201;
-                    return new ObjectResult(new { StatusCode = 201, Content = $@"Role {model.Name} Created" }); // mvc always http client always receives 200 as http response message so need this hack 
+                    return new ObjectResult(new { StatusCode = 201, Content = $@"Role {model.Name} Created" });
                 }
                 else
                     return new ObjectResult(new { StatusCode = 200, Content = result.Errors });
@@ -74,17 +73,16 @@ namespace Monad.AB.Web.App.Controllers
         [HttpPut]
         [AllowAnonymous]
         [Route("EditRole")]
-        public async Task<IActionResult> EditRole([FromBody] LookupTypeViewModel model)
+        public async Task<IActionResult> EditRole([FromBody] RoleViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var applicationRole = Mapper.Map<LookupTypeViewModel, Role>(model);
+                var applicationRole = Mapper.Map<RoleViewModel, Role>(model);
                 var result = await _accountService.UpdateRole(applicationRole);
 
                 if (result.Succeeded)
                 {
-                    HttpContext.Response.StatusCode = 204;
-                    return new ObjectResult(new { StatusCode = 204 });   // mvc always http client always receives 200 as http response message so need this hack 
+                    return new ObjectResult(new { StatusCode = 204 });   
                 }
                 else
                     return new ObjectResult(new { StatusCode = 400, Content = result.Errors });
