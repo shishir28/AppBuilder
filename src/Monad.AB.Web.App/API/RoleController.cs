@@ -55,7 +55,6 @@ namespace Monad.AB.Web.App.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.IsActive = true;
                 var applicationRole = Mapper.Map<AddRoleViewModel, Role>(model);
                 var result = await _accountService.AddRole(applicationRole);
 

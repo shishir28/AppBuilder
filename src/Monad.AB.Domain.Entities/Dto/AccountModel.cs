@@ -49,7 +49,6 @@ namespace Monad.AB.Domain.Entities.Dto
         public DateTime CreatedDateUtc { get; set; }
         public DateTime LastModifiedDateUtc { get; set; }
         public int LastModifiedBy { get; set; }
-        public int TenantId { get; set; }
         public bool LockoutEnabled { get; set; }
 
         public int UserRole { get; set; }
@@ -65,7 +64,6 @@ namespace Monad.AB.Domain.Entities.Dto
         public string Name { get; set; }
         public string NormalizedName { get; set; }
         public string Description { get; set; }
-        public int TenantId { get; set; }
         public bool IsActive { get; set; }
     }
 

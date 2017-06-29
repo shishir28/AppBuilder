@@ -77,6 +77,8 @@ namespace Monad.AB.Web.App
 
                 cfg.CreateMap<RoleViewModel, Role>()
               .ForMember(dest => dest.Id, src => src.MapFrom(s => s.RoleId));
+                cfg.CreateMap<Role, AddRoleViewModel>();
+                cfg.CreateMap<AddRoleViewModel, Role>();
             });
         }
     }

@@ -20,10 +20,10 @@ export class RolesService {
             .map(res => res.json());
     }
 
-    //addRole(role) {
-    //    return this.http.post("/api/role/addproject/", JSON.stringify(role))
-    //        .map(res => res.json());
-    //}
+    addRole(role) {
+        return this.http.post("/api/role/addrole/", JSON.stringify(role))
+            .map(res => res.json());
+    }
 
     updateRole(role) {
         return this.http.put("/api/role/editrole/", JSON.stringify(role))
