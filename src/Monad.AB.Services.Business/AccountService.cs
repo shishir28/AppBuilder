@@ -127,5 +127,22 @@ namespace Monad.AB.Services.Business
             var user = UserManager.FindByNameAsync(userName).Result;
             return await Task.FromResult<User>(user);
         }
+
+        public async Task<IdentityResult> AddRole(Role role)
+        {
+            return await RoleManager.CreateAsync(role);
+        }
+
+        public async Task<IdentityResult> UpdateRole(Role role)
+        {
+            var tempRole = await RoleManager.FindByNameAsync(role.Name);
+            if (tempRole == null)
+                return IdentityResult.Failed(new IdentityError[] { new IdentityError { Code = "", Description = "Role Not Found!" } });
+
+            //tempRole.IsActive = role.IsActive;
+            //tempRole.TenantId = role.TenantId;
+            //tempRole.Description = role.Description;
+            return await RoleManager.UpdateAsync(tempRole);
+        }
     }
 }

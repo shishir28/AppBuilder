@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // ---------Routes--------------------------------------------------
@@ -6,7 +6,6 @@ import { projectsRoutes } from './projects/projects.routing';
 import { formsRoutes } from './forms/forms.routing';
 import { formFieldsRoutes } from './formFields/formFields.routing';
 import { formFieldViewsRoutes } from './formFieldViews/formFieldViews.routing';
-
 // -----------------------------------------------------------------
 import { IconsComponent } from '../widgets/icons/icons.component';
 

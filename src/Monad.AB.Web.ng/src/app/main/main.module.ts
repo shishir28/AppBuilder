@@ -12,13 +12,13 @@ import { ClickOutsideDirective } from '../widgets/utils/click-outside.directive'
 import { SidenavService } from '../widgets/sidenav/sidenav.service';
 import { MediaReplayService } from '../widgets/sidenav/mediareplay/media-replay.service';
 import { BreadcrumbService } from '../widgets/breadcrumb/breadcrumb.service';
-import { MaterialComponentsModule } from '../material/material-components.module';
+import { MaterialComponentsModule } from '../shared/material-components.module';
+import { SharedComponentsModule } from '../shared/shared-components.module';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from '../widgets/dialogs/dialog.module';
-import {ElementAccessDirective } from '../widgets/element-access.directive';
 import { HomeComponent } from './home/home.component';
 
 import { projectConfig } from './projects/projects.module'
@@ -31,6 +31,7 @@ import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
         CommonModule,
         RouterModule,
         MaterialComponentsModule,
+        SharedComponentsModule,
         FlexLayoutModule,
         FormsModule,
         DialogModule,
@@ -41,8 +42,7 @@ import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
         ...formFieldViewConfig.imports
     ],
 
-    declarations: [
-        ElementAccessDirective,
+    declarations: [        
         SidenavComponent,
         SidenavItemComponent,
         IconSidenavDirective,
@@ -56,10 +56,7 @@ import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
         ...formConfig.declarations,
         ...formFieldConfig.declarations,
         ...formFieldViewConfig.declarations
-    ],
-    exports: [
-        ElementAccessDirective
-    ],
+    ],    
     entryComponents: [
         ...projectConfig.entryComponents
     ],

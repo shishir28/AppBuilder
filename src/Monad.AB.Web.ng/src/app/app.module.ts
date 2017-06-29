@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './shared/guards/index';
-import { MaterialComponentsModule } from './material/material-components.module';
+import { MaterialComponentsModule } from './shared/material-components.module';
+import { SharedComponentsModule } from './shared/shared-components.module';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { MdIconRegistry, } from "@angular/material";
@@ -13,6 +15,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MainModule } from './main/main.module';
 import { AccountsModule } from './accounts/accounts.module';
 import { UserProfilesModule } from './userProfiles/userProfiles.module';
+import { RolesModule } from './roles/roles.module';
+
 import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 import { SortablejsModule, SortablejsOptions } from 'angular-sortablejs';
 
@@ -44,8 +48,10 @@ const sortablejsConfig: SortablejsOptions = {
         MainModule,
         AccountsModule,
         UserProfilesModule,
+        RolesModule,
         SortablejsModule,
         MaterialComponentsModule,
+        SharedComponentsModule,
         FlexLayoutModule,
         PerfectScrollbarModule.forRoot(perfectScrollbarConfig),
     ],

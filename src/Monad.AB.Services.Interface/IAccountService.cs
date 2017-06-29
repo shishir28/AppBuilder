@@ -14,5 +14,7 @@ namespace Monad.AB.Services.Interface
         Task<IList<Claim>> GetClaims(User user);
         Task<User> GetUser(string userName);
         void LogOff(string userName);
+        Task<IdentityResult> AddRole(Role role);
+        Task<IdentityResult> UpdateRole(Role role);
     }
 }

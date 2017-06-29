@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Monad.AB.Domain.Entities;
+using Monad.AB.Domain.Entities.Identity;
 using Monad.AB.Web.App.Models;
 
 namespace Monad.AB.Web.App
@@ -65,6 +66,17 @@ namespace Monad.AB.Web.App
                   .ForMember(dest => dest.Name, src => src.MapFrom(s => s.FormName))
                .ForMember(dest => dest.Title, src => src.MapFrom(s => s.FormTitle))
                .ForMember(dest => dest.Description, src => src.MapFrom(s => s.FormDescription));
+
+                cfg.CreateMap<Form, EditFormViewModel>()
+               .ForMember(dest => dest.FormName, src => src.MapFrom(s => s.Name))
+               .ForMember(dest => dest.FormTitle, src => src.MapFrom(s => s.Title))
+               .ForMember(dest => dest.FormDescription, src => src.MapFrom(s => s.Description));
+
+                cfg.CreateMap<Role, LookupTypeViewModel>()
+               .ForMember(dest => dest.ApplicationRoleId, src => src.MapFrom(s => s.Id));
+
+                cfg.CreateMap<LookupTypeViewModel, Role>()
+              .ForMember(dest => dest.Id, src => src.MapFrom(s => s.ApplicationRoleId));
             });
         }
     }

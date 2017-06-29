@@ -42,7 +42,8 @@ namespace Monad.AB.Infrastructure.DependencyResolver
 
             services.AddTransient<IRoleStore<Role>, CustomRoleStore>();
             services.AddTransient<IUserStore<User>, CustomUserStore>();
-
+            services.AddTransient<ILookupTypeRepository, LookupTypeRepository>();
+            services.AddTransient<ILookupValueRepository, LookupValueRepository>();
             services.AddTransient<IControlTypeRepository, ControlTypeRepository>();
             services.AddTransient<IFieldTypeRepository, FieldTypeRepository>();
             services.AddTransient<IFormFieldRepository, FormFieldRepository>();
@@ -83,7 +84,7 @@ namespace Monad.AB.Infrastructure.DependencyResolver
             //services.AddTransient<ISolutionBuilder, SolutionBuilder>();
             //services.AddTransient<IBuildScriptBuilder, BuildScriptBuilder>();
             services.AddTransient<IActivityService, ActivityService>();
-            //services.AddTransient<IRoleService, RoleService>();
+            services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<IProjectService, ProjectService>();
         }
     }

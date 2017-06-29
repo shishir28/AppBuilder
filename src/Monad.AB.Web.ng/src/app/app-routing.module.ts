@@ -11,25 +11,27 @@ import { AuthGuard } from './shared/guards/index';
 import { mainRoutes } from './main/main-routing.module';
 import { accountsRoutes } from './accounts/accounts-routing.module';
 import { userProfilesRoutes } from './userProfiles/userProfiles.routing';
+import { rolesRoutes } from './roles/roles.routing';
 
-// -------------------
 
 //-------------
 const routes: Routes = [
     ...accountsRoutes,
+   
     {
         path: '',
         component: HomeComponent,
         canActivate: [AuthGuard],
         children: [
             ...mainRoutes,
-            ...userProfilesRoutes
+            ...userProfilesRoutes,
+            ...rolesRoutes,
         ]
     },
     { path: 'notFound', component: NotFoundComponent },
     { path: 'accessDenied', component: AccessDeniedComponent },
-    { path: 'internalServerError', component: InternalServerErrorComponent },
-    { path: '**', redirectTo: '/notFound' }
+    { path: 'internalServerError', component: InternalServerErrorComponent }
+    //{ path: '**', redirectTo: '/notFound' }
 ];
 
 @NgModule({
