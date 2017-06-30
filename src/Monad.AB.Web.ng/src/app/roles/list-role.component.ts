@@ -43,32 +43,4 @@ export class ListRoleComponent implements OnInit {
     editRole(roleId): void {
         this.router.navigateByUrl('/roles/edit/' + roleId);
     }
-
-    deleteRole(roleId): void {
-        this.dialogService.confirm('Delete Role', 'Are you sure want to delete this role?')
-            .subscribe(result => {
-                let res: any = result;
-                if (res == 'yes') {
-                    this.rolesService.deleteRole(roleId)
-                        .subscribe(response => {
-                            if (response.statusCode == 204) {
-                                let snackBarRef = this.snackBar.open('Role deleted Successfully!', 'Close', {
-                                    duration: 500
-                                });
-                                snackBarRef.afterDismissed().subscribe(() => {
-                                    this.router.navigateByUrl('/roles');
-                                });
-
-                            } else if (response.statusCode == 412) {
-                                this.serverErrorMessage = "Some details were missing!";
-                            } else {
-                                this.serverErrorMessage = response.content;
-                            }
-                        });
-                }
-            });
-    }
-
-    
-
 }

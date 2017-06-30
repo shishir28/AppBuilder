@@ -66,6 +66,8 @@ namespace Monad.AB.Infrastructure.DependencyResolver
             services.AddTransient<IResourceRepository, ResourceRepository>();
             services.AddTransient<IResourceTypeRepository, ResourceTypeRepository>();
             services.AddTransient<IRoleRightRepository, RoleRightRepository>();
+            services.AddTransient<IRoleRightRequestRepository, RoleRightRequestRepository>();
+
 
             services.AddTransient<IRoleStore<Role>, CustomRoleStore>();
             services.AddTransient<IUserStore<User>, CustomUserStore>();

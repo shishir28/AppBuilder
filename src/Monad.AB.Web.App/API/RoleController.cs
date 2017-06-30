@@ -78,7 +78,6 @@ namespace Monad.AB.Web.App.Controllers
             {
                 var applicationRole = Mapper.Map<RoleViewModel, Role>(model);
                 var result = await _accountService.UpdateRole(applicationRole);
-
                 if (result.Succeeded)
                 {
                     return new ObjectResult(new { StatusCode = 204 });   
@@ -89,19 +88,28 @@ namespace Monad.AB.Web.App.Controllers
             }
             return new StatusCodeResult(412);
         }
+
         [HttpGet]
         [Route("GetRolePermissions")]
-        public IList<RoleRightsViewModel> GetRolePermissions(string applicationRole)
+        public IList<RoleRightsViewModel> GetRolePermissions(string roleName)
         {
-            var response = _roleService.GetRoleRights(applicationRole);
-            return Mapper.Map<IList<RoleRightsDto>, IList<RoleRightsViewModel>>(response);
+            var response = _roleService.GetRoleRights(roleName);
+            return Mapper.Map<IList<RoleRightRequest>, IList<RoleRightsViewModel>>(response);
         }
-        [HttpPost]
+        [HttpPut]
         [Route("UpdateRoleRights")]
-        public IActionResult UpdateRoleRights([FromBody] UpdateRoleRightsView model)
+        public IActionResult UpdateRoleRights([FromBody] UpdateRoleRightsViewModel model)// [FromBody] string roleId, [FromBody] IList<RoleRightsViewModel> model)
         {
-            _roleService.UpdateRoleRights(model.RoleRights, model.ApplicationRoleId);
-            return (new ObjectResult(true) { StatusCode = 200 }); ;
+            try
+            {
+                var updateData = Mapper.Map<IList<RoleRightsViewModel>, IList<RoleRightRequest>>(model.RoleRights);
+                _roleService.UpdateRoleRights(model.ApplicationRoleId, updateData);
+                return new ObjectResult(new { StatusCode = 204, Content = $@"Role Rights updated!" });
+            }
+            catch (System.Exception ex)
+            {
+                return new ObjectResult(new { StatusCode = 400, Content = $@"Role Rights could not be updated!" });
+            }
         }
         #endregion  User Management       
     }

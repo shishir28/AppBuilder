@@ -81,6 +81,7 @@ export class HttpInterceptor extends Http {
 
     private interceptErrors(err: any): Observable<Response> {
         console.log(err);
+
         if (err.status === 404) {
             window.location.href = '/notFound';
             return Observable.empty();

@@ -15,7 +15,7 @@ namespace  Monad.AB.Services.Interface
         void AddRoleRight(RoleRight roleRight);
         void EditRoleRight(RoleRight roleRight);
         void DeleteRoleRight(RoleRight roleRight);
-        IList<RoleRightsDto> GetRoleRights(string applicationRole);
-        void UpdateRoleRights(List<RoleRightsDto> roleRight, string roleId);
+        IList<RoleRightRequest> GetRoleRights(string applicationRole);
+        void UpdateRoleRights(string roleId, IList<RoleRightRequest> roleRightsDto);
     }
 }

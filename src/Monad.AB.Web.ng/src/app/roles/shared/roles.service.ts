@@ -2,6 +2,8 @@ import { Http, URLSearchParams, Response, Headers, RequestOptions } from '@angul
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable'
+import { RoleViewModel, RoleRightsViewModel, UpdateRoleRightsViewModel } from './role';
+
 @Injectable()
 
 export class RolesService {
@@ -30,13 +32,16 @@ export class RolesService {
             .map(res => res.json());
     }
 
-    deleteRole(id) {
-        return this.http.delete("/api/role/deleteproject?projectId=" + id)
+    getRolePermission(roleName): Observable<any[]> {
+        return this.http.get('/api/role/GetRolePermissions?roleName=' + roleName)
             .map(res => res.json());
     }
 
-    private extractData(res: Response) {
-        let body = res.json();
-        return body || {};
+    saveRolePermission(roleId, rolePermissions: RoleRightsViewModel[]) {
+        let data = new UpdateRoleRightsViewModel();
+        data.applicationRoleId = roleId;
+        data.roleRights = rolePermissions;
+        return this.http.put('/api/role/UpdateRoleRights', JSON.stringify(data))
+            .map(res => res.json());
     }
 }

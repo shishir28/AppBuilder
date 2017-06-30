@@ -5,7 +5,7 @@ import { MdSnackBar } from "@angular/material";
 import { DialogService } from '../widgets/dialogs/dialog.service';
 
 import { RolesService } from './shared/roles.service';
-import { RoleViewModel } from './shared/role';
+import { RoleViewModel, RoleRightsViewModel } from './shared/role';
 
 @Component({
     selector: 'ms-view-role',
@@ -13,7 +13,7 @@ import { RoleViewModel } from './shared/role';
     styleUrls: ['./view-role.component.scss']
 })
 export class ViewRoleComponent implements OnInit {
-    formGroup: FormGroup;
+    rolePermissions: RoleRightsViewModel[];
     role: RoleViewModel = new RoleViewModel();
     serverErrorMessage: string;
     roleId: string;
@@ -35,6 +35,10 @@ export class ViewRoleComponent implements OnInit {
                 .subscribe(
                 role => {
                     this.role = role;
+                    this.rolesService.getRolePermission(this.role.name)
+                        .subscribe(permissions => {
+                            this.rolePermissions = permissions;
+                        });
                 },
                 response => {
                     if (response.status == 404) {
@@ -44,31 +48,22 @@ export class ViewRoleComponent implements OnInit {
         });
     }
 
-    editRole(roleId): void {
-        this.router.navigateByUrl('/roles/edit/' + roleId);
-    }
+    saveChanges(roleId): void {
+        if (!this.roleId)
+            return;
 
-    deleteRole(roleId): void {
-        this.dialogService.confirm('Delete Role', 'Are you sure want to delete this role?')
-            .subscribe(result => {
-                let res: any = result;
-                if (res == 'yes') {
-                    this.rolesService.deleteRole(roleId)
-                        .subscribe(response => {
-                            if (response.statusCode == 204) {
-                                let snackBarRef = this.snackBar.open('Role deleted Successfully!', 'Close', {
-                                    duration: 500
-                                });
-                                snackBarRef.afterDismissed().subscribe(() => {
-                                    this.router.navigateByUrl('/roles');
-                                });
-
-                            } else if (response.statusCode == 412) {
-                                this.serverErrorMessage = "Some details were missing!";
-                            } else {
-                                this.serverErrorMessage = response.content;
-                            }
-                        });
+        this.rolesService.saveRolePermission(this.role.roleId, this.rolePermissions)
+            .subscribe(
+            response => {                
+                if (response.statusCode == 204) {
+                    let snackBarRef = this.snackBar.open('Role Rights information saved Successfully!', 'Close', {
+                        duration: 500
+                    });
+                    snackBarRef.afterDismissed().subscribe(() => {
+                        this.router.navigateByUrl('/roles');
+                    });
+                } else {
+                    this.serverErrorMessage = response.content;
                 }
             });
     }

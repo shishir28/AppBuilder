@@ -37,24 +37,23 @@ namespace Monad.AB.Web.App.Models
 
     public class RoleRightsViewModel
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int ResourceTypeId { get; set; }
-        public bool IsAllowed { get; set; }
-        public bool IsCreate { get; set; }
+        public int Id { get; set; }
+        public string ResourceName { get; set; }
+        public bool IsAdd { get; set; }
         public bool IsEdit { get; set; }
+        public bool IsDelete { get; set; }
         public bool IsView { get; set; }
         public bool IsList { get; set; }
-        public bool IsDelete { get; set; }
-        public DateTime CreatedDateUtc { get; set; }
-        public DateTime LastModifiedDateUtc { get; set; }
-        public int LastModifiedBy { get; set; }
+        public int AddId { get; set; }
+        public int EditId { get; set; }
+        public int DeleteId { get; set; }
+        public int ViewId { get; set; }
+        public int ListId { get; set; }
     }
 
-    public class UpdateRoleRightsView
+    public class UpdateRoleRightsViewModel
     {
-        public List<RoleRightsDto> RoleRights { get; set; }
+        public List<RoleRightsViewModel> RoleRights { get; set; }
         public string ApplicationRoleId { get; set; }
     }
 }

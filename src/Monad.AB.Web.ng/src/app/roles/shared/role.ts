@@ -14,21 +14,22 @@ export class UserRoleViewModel extends RoleViewModel {
 }
 
 export class RoleRightsViewModel {
-    id: string;
-    name: string;
-    description: string;
-    resourceTypeId: number;
-    isAllowed: boolean;
-    isCreate: boolean;
-    isEdit: boolean;
+    Id: number;
+    resourceName: string;
+    isAdd: boolean;
+    isedit: boolean;
+    isDelete: boolean;
     isView: boolean;
     isList: boolean;
-    isDelete: boolean;
-    createdDateUtc: Date;
-    lastModifiedDateUtc: Date;
-    lastModifiedBy: number;
+    addId: number;
+    editId: number;
+    deleteId: number;
+    viewId: number;
+    listId: number;
 }
-//export interface UpdateRoleRightsView {
-//    RoleRights: List<RoleRightsDto>;
-//    ApplicationRoleId: string;
-//}
+
+
+export class UpdateRoleRightsViewModel {
+    roleRights: RoleRightsViewModel[];
+    applicationRoleId: string;
+}

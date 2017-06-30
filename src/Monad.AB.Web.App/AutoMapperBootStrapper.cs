@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Monad.AB.Domain.Entities;
+using Monad.AB.Domain.Entities.Dto;
 using Monad.AB.Domain.Entities.Identity;
 using Monad.AB.Web.App.Models;
 
@@ -79,6 +80,23 @@ namespace Monad.AB.Web.App
               .ForMember(dest => dest.Id, src => src.MapFrom(s => s.RoleId));
                 cfg.CreateMap<Role, AddRoleViewModel>();
                 cfg.CreateMap<AddRoleViewModel, Role>();
+
+
+                cfg.CreateMap<RoleRightRequest, RoleRightsViewModel>()
+              .ForMember(dest => dest.IsAdd, src => src.MapFrom(s => s.IsAdd == 1))
+              .ForMember(dest => dest.IsDelete, src => src.MapFrom(s => s.IsDelete == 1))
+              .ForMember(dest => dest.IsEdit, src => src.MapFrom(s => s.IsEdit == 1))
+              .ForMember(dest => dest.IsView, src => src.MapFrom(s => s.IsView == 1))
+              .ForMember(dest => dest.IsList, src => src.MapFrom(s => s.IsList == 1));
+
+                cfg.CreateMap<RoleRightsViewModel, RoleRightRequest>()
+              .ForMember(dest => dest.IsAdd, src => src.MapFrom(s => s.IsAdd?1:0))
+              .ForMember(dest => dest.IsDelete, src => src.MapFrom(s => s.IsDelete ? 1 : 0))
+              .ForMember(dest => dest.IsEdit, src => src.MapFrom(s => s.IsEdit ? 1 : 0))
+              .ForMember(dest => dest.IsView, src => src.MapFrom(s => s.IsView ? 1 : 0))
+              .ForMember(dest => dest.IsList, src => src.MapFrom(s => s.IsList ? 1 : 0));
+
+
             });
         }
     }

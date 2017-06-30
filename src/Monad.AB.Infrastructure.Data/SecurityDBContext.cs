@@ -73,7 +73,18 @@ namespace Monad.AB.Infrastructure.Data
             modelBuilder.Entity<RoleRight>(b =>
             {
                 b.HasKey(u => u.Id);
+                b.Property(u => u.RoleId).HasColumnName("ApplicationRoleId");
+                b.Property(u => u.ResourceId).HasColumnName("ApplicationResourceId");
                 b.Property(u => u.Id).HasColumnName("RoleRightID");
+            });
+
+            modelBuilder.Entity<RoleRightRequest>(b =>
+            {
+                b.Property(u => u.IsAdd).HasColumnName("Add");
+                b.Property(u => u.IsDelete).HasColumnName("Delete");
+                b.Property(u => u.IsEdit).HasColumnName("Edit");
+                b.Property(u => u.IsList).HasColumnName("List");
+                b.Property(u => u.IsView).HasColumnName("View");
             });
         }
     }
