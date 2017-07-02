@@ -1,6 +1,7 @@
 ﻿using Monad.AB.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Monad.AB.Domain.Entities.Identity;
 namespace Monad.AB.Infrastructure.Data
 {
