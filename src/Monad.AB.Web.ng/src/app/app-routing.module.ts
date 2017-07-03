@@ -12,7 +12,7 @@ import { mainRoutes } from './main/main-routing.module';
 import { accountsRoutes } from './accounts/accounts-routing.module';
 import { userProfilesRoutes } from './userProfiles/userProfiles.routing';
 import { rolesRoutes } from './roles/roles.routing';
-
+import { userManagementRoutes } from './accounts/accounts-routing.module';
 
 //-------------
 const routes: Routes = [
@@ -26,6 +26,7 @@ const routes: Routes = [
             ...mainRoutes,
             ...userProfilesRoutes,
             ...rolesRoutes,
+            ...userManagementRoutes,
         ]
     },
     { path: 'notFound', component: NotFoundComponent },

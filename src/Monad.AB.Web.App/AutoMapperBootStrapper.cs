@@ -96,6 +96,9 @@ namespace Monad.AB.Web.App
               .ForMember(dest => dest.IsView, src => src.MapFrom(s => s.IsView ? 1 : 0))
               .ForMember(dest => dest.IsList, src => src.MapFrom(s => s.IsList ? 1 : 0));
 
+               cfg.CreateMap<AggregatedUserDto, UserViewModel>();
+               cfg.CreateMap<UserViewModel, AggregatedUserDto>();
+
 
             });
         }

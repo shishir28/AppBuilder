@@ -19,7 +19,7 @@ using System;
 using System.Threading.Tasks;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.Extensions.Logging;
 namespace Monad.AB.Web.App
 {
     public class Startup
@@ -119,13 +119,14 @@ namespace Monad.AB.Web.App
             app.Use(new UnhandledExceptionMiddleware().Process);
             app.Use(new PerformanceLoggingMiddleware().Process);
             app.Use(new TokenReaderMiddleware().Process);
-           
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+            
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
-                loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-                loggerFactory.AddDebug();
+                
+                app.UseBrowserLink();                
+                
             }
             else
             {

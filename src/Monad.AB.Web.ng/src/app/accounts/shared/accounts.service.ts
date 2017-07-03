@@ -24,8 +24,17 @@ export class AccountsService {
             .map(res => res.json());
     }
 
+    getAllUsers() {
+        return this.http.get("/api/account/GetAllUsers")
+            .map(res => res.json());
+    }
+
     private extractData(res: Response) {
         let body = res.json();
         return body || {};
     }
+
+
+
+
 }

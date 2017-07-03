@@ -13,6 +13,9 @@ using Monad.AB.Common.StateManagement;
 using System.Security.Principal;
 using Monad.AB.Web.App.Policies;
 using Monad.AB.Domain.Entities.Identity;
+using Monad.AB.Domain.Entities.Dto;
+
+using AutoMapper;
 
 namespace Monad.AB.Web.App.Controllers
 {
@@ -30,6 +33,8 @@ namespace Monad.AB.Web.App.Controllers
             _tokenOptions = tokenOptions;
             _authService = authService;
         }
+
+        #region Standard ASP.NET Stuff
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Login(string returnUrl = null)
@@ -146,6 +151,20 @@ namespace Monad.AB.Web.App.Controllers
             };
             return handler.WriteToken(handler.CreateToken(descriptor));
         }
+
+       #endregion Standard ASP.NET Stuff
+
+        #region User Management
+        // [Authorize("Bearer")]
+        [HttpGet]
+        [Route("GetAllUsers")]
+        public IEnumerable<UserViewModel> GetAllUsers()
+        {
+            var applicationUsers = _accountService.GetAllUsers();
+            return Mapper.Map<IList<AggregatedUserDto>, IEnumerable<UserViewModel>>(applicationUsers);
+        }
+
+       #endregion User Management
 
     }
 }

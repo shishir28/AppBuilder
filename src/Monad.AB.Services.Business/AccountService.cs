@@ -1,4 +1,4 @@
-using  Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,6 +9,7 @@ using Monad.AB.Domain.Entities.Identity;
 using Monad.AB.Services.Interface;
 using System.Security.Claims;
 using Monad.AB.Common.Utility;
+using Monad.AB.Domain.Entities.Dto;
 
 namespace Monad.AB.Services.Business
 {
@@ -60,7 +61,7 @@ namespace Monad.AB.Services.Business
         {
             //do nothing
             return await Task.FromResult<string>("");
-          
+
         }
 
         public void LogOff(string userName)
@@ -143,5 +144,41 @@ namespace Monad.AB.Services.Business
             tempRole.Description = role.Description;
             return await RoleManager.UpdateAsync(tempRole);
         }
+
+        #region User Management
+            public IList<AggregatedUserDto> GetAllUsers()
+        {
+            var securuityUsers = UserManager.Users.ToList();
+            var users = _userService.GetUsers();
+            return BuildUserList(securuityUsers, users);
+        }
+
+        private IList<AggregatedUserDto> BuildUserList(IList<User> securuityUsers, IList<UserProfile> users, bool loadRoles = false)
+        {
+            var allRoles = RoleManager.Roles.ToList();
+            var query = from securityUser in securuityUsers
+                        join user in users on securityUser.UserName equals user.UserName
+                        select new AggregatedUserDto
+                        {
+                            Id = securityUser.Id,
+                            
+                            UserName = securityUser.UserName,
+                            // FirstName = user.FirstName,
+                            // LastName = user.LastName,
+                            // FullName = user.FirstName + ' ' + user.LastName,
+                            Email = securityUser.Email,
+                            PhoneNumber = securityUser.PhoneNumber,
+                            
+                            // CreatedDateUtc = user.CreatedDateUtc,
+                            // LastModifiedDateUtc = user.LastModifiedDateUtc,
+                            // LastModifiedBy = Convert.ToInt32(user.LastModifiedBy),
+                            // TenantId = securityUser.TenantId,
+                            // IsEnabled = securityUser.IsEnabled
+
+                        };
+            return query.ToList();
+        }
+        #endregion User Management
+
     }
 }

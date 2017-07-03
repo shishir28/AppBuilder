@@ -76,6 +76,7 @@ namespace Monad.AB.Infrastructure.Data
             {
                 b.ToTable("User");
                 b.HasKey(u => u.Id);
+                b.Property(u => u.Id).HasColumnName("UserId");
             });
 
             base.OnModelCreating(modelBuilder);

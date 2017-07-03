@@ -1,3 +1,37 @@
-<p>
-  list-user works!
-</p>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;" align="end" *msElementAccess="'User.Add'">
+  <button mdTooltip="New Project" md-fab color="primary" (click)="addUser();">
+    <md-icon>add</md-icon>
+  </button>
+</div>
+
+<div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'User.List'">
+  <md-card style="padding: 16px;" fxFlex="90%">
+    <md-card-content>
+      <div fxLayout="row" fxLayout.gt-md="column" style="margin-top: 20px;">
+        <div fxLayout="row" class="table-container mat-elevation-z2" fxLayout.gt-sm="row" fxLayoutAlign="end center">
+          <table class="table" [class.table-hover]="tableHover" [class.table-striped]="tableStriped" [class.table-condensed]="tableCondensed" [class.table-bordered]="tableBordered">
+            <thead>
+              <tr>
+                <th>User Name</th>            
+                <th>Email</th>            
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{ user.userName }}</td>
+                <td>{{ user.email }}</td>
+                <!--<td><button md-icon-button> <md-icon>{{ role.isActive?"check":"close"}}</md-icon></button></td>-->
+                <td>
+                  <button md-icon-button (click)="viewRole(role.roleId);" style="margin-left: 1px;" *msElementAccess="'User.View'"><md-icon>pageview</md-icon></button>
+                  <button md-icon-button (click)="editRole(role.roleId);" style="margin-left: 1px;" *msElementAccess="'User.Edit'"><md-icon>edit</md-icon></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </md-card-content>
+  </md-card>
+</div>
+

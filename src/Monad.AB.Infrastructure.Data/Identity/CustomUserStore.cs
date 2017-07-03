@@ -40,6 +40,7 @@ namespace Monad.AB.Infrastructure.Data.Identity
         IUserLockoutStore<TUser>,
         IUserPhoneNumberStore<TUser>,
         // IQueryableCustomUserStore<TUser>,
+        IQueryableUserStore<TUser>,
         IUserTwoFactorStore<TUser>
         where TUser : IdentityUser<TKey>
         where TRole : IdentityRole<TKey>
@@ -784,7 +785,6 @@ namespace Monad.AB.Infrastructure.Data.Identity
             return new List<TUser>();
         }
 
-      
-      
+        
     }
 }
