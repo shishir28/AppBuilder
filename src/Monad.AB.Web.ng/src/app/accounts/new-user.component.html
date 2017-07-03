@@ -52,13 +52,13 @@
           </md-input-container>
         </div>
 
-         <!--<div fxLayout="column">
-          <md-select [(ngModel)]="user.fieldTypeID" placeholder="Field Type" formControlName="fieldTypeID">
-            <md-option *ngFor="let fieldType of fieldTypes" [value]="fieldType.id">
-              {{fieldType.name}}
+         <div fxLayout="column">
+          <md-select [(ngModel)]="user.roleId" placeholder="Role Name" formControlName="roleId">
+            <md-option *ngFor="let role of roles" [value]="role.roleId">
+              {{role.name}}
             </md-option>
           </md-select>
-        </div>-->
+        </div>
 
         <div fxLayout="column">
           <div fxLayout="row" fxLayoutAlign="end center">

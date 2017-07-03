@@ -62,7 +62,6 @@ namespace Monad.AB.Services.Business
         {
             //do nothing
             return await Task.FromResult<string>("");
-
         }
 
         public void LogOff(string userName)
@@ -180,7 +179,7 @@ namespace Monad.AB.Services.Business
             return query.ToList();
         }
 
-        public async Task<IdentityResult> AddUser(User user, UserProfile userProfile, IList<string> newRoles)
+        public async Task<IdentityResult> AddUser(User user, UserProfile userProfile, string roleId)
         {
             // add user to security database
             var password = "Test123#";// PasswordGenerator.Generate();
@@ -193,12 +192,9 @@ namespace Monad.AB.Services.Business
             if (createdUser.Succeeded)
             {
                 var newUser = await UserManager.FindByNameAsync(user.UserName);
-                // foreach (var roleId in newRoles)
-                // {
-                //     var applicationRole = await RoleManager.FindByIdAsync(roleId);
-                //     var userRoleResult = await UserManager.AddToRoleAsync(user, applicationRole.Name);
-                //     await AddClaims(newUser, applicationRole);
-                // }
+                var applicationRole = await RoleManager.FindByIdAsync(roleId);
+                var userRoleResult = await UserManager.AddToRoleAsync(user, applicationRole.Name);
+                await AddClaims(newUser, applicationRole);
                 // add user to application database
                 userProfile.EmailAddress = user.Email;
                 userProfile.UserName = user.UserName;
@@ -240,7 +236,6 @@ namespace Monad.AB.Services.Business
             return await UserManager.GenerateEmailConfirmationTokenAsync(user);
         }
         #endregion User Management
-
     }
 
 }

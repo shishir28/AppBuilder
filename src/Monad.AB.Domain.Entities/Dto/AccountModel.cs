@@ -45,7 +45,7 @@ namespace Monad.AB.Domain.Entities.Dto
         public string ManagerName { get; set; }
         public int SkillLevel { get; set; }
         public string UserText { get; set; }
-        public IList<UserRoleDto> Roles { get; set; }
+        public int RoleId { get; set; }
         public DateTime CreatedDateUtc { get; set; }
         public DateTime LastModifiedDateUtc { get; set; }
         public int LastModifiedBy { get; set; }

@@ -173,8 +173,8 @@ namespace Monad.AB.Web.App.Controllers
             if (ModelState.IsValid)
             {
                 // check if any role was sent
-                // if (model.Roles == null || model.Roles.Count == 0 || model.Roles.Where(x => x.IsSelected).ToList().Count <= 0)
-                //     return new ObjectResult(new { StatusCode = 400, Content = "No Role was selected!" });
+                if (string.IsNullOrEmpty(model.RoleId))
+                    return new ObjectResult(new { StatusCode = 412, Content = "No Role was selected!" });
 
                 var user = Mapper.Map<AddUserViewModel, User>(model);
                 user.LastModifiedBy = model.LastModifiedBy;
@@ -182,9 +182,8 @@ namespace Monad.AB.Web.App.Controllers
                 var userprofile = Mapper.Map<AddUserViewModel, UserProfile>(model);
                 userprofile.LastModifiedBy = model.LastModifiedBy;
 
-                // var result = await _accountService.AddUser(user, userprofile,  model.Roles.Where(x => x.IsSelected).Select(y => y.RoleId).ToList());
-                var result = await _accountService.AddUser(user, userprofile, null);
-
+                var result = await _accountService.AddUser(user, userprofile,  model.RoleId );
+                
                 if (result.Succeeded)
                 {
                     var code = await _accountService.GenerateEmailConfirmationToken(user);
@@ -197,7 +196,7 @@ namespace Monad.AB.Web.App.Controllers
                     });
                 }
                 else
-                    return new ObjectResult(new { StatusCode = 400, Content = result.Errors });
+                    return new ObjectResult(new { StatusCode = 412, Content = result.Errors });
 
             }
             return new StatusCodeResult(204);

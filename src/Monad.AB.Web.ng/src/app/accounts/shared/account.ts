@@ -1,4 +1,4 @@
-﻿export class LoginDetail{
+export class LoginDetail{
     public userName: string;
     public password: string;
     public rememberMe: boolean;
@@ -36,7 +36,7 @@ export class CommonUserViewModel {
     City: string;    
     state: string;        
     userText: string;
-   // roles: List<UserRoleViewModel>;
+    roleId: string;
     createdDateUtc: Date;
     lastModifiedDateUtc: Date;
     lastModifiedBy: number;

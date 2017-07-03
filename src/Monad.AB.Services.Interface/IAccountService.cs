@@ -26,7 +26,7 @@ namespace Monad.AB.Services.Interface
 
         #region User Management
         IList<AggregatedUserDto> GetAllUsers();
-        Task<IdentityResult> AddUser(User applicationUser, UserProfile userProfile, IList<string> newRoles);
+        Task<IdentityResult> AddUser(User applicationUser, UserProfile userProfile, string roleId);
         #endregion User Management
 
     }
