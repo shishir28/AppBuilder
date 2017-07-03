@@ -113,8 +113,6 @@ namespace Monad.AB.Web.App
             cfg.CreateMap<AggregatedUserDto, AddUserViewModel>();
             cfg.CreateMap<AddUserViewModel, AggregatedUserDto>();
 
-            // .ForMember(dest => dest.Roles, src => src.MapFrom(s => s.Roles));
-            // .ForMember(dest => dest.Roles, src => src.MapFrom(s => s.Roles)); 
         }
 
     }

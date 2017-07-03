@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'User.Add'">
   <md-card style="padding: 16px;" fxFlex="90%">
-    <md-toolbar color="primary">Edit user</md-toolbar>
+    <md-toolbar color="primary">Add user</md-toolbar>
     <md-card-content>
       <form [formGroup]="userForm" novalidate (ngSubmit)="saveUser(userForm.value)">
         <div fxLayout="column">

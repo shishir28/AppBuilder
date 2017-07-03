@@ -235,6 +235,80 @@ namespace Monad.AB.Services.Business
         {
             return await UserManager.GenerateEmailConfirmationTokenAsync(user);
         }
+
+        public async Task<IdentityResult> EditUser(User user, UserProfile userProfile, string roleId)
+        {
+            var existingApplicationUser = await UserManager.FindByNameAsync(user.UserName);
+            if (existingApplicationUser == null)
+                return IdentityResult.Failed(new IdentityError[] { new IdentityError { Code = "", Description = "User Not Found!" } });
+
+            existingApplicationUser.Email = user.Email;
+            existingApplicationUser.PhoneNumber = user.PhoneNumber;
+            existingApplicationUser.LastModifiedBy = user.LastModifiedBy;
+            existingApplicationUser.LastModifiedDateUtc = DateTime.UtcNow;
+
+            var updatedApplicationUser = await UserManager.UpdateAsync(existingApplicationUser);
+
+            var existingRoles = await UserManager.GetRolesAsync(existingApplicationUser);
+            var claims = await UserManager.GetClaimsAsync(existingApplicationUser);
+            if (claims.Any())
+                await UserManager.RemoveClaimsAsync(existingApplicationUser, claims);
+            // remove existing roles
+            await UserManager.RemoveFromRolesAsync(existingApplicationUser, existingRoles);
+
+            // add new roles
+            var applicationRole = await RoleManager.FindByIdAsync(roleId);
+            var userRoleResult = await UserManager.AddToRoleAsync(existingApplicationUser, applicationRole.Name);
+            await AddClaims(existingApplicationUser, applicationRole);
+
+            var existingUser = _userService.GetUserByName(userProfile.UserName);
+            CopyUserData(userProfile, existingUser);
+            existingUser.EmailAddress = user.Email;
+            _userService.EditUser(existingUser);
+            return updatedApplicationUser;
+        }
+
+        private void CopyUserData(UserProfile sourceUserProfile, UserProfile targetUserProfile)
+        {
+            targetUserProfile.EmailAddress = sourceUserProfile.EmailAddress;
+            targetUserProfile.FirstName = sourceUserProfile.FirstName;
+            targetUserProfile.LastName = sourceUserProfile.LastName;
+            targetUserProfile.EmailAddress = sourceUserProfile.EmailAddress;
+            targetUserProfile.AddressLine1 = sourceUserProfile.AddressLine1;
+            targetUserProfile.AddressLine2 = sourceUserProfile.AddressLine2;
+            targetUserProfile.City = sourceUserProfile.City;
+            targetUserProfile.State = sourceUserProfile.State;
+            targetUserProfile.Zip = sourceUserProfile.Zip;
+            targetUserProfile.FirstName = sourceUserProfile.FirstName;
+            targetUserProfile.Gender = sourceUserProfile.Gender;
+        }
+        public async Task<AggregatedUserDto> GetUserByUserId(string userId)
+        {
+            var user = await UserManager.FindByIdAsync(userId);
+            var userProfile = _userService.GetUserByName(user.UserName);
+            var result = new AggregatedUserDto
+            {
+                Id = user.Id,
+                UserId = userProfile.Id,
+                UserName = user.UserName,
+                FirstName = userProfile.FirstName,
+                LastName = userProfile.LastName,
+                FullName = userProfile.FirstName + ' ' + userProfile.LastName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                AddressLine1 = userProfile.AddressLine1,
+                AddressLine2 = userProfile.AddressLine2,
+                Zip = userProfile.Zip,
+                City = userProfile.City,
+                State = userProfile.State,
+                CreatedDateUtc = user.CreatedDateUtc,
+                LastModifiedDateUtc = user.LastModifiedDateUtc,
+                LastModifiedBy = userProfile.LastModifiedBy,
+                IsEnabled = user.IsEnabled
+            };
+            return result;
+        }
+
         #endregion User Management
     }
 

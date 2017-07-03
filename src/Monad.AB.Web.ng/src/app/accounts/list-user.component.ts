@@ -6,13 +6,13 @@ import { AccountsService } from './shared/accounts.service';
 import { UserViewModel } from './shared/account';
 
 @Component({
-  selector: 'ms-list-user',
-  templateUrl: './list-user.component.html',
-  styleUrls: ['./list-user.component.scss']
+    selector: 'ms-list-user',
+    templateUrl: './list-user.component.html',
+    styleUrls: ['./list-user.component.scss']
 })
 export class ListUserComponent implements OnInit {
 
-  serverErrorMessage: string;
+    serverErrorMessage: string;
     @ViewChild('tbody')
     tbody: ElementRef;
     private users: UserViewModel[];
@@ -24,7 +24,6 @@ export class ListUserComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('On Init');
         this.accountsService.getAllUsers()
             .subscribe(data => {
                 this.users = data;
@@ -35,13 +34,12 @@ export class ListUserComponent implements OnInit {
         this.router.navigateByUrl('/users/new');
     }
 
-
     // viewRole(roleId): void {
     //     this.router.navigateByUrl('/roles/' + roleId);
     // }
 
-    // editRole(roleId): void {
-    //     this.router.navigateByUrl('/roles/edit/' + roleId);
-    // }
+    editUser(userId): void {
+        this.router.navigateByUrl('/users/edit/' + userId);
+    }
 
 }

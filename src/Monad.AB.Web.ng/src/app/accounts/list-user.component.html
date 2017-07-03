@@ -3,7 +3,6 @@
     <md-icon>add</md-icon>
   </button>
 </div>
-
 <div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'User.List'">
   <md-card style="padding: 16px;" fxFlex="90%">
     <md-card-content>
@@ -12,8 +11,8 @@
           <table class="table" [class.table-hover]="tableHover" [class.table-striped]="tableStriped" [class.table-condensed]="tableCondensed" [class.table-bordered]="tableBordered">
             <thead>
               <tr>
-                <th>User Name</th>            
-                <th>Email</th>            
+                <th>User Name</th>
+                <th>Email</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -23,8 +22,8 @@
                 <td>{{ user.email }}</td>
                 <!--<td><button md-icon-button> <md-icon>{{ role.isActive?"check":"close"}}</md-icon></button></td>-->
                 <td>
-                  <button md-icon-button (click)="viewRole(role.roleId);" style="margin-left: 1px;" *msElementAccess="'User.View'"><md-icon>pageview</md-icon></button>
-                  <button md-icon-button (click)="editRole(role.roleId);" style="margin-left: 1px;" *msElementAccess="'User.Edit'"><md-icon>edit</md-icon></button>
+                  <button md-icon-button (click)="viewUser(user.id);" style="margin-left: 1px;" *msElementAccess="'User.View'"><md-icon>pageview</md-icon></button>
+                  <button md-icon-button (click)="editUser(user.id);" style="margin-left: 1px;" *msElementAccess="'User.Edit'"><md-icon>edit</md-icon></button>
                 </td>
               </tr>
             </tbody>
@@ -34,4 +33,3 @@
     </md-card-content>
   </md-card>
 </div>
-

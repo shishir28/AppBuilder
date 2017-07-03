@@ -182,8 +182,8 @@ namespace Monad.AB.Web.App.Controllers
                 var userprofile = Mapper.Map<AddUserViewModel, UserProfile>(model);
                 userprofile.LastModifiedBy = model.LastModifiedBy;
 
-                var result = await _accountService.AddUser(user, userprofile,  model.RoleId );
-                
+                var result = await _accountService.AddUser(user, userprofile, model.RoleId);
+
                 if (result.Succeeded)
                 {
                     var code = await _accountService.GenerateEmailConfirmationToken(user);
@@ -200,6 +200,60 @@ namespace Monad.AB.Web.App.Controllers
 
             }
             return new StatusCodeResult(204);
+        }
+
+        [HttpPut]
+        [Route("EditUser")]
+        public async Task<IActionResult> EditUser([FromBody] UserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // check if any role was sent
+                if (string.IsNullOrEmpty(model.RoleId))
+                    return new ObjectResult(new { StatusCode = 400, Content = "No Role was selected!" });
+
+                var applicationUser = Mapper.Map<UserViewModel, User>(model);
+                applicationUser.LastModifiedBy = model.LastModifiedBy;
+                var user = new UserProfile
+                {
+                    Id = model.UserId,
+                    LastModifiedBy = model.LastModifiedBy,
+                    LastModifiedDateUtc = model.LastModifiedDateUtc,
+                    LastName = model.LastName,
+                    FirstName = model.FirstName,
+                    UserName = model.UserName,
+                    AddressLine1 = model.AddressLine1,
+                    AddressLine2 = model.AddressLine2,
+                    City = model.City,
+                    State = model.State,
+                    EmailAddress = model.Email,
+                    CreatedDateUtc = model.CreatedDateUtc,
+                    //SkillLevel = model.SkillLevel,
+                    Zip = model.Zip,
+                    Gender = model.Gender
+                };
+
+                var result = await _accountService.EditUser(applicationUser, user, model.RoleId);
+
+                if (result.Succeeded)
+                {
+                    HttpContext.Response.StatusCode = 204;
+                    return new ObjectResult(new { StatusCode = 204 });   // mvc  http client always receives 200 as http response message so need this hack 
+                }
+                else
+                    return new ObjectResult(new { StatusCode = 400, Content = result.Errors });
+
+            }
+            return new StatusCodeResult(204);
+        }
+
+        [HttpGet]
+        [Route("GetUser")]
+        public UserViewModel  GetUser(string userId)
+        {       
+            var applicationUser =   _accountService.GetUserByUserId(userId).Result;
+            var result = Mapper.Map<AggregatedUserDto, UserViewModel>(applicationUser);
+            return result;
         }
 
         #endregion User Management

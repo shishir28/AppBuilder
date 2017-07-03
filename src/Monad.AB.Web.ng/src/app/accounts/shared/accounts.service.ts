@@ -34,6 +34,17 @@ export class AccountsService {
             .map(res => res.json());
     }
 
+    GetUser(userId) {
+        return this.http.get("/api/account/GetUser?userId=" + userId)
+            .map(res => res.json());
+    }
+
+
+    editUser(userData) {
+        return this.http.post("/api/account/editUser", JSON.stringify(userData))
+            .map(res => res.json());
+    }
+
     private extractData(res: Response) {
         let body = res.json();
         return body || {};
