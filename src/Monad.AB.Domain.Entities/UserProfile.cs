@@ -1,4 +1,6 @@
-﻿namespace Monad.AB.Domain.Entities
+﻿using System;
+
+namespace Monad.AB.Domain.Entities
 {
     public class UserProfile : BaseEntity
     {
@@ -13,6 +15,10 @@
         public string City { get; set; }
         public string State { get; set; }
         public string ProfilePicture { get; set; }
+        public string Gender { get; set; }
+        public DateTime CreatedDateUtc { get; set; }
+        public DateTime LastModifiedDateUtc { get; set; }
+        public int LastModifiedBy { get; set; }
     }
 
 }

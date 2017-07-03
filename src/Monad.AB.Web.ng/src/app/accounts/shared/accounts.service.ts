@@ -29,12 +29,15 @@ export class AccountsService {
             .map(res => res.json());
     }
 
+    addUser(userData){
+        return this.http.post("/api/account/addUser", JSON.stringify(userData))
+            .map(res => res.json());
+    }
+
     private extractData(res: Response) {
         let body = res.json();
         return body || {};
     }
-
-
 
 
 }

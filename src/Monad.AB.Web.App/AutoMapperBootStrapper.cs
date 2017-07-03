@@ -10,7 +10,6 @@ namespace Monad.AB.Web.App
     {
         public static void Bootstrap()
         {
-
             ConfigurePageMappings();
         }
 
@@ -81,7 +80,6 @@ namespace Monad.AB.Web.App
                 cfg.CreateMap<Role, AddRoleViewModel>();
                 cfg.CreateMap<AddRoleViewModel, Role>();
 
-
                 cfg.CreateMap<RoleRightRequest, RoleRightsViewModel>()
               .ForMember(dest => dest.IsAdd, src => src.MapFrom(s => s.IsAdd == 1))
               .ForMember(dest => dest.IsDelete, src => src.MapFrom(s => s.IsDelete == 1))
@@ -90,17 +88,34 @@ namespace Monad.AB.Web.App
               .ForMember(dest => dest.IsList, src => src.MapFrom(s => s.IsList == 1));
 
                 cfg.CreateMap<RoleRightsViewModel, RoleRightRequest>()
-              .ForMember(dest => dest.IsAdd, src => src.MapFrom(s => s.IsAdd?1:0))
+              .ForMember(dest => dest.IsAdd, src => src.MapFrom(s => s.IsAdd ? 1 : 0))
               .ForMember(dest => dest.IsDelete, src => src.MapFrom(s => s.IsDelete ? 1 : 0))
               .ForMember(dest => dest.IsEdit, src => src.MapFrom(s => s.IsEdit ? 1 : 0))
               .ForMember(dest => dest.IsView, src => src.MapFrom(s => s.IsView ? 1 : 0))
               .ForMember(dest => dest.IsList, src => src.MapFrom(s => s.IsList ? 1 : 0));
 
-               cfg.CreateMap<AggregatedUserDto, UserViewModel>();
-               cfg.CreateMap<UserViewModel, AggregatedUserDto>();
-
-
+                MapAggregatedUserDtoAndUserViewModel(cfg);
             });
         }
+
+        private static void MapAggregatedUserDtoAndUserViewModel(IMapperConfigurationExpression cfg)
+        {
+
+             cfg.CreateMap<User, AddUserViewModel>();
+             cfg.CreateMap<AddUserViewModel, User>();
+             cfg.CreateMap<UserProfile, AddUserViewModel>();
+             cfg.CreateMap<AddUserViewModel, UserProfile>();
+
+
+            cfg.CreateMap<AggregatedUserDto, UserViewModel>();
+            cfg.CreateMap<UserViewModel, AggregatedUserDto>();
+
+            cfg.CreateMap<AggregatedUserDto, AddUserViewModel>();
+            cfg.CreateMap<AddUserViewModel, AggregatedUserDto>();
+
+            // .ForMember(dest => dest.Roles, src => src.MapFrom(s => s.Roles));
+            // .ForMember(dest => dest.Roles, src => src.MapFrom(s => s.Roles)); 
+        }
+
     }
 }

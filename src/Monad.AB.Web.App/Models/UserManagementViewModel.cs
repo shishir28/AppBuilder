@@ -73,7 +73,7 @@ namespace Monad.AB.Web.App.Models
    
         public string UserText { get; set; }
 
-        [Required]
+       // [Required]
         [Display(Name = "Select Roles")]
         public List<UserRoleViewModel> Roles { get; set; }
         public DateTime CreatedDateUtc { get; set; }

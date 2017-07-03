@@ -28,7 +28,7 @@ export class CommonUserViewModel {
     userName: string;    
     firstName: string;    
     lastName: string;    
-    rmail: string;    
+    email: string;    
     phoneNumber: string;    
     addressLine1: string;    
     addressLine2: string;    

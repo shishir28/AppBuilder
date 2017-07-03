@@ -10,6 +10,7 @@ using Monad.AB.Services.Interface;
 using System.Security.Claims;
 using Monad.AB.Common.Utility;
 using Monad.AB.Domain.Entities.Dto;
+using System;
 
 namespace Monad.AB.Services.Business
 {
@@ -146,7 +147,7 @@ namespace Monad.AB.Services.Business
         }
 
         #region User Management
-            public IList<AggregatedUserDto> GetAllUsers()
+        public IList<AggregatedUserDto> GetAllUsers()
         {
             var securuityUsers = UserManager.Users.ToList();
             var users = _userService.GetUsers();
@@ -161,14 +162,14 @@ namespace Monad.AB.Services.Business
                         select new AggregatedUserDto
                         {
                             Id = securityUser.Id,
-                            
+
                             UserName = securityUser.UserName,
                             // FirstName = user.FirstName,
                             // LastName = user.LastName,
                             // FullName = user.FirstName + ' ' + user.LastName,
                             Email = securityUser.Email,
                             PhoneNumber = securityUser.PhoneNumber,
-                            
+
                             // CreatedDateUtc = user.CreatedDateUtc,
                             // LastModifiedDateUtc = user.LastModifiedDateUtc,
                             // LastModifiedBy = Convert.ToInt32(user.LastModifiedBy),
@@ -178,7 +179,68 @@ namespace Monad.AB.Services.Business
                         };
             return query.ToList();
         }
+
+        public async Task<IdentityResult> AddUser(User user, UserProfile userProfile, IList<string> newRoles)
+        {
+            // add user to security database
+            var password = "Test123#";// PasswordGenerator.Generate();
+            var currentTime = DateTime.UtcNow;
+            user.CreatedDateUtc = currentTime;
+            user.LastModifiedDateUtc = currentTime;
+            user.LastPasswordChangedDateUtc = currentTime;
+
+            var createdUser = await UserManager.CreateAsync(user, password);
+            if (createdUser.Succeeded)
+            {
+                var newUser = await UserManager.FindByNameAsync(user.UserName);
+                // foreach (var roleId in newRoles)
+                // {
+                //     var applicationRole = await RoleManager.FindByIdAsync(roleId);
+                //     var userRoleResult = await UserManager.AddToRoleAsync(user, applicationRole.Name);
+                //     await AddClaims(newUser, applicationRole);
+                // }
+                // add user to application database
+                userProfile.EmailAddress = user.Email;
+                userProfile.UserName = user.UserName;
+                userProfile.CreatedDateUtc = currentTime;
+                userProfile.LastModifiedDateUtc = currentTime;
+
+                if (string.IsNullOrWhiteSpace(userProfile.Gender)) // shishir assigning null if empty string was passed. Actually Geder should be lookup not string in database. will fix in near future
+                    userProfile.Gender = null;
+                _userService.AddUser(userProfile);
+            }
+            return createdUser;
+        }
+
+        private async Task<IdentityResult> AddClaims(User newUser, Role role)
+        {
+            var resourceTypes = _resourceTypeRepository.GetAll().ToList();
+            var formResourceTypeId = resourceTypes.Where(x => string.Equals(x.Name, "Form")).SingleOrDefault().Id;
+            var roleRights = _roleRightRepository.GetAll().Where(x => string.Equals(x.RoleId, role.Id)).ToList();
+            var formElementsClaims = from r in _resourceRepository.GetAll().Where(x => x.ResourceTypeId == formResourceTypeId)
+                                     join rr in roleRights on r.Id equals rr.ResourceId
+                                     join a in _activityRepository.GetAll().Where(x => x.ResourceTypeId == formResourceTypeId) on rr.ActivityId equals a.Id
+                                     select r.Name + "." + a.Value;
+
+            return await UserManager.AddClaimsAsync(newUser, formElementsClaims.Select(x => new Claim("Custom", x)).ToList());
+        }
+
+        public async Task<string> GetUserId(User user)
+        {
+            return await UserManager.GetUserIdAsync(user);
+        }
+
+        public async Task<User> GetUserById(string userId)
+        {
+            return await UserManager.FindByIdAsync(userId);
+        }
+
+        public async Task<string> GenerateEmailConfirmationToken(User user)
+        {
+            return await UserManager.GenerateEmailConfirmationTokenAsync(user);
+        }
         #endregion User Management
 
     }
+
 }

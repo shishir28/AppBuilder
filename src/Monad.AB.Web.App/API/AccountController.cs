@@ -16,6 +16,7 @@ using Monad.AB.Domain.Entities.Identity;
 using Monad.AB.Domain.Entities.Dto;
 
 using AutoMapper;
+using Monad.AB.Domain.Entities;
 
 namespace Monad.AB.Web.App.Controllers
 {
@@ -74,7 +75,7 @@ namespace Monad.AB.Web.App.Controllers
                 //}
                 //else
                 //{
-              
+
                 //}
             }
             return new StatusCodeResult(412);
@@ -121,25 +122,25 @@ namespace Monad.AB.Web.App.Controllers
             return new StatusCodeResult(412);
         }
 
-        
+
         private IList<ClaimViewModel> GetClaims(string userName)
         {
             var currentCacheKey = string.Format("UserClaims-{0}", userName);
             var claims = _cacheInstance.Get<IList<Claim>>(currentCacheKey);
-            return claims.Select(x=>new ClaimViewModel { ClaimType = x.Type, ClaimValue=x.Value}).ToList();
+            return claims.Select(x => new ClaimViewModel { ClaimType = x.Type, ClaimValue = x.Value }).ToList();
         }
 
         private void CacheAccessClaims(string userName, User currentUser, DateTime? expires)
         {
             var currentCacheKey = string.Format("UserClaims-{0}", userName);
             var claims = _authService.GetClaims(currentUser).Result;
-            _cacheInstance.Set(currentCacheKey, claims );
+            _cacheInstance.Set(currentCacheKey, claims);
         }
 
         private string GetToken(string user, User currentUser, DateTime? expires)
         {
             var handler = new JwtSecurityTokenHandler();
-                   
+
             ClaimsIdentity identity = new ClaimsIdentity(new GenericIdentity(user, "TokenAuth"));
             var descriptor = new SecurityTokenDescriptor
             {
@@ -152,7 +153,7 @@ namespace Monad.AB.Web.App.Controllers
             return handler.WriteToken(handler.CreateToken(descriptor));
         }
 
-       #endregion Standard ASP.NET Stuff
+        #endregion Standard ASP.NET Stuff
 
         #region User Management
         // [Authorize("Bearer")]
@@ -164,7 +165,45 @@ namespace Monad.AB.Web.App.Controllers
             return Mapper.Map<IList<AggregatedUserDto>, IEnumerable<UserViewModel>>(applicationUsers);
         }
 
-       #endregion User Management
+
+        [HttpPost]
+        [Route("AddUser")]
+        public async Task<IActionResult> AddUser([FromBody] AddUserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // check if any role was sent
+                // if (model.Roles == null || model.Roles.Count == 0 || model.Roles.Where(x => x.IsSelected).ToList().Count <= 0)
+                //     return new ObjectResult(new { StatusCode = 400, Content = "No Role was selected!" });
+
+                var user = Mapper.Map<AddUserViewModel, User>(model);
+                user.LastModifiedBy = model.LastModifiedBy;
+
+                var userprofile = Mapper.Map<AddUserViewModel, UserProfile>(model);
+                userprofile.LastModifiedBy = model.LastModifiedBy;
+
+                // var result = await _accountService.AddUser(user, userprofile,  model.Roles.Where(x => x.IsSelected).Select(y => y.RoleId).ToList());
+                var result = await _accountService.AddUser(user, userprofile, null);
+
+                if (result.Succeeded)
+                {
+                    var code = await _accountService.GenerateEmailConfirmationToken(user);
+                    var createdUser = await _accountService.GetUserId(user);
+                    return new ObjectResult(new AddUserResultViewmodel
+                    {
+                        StatusCode = 201,
+                        EmailConfirmationToken = code,
+                        SecurityUserId = createdUser
+                    });
+                }
+                else
+                    return new ObjectResult(new { StatusCode = 400, Content = result.Errors });
+
+            }
+            return new StatusCodeResult(204);
+        }
+
+        #endregion User Management
 
     }
 }

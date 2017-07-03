@@ -17,6 +17,5 @@ export const accountsRoutes: Routes = [
 
 export const userManagementRoutes: Routes = [
     { path: 'users', component: ListUserComponent, pathMatch: 'full' },
-    { path: 'users/new', component: ListUserComponent, pathMatch: 'full' },
+    { path: 'users/new', component: NewUserComponent, pathMatch: 'full' },
 ];
-

@@ -31,9 +31,9 @@ export class ListUserComponent implements OnInit {
             });
     }
 
-    // addRole(): void {
-    //     this.router.navigateByUrl('/roles/new');
-    // }
+    addUser(): void {
+        this.router.navigateByUrl('/users/new');
+    }
 
 
     // viewRole(roleId): void {

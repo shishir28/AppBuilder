@@ -4,7 +4,8 @@ import { RouterModule } from '@angular/router';
 import { MaterialComponentsModule } from '../shared/material-components.module';
 import { SharedComponentsModule } from '../shared/shared-components.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ElementAccessDirective } from '../widgets/element-access.directive';
 import { HttpModule } from '@angular/http';
 import { AccountsService } from './shared/accounts.service';
 
@@ -16,10 +17,12 @@ import { EditUserComponent } from './edit-user.component';
 import { NewUserComponent } from './new-user.component';
 
 
+
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         MaterialComponentsModule,
         SharedComponentsModule,
         RouterModule,
