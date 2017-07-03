@@ -40,12 +40,8 @@ namespace Monad.AB.Domain.Entities.Dto
         public string Zip { get; set; }
         public string City { get; set; }
         public string State { get; set; }
-        public List<int> Stations { get; set; }
-        public int? ManagerId { get; set; }
-        public string ManagerName { get; set; }
-        public int SkillLevel { get; set; }
         public string UserText { get; set; }
-        public int RoleId { get; set; }
+        public string RoleId { get; set; }
         public DateTime CreatedDateUtc { get; set; }
         public DateTime LastModifiedDateUtc { get; set; }
         public int LastModifiedBy { get; set; }

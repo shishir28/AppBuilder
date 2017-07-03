@@ -69,6 +69,34 @@
           </div>
         </div>
       </form>
+
+       <div fxLayout="row" fxLayout.gt-md="column" style="margin-top: 20px;">
+
+        <div fxLayout="row" class="table-container mat-elevation-z2" fxLayout.gt-sm="row" fxLayoutAlign="end center" *msElementAccess="'Form.List'">
+          <table class="table" [class.table-hover]="tableHover" [class.table-striped]="tableStriped" [class.table-condensed]="tableCondensed" [class.table-bordered]="tableBordered">
+            <thead>
+              <tr>
+                <th>Resource</th>
+                <th>View</th>
+                <th>List</th>
+                <th>Add</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--<tr *ngFor="let rolePermission of rolePermissions">
+                <td>{{ rolePermission.resourceName }}</td>
+                <td><md-checkbox [(ngModel)]="rolePermission.isView" color="primary"></md-checkbox></td>
+                <td><md-checkbox [(ngModel)]="rolePermission.isList" color="primary"></md-checkbox></td>
+                <td><md-checkbox [(ngModel)]="rolePermission.isAdd" color="primary"></md-checkbox></td>
+                <td><md-checkbox [(ngModel)]="rolePermission.isEdit" color="primary"></md-checkbox></td>
+                <td><md-checkbox [(ngModel)]="rolePermission.isDelete" color="primary"></md-checkbox></td>               
+              </tr>-->
+            </tbody>
+          </table>
+        </div>
+      </div>
     </md-card-content>
   </md-card>
 </div>

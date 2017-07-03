@@ -284,8 +284,11 @@ namespace Monad.AB.Services.Business
         }
         public async Task<AggregatedUserDto> GetUserByUserId(string userId)
         {
+        
             var user = await UserManager.FindByIdAsync(userId);
             var userProfile = _userService.GetUserByName(user.UserName);
+            var selectedRoles = await UserManager.GetRolesAsync(user);
+            var selectedRole = await RoleManager.FindByNameAsync (selectedRoles.FirstOrDefault());
             var result = new AggregatedUserDto
             {
                 Id = user.Id,
@@ -304,6 +307,7 @@ namespace Monad.AB.Services.Business
                 CreatedDateUtc = user.CreatedDateUtc,
                 LastModifiedDateUtc = user.LastModifiedDateUtc,
                 LastModifiedBy = userProfile.LastModifiedBy,
+                RoleId = selectedRole.Id,
                 IsEnabled = user.IsEnabled
             };
             return result;
