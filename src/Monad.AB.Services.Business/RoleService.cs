@@ -15,6 +15,8 @@ namespace  Monad.AB.Services.Business
 {
     public class RoleService : IRoleService
     {
+        //Shishir Break it down into smaller services as it is viloating lot is  SR principle 
+        // 
         private IRoleRightRepository _roleRightRepository;
         private IRoleRightRequestRepository _roleRightRequestRepository;
         private IActivityRepository _activityRepository;
@@ -22,7 +24,6 @@ namespace  Monad.AB.Services.Business
         private ILookupTypeRepository _lookupTypeRepository;
         private ILookupValueRepository _lookupValueRepository;
         private IIdentityRepository _identityRepository;
-      
 
         public RoleManager<Role> RoleManager { get; private set; }
 
@@ -87,6 +88,5 @@ namespace  Monad.AB.Services.Business
         {
             _roleRightRequestRepository.UpdateRoleRights(roleId, roleRightsDto);
         }
-
     }
 }

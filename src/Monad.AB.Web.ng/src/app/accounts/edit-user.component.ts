@@ -6,11 +6,11 @@ import { DialogService } from '../widgets/dialogs/dialog.service';
 import { AccountsService } from './shared/accounts.service';
 import { RolesService } from '../roles/shared/roles.service'
 
-import { UserEditViewModel } from './shared/account';
+import { UserEditViewModel,UserClaimsViewModel } from './shared/account';
 import { RoleViewModel } from '../roles/shared/role';
 
 @Component({
-  selector: 'ms-edit-user',
+  selector: 'ms-edit-user', 
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.scss']
 })
@@ -20,6 +20,7 @@ export class EditUserComponent implements OnInit {
   userForm: FormGroup;
   user: UserEditViewModel = new UserEditViewModel();
   serverErrorMessage: string;
+  userClaims:UserClaimsViewModel[];
   constructor(private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -49,11 +50,17 @@ export class EditUserComponent implements OnInit {
       this.accountsService.GetUser(userId)
         .subscribe(data => {
           this.user = data;
-          console.log(data);
+        
           this.rolesService.getRoles()
             .subscribe(roles => {
               this.roles = roles;
             });
+         this.accountsService.getUserClaims(userId)
+                        .subscribe(userClaims => {
+                            this.userClaims = userClaims;
+                            console.log(this.userClaims);
+                        });
+
         });
     });
   }

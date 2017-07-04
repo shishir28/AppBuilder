@@ -56,6 +56,8 @@ namespace Monad.AB.Infrastructure.DependencyResolver
             services.AddTransient<IProjectRepository, ProjectRepository>();
             services.AddTransient<IProjectPublishStatusRepository, ProjectPublishStatusRepository>();
             services.AddTransient<IUserClaimRepository, UserClaimRepository>();
+            services.AddTransient<IUserClaimRequestRepository, UserClaimRequestRepository>();
+
             services.AddTransient<IUserProfileRepository, UserProfileRepository>();
             services.AddTransient<IUserPasswordHistoryRepository, UserPasswordHistoryRepository>();
 

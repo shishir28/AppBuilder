@@ -85,14 +85,14 @@
               </tr>
             </thead>
             <tbody>
-              <!--<tr *ngFor="let rolePermission of rolePermissions">
-                <td>{{ rolePermission.resourceName }}</td>
-                <td><md-checkbox [(ngModel)]="rolePermission.isView" color="primary"></md-checkbox></td>
-                <td><md-checkbox [(ngModel)]="rolePermission.isList" color="primary"></md-checkbox></td>
-                <td><md-checkbox [(ngModel)]="rolePermission.isAdd" color="primary"></md-checkbox></td>
-                <td><md-checkbox [(ngModel)]="rolePermission.isEdit" color="primary"></md-checkbox></td>
-                <td><md-checkbox [(ngModel)]="rolePermission.isDelete" color="primary"></md-checkbox></td>               
-              </tr>-->
+              <tr *ngFor="let userClaim of userClaims">
+                <td>{{ userClaim.resourceName }}</td>
+                <td><md-checkbox [(ngModel)]="userClaim.isView" color="primary"></md-checkbox></td>
+                <td><md-checkbox [(ngModel)]="userClaim.isList" color="primary"></md-checkbox></td>
+                <td><md-checkbox [(ngModel)]="userClaim.isAdd" color="primary"></md-checkbox></td>
+                <td><md-checkbox [(ngModel)]="userClaim.isEdit" color="primary"></md-checkbox></td>
+                <td><md-checkbox [(ngModel)]="userClaim.isDelete" color="primary"></md-checkbox></td>               
+              </tr>
             </tbody>
           </table>
         </div>

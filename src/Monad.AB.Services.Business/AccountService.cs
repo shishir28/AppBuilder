@@ -23,6 +23,7 @@ namespace Monad.AB.Services.Business
         private IActivityRepository _activityRepository;
         private IResourceRepository _resourceRepository;
         private IResourceTypeRepository _resourceTypeRepository;
+        private IUserClaimRequestRepository _userClaimRequestRepository;
 
         public AccountService(UserManager<User> userManager,
             RoleManager<Role> roleMananager,
@@ -33,7 +34,9 @@ namespace Monad.AB.Services.Business
             IRoleRightRepository roleRightRepository,
              IActivityRepository activityRepository,
              IResourceRepository resourceRepository,
-             IResourceTypeRepository resourceTypeRepository)
+             IResourceTypeRepository resourceTypeRepository,
+             IUserClaimRequestRepository userClaimRequestRepository
+             )
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -45,6 +48,7 @@ namespace Monad.AB.Services.Business
             _activityRepository = activityRepository;
             _resourceRepository = resourceRepository;
             _resourceTypeRepository = resourceTypeRepository;
+            _userClaimRequestRepository = userClaimRequestRepository;
         }
 
         public UserManager<User> UserManager { get; private set; }
@@ -314,6 +318,11 @@ namespace Monad.AB.Services.Business
         }
 
         #endregion User Management
+
+        public IList<UserClaimRequest> GetUserClaims(string userId)
+        {
+            return _userClaimRequestRepository.GetSearchResult(userId);
+        }
     }
 
 }

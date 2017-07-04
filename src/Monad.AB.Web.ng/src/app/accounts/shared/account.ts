@@ -63,3 +63,19 @@ export class AddUserResultViewmodel {
 export class UserEditViewModel extends UserViewModel {
 
 }
+
+
+export class UserClaimsViewModel {
+    Id: number;
+    resourceName: string;
+    isAdd: boolean;
+    isedit: boolean;
+    isDelete: boolean;
+    isView: boolean;
+    isList: boolean;
+    addId: number;
+    editId: number;
+    deleteId: number;
+    viewId: number;
+    listId: number;
+}

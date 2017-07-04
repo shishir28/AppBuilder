@@ -34,6 +34,16 @@ namespace Monad.AB.Infrastructure.Data
                 b.Property(u => u.UserId).HasColumnName("UserId");
             });
 
+            modelBuilder.Entity<UserClaimRequest>(b =>
+            {
+                b.Property(u => u.IsAdd).HasColumnName("Add");
+                b.Property(u => u.IsDelete).HasColumnName("Delete");
+                b.Property(u => u.IsEdit).HasColumnName("Edit");
+                b.Property(u => u.IsList).HasColumnName("List");
+                b.Property(u => u.IsView).HasColumnName("View");
+            });
+
+
             modelBuilder.Entity<IdentityUserRole<string>>(b =>
             {
                 b.ToTable("UserRole");

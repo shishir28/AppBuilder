@@ -45,6 +45,12 @@ export class AccountsService {
             .map(res => res.json());
     }
 
+
+    getUserClaims(userId): Observable<any[]> {
+        return this.http.get('/api/account/GetUserClaims?userId=' + userId)
+            .map(res => res.json());
+    }
+
     private extractData(res: Response) {
         let body = res.json();
         return body || {};

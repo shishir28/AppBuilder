@@ -258,6 +258,13 @@ namespace Monad.AB.Web.App.Controllers
 
         #endregion User Management
 
+        [HttpGet]
+        [Route("GetUserClaims")]
+        public IList<UserClaimsViewModel> GetUserClaims(string userId)
+        {
+            var response = _accountService.GetUserClaims(userId);
+            return Mapper.Map<IList<UserClaimRequest>, IList<UserClaimsViewModel>>(response);
+        }
     }
 }
 

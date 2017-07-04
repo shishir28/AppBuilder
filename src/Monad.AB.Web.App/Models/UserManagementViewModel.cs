@@ -99,4 +99,26 @@ namespace Monad.AB.Web.App.Models
         public string SecurityUserId { get; set; }
     }
 
+
+    public class UserClaimsViewModel
+    {
+        public int Id { get; set; }
+        public string ResourceName { get; set; }
+        public bool IsAdd { get; set; }
+        public bool IsEdit { get; set; }
+        public bool IsDelete { get; set; }
+        public bool IsView { get; set; }
+        public bool IsList { get; set; }
+        public int AddId { get; set; }
+        public int EditId { get; set; }
+        public int DeleteId { get; set; }
+        public int ViewId { get; set; }
+        public int ListId { get; set; }
+    }
+
+    //public class UpdateRoleRightsViewModel
+    //{
+    //    public List<RoleRightsViewModel> RoleRights { get; set; }
+    //    public string ApplicationRoleId { get; set; }
+    //}
 }
