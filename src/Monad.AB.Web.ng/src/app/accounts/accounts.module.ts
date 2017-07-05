@@ -15,7 +15,7 @@ import { ForgotPasswordComponent } from './forgot-password.component';
 import { ListUserComponent } from './list-user.component';
 import { EditUserComponent } from './edit-user.component';
 import { NewUserComponent } from './new-user.component';
-
+import { ViewUserComponent } from './view-user.component';
 
 
 @NgModule({
@@ -31,7 +31,7 @@ import { NewUserComponent } from './new-user.component';
     ],
 
     declarations: [
-        LoginComponent, RegisterComponent, ForgotPasswordComponent, ListUserComponent, EditUserComponent, NewUserComponent
+        LoginComponent, RegisterComponent, ForgotPasswordComponent, ListUserComponent, EditUserComponent, NewUserComponent, ViewUserComponent
     ],
     entryComponents: [
     ],

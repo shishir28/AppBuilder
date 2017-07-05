@@ -1,0 +1,60 @@
+<div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'User.Edit'">
+  <md-card style="padding: 16px;" fxFlex="90%">
+    <md-toolbar color="primary">Edit user</md-toolbar>
+    <md-card-content>
+      <form [formGroup]="userForm" novalidate (ngSubmit)="saveUser(userForm.value)">
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput name="userName" placeholder="User Name" required [(ngModel)]="user.userName" formControlName="userName" readonly="true"
+            />
+          </md-input-container>
+        </div>
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput name="email" placeholder="email" required [(ngModel)]="user.email" formControlName="email" readonly="true"
+            />
+          </md-input-container>
+        </div>
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput name="firstName" placeholder="First Name" required [(ngModel)]="user.firstName" formControlName="firstName"
+              readonly="true" />
+
+          </md-input-container>
+        </div>
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput name="lastName" placeholder="Last Name" required [(ngModel)]="user.lastName" formControlName="lastName" readonly="true"
+            />
+          </md-input-container>
+        </div>
+
+        <div fxLayout="column">
+          <md-input-container>
+            <input mdInput name="addressLine1" placeholder="Address Line1" required [(ngModel)]="user.addressLine1" formControlName="addressLine1"
+              readonly="true" />
+          </md-input-container>
+        </div>
+
+
+        <div fxLayout="column">
+          <md-select [(ngModel)]="user.roleId" placeholder="Role Name" formControlName="roleId" [disabled]="true">
+            <md-option *ngFor="let role of roles" [value]="role.roleId">
+              {{role.name}}
+            </md-option>
+          </md-select>
+        </div>
+
+
+        <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
+          <button md-raised-button type="button" (click)="editUser(user.id);" color="primary" style="margin-left: 8px;">
+              Edit
+            </button>
+          <button md-raised-button type="button" (click)="cancelChanges($event);" color="primary" style="margin-left: 8px;">
+              Go Back
+            </button>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>

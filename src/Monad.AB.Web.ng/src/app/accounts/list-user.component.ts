@@ -34,9 +34,9 @@ export class ListUserComponent implements OnInit {
         this.router.navigateByUrl('/users/new');
     }
 
-    // viewRole(roleId): void {
-    //     this.router.navigateByUrl('/roles/' + roleId);
-    // }
+    viewUser(userId): void {
+        this.router.navigateByUrl('/users/' + userId);
+    }
 
     editUser(userId): void {
         this.router.navigateByUrl('/users/edit/' + userId);
