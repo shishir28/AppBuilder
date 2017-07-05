@@ -6,6 +6,6 @@ namespace Monad.AB.Domain.Interfaces
     public interface IUserClaimRequestRepository : IRepository<UserClaimRequest>
     {
         IList<UserClaimRequest> GetSearchResult(string userId = null);
-        //void UpdateRoleRights(string roleId, IList<RoleRightRequest> updateRequest);
+        void UpdateUserClaims(string userId, IList<UserClaimRequest> updateRequest);
     }
 }

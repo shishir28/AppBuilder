@@ -245,12 +245,12 @@ namespace Monad.AB.Services.Business
             var existingApplicationUser = await UserManager.FindByNameAsync(user.UserName);
             if (existingApplicationUser == null)
                 return IdentityResult.Failed(new IdentityError[] { new IdentityError { Code = "", Description = "User Not Found!" } });
-
+            var currentUtcTime = DateTime.UtcNow;
             existingApplicationUser.Email = user.Email;
             existingApplicationUser.PhoneNumber = user.PhoneNumber;
             existingApplicationUser.LastModifiedBy = user.LastModifiedBy;
-            existingApplicationUser.LastModifiedDateUtc = DateTime.UtcNow;
-
+            existingApplicationUser.LastModifiedDateUtc = currentUtcTime;
+            
             var updatedApplicationUser = await UserManager.UpdateAsync(existingApplicationUser);
 
             var existingRoles = await UserManager.GetRolesAsync(existingApplicationUser);
@@ -268,6 +268,7 @@ namespace Monad.AB.Services.Business
             var existingUser = _userService.GetUserByName(userProfile.UserName);
             CopyUserData(userProfile, existingUser);
             existingUser.EmailAddress = user.Email;
+            existingUser.LastModifiedDateUtc = currentUtcTime;
             _userService.EditUser(existingUser);
             return updatedApplicationUser;
         }
@@ -284,15 +285,15 @@ namespace Monad.AB.Services.Business
             targetUserProfile.State = sourceUserProfile.State;
             targetUserProfile.Zip = sourceUserProfile.Zip;
             targetUserProfile.FirstName = sourceUserProfile.FirstName;
-            targetUserProfile.Gender = sourceUserProfile.Gender;
+            targetUserProfile.Gender = sourceUserProfile.Gender;            
         }
         public async Task<AggregatedUserDto> GetUserByUserId(string userId)
         {
-        
+
             var user = await UserManager.FindByIdAsync(userId);
             var userProfile = _userService.GetUserByName(user.UserName);
             var selectedRoles = await UserManager.GetRolesAsync(user);
-            var selectedRole = await RoleManager.FindByNameAsync (selectedRoles.FirstOrDefault());
+            var selectedRole = await RoleManager.FindByNameAsync(selectedRoles.FirstOrDefault());
             var result = new AggregatedUserDto
             {
                 Id = user.Id,
@@ -322,6 +323,11 @@ namespace Monad.AB.Services.Business
         public IList<UserClaimRequest> GetUserClaims(string userId)
         {
             return _userClaimRequestRepository.GetSearchResult(userId);
+        }
+
+        public void UpdateUserClaims(string userId, IList<UserClaimRequest> userClaimsDto)
+        {
+            _userClaimRequestRepository.UpdateUserClaims(userId, userClaimsDto);
         }
     }
 

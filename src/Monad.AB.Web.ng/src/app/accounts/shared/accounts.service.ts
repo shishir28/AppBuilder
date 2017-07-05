@@ -2,6 +2,11 @@ import { Http, URLSearchParams, Response, Headers, RequestOptions } from '@angul
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable'
+
+import { UserClaimsViewModel, UpdateUserClaimsViewModel } from './account';
+
+
+
 @Injectable()
 
 export class AccountsService {
@@ -17,7 +22,6 @@ export class AccountsService {
         return this.http.post("/api/account/register", JSON.stringify(registerUser))
             .map(res => res.json());
     }
-
 
     logout(logoutUser) {
         return this.http.post("/api/account/LogOff", JSON.stringify(logoutUser))
@@ -39,9 +43,8 @@ export class AccountsService {
             .map(res => res.json());
     }
 
-
-    editUser(userData) {
-        return this.http.post("/api/account/editUser", JSON.stringify(userData))
+    editUser(userData) {    
+        return this.http.put("/api/account/editUser", JSON.stringify(userData))
             .map(res => res.json());
     }
 
@@ -51,10 +54,17 @@ export class AccountsService {
             .map(res => res.json());
     }
 
+
+    saveUserClains(userId, userClaims: UserClaimsViewModel[]) {
+        let data = new UpdateUserClaimsViewModel();
+        data.userId = userId;
+        data.claims = userClaims;
+        return this.http.put('/api/account/UpdateUserClaims', JSON.stringify(data))
+            .map(res => res.json());
+    }
+
     private extractData(res: Response) {
         let body = res.json();
         return body || {};
     }
-
-
 }

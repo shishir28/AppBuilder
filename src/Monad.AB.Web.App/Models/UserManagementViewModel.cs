@@ -116,9 +116,9 @@ namespace Monad.AB.Web.App.Models
         public int ListId { get; set; }
     }
 
-    //public class UpdateRoleRightsViewModel
-    //{
-    //    public List<RoleRightsViewModel> RoleRights { get; set; }
-    //    public string ApplicationRoleId { get; set; }
-    //}
+    public class UpdateUserClaimsViewModel
+    {
+        public List<UserClaimsViewModel> Claims { get; set; }
+        public string UserId { get; set; }
+    }
 }

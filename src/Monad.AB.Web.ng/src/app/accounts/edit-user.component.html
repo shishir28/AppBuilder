@@ -4,23 +4,17 @@
     <md-card-content>
       <form [formGroup]="userForm" novalidate (ngSubmit)="saveUser(userForm.value)">
         <div fxLayout="column">
-
           <md-input-container>
             <input mdInput name="userName" placeholder="User Name" required [(ngModel)]="user.userName" formControlName="userName" [class.invalid]="userForm.controls['userName'].touched && !userForm.controls['userName'].valid"
-            readonly="true" />
-           
+            readonly="true" />           
           </md-input-container>
-
         </div>
         <div fxLayout="column">
-
           <md-input-container>
             <input mdInput name="email" placeholder="email" required [(ngModel)]="user.email" formControlName="email" [class.invalid]="userForm.controls['email'].touched && !userForm.controls['email'].valid"
-            readonly="true"/>
-           
+            readonly="true"/>           
           </md-input-container>
         </div>
-
         <div fxLayout="column">
           <md-input-container>
             <input mdInput name="firstName" placeholder="First Name" required [(ngModel)]="user.firstName" formControlName="firstName"
@@ -50,6 +44,7 @@
           </md-input-container>
         </div>
 
+        
         <div fxLayout="column">
           <md-select [(ngModel)]="user.roleId" placeholder="Role Name" formControlName="roleId">
             <md-option *ngFor="let role of roles" [value]="role.roleId">

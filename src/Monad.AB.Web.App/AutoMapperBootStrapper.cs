@@ -132,6 +132,12 @@ namespace Monad.AB.Web.App
 
             cfg.CreateMap<AggregatedUserDto, AddUserViewModel>();
             cfg.CreateMap<AddUserViewModel, AggregatedUserDto>();
+
+            cfg.CreateMap<User, UserViewModel>();
+            cfg.CreateMap<UserViewModel, User>();
+
+            cfg.CreateMap<UserProfile, UserViewModel>();
+            cfg.CreateMap<UserViewModel, UserProfile>();
         }
 
     }

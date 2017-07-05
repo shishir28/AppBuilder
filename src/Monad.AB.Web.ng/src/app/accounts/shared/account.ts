@@ -33,7 +33,7 @@ export class CommonUserViewModel {
     addressLine1: string;    
     addressLine2: string;    
     zip: string;    
-    City: string;    
+    city: string;    
     state: string;        
     userText: string;
     roleId: string;
@@ -78,4 +78,9 @@ export class UserClaimsViewModel {
     deleteId: number;
     viewId: number;
     listId: number;
+}
+
+export class UpdateUserClaimsViewModel {
+    claims: UserClaimsViewModel[];
+    userId: string;
 }

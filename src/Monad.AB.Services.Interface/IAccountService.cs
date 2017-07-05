@@ -33,10 +33,7 @@ namespace Monad.AB.Services.Interface
         #endregion User Management
 
         IList<UserClaimRequest> GetUserClaims(string userId);
-
-        //public void UpdateRoleRights(string roleId, IList<RoleRightRequest> roleRightsDto)
-        //{
-        //    _roleRightRequestRepository.UpdateRoleRights(roleId, roleRightsDto);
-        //}
+        void UpdateUserClaims(string userId, IList<UserClaimRequest> userClaimsDto);
+       
     }
 }

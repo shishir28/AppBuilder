@@ -211,24 +211,23 @@ namespace Monad.AB.Web.App.Controllers
                 // check if any role was sent
                 if (string.IsNullOrEmpty(model.RoleId))
                     return new ObjectResult(new { StatusCode = 400, Content = "No Role was selected!" });
-
+                var lastModifierUserId = 1;
+                
                 var applicationUser = Mapper.Map<UserViewModel, User>(model);
-                applicationUser.LastModifiedBy = model.LastModifiedBy;
+                applicationUser.LastModifiedBy = lastModifierUserId;
                 var user = new UserProfile
                 {
                     Id = model.UserId,
-                    LastModifiedBy = model.LastModifiedBy,
-                    LastModifiedDateUtc = model.LastModifiedDateUtc,
                     LastName = model.LastName,
                     FirstName = model.FirstName,
                     UserName = model.UserName,
                     AddressLine1 = model.AddressLine1,
                     AddressLine2 = model.AddressLine2,
+                    LastModifiedBy = lastModifierUserId,
                     City = model.City,
                     State = model.State,
                     EmailAddress = model.Email,
                     CreatedDateUtc = model.CreatedDateUtc,
-                    //SkillLevel = model.SkillLevel,
                     Zip = model.Zip,
                     Gender = model.Gender
                 };
@@ -237,8 +236,7 @@ namespace Monad.AB.Web.App.Controllers
 
                 if (result.Succeeded)
                 {
-                    HttpContext.Response.StatusCode = 204;
-                    return new ObjectResult(new { StatusCode = 204 });   // mvc  http client always receives 200 as http response message so need this hack 
+                    return new ObjectResult(new { StatusCode = 204 });
                 }
                 else
                     return new ObjectResult(new { StatusCode = 400, Content = result.Errors });
@@ -264,6 +262,22 @@ namespace Monad.AB.Web.App.Controllers
         {
             var response = _accountService.GetUserClaims(userId);
             return Mapper.Map<IList<UserClaimRequest>, IList<UserClaimsViewModel>>(response);
+        }
+
+        [HttpPut]
+        [Route("UpdateUserClaims")]
+        public IActionResult UpdateUserClaims([FromBody] UpdateUserClaimsViewModel model)
+        {
+            try
+            {
+                var updateData = Mapper.Map<IList<UserClaimsViewModel>, IList<UserClaimRequest>>(model.Claims);
+                _accountService.UpdateUserClaims(model.UserId, updateData);
+                return new ObjectResult(new { StatusCode = 204, Content = $@"User Claims updated!" });
+            }
+            catch (System.Exception ex)
+            {
+                return new ObjectResult(new { StatusCode = 400, Content = $@"User Claims could not be updated!" });
+            }
         }
     }
 }
