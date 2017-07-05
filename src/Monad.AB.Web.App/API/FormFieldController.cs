@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Monad.AB.Domain.Entities;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 namespace Monad.AB.Web.App.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Policy = "Bearer")]
     public class FormFieldController : Controller
     {
         private IFormFieldService _formFieldService;

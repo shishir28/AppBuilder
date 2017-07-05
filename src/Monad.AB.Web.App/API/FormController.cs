@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Monad.AB.Web.App.Controllers
 {
     [Route("api/[controller]")]
- //   [Authorize(Policy = "Bearer")]
+    [Authorize(Policy = "Bearer")]
     public class FormController : Controller
     {
         private IFormService _formService;

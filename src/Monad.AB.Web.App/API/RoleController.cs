@@ -8,10 +8,12 @@ using Monad.AB.Domain.Entities.Identity;
 using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
 using Monad.AB.Domain.Entities.Dto;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Monad.AB.Web.App.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Policy = "Bearer")]
     public class RoleController : Controller
     {
         private IAccountService _accountService;

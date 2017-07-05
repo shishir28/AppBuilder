@@ -21,6 +21,7 @@ using Monad.AB.Domain.Entities;
 namespace Monad.AB.Web.App.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Policy = "Bearer")]
     public class AccountController : Controller
     {
         private IAccountService _accountService;
@@ -212,7 +213,7 @@ namespace Monad.AB.Web.App.Controllers
                 if (string.IsNullOrEmpty(model.RoleId))
                     return new ObjectResult(new { StatusCode = 400, Content = "No Role was selected!" });
                 var lastModifierUserId = 1;
-                
+
                 var applicationUser = Mapper.Map<UserViewModel, User>(model);
                 applicationUser.LastModifiedBy = lastModifierUserId;
                 var user = new UserProfile
@@ -247,9 +248,9 @@ namespace Monad.AB.Web.App.Controllers
 
         [HttpGet]
         [Route("GetUser")]
-        public UserViewModel  GetUser(string userId)
-        {       
-            var applicationUser =   _accountService.GetUserByUserId(userId).Result;
+        public UserViewModel GetUser(string userId)
+        {
+            var applicationUser = _accountService.GetUserByUserId(userId).Result;
             var result = Mapper.Map<AggregatedUserDto, UserViewModel>(applicationUser);
             return result;
         }

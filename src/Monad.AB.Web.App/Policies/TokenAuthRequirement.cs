@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Monad.AB.Common.StateManagement;
 using Monad.AB.Domain.Entities.Identity;
@@ -20,7 +21,7 @@ namespace Monad.AB.Web.App.Policies
         }
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, TokenAuthRequirement requirement)
         {
-            var httpContext = (context.Resource as ActionContext).HttpContext;
+            var httpContext = context.Resource as DefaultHttpContext;
             var request = httpContext.Request;
             if (SecurityHelper.SkipRequired(request.Path))
             {
@@ -38,18 +39,15 @@ namespace Monad.AB.Web.App.Policies
         }
         private bool IsAuthorizedForRequestedAction(AuthorizationHandlerContext context, TokenAuthRequirement requirement)
         {
-            var httpContext = (context.Resource as ActionContext).HttpContext;
-            var routeData = (context.Resource as ActionContext).RouteData;
+            var httpContext = context.Resource as DefaultHttpContext;
+            var routeData = httpContext.Request.Path;
             var cacheInstance = httpContext.RequestServices.GetService(typeof(ICacheProvider)) as ICacheProvider;
             var authService = httpContext.RequestServices.GetService(typeof(IAuthService)) as IAuthService;
             var requestedUserName =Convert.ToString( httpContext.Items["x-access-username"]);
             if (string.IsNullOrEmpty(requestedUserName))
                 return false;
 
-            var controllerName = Convert.ToString(routeData.Values["controller"]);
-            var actionName = Convert.ToString(routeData.Values["action"]);
-
-            var tobeMathedClaim = controllerName.ToLower() + "/" + actionName.ToLower();
+            var tobeMathedClaim = routeData.Value.Replace("/api/","").ToLower();
             var currentCacheKey = string.Format("User-{0}-{1}", requestedUserName, tobeMathedClaim);
             if (!cacheInstance.Contains(currentCacheKey))
             {

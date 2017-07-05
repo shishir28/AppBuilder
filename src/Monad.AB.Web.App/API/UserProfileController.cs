@@ -10,15 +10,14 @@ using Monad.AB.Domain.Entities;
 
 namespace Monad.AB.Web.App.Controllers
 {
+    //   [Authorize(Policy = "Bearer")]
     [Route("api/[controller]")]
     public class UserProfileController : Controller
     {
         private IUserProfileService _userService;
-        // private IOptions<AppSettings> _appSettings;
         public UserProfileController(IUserProfileService userService)//, IOptions<AppSettings> appSettings)
         {
             _userService = userService;
-            //_appSettings = appSettings;
         }
 
         [HttpGet]
