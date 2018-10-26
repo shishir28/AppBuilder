@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 import { FormFieldViewsService } from './shared/formFieldViews.service';
 import { FormFieldView, FormViewTypeModel } from '../formFields/shared/formField';
 
@@ -21,7 +21,7 @@ export class EditFormFieldViewComponent implements OnInit {
     formfieldId: number;
 
     constructor(
-        private snackBar: MdSnackBar,
+        private snackBar: MatSnackBar,
         private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,

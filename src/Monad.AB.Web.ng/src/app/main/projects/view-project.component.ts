@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 import { DialogService } from '../../widgets/dialogs/dialog.service';
 import { ProjectsService } from './shared/projects.service';
 import { FormsService } from '../forms/shared/forms.service';
@@ -27,7 +27,7 @@ export class ViewProjectComponent implements OnInit, AfterViewInit {
 
     constructor(private router: Router,
         private route: ActivatedRoute,
-        private snackBar: MdSnackBar,
+        private snackBar: MatSnackBar,
         private dialogService: DialogService,
         private projectsService: ProjectsService,
         private formsService: FormsService) {

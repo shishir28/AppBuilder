@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 import { DialogService } from '../widgets/dialogs/dialog.service';
 import { AccountsService } from './shared/accounts.service';
 import { RolesService } from '../roles/shared/roles.service'
@@ -26,7 +26,7 @@ export class EditUserComponent implements OnInit {
   constructor(private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private snackBar: MdSnackBar,
+    private snackBar: MatSnackBar,
     private dialogService: DialogService,
     private rolesService: RolesService,
     private accountsService: AccountsService) {

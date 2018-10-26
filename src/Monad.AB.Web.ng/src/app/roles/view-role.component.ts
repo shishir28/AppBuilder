@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 import { DialogService } from '../widgets/dialogs/dialog.service';
 
 import { RolesService } from './shared/roles.service';
@@ -20,7 +20,7 @@ export class ViewRoleComponent implements OnInit {
     constructor(
         private router: Router,
         private route: ActivatedRoute,
-        private snackBar: MdSnackBar,
+        private snackBar: MatSnackBar,
         private dialogService: DialogService,
         private rolesService: RolesService) {
     }

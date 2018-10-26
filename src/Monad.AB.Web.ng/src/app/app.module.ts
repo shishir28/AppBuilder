@@ -7,7 +7,7 @@ import { SharedComponentsModule } from './shared/shared-components.module';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
-import { MdIconRegistry, } from "@angular/material";
+import { MatIconRegistry, } from "@angular/material";
 import { RoutingModule } from "./app-routing.module";
 import { CommonModule } from "@angular/common";
 import { PerfectScrollbarConfigInterface, PerfectScrollbarModule } from "ngx-perfect-scrollbar";
@@ -28,7 +28,7 @@ import { InternalServerErrorComponent } from './shared/internal-server-error.com
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
-    swipePropagation: false
+    // swipePropagation: false
 };
 
 const sortablejsConfig: SortablejsOptions = {
@@ -52,11 +52,11 @@ const sortablejsConfig: SortablejsOptions = {
         SortablejsModule,
         MaterialComponentsModule,
         SharedComponentsModule,
-        FlexLayoutModule,
-        PerfectScrollbarModule.forRoot(perfectScrollbarConfig),
+        FlexLayoutModule,        
+        PerfectScrollbarModule,
     ],
     providers: [
-        MdIconRegistry, AuthGuard,
+        MatIconRegistry, AuthGuard,
         {
             provide: Http,
             useFactory: httpFactory,

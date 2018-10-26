@@ -1,7 +1,7 @@
 ﻿import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from '@angular/material';
+// import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -14,7 +14,7 @@ export const formFieldConfig: NgModule = {
     imports: [
         CommonModule,
         FormsModule,
-        MaterialModule,
+        // MaterialModule,
         ReactiveFormsModule,
         RouterModule,
         HttpModule,

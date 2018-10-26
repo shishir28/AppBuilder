@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 import { UsersService } from './shared/users.service';
 import { ApplicationUser } from './shared/user';
 
@@ -19,7 +19,7 @@ export class EditUserProfileComponent implements OnInit {
     serverErrorMessage: string;
 
     constructor(
-        private snackBar: MdSnackBar,
+        private snackBar: MatSnackBar,
         private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,

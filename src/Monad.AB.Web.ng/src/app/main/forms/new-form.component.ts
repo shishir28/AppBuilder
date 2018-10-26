@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 
 import { FormsService } from './shared/forms.service'
 import { Form } from './shared/form'
@@ -19,7 +19,7 @@ export class NewFormComponent implements OnInit {
     projectId: string;
     formId: string;
     constructor(
-        private snackBar: MdSnackBar,
+        private snackBar: MatSnackBar,
         private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,

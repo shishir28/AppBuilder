@@ -5,7 +5,7 @@ import * as _ from 'lodash';
 import { Router, NavigationEnd } from "@angular/router";
 import { Subscription } from "rxjs";
 import { BreadcrumbService } from "../breadcrumb/breadcrumb.service";
-import { MdSnackBar, MdSnackBarConfig } from "@angular/material";
+import { MatSnackBar, MatSnackBarConfig } from "@angular/material";
 
 @Component({
     selector: 'ms-sidenav',
@@ -24,7 +24,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         private sidenavService: SidenavService,
         private router: Router,
         private breadcrumbService: BreadcrumbService,
-        private snackBar: MdSnackBar
+        private snackBar: MatSnackBar
     ) { }
 
     ngOnInit() {
@@ -52,7 +52,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
         this.sidenavService.isIconSidenav = !this.sidenavService.isIconSidenav;
 
-        let snackBarConfig: MdSnackBarConfig = <MdSnackBarConfig>{
+        let snackBarConfig: MatSnackBarConfig = <MatSnackBarConfig>{
             duration: 10000
         };
 

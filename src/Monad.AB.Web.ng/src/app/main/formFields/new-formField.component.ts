@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 
 import { FormFieldsService } from './shared/formFields.service';
 import { FormField, FieldType } from './shared/formField';
@@ -22,7 +22,7 @@ export class NewFormFieldComponent implements OnInit {
     formFieldId: number;
 
     constructor(
-        private snackBar: MdSnackBar,
+        private snackBar: MatSnackBar,
         private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,

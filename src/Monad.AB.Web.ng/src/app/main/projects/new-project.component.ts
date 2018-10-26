@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 
 import { ProjectsService } from './shared/projects.service'
 import { Project } from './shared/project'
@@ -16,7 +16,7 @@ export class NewProjectComponent implements OnInit {
     project: Project = new Project();
     serverErrorMessage: string;
     constructor(
-        private snackBar: MdSnackBar,
+        private snackBar: MatSnackBar,
         private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,

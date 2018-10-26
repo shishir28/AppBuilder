@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 
 import { DialogService } from '../../widgets/dialogs/dialog.service';
 import { FormFieldsService } from './shared/formFields.service';
@@ -26,7 +26,7 @@ export class ViewFormFieldComponent implements OnInit {
     constructor(private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,
-        private snackBar: MdSnackBar,
+        private snackBar: MatSnackBar,
         private dialogService: DialogService,
         private formFieldsService: FormFieldsService,
         private formFieldViewsService: FormFieldViewsService

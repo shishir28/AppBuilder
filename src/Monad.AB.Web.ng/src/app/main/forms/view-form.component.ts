@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 
 import { DialogService } from '../../widgets/dialogs/dialog.service';
 import { FormsService } from './shared/forms.service';
@@ -29,7 +29,7 @@ export class ViewFormComponent implements OnInit, AfterViewInit {
     tbody: ElementRef;
     constructor(private router: Router,
         private route: ActivatedRoute,
-        private snackBar: MdSnackBar,
+        private snackBar: MatSnackBar,
         private dialogService: DialogService,
         private formsService: FormsService,
         private formFieldsService: FormFieldsService) {

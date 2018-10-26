@@ -1,6 +1,8 @@
-import { XHRBackend, Http, RequestOptions } from "@angular/http";
-import { HttpInterceptor } from "./HttpInterceptor";
+import { Location } from '@angular/common';
+import { Http, RequestOptions, XHRBackend } from '@angular/http';
 
-export function httpFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions): Http {
-    return new HttpInterceptor(xhrBackend, requestOptions);
+import { HttpInterceptor } from './HttpInterceptor';
+
+export function httpFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, location: Location): Http {
+    return new HttpInterceptor(xhrBackend, requestOptions,location);
 }

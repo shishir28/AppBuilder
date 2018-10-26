@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 import { RolesService } from './shared/roles.service';
 import { AddRoleViewModel } from './shared/role';
 
@@ -17,7 +17,7 @@ export class NewRoleComponent implements OnInit {
     serverErrorMessage: string;
     roleId: string;
 
-    constructor(private snackBar: MdSnackBar,
+    constructor(private snackBar: MatSnackBar,
         private formBuilder: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  MdAutocompleteModule, MdButtonModule, MdCardModule, MdCheckboxModule, MdDatepickerModule, MdDialogModule,
-  MdGridListModule, MdIconModule, MdInputModule, MdListModule,
-  MdMenuModule, MdNativeDateModule, MdProgressBarModule, MdProgressSpinnerModule, MdSelectModule,
-  MdSidenavModule,
-  MdSliderModule,
-  MdSlideToggleModule, MdSnackBarModule, MdTabsModule, MdToolbarModule, MdTooltipModule
+  MatAutocompleteModule, MatButtonModule, MatCardModule, MatCheckboxModule, MatDatepickerModule, MatDialogModule,
+  MatGridListModule, MatIconModule, MatInputModule, MatListModule,
+  MatMenuModule, MatNativeDateModule, MatProgressBarModule, MatProgressSpinnerModule, MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule, MatSnackBarModule, MatTabsModule, MatToolbarModule, MatTooltipModule
 } from '@angular/material';
 
 @NgModule({
@@ -15,28 +15,28 @@ import {
   ],
   declarations: [],
   exports: [
-    MdInputModule,
-    MdTabsModule,
-    MdIconModule,
-    MdListModule,
-    MdButtonModule,
-    MdToolbarModule,
-    MdDialogModule,
-    MdMenuModule,
-    MdGridListModule,
-    MdCardModule,
-    MdSnackBarModule,
-    MdTooltipModule,
-    MdSliderModule,
-    MdAutocompleteModule,
-    MdDatepickerModule,
-    MdSlideToggleModule,
-    MdSidenavModule,
-    MdCheckboxModule,
-    MdNativeDateModule,
-    MdProgressBarModule,
-    MdProgressSpinnerModule,
-    MdSelectModule
+    MatInputModule,
+    MatTabsModule,
+    MatIconModule,
+    MatListModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatMenuModule,
+    MatGridListModule,
+    MatCardModule,
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatSliderModule,
+    MatAutocompleteModule,
+    MatDatepickerModule,
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatCheckboxModule,
+    MatNativeDateModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatSelectModule
   ]
 })
 export class MaterialComponentsModule { }

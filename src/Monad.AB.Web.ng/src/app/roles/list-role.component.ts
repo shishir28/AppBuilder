@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MdSnackBar } from "@angular/material";
+import { MatSnackBar } from "@angular/material";
 import { DialogService } from '../widgets/dialogs/dialog.service';
 import { RolesService } from './shared/roles.service';
 import { RoleViewModel } from './shared/role';
@@ -18,7 +18,7 @@ export class ListRoleComponent implements OnInit {
     private roles: RoleViewModel[];
     constructor(private router: Router,
         private route: ActivatedRoute,
-        private snackBar: MdSnackBar,
+        private snackBar: MatSnackBar,
         private dialogService: DialogService,
         private rolesService: RolesService) {
     }

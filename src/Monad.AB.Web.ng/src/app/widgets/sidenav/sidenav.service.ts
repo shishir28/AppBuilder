@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { SidenavItem } from "./sidenav-item/sidenav-item.model";
 import { BehaviorSubject, Observable } from "rxjs";
 import * as _ from 'lodash';
-import { MdSnackBar, MdSnackBarConfig } from "@angular/material";
+import { MatSnackBar, MatSnackBarConfig } from "@angular/material";
 import { Http, URLSearchParams, Response, Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
@@ -19,7 +19,7 @@ export class SidenavService {
     isIconSidenav: boolean;
     options: RequestOptions;
 
-    constructor(private http: Http, private snackbar: MdSnackBar) {
+    constructor(private http: Http, private snackbar: MatSnackBar) {
     }
 
     public buildMenu(userName) {

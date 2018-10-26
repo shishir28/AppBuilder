@@ -35,7 +35,7 @@ import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
         FlexLayoutModule,
         FormsModule,
         DialogModule,
-        PerfectScrollbarModule.forChild(),
+        PerfectScrollbarModule,
         ...projectConfig.imports,
         ...formConfig.imports,
         ...formFieldConfig.imports,
