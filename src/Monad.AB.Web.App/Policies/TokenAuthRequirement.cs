@@ -21,7 +21,7 @@ namespace Monad.AB.Web.App.Policies
         }
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, TokenAuthRequirement requirement)
         {
-            var httpContext = context.Resource as DefaultHttpContext;
+            var httpContext = (context.Resource as Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext).HttpContext;
             var request = httpContext.Request;
             if (SecurityHelper.SkipRequired(request.Path))
             {
@@ -39,15 +39,15 @@ namespace Monad.AB.Web.App.Policies
         }
         private bool IsAuthorizedForRequestedAction(AuthorizationHandlerContext context, TokenAuthRequirement requirement)
         {
-            var httpContext = context.Resource as DefaultHttpContext;
+            var httpContext = (context.Resource as Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext).HttpContext;
             var routeData = httpContext.Request.Path;
             var cacheInstance = httpContext.RequestServices.GetService(typeof(ICacheProvider)) as ICacheProvider;
             var authService = httpContext.RequestServices.GetService(typeof(IAuthService)) as IAuthService;
-            var requestedUserName =Convert.ToString( httpContext.Items["x-access-username"]);
+            var requestedUserName = Convert.ToString(httpContext.Items["x-access-username"]);
             if (string.IsNullOrEmpty(requestedUserName))
                 return false;
 
-            var tobeMathedClaim = routeData.Value.Replace("/api/","").ToLower();
+            var tobeMathedClaim = routeData.Value.Replace("/api/", "").ToLower();
             var currentCacheKey = string.Format("User-{0}-{1}", requestedUserName, tobeMathedClaim);
             if (!cacheInstance.Contains(currentCacheKey))
             {
