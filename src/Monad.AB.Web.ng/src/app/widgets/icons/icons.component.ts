@@ -13,7 +13,7 @@ import {fadeInAnimation} from "../../route.animation";
 })
 export class IconsComponent implements OnInit {
 
-  iconsHTML: string = `<md-icon>grade</md-icon>`;
+  iconsHTML: string = `<mat-icon>grade</mat-icon>`;
 
   icons = [
     "3d_rotation",

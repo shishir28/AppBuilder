@@ -16,8 +16,8 @@ import { MainModule } from './main/main.module';
 import { AccountsModule } from './accounts/accounts.module';
 import { UserProfilesModule } from './userProfiles/userProfiles.module';
 import { RolesModule } from './roles/roles.module';
-
-import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
+import { MatDialogModule } from '@angular/material';
+import { Http, RequestOptions, XHRBackend } from '@angular/http';
 import { SortablejsModule, SortablejsOptions } from 'angular-sortablejs';
 
 import { httpFactory } from './shared/httpFactory';
@@ -42,7 +42,7 @@ const sortablejsConfig: SortablejsOptions = {
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpModule,
+        MatDialogModule,       
         RoutingModule,
         BrowserAnimationsModule,
         MainModule,
@@ -61,7 +61,7 @@ const sortablejsConfig: SortablejsOptions = {
             provide: Http,
             useFactory: httpFactory,
             deps: [XHRBackend, RequestOptions]
-        }
+          },
     ],
     bootstrap: [AppComponent]
 })

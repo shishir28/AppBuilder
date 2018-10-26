@@ -2,6 +2,8 @@ import { Http, URLSearchParams, Response, Headers, RequestOptions } from '@angul
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs'
+import {map} from 'rxjs/operators';
+
 @Injectable()
 
 export class FormFieldsService {
@@ -15,7 +17,7 @@ export class FormFieldsService {
 
     getFormField(fieldId) {
         return this.http.get('/api/formField/GetFormField?fieldId=' + fieldId)
-            .map(res => res.json());
+            .pipe(map(res => res.json()));
     }
 
     addFormField(formField) {

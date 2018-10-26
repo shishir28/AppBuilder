@@ -1,41 +1,41 @@
 <div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'Form.View'">
-  <md-card style="padding: 16px;" fxFlex="90%">
-    <md-toolbar color="primary">View Form</md-toolbar>
-    <md-card-content>
+  <mat-card style="padding: 16px;" fxFlex="90%">
+    <mat-toolbar color="primary">View Form</mat-toolbar>
+    <mat-card-content>
       <form>
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="formName"
                    placeholder="Name"
                    readonly="readonly"
                    [(ngModel)]="form.formName" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="formTitle"
                    placeholder="Title"
                    readonly="readonly"
                    [(ngModel)]="form.formTitle" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-select [(ngModel)]="form.dependencyID" placeholder="Dependency" name="dependencyID" [disabled]="true">
-            <md-option *ngFor="let currentForm of forms" [value]="currentForm.id">
+          <mat-select [(ngModel)]="form.dependencyID" placeholder="Dependency" name="dependencyID" [disabled]="true">
+            <mat-option *ngFor="let currentForm of forms" [value]="currentForm.id">
               {{currentForm.title}}
-            </md-option>
-          </md-select>
+            </mat-option>
+          </mat-select>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="formDescription"
                    placeholder="Description"
                    [disabled]="true"
                    [(ngModel)]="form.formDescription" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
@@ -71,22 +71,22 @@
             <tbody>
               <tr *ngFor="let formField of formFields">
                 <td>{{ formField.name }}</td>
-                <td><button md-icon-button> <md-icon>{{ formField.isRequired?"check":"close"}}</md-icon></button></td>
+                <td><button mat-icon-button> <mat-icon>{{ formField.isRequired?"check":"close"}}</mat-icon></button></td>
 
                 <td>{{ formField.lastModifiedBy }}</td>
                 <td>{{ formField.lastModifiedDateUtc |date }}</td>
 
                 <td hidden="hidden">{{ form.dependencyID }}</td>
                 <td>
-                  <button md-icon-button (click)="viewFormField(form.projectID,form.id,formField.id);" style="margin-left: 1px;" *msElementAccess="'FormField.View'"><md-icon>pageview</md-icon></button>
-                  <button md-icon-button (click)="editFormField(form.projectID,form.id,formField.id);" style="margin-left: 1px;" *msElementAccess="'FormField.Edit'"><md-icon>edit</md-icon></button>
-                  <button md-icon-button (click)="deleteFormField(form.projectID,form.id,formField.id);" style="margin-left: 1px;" *msElementAccess="'FormField.Delete'"><md-icon>delete</md-icon></button>
+                  <button mat-icon-button (click)="viewFormField(form.projectID,form.id,formField.id);" style="margin-left: 1px;" *msElementAccess="'FormField.View'"><mat-icon>pageview</mat-icon></button>
+                  <button mat-icon-button (click)="editFormField(form.projectID,form.id,formField.id);" style="margin-left: 1px;" *msElementAccess="'FormField.Edit'"><mat-icon>edit</mat-icon></button>
+                  <button mat-icon-button (click)="deleteFormField(form.projectID,form.id,formField.id);" style="margin-left: 1px;" *msElementAccess="'FormField.Delete'"><mat-icon>delete</mat-icon></button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

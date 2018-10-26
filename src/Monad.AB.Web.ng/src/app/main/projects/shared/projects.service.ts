@@ -2,7 +2,8 @@
 import { Http, URLSearchParams, Response, Headers, RequestOptions } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs';
+import {map} from 'rxjs/operators';
 @Injectable()
 
 export class ProjectsService {
@@ -19,27 +20,27 @@ export class ProjectsService {
             search: params
         });
         return this.http.get('/api/project/GetProjects', options)
-            .map(this.extractData);
+        .pipe(map(this.extractData));
     }
 
     getProject(id) {
         return this.http.get("/api/project/GetProject?projectId=" + id)
-            .map(res => res.json());
+        .pipe(map(res => res.json()));
     }
 
     addProject(project) {
         return this.http.post("/api/project/addproject/", JSON.stringify(project))
-            .map(res => res.json());
+        .pipe(map(res => res.json()));
     }
 
     updateProject(project) {
         return this.http.put("/api/project/editproject/", JSON.stringify(project))
-            .map(res => res.json());
+            .pipe(map(res => res.json()));
     }
 
     deleteProject(id) {
         return this.http.delete("/api/project/deleteproject?projectId=" + id)
-            .map(res => res.json());
+            .pipe(map(res => res.json()));
     }
 
     private extractData(res: Response) {

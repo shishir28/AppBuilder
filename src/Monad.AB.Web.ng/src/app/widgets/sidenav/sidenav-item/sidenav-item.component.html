@@ -5,7 +5,7 @@
      *ngIf="!item.hasSubItems()"
      md-list-item md-ripple (click)="item.route()">
 
-    <md-icon>{{ item.icon }}</md-icon>
+    <mat-icon>{{ item.icon }}</mat-icon>
     <span class="sidenav-item-name fade-in-on-icon-sidenav">{{ item.name }}</span>
     <span fxFlex><!-- fill space --></span>
     <span class="badge fade-in-on-icon-sidenav" *ngIf="item.badge" [style.background-color]="item.badgeColor">{{ item.badge }}</span>
@@ -19,7 +19,7 @@
      md-list-item md-ripple
      [routerLink]="[item.route]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
-    <md-icon>{{ item.icon }}</md-icon>
+    <mat-icon>{{ item.icon }}</mat-icon>
     <span class="sidenav-item-name fade-in-on-icon-sidenav">{{ item.name }}</span>
     <span fxFlex><!-- fill space --></span>
     <span class="badge fade-in-on-icon-sidenav" *ngIf="item.badge" [style.background-color]="item.badgeColor">{{ item.badge }}</span>
@@ -32,15 +32,15 @@
    (click)="toggleDropdown()"
    [ngClass]="item.customClass">
 
-  <md-icon>{{ item.icon }}</md-icon>
+  <mat-icon>{{ item.icon }}</mat-icon>
   <span class="sidenav-item-name fade-in-on-icon-sidenav">{{ item.name }}</span>
   <span fxFlex><!-- fill space --></span>
   <span class="badge fade-in-on-icon-sidenav" *ngIf="item.badge" [style.background-color]="item.badgeColor" style="margin-right: 12px;">{{ item.badge }}</span>
-  <md-icon *ngIf="item.hasSubItems()" class="sidenav-item-dropdown-indicator rotate fade-in-on-icon-sidenav">expand_more</md-icon>
+  <mat-icon *ngIf="item.hasSubItems()" class="sidenav-item-dropdown-indicator rotate fade-in-on-icon-sidenav">expand_more</mat-icon>
 
 </a>
 
-<md-nav-list class="sidenav-list sidenav-list-nested"
+<mat-nav-list class="sidenav-list sidenav-list-nested"
      fxLayout="column" [style.height]="getSubItemsHeight()">
   <ms-sidenav-item *ngFor="let subItem of item.subItems" [item]="subItem"></ms-sidenav-item>
-</md-nav-list>
+</mat-nav-list>

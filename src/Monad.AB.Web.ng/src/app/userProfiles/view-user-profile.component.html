@@ -1,103 +1,103 @@
 ﻿<div fxLayout="column" fxLayout.gt-md="row">
-  <md-card style="padding: 16px;" fxFlex="90%">
-    <md-toolbar color="primary">View User Profile</md-toolbar>
-    <md-card-content>
+  <mat-card style="padding: 16px;" fxFlex="90%">
+    <mat-toolbar color="primary">View User Profile</mat-toolbar>
+    <mat-card-content>
       <form>
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="userName"
                    placeholder="UserName"
                    readonly="readonly"
                    [(ngModel)]="user.userName" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="firstName"
                    placeholder="First Name"
                    readonly="readonly"
                    [(ngModel)]="user.firstName" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="lastName"
                    placeholder="Last Name"
                    readonly="readonly"
                    [(ngModel)]="user.lastName" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="emailAddress"
                    placeholder="Email Address"
                    readonly="readonly"
                    [(ngModel)]="user.emailAddress" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="designation"
                    placeholder="Designation"
                    readonly="readonly"
                    [(ngModel)]="user.designation" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="addressLine1"
                    placeholder="Address Line 1"
                    readonly="readonly"
                    [(ngModel)]="user.addressLine1" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="addressLine2"
                    placeholder="Address Line 2"
                    readonly="readonly"
                    [(ngModel)]="user.addressLine2" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="zip"
                    placeholder="Zip"
                    readonly="readonly"
                    [(ngModel)]="user.zip" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="city"
                    placeholder="City"
                    readonly="readonly"
                    [(ngModel)]="user.city" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="state"
                    placeholder="State"
                    readonly="readonly"
                    [(ngModel)]="user.state" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
@@ -109,6 +109,6 @@
           </button>
         </div>
       </form>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

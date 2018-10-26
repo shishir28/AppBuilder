@@ -1,22 +1,22 @@
 <div class="dashboard-container" fxLayout="column" fxLayoutAlign="start stretch" *msElementAccess="'Project.List'">
   <div class="fixed-action-btn" style="bottom: 45px; right: 24px;" align="end">
     <button mdTooltip="New Project" md-fab color="primary" (click)="addProject();">
-      <md-icon>add</md-icon>
+      <mat-icon>add</mat-icon>
     </button>
   </div>
   <div fxLayout="column" fxLayoutAlign="center stretch">
     <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="space-between stretch">
       <div fxLayout="column" fxLayout.gt-md="row" fxFlex="100%" fxFlex.gt-sm>
-        <md-card class="widget" *ngFor="let project of projects" fxFlex="100%" fxFlex.gt-sm>
-          <md-card-title fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="widget" *ngFor="let project of projects" fxFlex="100%" fxFlex.gt-sm>
+          <mat-card-title fxLayout="row" fxLayoutAlign="center center">
             <span class="name">{{ project.name }}</span>
             <span fxFlex></span>
-            <button md-icon-button (click)="viewProject(project.id);"><md-icon [class.green]="true">arrow_right</md-icon></button>
-          </md-card-title>
-          <md-card-subtitle>
+            <button mat-icon-button (click)="viewProject(project.id);"><mat-icon [class.green]="true">arrow_right</mat-icon></button>
+          </mat-card-title>
+          <mat-card-subtitle>
             <span class="description">{{ project.description }}</span>
-          </md-card-subtitle>
-        </md-card>
+          </mat-card-subtitle>
+        </mat-card>
       </div>
     </div>
   </div>

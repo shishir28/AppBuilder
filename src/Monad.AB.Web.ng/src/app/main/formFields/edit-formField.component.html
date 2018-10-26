@@ -1,124 +1,124 @@
 <div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'FormField.Edit'">
-  <md-card style="padding: 16px;" fxFlex="90%">
-    <md-toolbar color="primary">Edit Form Field</md-toolbar>
-    <md-card-content>
+  <mat-card style="padding: 16px;" fxFlex="90%">
+    <mat-toolbar color="primary">Edit Form Field</mat-toolbar>
+    <mat-card-content>
       <form [formGroup]="formGroup" novalidate (ngSubmit)="saveForm(formGroup.value)">
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="name"
                    placeholder="Name"
                    required
                    [(ngModel)]="formField.name"
                    formControlName="name"
                    [class.invalid]="formGroup.controls['name'].touched && !formGroup.controls['name'].valid" />
-            <md-hint [hidden]="formGroup.controls['name'].pristine || formGroup.controls['name'].valid">
+            <mat-hint [hidden]="formGroup.controls['name'].pristine || formGroup.controls['name'].valid">
               <span [hidden]="!formGroup.controls['name'].errors?.required">Field Name is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="label"
                    placeholder="Label"
                    [(ngModel)]="formField.label"
                    formControlName="label" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="description"
                    placeholder="Description"
                    [(ngModel)]="formField.description"
                    formControlName="description" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-select [(ngModel)]="formField.fieldTypeID" placeholder="Field Type" formControlName="fieldTypeID">
-            <md-option *ngFor="let fieldType of fieldTypes" [value]="fieldType.id">
+          <mat-select [(ngModel)]="formField.fieldTypeID" placeholder="Field Type" formControlName="fieldTypeID">
+            <mat-option *ngFor="let fieldType of fieldTypes" [value]="fieldType.id">
               {{fieldType.name}}
-            </md-option>
-          </md-select>
+            </mat-option>
+          </mat-select>
         </div>
 
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="width"
                    placeholder="Width"
                    [(ngModel)]="formField.width"
                    formControlName="width" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="rowNumber"
                    placeholder="Row Number"
                    required
                    [(ngModel)]="formField.rowNumber"
                    formControlName="rowNumber"
                    [class.invalid]="formGroup.controls['rowNumber'].touched && !formGroup.controls['rowNumber'].valid" />
-            <md-hint [hidden]="formGroup.controls['rowNumber'].pristine || formGroup.controls['rowNumber'].valid">
+            <mat-hint [hidden]="formGroup.controls['rowNumber'].pristine || formGroup.controls['rowNumber'].valid">
               <span [hidden]="!formGroup.controls['rowNumber'].errors?.required">Row Number is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="rowSpan"
                    placeholder="Rowspan"
                    required
                    [(ngModel)]="formField.rowSpan"
                    formControlName="rowSpan"
                    [class.invalid]="formGroup.controls['rowSpan'].touched && !formGroup.controls['rowSpan'].valid" />
-            <md-hint [hidden]="formGroup.controls['rowSpan'].pristine || formGroup.controls['rowSpan'].valid">
+            <mat-hint [hidden]="formGroup.controls['rowSpan'].pristine || formGroup.controls['rowSpan'].valid">
               <span [hidden]="!formGroup.controls['rowSpan'].errors?.required">Row span is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="columnNumber"
                    placeholder="Column Number"
                    required
                    [(ngModel)]="formField.columnNumber"
                    formControlName="columnNumber"
                    [class.invalid]="formGroup.controls['columnNumber'].touched && !formGroup.controls['columnNumber'].valid" />
-            <md-hint [hidden]="formGroup.controls['columnNumber'].pristine || formGroup.controls['columnNumber'].valid">
+            <mat-hint [hidden]="formGroup.controls['columnNumber'].pristine || formGroup.controls['columnNumber'].valid">
               <span [hidden]="!formGroup.controls['columnNumber'].errors?.required">Column Number is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="columnSpan"
                    placeholder="Column Span"
                    required
                    [(ngModel)]="formField.columnSpan"
                    formControlName="columnSpan"
                    [class.invalid]="formGroup.controls['columnSpan'].touched && !formGroup.controls['columnSpan'].valid" />
-            <md-hint [hidden]="formGroup.controls['columnSpan'].pristine || formGroup.controls['columnSpan'].valid">
+            <mat-hint [hidden]="formGroup.controls['columnSpan'].pristine || formGroup.controls['columnSpan'].valid">
               <span [hidden]="!formGroup.controls['columnSpan'].errors?.required">Column Span is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-slide-toggle name="isRequired" [(ngModel)]="formField.isRequired" formControlName="isRequired" color="primary">
+          <mat-slide-toggle name="isRequired" [(ngModel)]="formField.isRequired" formControlName="isRequired" color="primary">
             Is Required
-          </md-slide-toggle>
+          </mat-slide-toggle>
         </div>
 
         <div fxLayout="column">
@@ -137,6 +137,6 @@
           </div>
         </div>
       </form>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

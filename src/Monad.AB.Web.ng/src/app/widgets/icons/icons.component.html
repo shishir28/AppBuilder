@@ -1,52 +1,52 @@
 ﻿<div fxLayout="row" fxLayoutAlign="center center" style="margin: 24px 0;">
-  <md-card fxFlex="90%">
-    <md-card-title>Material Buttons</md-card-title>
+  <mat-card fxFlex="90%">
+    <mat-card-title>Material Buttons</mat-card-title>
 
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
 
-    <md-card-content fxLayout="column">
+    <mat-card-content fxLayout="column">
 
       <div fxLayout="column" fxLayout.gt-md="row" fxLayoutAlign="start stretch" fxLayoutAlign.gt-md="start start" style="margin: 24px 0">
         <div fxFlex fxFlex.gt-md="30%" style="margin-right: 24px;">
           <div fxLayout="column">
             <h3>Material Icons</h3>
-            <h4>&lt;md-icon&gt;</h4>
+            <h4>&lt;mat-icon&gt;</h4>
             <p>Icons are a neat way to add some live to only-text lists. Our theme comes with a great variety of icons from the official Material Icons font.</p>
             
           </div>
         </div>
         <div class="demo-tabs mat-elevation-z2" fxFlex>
-          <md-tab-group>
-            <md-tab label="PREVIEW">
+          <mat-tab-group>
+            <mat-tab label="PREVIEW">
               <div class="demo-preview" fxLayout="row" fxLayoutAlign="center center">
-                <md-card fxFlex="80%" fxFlex.sm="90%">
-                  <md-card-content fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="space-around center" fxLayoutWrap="wrap">
-                    <md-icon>grade</md-icon>
-                  </md-card-content>
-                </md-card>
+                <mat-card fxFlex="80%" fxFlex.sm="90%">
+                  <mat-card-content fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="space-around center" fxLayoutWrap="wrap">
+                    <mat-icon>grade</mat-icon>
+                  </mat-card-content>
+                </mat-card>
               </div>
-            </md-tab>
-            <md-tab label="HTML">
-            </md-tab>
-          </md-tab-group>
+            </mat-tab>
+            <mat-tab label="HTML">
+            </mat-tab>
+          </mat-tab-group>
         </div>
       </div>
 
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
 
       <div>
         <h2>List of all Material Icons</h2>
         <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutWrap="wrap">
           <div fxLayout="column" fxLayoutAlign="center center" fxFlex="20%" *ngFor="let icon of icons">
-            <md-icon>{{ icon }}</md-icon>
+            <mat-icon>{{ icon }}</mat-icon>
             <span class="icon-name">{{ icon }}</span>
           </div>
         </div>
       </div>
 
 
-    </md-card-content>
+    </mat-card-content>
 
-  </md-card>
+  </mat-card>
 </div>
 

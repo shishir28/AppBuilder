@@ -1,7 +1,7 @@
-<md-sidenav-container *msElementAccess="'Dashboard.View'">
-  <md-sidenav class="sidenav" [opened]="sidenavOpen" align="start" [mode]="sidenavMode" msIconSidenav #sidenav>
+<mat-sidenav-container *msElementAccess="'Dashboard.View'">
+  <mat-sidenav class="sidenav" [opened]="sidenavOpen" align="start" [mode]="sidenavMode" msIconSidenav #sidenav>
     <ms-sidenav></ms-sidenav>
-  </md-sidenav>
+  </mat-sidenav>
   
   <div class="content-container" fxLayout="column">
     <ms-toolbar [quickpanel]="quickpanel" [sidenav]="sidenav"></ms-toolbar>
@@ -9,4 +9,4 @@
       <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
     </div>
   </div>
-</md-sidenav-container>
+</mat-sidenav-container>

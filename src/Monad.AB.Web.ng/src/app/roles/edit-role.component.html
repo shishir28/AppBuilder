@@ -1,36 +1,36 @@
 <div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'Role.Edit'">
-  <md-card style="padding: 16px;" fxFlex="90%">
-    <md-toolbar color="primary">Edit Role</md-toolbar>
-    <md-card-content>
+  <mat-card style="padding: 16px;" fxFlex="90%">
+    <mat-toolbar color="primary">Edit Role</mat-toolbar>
+    <mat-card-content>
       <form [formGroup]="formGroup" novalidate (ngSubmit)="saveRole(formGroup.value)">
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="name"
                    placeholder="Name"
                    required
                    [(ngModel)]="role.name"
                    formControlName="name"
                    [class.invalid]="formGroup.controls['name'].touched && !formGroup.controls['name'].valid" />
-            <md-hint [hidden]="formGroup.controls['name'].pristine || formGroup.controls['name'].valid">
+            <mat-hint [hidden]="formGroup.controls['name'].pristine || formGroup.controls['name'].valid">
               <span [hidden]="!formGroup.controls['name'].errors?.required">Field Name is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="description"
                    placeholder="Description"
                    [(ngModel)]="role.description"
                    formControlName="description" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-slide-toggle name="isActive" [(ngModel)]="role.isActive" formControlName="isActive" color="primary">
+          <mat-slide-toggle name="isActive" [(ngModel)]="role.isActive" formControlName="isActive" color="primary">
             Is Active
-          </md-slide-toggle>
+          </mat-slide-toggle>
         </div>
 
         <div fxLayout="column">
@@ -49,6 +49,6 @@
           </div>
         </div>
       </form>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

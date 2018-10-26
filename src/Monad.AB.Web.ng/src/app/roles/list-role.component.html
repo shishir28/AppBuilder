@@ -1,12 +1,12 @@
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;" align="end" *msElementAccess="'Role.Add'">
   <button mdTooltip="New Project" md-fab color="primary" (click)="addRole();">
-    <md-icon>add</md-icon>
+    <mat-icon>add</mat-icon>
   </button>
 </div>
 
 <div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'Role.List'">
-  <md-card style="padding: 16px;" fxFlex="90%">
-    <md-card-content>
+  <mat-card style="padding: 16px;" fxFlex="90%">
+    <mat-card-content>
       <div fxLayout="row" fxLayout.gt-md="column" style="margin-top: 20px;">
         <div fxLayout="row" class="table-container mat-elevation-z2" fxLayout.gt-sm="row" fxLayoutAlign="end center">
           <table class="table" [class.table-hover]="tableHover" [class.table-striped]="tableStriped" [class.table-condensed]="tableCondensed" [class.table-bordered]="tableBordered">
@@ -22,16 +22,16 @@
               <tr *ngFor="let role of roles">
                 <td>{{ role.name }}</td>
                 <td>{{ role.description }}</td>
-                <td><button md-icon-button> <md-icon>{{ role.isActive?"check":"close"}}</md-icon></button></td>
+                <td><button mat-icon-button> <mat-icon>{{ role.isActive?"check":"close"}}</mat-icon></button></td>
                 <td>
-                  <button md-icon-button (click)="viewRole(role.roleId);" style="margin-left: 1px;" *msElementAccess="'Role.View'"><md-icon>pageview</md-icon></button>
-                  <button md-icon-button (click)="editRole(role.roleId);" style="margin-left: 1px;" *msElementAccess="'Role.Edit'"><md-icon>edit</md-icon></button>
+                  <button mat-icon-button (click)="viewRole(role.roleId);" style="margin-left: 1px;" *msElementAccess="'Role.View'"><mat-icon>pageview</mat-icon></button>
+                  <button mat-icon-button (click)="editRole(role.roleId);" style="margin-left: 1px;" *msElementAccess="'Role.Edit'"><mat-icon>edit</mat-icon></button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

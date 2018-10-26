@@ -1,63 +1,63 @@
 <div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'User.Add'">
-  <md-card style="padding: 16px;" fxFlex="90%">
-    <md-toolbar color="primary">Add user</md-toolbar>
-    <md-card-content>
+  <mat-card style="padding: 16px;" fxFlex="90%">
+    <mat-toolbar color="primary">Add user</mat-toolbar>
+    <mat-card-content>
       <form [formGroup]="userForm" novalidate (ngSubmit)="saveUser(userForm.value)">
         <div fxLayout="column">
 
-          <md-input-container>
-            <input mdInput name="userName" placeholder="User Name" required [(ngModel)]="user.userName" formControlName="userName" [class.invalid]="userForm.controls['userName'].touched && !userForm.controls['userName'].valid"
+          <mat-form-field>
+            <input matInput name="userName" placeholder="User Name" required [(ngModel)]="user.userName" formControlName="userName" [class.invalid]="userForm.controls['userName'].touched && !userForm.controls['userName'].valid"
             />
-            <md-hint [hidden]="userForm.controls['userName'].pristine || userForm.controls['userName'].valid">
+            <mat-hint [hidden]="userForm.controls['userName'].pristine || userForm.controls['userName'].valid">
               <span [hidden]="!userForm.controls['userName'].errors?.required">User Name is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput name="email" placeholder="email" required [(ngModel)]="user.email" formControlName="email" [class.invalid]="userForm.controls['email'].touched && !userForm.controls['email'].valid"
+          <mat-form-field>
+            <input matInput name="email" placeholder="email" required [(ngModel)]="user.email" formControlName="email" [class.invalid]="userForm.controls['email'].touched && !userForm.controls['email'].valid"
             />
-            <md-hint [hidden]="userForm.controls['email'].pristine || userForm.controls['email'].valid">
+            <mat-hint [hidden]="userForm.controls['email'].pristine || userForm.controls['email'].valid">
               <span [hidden]="!userForm.controls['email'].errors?.required">Email Address is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput name="firstName" placeholder="First Name" required [(ngModel)]="user.firstName" formControlName="firstName"
+          <mat-form-field>
+            <input matInput name="firstName" placeholder="First Name" required [(ngModel)]="user.firstName" formControlName="firstName"
               [class.invalid]="userForm.controls['firstName'].touched && !userForm.controls['firstName'].valid" />
-            <md-hint [hidden]="userForm.controls['firstName'].pristine || userForm.controls['firstName'].valid">
+            <mat-hint [hidden]="userForm.controls['firstName'].pristine || userForm.controls['firstName'].valid">
               <span [hidden]="!userForm.controls['firstName'].errors?.required">First Name is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput name="lastName" placeholder="Last Name" required [(ngModel)]="user.lastName" formControlName="lastName" [class.invalid]="userForm.controls['lastName'].touched && !userForm.controls['lastName'].valid"
+          <mat-form-field>
+            <input matInput name="lastName" placeholder="Last Name" required [(ngModel)]="user.lastName" formControlName="lastName" [class.invalid]="userForm.controls['lastName'].touched && !userForm.controls['lastName'].valid"
             />
-            <md-hint [hidden]="userForm.controls['lastName'].pristine || userForm.controls['lastName'].valid">
+            <mat-hint [hidden]="userForm.controls['lastName'].pristine || userForm.controls['lastName'].valid">
               <span [hidden]="!userForm.controls['lastName'].errors?.required">First Name is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput name="addressLine1" placeholder="Address Line1" required [(ngModel)]="user.addressLine1" formControlName="addressLine1" [class.invalid]="userForm.controls['addressLine1'].touched && !userForm.controls['addressLine1'].valid"
+          <mat-form-field>
+            <input matInput name="addressLine1" placeholder="Address Line1" required [(ngModel)]="user.addressLine1" formControlName="addressLine1" [class.invalid]="userForm.controls['addressLine1'].touched && !userForm.controls['addressLine1'].valid"
             />
-            <md-hint [hidden]="userForm.controls['addressLine1'].pristine || userForm.controls['addressLine1'].valid">
+            <mat-hint [hidden]="userForm.controls['addressLine1'].pristine || userForm.controls['addressLine1'].valid">
               <span [hidden]="!userForm.controls['addressLine1'].errors?.required">Address Line 1 is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
 
          <div fxLayout="column">
-          <md-select [(ngModel)]="user.roleId" placeholder="Role Name" formControlName="roleId">
-            <md-option *ngFor="let role of roles" [value]="role.roleId">
+          <mat-select [(ngModel)]="user.roleId" placeholder="Role Name" formControlName="roleId">
+            <mat-option *ngFor="let role of roles" [value]="role.roleId">
               {{role.name}}
-            </md-option>
-          </md-select>
+            </mat-option>
+          </mat-select>
         </div>
 
         <div fxLayout="column">
@@ -71,6 +71,6 @@
           </div>
         </div>
       </form>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

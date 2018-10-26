@@ -1,52 +1,52 @@
 <div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'Project.View'">
-  <md-card style="padding: 16px;" fxFlex="90%">
-    <md-toolbar color="primary">View Project</md-toolbar>
-    <md-card-content>
+  <mat-card style="padding: 16px;" fxFlex="90%">
+    <mat-toolbar color="primary">View Project</mat-toolbar>
+    <mat-card-content>
       <form>
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="name"
                    placeholder="Name"
                    readonly="readonly"
                    [(ngModel)]="project.name" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="title"
                    placeholder="Title"
                    readonly="readonly"
                    [(ngModel)]="project.title" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="rootNamespace"
                    placeholder="RootNamespace"
                    readonly="readonly"
                    [(ngModel)]="project.rootNamespace" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="companyName"
                    placeholder="CompanyName"
                    readonly="readonly"
                    [(ngModel)]="project.companyName" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="description"
                    placeholder="Description"
                    readonly="readonly"
                    [(ngModel)]="project.description" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
           <button md-raised-button color="primary" disabled="disabled" type="button">
@@ -89,15 +89,15 @@
                 <td>{{ form.title }}</td>
                 <td hidden="hidden">{{ form.dependencyID }}</td>
                 <td>
-                  <button md-icon-button (click)="viewForm(project.id,form.id);" style="margin-left: 1px;" *msElementAccess="'Form.View'"><md-icon>pageview</md-icon></button>
-                  <button md-icon-button (click)="editForm(project.id,form.id);" style="margin-left: 1px;" *msElementAccess="'Form.Edit'"><md-icon>edit</md-icon></button>
-                  <button md-icon-button (click)="deleteForm(project.id,form.id);" style="margin-left: 1px;" *msElementAccess="'Form.Delete'"><md-icon>delete</md-icon></button>
+                  <button mat-icon-button (click)="viewForm(project.id,form.id);" style="margin-left: 1px;" *msElementAccess="'Form.View'"><mat-icon>pageview</mat-icon></button>
+                  <button mat-icon-button (click)="editForm(project.id,form.id);" style="margin-left: 1px;" *msElementAccess="'Form.Edit'"><mat-icon>edit</mat-icon></button>
+                  <button mat-icon-button (click)="deleteForm(project.id,form.id);" style="margin-left: 1px;" *msElementAccess="'Form.Delete'"><mat-icon>delete</mat-icon></button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

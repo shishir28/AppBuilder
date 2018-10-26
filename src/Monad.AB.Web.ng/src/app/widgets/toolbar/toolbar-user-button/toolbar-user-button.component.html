@@ -3,7 +3,7 @@
     <span fxLayout="row" fxLayoutAlign="start center">
       <img class="avatar" src="assets/img/avatars/noavatar.png">
       <span class="name" fxHide fxShow.gt-sm>{{userName}}</span>
-      <md-icon class="icon" fxHide fxShow.gt-sm>keyboard_arrow_down</md-icon>
+      <mat-icon class="icon" fxHide fxShow.gt-sm>keyboard_arrow_down</mat-icon>
     </span>
   </button>
 
@@ -11,20 +11,20 @@
     <div class="content">
       <div class="list">
         <div class="item" fxLayout="row" fxLayoutAlign="start center" md-ripple (click)="viewUserProfile();">
-          <md-icon class="icon">account_circle</md-icon>
+          <mat-icon class="icon">account_circle</mat-icon>
           <span class="title">Profile</span>
         </div>
         <div class="item" fxLayout="row" fxLayoutAlign="start center" md-ripple>
-          <md-icon class="icon">settings</md-icon>
+          <mat-icon class="icon">settings</mat-icon>
           <span class="title">Settings</span>
         </div>
         <div class="item" fxLayout="row" fxLayoutAlign="start center" md-ripple>
-          <md-icon class="icon">help</md-icon>
+          <mat-icon class="icon">help</mat-icon>
           <span class="title">Help</span>
         </div>
-        <md-divider></md-divider>
+        <mat-divider></mat-divider>
         <div class="item" fxLayout="row" fxLayoutAlign="start center" md-ripple (click)="logout();">         
-          <md-icon class="icon">exit_to_app</md-icon>
+          <mat-icon class="icon">exit_to_app</mat-icon>
           <span class="title">Logout</span>
         </div>
       </div>

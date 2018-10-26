@@ -5,17 +5,17 @@
     </div>
     <form #form="ngForm" (ngSubmit)="register()">
       <div class="register-content" fxLayout="column" fxLayoutAlign="start stretch">       
-        <md-input-container>
-          <input mdInput placeholder="E-Mail" type="text" name="email" required [(ngModel)]="registerDetail.email">
-        </md-input-container>
-        <md-input-container>
-          <input mdInput placeholder="Password" type="password" name="password" required [(ngModel)]="registerDetail.password">
-        </md-input-container>
-        <md-input-container>
-          <input mdInput placeholder="Password (Confirm)" type="password" name="password-confirm" required [(ngModel)]="registerDetail.confirmPassword">
-        </md-input-container>
+        <mat-form-field>
+          <input matInput placeholder="E-Mail" type="text" name="email" required [(ngModel)]="registerDetail.email">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Password" type="password" name="password" required [(ngModel)]="registerDetail.password">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Password (Confirm)" type="password" name="password-confirm" required [(ngModel)]="registerDetail.confirmPassword">
+        </mat-form-field>
         <div class="extra-options" fxLayout="row" fxLayoutAlign="center center">
-          <md-checkbox class="remember-me" color="primary" >I accept the <a href="#">terms and conditions.</a></md-checkbox>
+          <mat-checkbox class="remember-me" color="primary" >I accept the <a href="#">terms and conditions.</a></mat-checkbox>
         </div>
         <button color="primary" md-raised-button [disabled]="!form.valid">CREATE ACCOUNT</button>
         <p class="note">Already have an account?<br /> <a [routerLink]="['/login']">Sign in here</a></p>

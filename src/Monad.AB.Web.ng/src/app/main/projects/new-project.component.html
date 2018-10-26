@@ -1,72 +1,72 @@
 <div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'Project.Add'">
-  <md-card style="padding: 16px;" fxFlex="90%">
-    <md-toolbar color="primary">Add Project</md-toolbar>
-    <md-card-content>
+  <mat-card style="padding: 16px;" fxFlex="90%">
+    <mat-toolbar color="primary">Add Project</mat-toolbar>
+    <mat-card-content>
       <form [formGroup]="projForm" novalidate (ngSubmit)="saveProject(projForm.value)">
         <div fxLayout fxLayoutWrap>
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="name"
                    placeholder="Name"
                    required
                    [(ngModel)]="project.name"
                    formControlName="name"
                    [class.invalid]="projForm.controls['name'].touched && !projForm.controls['name'].valid" />
-            <md-hint [hidden]="projForm.controls['name'].pristine || projForm.controls['name'].valid">
+            <mat-hint [hidden]="projForm.controls['name'].pristine || projForm.controls['name'].valid">
               <span [hidden]="!projForm.controls['name'].errors?.required">Project Name is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="title"
                    required
                    placeholder="Title"
                    [(ngModel)]="project.title"
                    formControlName="title"
                    [class.invalid]="projForm.controls['title'].touched && !projForm.controls['title'].valid" />
-            <md-hint [hidden]="projForm.controls['title'].pristine || projForm.controls['title'].valid">
+            <mat-hint [hidden]="projForm.controls['title'].pristine || projForm.controls['title'].valid">
               <span [hidden]="!projForm.controls['title'].errors?.required">Project Title is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="rootNamespace"
                    required
                    placeholder="RootNamespace"
                    [(ngModel)]="project.rootNamespace"
                    formControlName="rootNamespace"
                    [class.invalid]="projForm.controls['rootNamespace'].touched && !projForm.controls['rootNamespace'].valid" />
-            <md-hint [hidden]="projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid">
+            <mat-hint [hidden]="projForm.controls['rootNamespace'].pristine || projForm.controls['rootNamespace'].valid">
               <span [hidden]="!projForm.controls['rootNamespace'].errors?.required">Project Root Namespace is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="companyName"
                    required
                    placeholder="CompanyName"
                    [(ngModel)]="project.companyName"
                    formControlName="companyName"
                    [class.invalid]="projForm.controls['companyName'].touched && !projForm.controls['companyName'].valid" />
-            <md-hint [hidden]="projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid">
+            <mat-hint [hidden]="projForm.controls['companyName'].pristine || projForm.controls['companyName'].valid">
               <span [hidden]="!projForm.controls['companyName'].errors?.required">Company Name is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="description"
                    placeholder="Description"
                    [(ngModel)]="project.description"
                    formControlName="description" />
-          </md-input-container>
+          </mat-form-field>
         </div>
         <div fxLayout="column" *ngIf="serverErrorMessage">
           <div fxLayout="row" fxLayoutAlign="end center">
@@ -91,7 +91,7 @@
           </div>
         </div>
       </form>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>
 

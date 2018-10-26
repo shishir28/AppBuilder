@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatInputModule} from '@angular/material/input';
 
 import { ListProjectComponent } from './list-project.component';
 import { NewProjectComponent } from './new-project.component';
@@ -16,7 +17,7 @@ export const projectConfig: NgModule = {
     imports: [
         CommonModule,
         FormsModule,
-        // MaterialModule,
+        MatInputModule,
         ReactiveFormsModule,
         RouterModule,
         HttpModule,

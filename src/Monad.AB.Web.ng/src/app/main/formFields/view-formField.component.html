@@ -1,103 +1,103 @@
 <div fxLayout="column" fxLayout.gt-md="row" *msElementAccess="'FormField.View'">
-  <md-card style="padding: 16px;" fxFlex="90%">
-    <md-toolbar color="primary">View Form Field</md-toolbar>
-    <md-card-content>
+  <mat-card style="padding: 16px;" fxFlex="90%">
+    <mat-toolbar color="primary">View Form Field</mat-toolbar>
+    <mat-card-content>
       <form>
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="name"
                    placeholder="Name"
                    [disabled]="true"
                    [(ngModel)]="formField.name" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="label"
                    placeholder="Label"
                    [disabled]="true"
                    [(ngModel)]="formField.label" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="description"
                    placeholder="Description"
                    [disabled]="true"
                    [(ngModel)]="formField.description" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-select [(ngModel)]="formField.fieldTypeID" placeholder="Field Type" name="fieldTypeID"  [disabled]="true">
-            <md-option *ngFor="let fieldType of fieldTypes" [value]="fieldType.id">
+          <mat-select [(ngModel)]="formField.fieldTypeID" placeholder="Field Type" name="fieldTypeID"  [disabled]="true">
+            <mat-option *ngFor="let fieldType of fieldTypes" [value]="fieldType.id">
               {{fieldType.name}}
-            </md-option>
-          </md-select>
+            </mat-option>
+          </mat-select>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="width"
                    placeholder="Width"
                    [disabled]="true"
                    [(ngModel)]="formField.width" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="rowNumber"
                    placeholder="Row Number"
                    [disabled]="true"
                    [(ngModel)]="formField.rowNumber" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="rowSpan"
                    placeholder="Row span"
                    [disabled]="true"
                    [(ngModel)]="formField.rowSpan" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="columnNumber"
                    placeholder="Column Number"
                    [disabled]="true"
                    [(ngModel)]="formField.columnNumber" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="columnSpan"
                    placeholder="Column Span"
                    [disabled]="true"
                    [(ngModel)]="formField.columnSpan" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <md-checkbox name="isRequired"
+          <mat-checkbox name="isRequired"
                        [disabled]="true"
                        [(ngModel)]="formField.isRequired"
                        color="primary">
             Is Required
-          </md-checkbox>
+          </mat-checkbox>
         </div>
 
         <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutAlign="end center">
@@ -135,16 +135,16 @@
                 <td>{{ formFieldView.rowSpan }}</td>
                 <td>{{ formFieldView.column }}</td>
                 <td>{{ formFieldView.columnSpan }}</td>
-                <td><button md-icon-button> <md-icon>{{ formFieldView.readOnly?"check":"close"}}</md-icon></button></td>
-                <td><button md-icon-button> <md-icon>{{ formFieldView.hidden?"check":"close"}}</md-icon></button></td>
+                <td><button mat-icon-button> <mat-icon>{{ formFieldView.readOnly?"check":"close"}}</mat-icon></button></td>
+                <td><button mat-icon-button> <mat-icon>{{ formFieldView.hidden?"check":"close"}}</mat-icon></button></td>
                 <td>
-                  <button md-icon-button (click)="editFormFieldView(this.projectId,formField.formID,formField.id, formFieldView.id);" style="margin-left: 1px;"><md-icon>edit</md-icon></button>
+                  <button mat-icon-button (click)="editFormFieldView(this.projectId,formField.formID,formField.id, formFieldView.id);" style="margin-left: 1px;"><mat-icon>edit</mat-icon></button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

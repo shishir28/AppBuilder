@@ -5,14 +5,14 @@
     </div>
     <form #form="ngForm" (ngSubmit)="login()">
       <div class="login-content" fxLayout="column" fxLayoutAlign="start stretch">
-        <md-input-container>
-          <input mdInput placeholder="E-Mail" type="text" name="email" required [(ngModel)]="loginDetail.userName">
-        </md-input-container>
-        <md-input-container>
-          <input mdInput placeholder="Password" type="password" name="password" required [(ngModel)]="loginDetail.password">
-        </md-input-container>
+        <mat-form-field>
+          <input matInput placeholder="E-Mail" type="text" name="email" required [(ngModel)]="loginDetail.userName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Password" type="password" name="password" required [(ngModel)]="loginDetail.password">
+        </mat-form-field>
         <div class="extra-options" fxLayout="row" fxLayoutAlign="space-between center">
-          <md-checkbox color="primary" class="remember-me" name="rememberMe" [(ngModel)]="loginDetail.rememberMe">Remember Me</md-checkbox>
+          <mat-checkbox color="primary" class="remember-me" name="rememberMe" [(ngModel)]="loginDetail.rememberMe">Remember Me</mat-checkbox>
           <a class="forgot-password" [routerLink]="['/forgot-password']">Forgot Password?</a>
         </div>
         <button color="primary" md-raised-button [disabled]="!form.valid">SIGN IN</button>

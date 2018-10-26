@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {MatListModule} from '@angular/material/list';
 import { SidenavComponent } from '../widgets/sidenav/sidenav.component';
 import { SidenavItemComponent } from '../widgets/sidenav/sidenav-item/sidenav-item.component';
 import { IconSidenavDirective } from '../widgets/sidenav/icon-sidenav.directive';
@@ -20,21 +20,23 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from '../widgets/dialogs/dialog.module';
 import { HomeComponent } from './home/home.component';
-
 import { projectConfig } from './projects/projects.module'
 import { formConfig } from './forms/forms.module';
 import { formFieldConfig } from './formFields/formFields.module';
 import { formFieldViewConfig } from './formFieldViews/formFieldViews.module';
+import { MatDialogModule } from '@angular/material';
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
+        MatListModule,
         MaterialComponentsModule,
         SharedComponentsModule,
         FlexLayoutModule,
         FormsModule,
         DialogModule,
+        MatDialogModule,
         PerfectScrollbarModule,
         ...projectConfig.imports,
         ...formConfig.imports,

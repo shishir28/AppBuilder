@@ -1,51 +1,51 @@
 <div fxLayout="column" fxLayout.gt-md="row"*msElementAccess="'Form.Add'">
-  <md-card style="padding: 16px;" fxFlex="90%">
-    <md-toolbar color="primary">Add Form</md-toolbar>
-    <md-card-content>
+  <mat-card style="padding: 16px;" fxFlex="90%">
+    <mat-toolbar color="primary">Add Form</mat-toolbar>
+    <mat-card-content>
       <form [formGroup]="formGroup" novalidate (ngSubmit)="saveForm(formGroup.value)">
         <div fxLayout="column">
-          <md-input-container fxFlex="50">
-            <input mdInput
+          <mat-form-field fxFlex="50">
+            <input matInput
                    name="formName"
                    placeholder="Name"
                    required
                    [(ngModel)]="form.formName"
                    formControlName="formName"
                    [class.invalid]="formGroup.controls['formName'].touched && !formGroup.controls['formName'].valid" />
-            <md-hint [hidden]="formGroup.controls['formName'].pristine || formGroup.controls['formName'].valid">
+            <mat-hint [hidden]="formGroup.controls['formName'].pristine || formGroup.controls['formName'].valid">
               <span [hidden]="!formGroup.controls['formName'].errors?.required">Form Name is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="formTitle"
                    required
                    placeholder="Title"
                    [(ngModel)]="form.formTitle"
                    formControlName="formTitle"
                    [class.invalid]="formGroup.controls['formTitle'].touched && !formGroup.controls['formTitle'].valid" />
-            <md-hint [hidden]="formGroup.controls['formTitle'].pristine || formGroup.controls['formTitle'].valid">
+            <mat-hint [hidden]="formGroup.controls['formTitle'].pristine || formGroup.controls['formTitle'].valid">
               <span [hidden]="!formGroup.controls['formTitle'].errors?.required">Form Title is required.</span>
-            </md-hint>
-          </md-input-container>
+            </mat-hint>
+          </mat-form-field>
         </div>
         <div fxLayout="column">
-          <md-select [(ngModel)]="form.dependencyID" placeholder="Dependency" formControlName="dependencyID">
-            <md-option *ngFor="let currentForm of forms" [value]="currentForm.id">
+          <mat-select [(ngModel)]="form.dependencyID" placeholder="Dependency" formControlName="dependencyID">
+            <mat-option *ngFor="let currentForm of forms" [value]="currentForm.id">
               {{currentForm.title}}
-            </md-option>
-          </md-select>
+            </mat-option>
+          </mat-select>
         </div>
         <div fxLayout="column">
-          <md-input-container>
-            <input mdInput
+          <mat-form-field>
+            <input matInput
                    name="formDescription"
                    placeholder="Description"
                    [(ngModel)]="form.formDescription"
                    formControlName="formDescription" />
-          </md-input-container>
+          </mat-form-field>
         </div>
 
         <div fxLayout="column" *ngIf="serverErrorMessage">
@@ -71,6 +71,6 @@
           </div>
         </div>
       </form>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

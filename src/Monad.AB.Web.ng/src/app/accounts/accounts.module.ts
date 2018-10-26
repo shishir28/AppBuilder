@@ -5,6 +5,7 @@ import { MaterialComponentsModule } from '../shared/material-components.module';
 import { SharedComponentsModule } from '../shared/shared-components.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 import { ElementAccessDirective } from '../widgets/element-access.directive';
 import { HttpModule } from '@angular/http';
 import { AccountsService } from './shared/accounts.service';
@@ -22,6 +23,7 @@ import { ViewUserComponent } from './view-user.component';
     imports: [
         CommonModule,
         FormsModule,
+        MatInputModule,
         ReactiveFormsModule,
         MaterialComponentsModule,
         SharedComponentsModule,
