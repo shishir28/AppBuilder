@@ -1,25 +1,24 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Monad.AB.Common;
+using Monad.AB.Domain.Entities.Identity;
+using Monad.AB.Infrastructure.DependencyResolver;
+using Monad.AB.Web.App.Middlewares;
+using Monad.AB.Web.App.Policies;
+using Monad.AB.Web.App.Security;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System.IO;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Monad.AB.Web.App.Middlewares;
-using Monad.AB.Infrastructure.DependencyResolver;
-using Monad.AB.Web.App.Policies;
-using Monad.AB.Common;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Monad.AB.Web.App.Security;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity;
-using Monad.AB.Domain.Entities.Identity;
-using System;
+// using NLog.Extensions.Logging;
+using Newtonsoft.Json;
+using System.IO;
 using System.Threading.Tasks;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.Extensions.Logging;
+using System;
 namespace Monad.AB.Web.App
 {
     public class Startup
@@ -64,40 +63,22 @@ namespace Monad.AB.Web.App
             {
                 o.DefaultAuthenticateScheme = tokenOptions.DefaultAuthenticateScheme;
                 o.DefaultChallengeScheme = tokenOptions.DefaultChallengeScheme;
-            });
-
-            services.AddJwtBearerAuthentication(o =>
+            }).AddJwtBearer(o =>
             {
-                o.TokenValidationParameters.IssuerSigningKey = key;
+                 o.TokenValidationParameters.IssuerSigningKey = key;
                 o.TokenValidationParameters.ValidAudience = tokenOptions.Audience;
                 o.TokenValidationParameters.ValidIssuer = tokenOptions.Issuer;
                 o.TokenValidationParameters.ValidateLifetime = true;
-                o.TokenValidationParameters.ValidateLifetime = true;
-
+                o.TokenValidationParameters.ValidateIssuer = true;
+                o.TokenValidationParameters.ValidateAudience = true;
                 o.Events = new JwtBearerEvents()
                 {
-                    //writing plumbing 
-                    //OnAuthenticationFailed
-                    //OnAuthenticationFailed = context =>
-                    
                     OnMessageReceived = context =>
                     {
                         context.Token = Convert.ToString(context.HttpContext.Items["x-access-token"]);
                         return Task.FromResult(0);
                     },
-                    //OnChallenge
-                    OnTokenValidated = context =>
-                    {
-                        //string authHeader = context.HttpContext.Request.Headers["Authorization"];
-                        //authHeader = authHeader ?? "";
-                        //string path = context.HttpContext.Request.Path.ToString() ?? "";
-                        //var identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Authentication, authHeader), new Claim(ClaimTypes.Uri, path) },
-                        //                       TokenAuthOptions.Scheme);
-                        //context.Ticket.Principal.AddIdentity(identity);
-                      
-                        return Task.FromResult(0);
-                    },
-                    
+                    OnTokenValidated = context => Task.FromResult(0)
                 };
             });
         }
@@ -124,9 +105,7 @@ namespace Monad.AB.Web.App
             
             if (env.IsDevelopment())
             {
-                
                 app.UseBrowserLink();                
-                
             }
             else
             {
