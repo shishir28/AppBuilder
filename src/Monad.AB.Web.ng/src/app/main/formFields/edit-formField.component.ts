@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from "@angular/material";
+import { MatSnackBar } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
 
+import { FieldType, FormField } from './shared/formField';
 import { FormFieldsService } from './shared/formFields.service';
-import { FormField, FieldType } from './shared/formField';
 
 @Component({
   selector: 'ms-edit-formField',

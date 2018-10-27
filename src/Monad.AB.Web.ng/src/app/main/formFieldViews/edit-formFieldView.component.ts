@@ -1,9 +1,10 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from "@angular/material";
-import { FormFieldViewsService } from './shared/formFieldViews.service';
+import { MatSnackBar } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { FormFieldView, FormViewTypeModel } from '../formFields/shared/formField';
+import { FormFieldViewsService } from './shared/formFieldViews.service';
 
 @Component({
     selector: 'ms-edit-formFieldView',

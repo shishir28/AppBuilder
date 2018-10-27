@@ -1,11 +1,10 @@
-import { map } from 'rxjs/operators';
 import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
-import { Headers, Http, RequestOptions, Response } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
-import { UserClaimsViewModel, UpdateUserClaimsViewModel } from './account';
+import { map } from 'rxjs/operators';
 
-
+import { UpdateUserClaimsViewModel, UserClaimsViewModel } from './account';
 
 @Injectable()
 

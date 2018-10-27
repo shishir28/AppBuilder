@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from "@angular/material";
-import { RolesService } from './shared/roles.service';
-import { AddRoleViewModel } from './shared/role';
+import { MatSnackBar } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
 
+import { AddRoleViewModel } from './shared/role';
+import { RolesService } from './shared/roles.service';
 
 @Component({
     selector: 'ms-new-role',

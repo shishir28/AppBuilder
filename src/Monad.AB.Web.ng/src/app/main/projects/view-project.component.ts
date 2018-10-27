@@ -1,11 +1,13 @@
-﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { MatSnackBar } from "@angular/material";
+﻿import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { DialogService } from '../../widgets/dialogs/dialog.service';
-import { ProjectsService } from './shared/projects.service';
-import { FormsService } from '../forms/shared/forms.service';
-import { Project } from './shared/project'
 import { Form } from '../forms/shared/form';
+import { FormsService } from '../forms/shared/forms.service';
+import { Project } from './shared/project';
+import { ProjectsService } from './shared/projects.service';
+
 declare let ResizeSensor;
 
 @Component({

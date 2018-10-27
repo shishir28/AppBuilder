@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from "./main/home/home.component";
-import { NotFoundComponent } from "./shared/not-found.component";
-import { AccessDeniedComponent } from "./shared/access-denied.component";
-import { InternalServerErrorComponent } from './shared/internal-server-error.component';
+import { RouterModule, Routes } from '@angular/router';
 
-import { ForgotPasswordComponent } from "./accounts/forgot-password.component";
-import { AuthGuard } from './shared/guards/index';
-// ---------Routes----------
+import { accountsRoutes, userManagementRoutes } from './accounts/accounts-routing.module';
+import { HomeComponent } from './main/home/home.component';
 import { mainRoutes } from './main/main-routing.module';
-import { accountsRoutes } from './accounts/accounts-routing.module';
-import { userProfilesRoutes } from './userProfiles/userProfiles.routing';
 import { rolesRoutes } from './roles/roles.routing';
-import { userManagementRoutes } from './accounts/accounts-routing.module';
+import { AccessDeniedComponent } from './shared/access-denied.component';
+import { AuthGuard } from './shared/guards';
+import { InternalServerErrorComponent } from './shared/internal-server-error.component';
+import { NotFoundComponent } from './shared/not-found.component';
+import { userProfilesRoutes } from './userProfiles/userProfiles.routing';
 
-//-------------
 const routes: Routes = [
     ...accountsRoutes,
    

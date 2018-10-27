@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from "@angular/material";
-import { DialogService } from '../widgets/dialogs/dialog.service';
+import { MatSnackBar } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
 
+import { DialogService } from '../widgets/dialogs/dialog.service';
+import { RoleRightsViewModel, RoleViewModel } from './shared/role';
 import { RolesService } from './shared/roles.service';
-import { RoleViewModel, RoleRightsViewModel } from './shared/role';
 
 @Component({
     selector: 'ms-view-role',

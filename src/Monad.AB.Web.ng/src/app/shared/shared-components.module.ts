@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
- ElementAccessDirective
-} from '../widgets/element-access.directive';
+import { NgModule } from '@angular/core';
+
+import { ElementAccessDirective } from '../widgets/element-access.directive';
 
 @NgModule({
   imports: [

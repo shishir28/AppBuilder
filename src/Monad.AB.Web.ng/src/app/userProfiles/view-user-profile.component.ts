@@ -1,9 +1,10 @@
-﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Location } from '@angular/common';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsersService } from './shared/users.service';
+﻿import { Location } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { ApplicationUser } from './shared/user';
+import { UsersService } from './shared/users.service';
 
 @Component({
     selector: 'ms-edit-user-profile',

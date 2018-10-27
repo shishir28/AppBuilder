@@ -1,12 +1,12 @@
-﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { MatSnackBar } from "@angular/material";
+﻿import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { DialogService } from '../../widgets/dialogs/dialog.service';
-import { FormsService } from './shared/forms.service';
+import { FormField } from '../formFields/shared/formField';
 import { FormFieldsService } from '../formFields/shared/formFields.service';
 import { Form } from './shared/form';
-import { FormField } from '../formFields/shared/formField';
+import { FormsService } from './shared/forms.service';
 
 @Component({
     selector: 'ms-view-form',

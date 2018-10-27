@@ -1,4 +1,4 @@
-import { transition, style, trigger, animate, state, group } from "@angular/animations";
+import { animate, style, transition, trigger } from '@angular/animations';
 
 /*
 Deprecated until Opacity works again

@@ -1,9 +1,10 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from "@angular/material";
-import { ProjectsService } from './shared/projects.service'
-import { Project } from './shared/project'
+import { MatSnackBar } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { Project } from './shared/project';
+import { ProjectsService } from './shared/projects.service';
 
 @Component({
     selector: 'ms-edit-project',

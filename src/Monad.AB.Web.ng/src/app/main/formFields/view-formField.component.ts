@@ -1,13 +1,12 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from "@angular/material";
+import { FormBuilder } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { DialogService } from '../../widgets/dialogs/dialog.service';
-import { FormFieldsService } from './shared/formFields.service';
 import { FormFieldViewsService } from '../formFieldViews/shared/formFieldViews.service';
-import { FormField, FieldType } from './shared/formField';
-import { FormFieldView } from './shared/formField';
+import { FieldType, FormField, FormFieldView } from './shared/formField';
+import { FormFieldsService } from './shared/formFields.service';
 
 @Component({
     selector: 'ms-view-formField',

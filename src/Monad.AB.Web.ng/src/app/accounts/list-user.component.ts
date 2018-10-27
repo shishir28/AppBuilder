@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { MatSnackBar } from "@angular/material";
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { DialogService } from '../widgets/dialogs/dialog.service';
-import { AccountsService } from './shared/accounts.service';
 import { UserViewModel } from './shared/account';
+import { AccountsService } from './shared/accounts.service';
 
 @Component({
     selector: 'ms-list-user',

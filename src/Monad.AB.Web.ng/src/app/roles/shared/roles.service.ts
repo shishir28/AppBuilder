@@ -1,8 +1,8 @@
-import { Http, URLSearchParams, Response, Headers, RequestOptions } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs'
-import { RoleViewModel, RoleRightsViewModel, UpdateRoleRightsViewModel } from './role';
+import { Http, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs';
+
+import { RoleRightsViewModel, UpdateRoleRightsViewModel } from './role';
 
 @Injectable()
 

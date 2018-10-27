@@ -1,13 +1,10 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 
-// ---------Routes--------------------------------------------------
-import { projectsRoutes } from './projects/projects.routing';
-import { formsRoutes } from './forms/forms.routing';
+import { IconsComponent } from '../widgets/icons/icons.component';
 import { formFieldsRoutes } from './formFields/formFields.routing';
 import { formFieldViewsRoutes } from './formFieldViews/formFieldViews.routing';
-// -----------------------------------------------------------------
-import { IconsComponent } from '../widgets/icons/icons.component';
+import { formsRoutes } from './forms/forms.routing';
+import { projectsRoutes } from './projects/projects.routing';
 
 export const mainRoutes: Routes = [
     {

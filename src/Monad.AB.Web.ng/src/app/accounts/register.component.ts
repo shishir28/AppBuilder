@@ -1,8 +1,9 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { fadeInAnimation } from "../route.animation";
-import { Router } from "@angular/router";
-import { AccountsService } from './shared/accounts.service';
+import { Router } from '@angular/router';
+
+import { fadeInAnimation } from '../route.animation';
 import { RegisterDetail } from './shared/account';
+import { AccountsService } from './shared/accounts.service';
 
 @Component({
     selector: 'ms-register',

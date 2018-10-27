@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { AccountsService } from '../../../accounts/shared/accounts.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { LogoutDetail } from '../../../accounts/shared/account';
+import { AccountsService } from '../../../accounts/shared/accounts.service';
 
 @Component({
     selector: 'ms-toolbar-user-button',

@@ -1,4 +1,5 @@
-﻿import { Routes, RouterModule } from '@angular/router';
+﻿import { Routes } from '@angular/router';
+
 import { EditFormFieldViewComponent } from './edit-formFieldView.component';
 
 export const formFieldViewsRoutes: Routes = [

@@ -1,8 +1,8 @@
-﻿import { Routes, RouterModule } from '@angular/router';
+﻿import { Routes } from '@angular/router';
 
-import {EditFormComponent} from "./edit-form.component";
-import {NewFormComponent} from "./new-form.component";
-import {ViewFormComponent} from "./view-form.component";
+import { EditFormComponent } from './edit-form.component';
+import { NewFormComponent } from './new-form.component';
+import { ViewFormComponent } from './view-form.component';
 
 export const formsRoutes: Routes = [
     { path: 'projects/:projectid/forms/new', component: NewFormComponent},

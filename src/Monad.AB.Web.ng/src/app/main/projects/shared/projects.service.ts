@@ -1,9 +1,9 @@
-
-import { Http, URLSearchParams, Response, Headers, RequestOptions } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Http, RequestOptions, Response, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs';
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+
+
 @Injectable()
 
 export class ProjectsService {

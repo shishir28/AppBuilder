@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewEncapsulation, HostBinding } from '@angular/core';
-import { Input } from "@angular/core";
-import { SidenavItem } from "./sidenav-item.model";
-import { SidenavService } from "../sidenav.service";
+import { Component, HostBinding, Input, OnInit, ViewEncapsulation } from '@angular/core';
+
+import { SidenavService } from '../sidenav.service';
+import { SidenavItem } from './sidenav-item.model';
 
 @Component({
   selector: 'ms-sidenav-item',

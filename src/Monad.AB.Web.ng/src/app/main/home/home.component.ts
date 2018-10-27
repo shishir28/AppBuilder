@@ -1,11 +1,9 @@
-﻿import {
-    Component, OnInit, ViewChild, ViewEncapsulation, AfterViewInit, ViewChildren, QueryList,
-    ElementRef, OnDestroy
-} from '@angular/core';
-import { Subscription } from "rxjs";
-import { MediaChange } from "@angular/flex-layout";
-import { Router, NavigationEnd } from "@angular/router";
-import { MediaReplayService } from "../../widgets/sidenav/mediareplay/media-replay.service";
+﻿import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MediaChange } from '@angular/flex-layout';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+
+import { MediaReplayService } from '../../widgets/sidenav/mediareplay/media-replay.service';
 
 @Component({
     selector: 'ms-home',

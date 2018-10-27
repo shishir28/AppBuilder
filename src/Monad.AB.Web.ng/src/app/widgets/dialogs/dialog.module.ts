@@ -1,9 +1,9 @@
-﻿import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatDialogModule, MatButtonModule } from '@angular/material';
+﻿import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MatButtonModule, MatDialogModule } from '@angular/material';
 
-import { DialogService } from './dialog.service';
 import { ConfirmDialog } from './dialog.component';
+import { DialogService } from './dialog.service';
 
 @NgModule({
     imports: [

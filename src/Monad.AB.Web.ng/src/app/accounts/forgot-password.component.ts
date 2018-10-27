@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { fadeInAnimation } from "../route.animation";
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
+
+import { fadeInAnimation } from '../route.animation';
 
 @Component({
   selector: 'ms-forgot-password',

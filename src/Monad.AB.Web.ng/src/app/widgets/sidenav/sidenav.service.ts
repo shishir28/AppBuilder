@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { SidenavItem } from "./sidenav-item/sidenav-item.model";
-import { BehaviorSubject, Observable } from "rxjs";
+import { Http, RequestOptions, URLSearchParams } from '@angular/http';
+import { MatSnackBar } from '@angular/material';
 import * as _ from 'lodash';
-import { MatSnackBar, MatSnackBarConfig } from "@angular/material";
-import { Http, URLSearchParams, Response, Headers, RequestOptions } from '@angular/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+
+import { SidenavItem } from './sidenav-item/sidenav-item.model';
 
 @Injectable()
 export class SidenavService {

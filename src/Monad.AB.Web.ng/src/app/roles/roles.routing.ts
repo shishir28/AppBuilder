@@ -1,7 +1,8 @@
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
+
+import { EditRoleComponent } from './edit-role.component';
 import { ListRoleComponent } from './list-role.component';
 import { NewRoleComponent } from './new-role.component';
-import { EditRoleComponent } from './edit-role.component';
 import { ViewRoleComponent } from './view-role.component';
 
 export const rolesRoutes: Routes = [

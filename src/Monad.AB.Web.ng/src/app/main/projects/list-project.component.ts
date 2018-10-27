@@ -1,7 +1,9 @@
-﻿import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+﻿import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { routeAnimation } from "../../route.animation";
+
+import { routeAnimation } from '../../route.animation';
 import { ProjectsService } from './shared/projects.service';
+
 @Component({
     selector: 'ms-list-project',
     templateUrl: './list-project.component.html',

@@ -1,11 +1,12 @@
-import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
-import { SidenavItem } from "./sidenav-item/sidenav-item.model";
-import { SidenavService } from "./sidenav.service";
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
+import { NavigationEnd, Router } from '@angular/router';
 import * as _ from 'lodash';
-import { Router, NavigationEnd } from "@angular/router";
-import { Subscription } from "rxjs";
-import { BreadcrumbService } from "../breadcrumb/breadcrumb.service";
-import { MatSnackBar, MatSnackBarConfig } from "@angular/material";
+import { Subscription } from 'rxjs';
+
+import { BreadcrumbService } from '../breadcrumb/breadcrumb.service';
+import { SidenavItem } from './sidenav-item/sidenav-item.model';
+import { SidenavService } from './sidenav.service';
 
 @Component({
     selector: 'ms-sidenav',

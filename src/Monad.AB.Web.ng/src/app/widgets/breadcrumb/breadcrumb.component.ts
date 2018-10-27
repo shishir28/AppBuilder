@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { Router, NavigationEnd } from "@angular/router";
-import { BreadcrumbService } from "./breadcrumb.service";
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+
+import { BreadcrumbService } from './breadcrumb.service';
 
 @Component({
   selector: 'ms-breadcrumbs',

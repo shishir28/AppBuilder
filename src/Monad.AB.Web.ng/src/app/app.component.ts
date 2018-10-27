@@ -1,5 +1,6 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
-import { MediaReplayService } from "./widgets/sidenav/mediareplay/media-replay.service";
+
+import { MediaReplayService } from './widgets/sidenav/mediareplay/media-replay.service';
 
 @Component({
   selector: 'app-root',

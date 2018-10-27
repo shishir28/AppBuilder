@@ -1,6 +1,7 @@
-﻿import { Routes, RouterModule } from '@angular/router';
-import { NewFormFieldComponent } from './new-formField.component';
+﻿import { Routes } from '@angular/router';
+
 import { EditFormFieldComponent } from './edit-formField.component';
+import { NewFormFieldComponent } from './new-formField.component';
 import { ViewFormFieldComponent } from './view-formField.component';
 
 export const formFieldsRoutes: Routes = [

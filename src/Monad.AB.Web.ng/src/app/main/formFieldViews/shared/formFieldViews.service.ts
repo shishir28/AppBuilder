@@ -1,7 +1,7 @@
-import { Http, URLSearchParams, Response, Headers, RequestOptions } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs'
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs';
+
 @Injectable()
 
 export class FormFieldViewsService {

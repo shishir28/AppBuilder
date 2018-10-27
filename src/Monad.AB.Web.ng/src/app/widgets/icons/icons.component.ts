@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
-import {fadeInAnimation} from "../../route.animation";
+
+import { fadeInAnimation } from '../../route.animation';
 
 @Component({
   selector: 'ms-icons',

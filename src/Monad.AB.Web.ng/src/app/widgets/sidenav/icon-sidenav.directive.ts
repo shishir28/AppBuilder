@@ -1,9 +1,10 @@
-import {Directive, HostBinding, HostListener, Inject, OnInit, OnDestroy} from '@angular/core';
-import { SidenavService } from "./sidenav.service";
-import { SidenavItem } from "./sidenav-item/sidenav-item.model";
-import {MediaChange, ObservableMedia} from "@angular/flex-layout";
-import { Subscription } from "rxjs";
-import {MediaReplayService} from "./mediareplay/media-replay.service";
+import { Directive, HostBinding, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { MediaChange } from '@angular/flex-layout';
+import { Subscription } from 'rxjs';
+
+import { MediaReplayService } from './mediareplay/media-replay.service';
+import { SidenavItem } from './sidenav-item/sidenav-item.model';
+import { SidenavService } from './sidenav.service';
 
 @Directive({
   selector: '[msIconSidenav]'

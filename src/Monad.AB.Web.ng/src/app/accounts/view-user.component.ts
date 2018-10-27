@@ -1,14 +1,14 @@
-
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from "@angular/material";
-import { DialogService } from '../widgets/dialogs/dialog.service';
-import { AccountsService } from './shared/accounts.service';
-import { RolesService } from '../roles/shared/roles.service'
+import { MatSnackBar } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { UserEditViewModel, UserClaimsViewModel } from './shared/account';
 import { RoleViewModel } from '../roles/shared/role';
+import { RolesService } from '../roles/shared/roles.service';
+import { DialogService } from '../widgets/dialogs/dialog.service';
+import { UserClaimsViewModel, UserEditViewModel } from './shared/account';
+import { AccountsService } from './shared/accounts.service';
+
 
 @Component({
   selector: 'ms-view-user',
