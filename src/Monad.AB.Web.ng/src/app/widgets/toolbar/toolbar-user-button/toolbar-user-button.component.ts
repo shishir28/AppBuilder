@@ -17,7 +17,7 @@ export class ToolbarUserButtonComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.userName = localStorage.getItem('currentUser');
+        this.userName = sessionStorage.getItem('currentUser');
     }
 
     toggleDropdown() {
@@ -29,9 +29,9 @@ export class ToolbarUserButtonComponent implements OnInit {
         this.accountService.logout(this.logoutDetail)
             .subscribe(response => {
                 if (response.statusCode == 200) {
-                    localStorage.removeItem('currentUser');
-                    localStorage.removeItem('currentUserToken');
-                    localStorage.removeItem('isCurrentUserAuthenticated');
+                    sessionStorage.removeItem('currentUser');
+                    sessionStorage.removeItem('currentUserToken');
+                    sessionStorage.removeItem('isCurrentUserAuthenticated');
                     this.router.navigateByUrl('/login');
                 }
             });

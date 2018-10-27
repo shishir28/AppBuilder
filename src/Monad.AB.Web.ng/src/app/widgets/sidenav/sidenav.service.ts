@@ -37,8 +37,6 @@ export class SidenavService {
         });
         this.http.get('api/project/GetProjects', options)
             .subscribe(response => {
-
-                debugger;
                 let projectList = response.json();
                 for (var idx = 0; idx < projectList.length; idx++) {
                     var project = projectList[idx];

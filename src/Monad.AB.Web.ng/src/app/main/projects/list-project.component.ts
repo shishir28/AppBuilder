@@ -24,7 +24,7 @@ export class ListProjectComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
-        this.projectsService.getProjects(localStorage.getItem('currentUser'))
+        this.projectsService.getProjects(sessionStorage.getItem('currentUser'))
             .subscribe(data => {
                 this.projects = data;
             });

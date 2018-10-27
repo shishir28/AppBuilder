@@ -89,7 +89,6 @@ export class EditUserComponent implements OnInit {
     this.accountsService.editUser(data)
       .subscribe(response => {
         if (response.statusCode == 204) {
-          debugger;
           this.accountsService.saveUserClains(data.id, this.userClaims)
             .subscribe(
             resp => {

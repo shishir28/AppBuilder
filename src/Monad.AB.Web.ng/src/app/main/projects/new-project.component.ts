@@ -46,7 +46,7 @@ export class NewProjectComponent implements OnInit {
 
     saveProject(data) {
         this.serverErrorMessage = '';
-        data.userName = localStorage.getItem('currentUser');
+        data.userName = sessionStorage.getItem('currentUser');
         this.projectsService.addProject(data)
             .subscribe(response => {
                 if (response.statusCode == 201) {

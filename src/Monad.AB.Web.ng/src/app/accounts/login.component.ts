@@ -28,10 +28,12 @@ export class LoginComponent implements OnInit {
         this.accountsService.login(this.loginDetail)
             .subscribe(response => {
                 if (response.statusCode == 200) {
-                    localStorage.setItem('currentUser', response.content.user.userName);
-                    localStorage.setItem('isCurrentUserAuthenticated', response.content.authenticated);
-                    localStorage.setItem('currentUserToken', response.content.token);
-                    localStorage.setItem('accessRights', JSON.stringify(response.content.claims));
+                    
+                    
+                    sessionStorage.setItem('currentUser', response.content.user.userName);
+                    sessionStorage.setItem('isCurrentUserAuthenticated', response.content.authenticated);
+                    sessionStorage.setItem('currentUserToken', response.content.token);
+                    sessionStorage.setItem('accessRights', JSON.stringify(response.content.claims));
                     this.router.navigateByUrl('/projects');
                 } else if (response.statusCode == 412) {
                     this.serverErrorMessage = "Invalid Credentials!";

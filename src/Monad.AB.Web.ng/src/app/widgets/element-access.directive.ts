@@ -11,7 +11,7 @@ export class ElementAccessDirective {
     ) { }
 
     @Input() set msElementAccess(accessRight: string) {
-        var acessControlList = JSON.parse(localStorage.getItem('accessRights'));
+        var acessControlList = JSON.parse(sessionStorage.getItem('accessRights'));
         var foundAccessRight = acessControlList.filter(
             ac => ac.claimValue == accessRight);
         if (foundAccessRight.length > 0) {

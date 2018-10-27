@@ -24,7 +24,7 @@ export class ViewUserProfileComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
-        this.userName = localStorage.getItem('currentUser');
+        this.userName = sessionStorage.getItem('currentUser');
 
         this.usersService.getUserProfile(this.userName)
             .subscribe(

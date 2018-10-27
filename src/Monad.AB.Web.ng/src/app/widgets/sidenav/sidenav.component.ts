@@ -28,7 +28,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
     ) { }
 
     ngOnInit() {
-        this.sidenavService.buildMenu(localStorage.getItem('currentUser'));
+        this.sidenavService.buildMenu(sessionStorage.getItem('currentUser'));
         this._itemsSubscription = this.sidenavService.items$
             .subscribe((items: SidenavItem[]) => {
                 this.items = this.sortRecursive(items, 'position');
