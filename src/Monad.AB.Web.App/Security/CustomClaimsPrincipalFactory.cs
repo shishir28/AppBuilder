@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using Monad.AB.Domain.Entities.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Builder;
+using Monad.AB.Domain.Entities.Identity;
+using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Monad.AB.Web.App.Security
 {

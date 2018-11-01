@@ -1,9 +1,4 @@
-﻿using Monad.AB.Common;
-using Monad.AB.Domain.Entities.Identity;
-using Monad.AB.Infrastructure.DependencyResolver;
-using Monad.AB.Web.App.Middlewares;
-using Monad.AB.Web.App.Policies;
-using Monad.AB.Web.App.Security;
+﻿// using NLog.Extensions.Logging;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -14,11 +9,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-// using NLog.Extensions.Logging;
-using Newtonsoft.Json;
+using Monad.AB.Common;
+using Monad.AB.Domain.Entities.Identity;
+using Monad.AB.Infrastructure.DependencyResolver;
+using Monad.AB.Web.App.Middlewares;
+using Monad.AB.Web.App.Policies;
+using Monad.AB.Web.App.Security;
 using System.IO;
 using System.Threading.Tasks;
 using System;
+
 namespace Monad.AB.Web.App
 {
     public class Startup

@@ -1,7 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Http;
 using System.Diagnostics;
 using System.Linq;
-using Microsoft.AspNetCore.Http;
 
 namespace Monad.AB.Web.App.Middlewares
 {

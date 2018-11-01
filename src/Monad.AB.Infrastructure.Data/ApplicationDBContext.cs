@@ -1,7 +1,5 @@
-﻿using Monad.AB.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Monad.AB.Domain.Entities.Identity;
+﻿using Microsoft.EntityFrameworkCore;
+using Monad.AB.Domain.Entities;
 namespace Monad.AB.Infrastructure.Data
 {
     public class ApplicationDBContext : DbContext

@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Monad.AB.Domain.Entities.Identity;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Security.Claims;
-using Monad.AB.Domain.Entities.Identity;
+using System.Threading.Tasks;
 
 namespace Monad.AB.Services.Interface
 {

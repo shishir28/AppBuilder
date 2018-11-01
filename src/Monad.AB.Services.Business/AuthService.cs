@@ -1,9 +1,9 @@
-﻿using Monad.AB.Services.Interface;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Identity;
 using Monad.AB.Domain.Entities.Identity;
+using Monad.AB.Services.Interface;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
 
 namespace Monad.AB.Services.Business
 {

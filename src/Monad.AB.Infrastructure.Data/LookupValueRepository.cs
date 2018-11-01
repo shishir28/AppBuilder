@@ -1,6 +1,5 @@
 using Monad.AB.Domain.Entities;
 using Monad.AB.Domain.Interfaces;
-using Monad.AB.Infrastructure.Data;
 using System.Linq;
 
 namespace Monad.AB.Infrastructure.Data

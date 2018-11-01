@@ -1,14 +1,12 @@
+using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Monad.AB.Domain.Entities.Identity;
+using Monad.AB.Domain.Entities;
 using Monad.AB.Services.Interface;
 using Monad.AB.Web.App.Models;
-using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using Monad.AB.Domain.Entities;
-using AutoMapper;
-using Monad.AB.Domain.Entities.Identity;
-using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
-using Monad.AB.Domain.Entities.Dto;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Monad.AB.Web.App.Controllers
 {

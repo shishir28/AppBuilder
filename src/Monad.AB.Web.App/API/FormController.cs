@@ -1,10 +1,10 @@
-using Monad.AB.Services.Interface;
-using Monad.AB.Web.App.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using Monad.AB.Domain.Entities;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Monad.AB.Domain.Entities;
+using Monad.AB.Services.Interface;
+using Monad.AB.Web.App.Models;
+using System.Collections.Generic;
 
 namespace Monad.AB.Web.App.Controllers
 {

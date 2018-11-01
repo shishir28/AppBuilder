@@ -8,12 +8,9 @@ using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Monad.AB.Domain.Entities;
 using Monad.AB.Domain.Entities.Identity;
 using Monad.AB.Domain.Interfaces.Identity;
-using Monad.AB.Domain.Interfaces;
 
 namespace Monad.AB.Infrastructure.Data.Identity
 {

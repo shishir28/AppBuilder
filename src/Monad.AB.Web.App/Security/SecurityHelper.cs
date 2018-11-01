@@ -1,9 +1,5 @@
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Monad.AB.Common.StateManagement;
-using Monad.AB.Domain.Entities.Identity;
 using System.Linq;
 
 namespace Monad.AB.Web.App.Security

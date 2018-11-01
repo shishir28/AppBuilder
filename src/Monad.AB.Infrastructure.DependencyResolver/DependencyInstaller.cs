@@ -1,22 +1,22 @@
-﻿//using Monad.AB.CodeGenerators;
-using Monad.AB.Common.StateManagement;
-using Monad.AB.Domain.Entities.Identity;
-using Monad.AB.Domain.Interfaces;
-using Monad.AB.Domain.Interfaces.Identity;
-using Monad.AB.Infrastructure.Data;
-using Monad.AB.Infrastructure.Data.Identity;
-using Monad.AB.Infrastructure.StateManagement.Cache.Providers;
-using Monad.AB.Services.Business;
-using Monad.AB.Services.Interface;
-using Monad.AB.Services.Interface.CodeGenerators;
-using Microsoft.AspNetCore.Identity;
+﻿
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Monad.AB.Common.StateManagement;
 using Monad.AB.Common;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Monad.AB.Domain.Entities.Identity;
+using Monad.AB.Domain.Interfaces.Identity;
+using Monad.AB.Domain.Interfaces;
+using Monad.AB.Infrastructure.Data.Identity;
+using Monad.AB.Infrastructure.Data;
+using Monad.AB.Infrastructure.StateManagement.Cache.Providers;
+using Monad.AB.Services.Business;
+using Monad.AB.Services.Interface.CodeGenerators;
+using Monad.AB.Services.Interface;
 
 namespace Monad.AB.Infrastructure.DependencyResolver
 {
@@ -70,7 +70,6 @@ namespace Monad.AB.Infrastructure.DependencyResolver
             services.AddTransient<IRoleRightRepository, RoleRightRepository>();
             services.AddTransient<IRoleRightRequestRepository, RoleRightRequestRepository>();
 
-
             services.AddTransient<IRoleStore<Role>, CustomRoleStore>();
             services.AddTransient<IUserStore<User>, CustomUserStore>();
         }
@@ -85,8 +84,6 @@ namespace Monad.AB.Infrastructure.DependencyResolver
             services.AddTransient<IFormFieldViewService, FormFieldViewService>();
             services.AddTransient<IPublishService, PublishService>();
             services.AddTransient<IAuthService, AuthService>();
-            //services.AddTransient<ISolutionBuilder, SolutionBuilder>();
-            //services.AddTransient<IBuildScriptBuilder, BuildScriptBuilder>();
             services.AddTransient<IActivityService, ActivityService>();
             services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<IProjectService, ProjectService>();

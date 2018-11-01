@@ -1,17 +1,16 @@
-﻿using  Monad.AB.Services.Interface;
-using System;
+﻿
+using Microsoft.AspNetCore.Identity;
+using Monad.AB.Domain.Entities.Dto;
+using Monad.AB.Domain.Entities.Identity;
+using Monad.AB.Domain.Entities;
+using Monad.AB.Domain.Interfaces.Identity;
+using Monad.AB.Domain.Interfaces;
+using Monad.AB.Services.Interface;
 using System.Collections.Generic;
 using System.Linq;
-using  Monad.AB.Domain.Entities;
-using Monad.AB.Domain.Entities.Identity;
-
-using Monad.AB.Domain.Interfaces;
 using System.Threading.Tasks;
-using Monad.AB.Domain.Entities.Dto;
-using Microsoft.AspNetCore.Identity;
-using Monad.AB.Domain.Interfaces.Identity;
-
-namespace  Monad.AB.Services.Business
+using System;
+namespace Monad.AB.Services.Business
 {
     public class RoleService : IRoleService
     {

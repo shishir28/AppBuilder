@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using Monad.AB.Domain.Interfaces;
 using Monad.AB.Domain.Entities;
+using Monad.AB.Domain.Interfaces;
+using System.Linq;
 
 namespace Monad.AB.Infrastructure.Data
 {

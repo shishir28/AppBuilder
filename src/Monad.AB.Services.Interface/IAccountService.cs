@@ -1,10 +1,10 @@
-﻿using Monad.AB.Domain.Entities.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Monad.AB.Domain.Entities.Dto;
-using Microsoft.AspNetCore.Identity;
-using System.Threading.Tasks;
+using Monad.AB.Domain.Entities.Identity;
+using Monad.AB.Domain.Entities;
 using System.Collections.Generic;
 using System.Security.Claims;
-using Monad.AB.Domain.Entities;
+using System.Threading.Tasks;
 
 namespace Monad.AB.Services.Interface
 {

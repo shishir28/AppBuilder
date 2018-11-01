@@ -1,9 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Http;
 using System;
-using System.Text;
-using System.IO;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Options;
 
 namespace Monad.AB.Web.App.Middlewares
 {

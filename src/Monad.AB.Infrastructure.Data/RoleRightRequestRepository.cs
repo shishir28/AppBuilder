@@ -1,11 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.SqlServer.Server;
 using Monad.AB.Domain.Entities;
 using Monad.AB.Domain.Interfaces;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System;
-using Microsoft.SqlServer.Server;
 
 namespace Monad.AB.Infrastructure.Data
 {

@@ -1,10 +1,9 @@
-﻿using  Monad.AB.Domain.Entities;
-using Monad.AB.Domain.Entities.Dto;
-using Monad.AB.Domain.Entities.Identity;
+﻿using Monad.AB.Domain.Entities.Identity;
+using Monad.AB.Domain.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace  Monad.AB.Services.Interface
+namespace Monad.AB.Services.Interface
 {
     public interface IRoleService : IService
     {

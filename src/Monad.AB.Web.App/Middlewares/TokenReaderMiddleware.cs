@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
-using Microsoft.AspNetCore.Http;
-using System.IdentityModel.Tokens.Jwt;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System;
 
 namespace Monad.AB.Web.App.Middlewares
 {

@@ -1,22 +1,21 @@
+using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using Monad.AB.Common.StateManagement;
+using Monad.AB.Domain.Entities.Dto;
+using Monad.AB.Domain.Entities.Identity;
+using Monad.AB.Domain.Entities;
 using Monad.AB.Services.Interface;
 using Monad.AB.Web.App.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System;
-using Monad.AB.Common.StateManagement;
-using System.Security.Principal;
 using Monad.AB.Web.App.Policies;
-using Monad.AB.Domain.Entities.Identity;
-using Monad.AB.Domain.Entities.Dto;
-
-using AutoMapper;
-using Monad.AB.Domain.Entities;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
+using System.Security.Principal;
+using System.Threading.Tasks;
+using System;
 
 namespace Monad.AB.Web.App.Controllers
 {
