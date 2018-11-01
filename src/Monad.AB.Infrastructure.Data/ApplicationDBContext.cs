@@ -77,6 +77,10 @@ namespace Monad.AB.Infrastructure.Data
                 b.ToTable("User");
                 b.HasKey(u => u.Id);
                 b.Property(u => u.Id).HasColumnName("UserId");
+                // b.Ignore(u => u.CreatedDateUtc);
+                // b.Ignore(u => u.Gender);
+                // b.Ignore(u => u.LastModifiedBy);
+                // b.Ignore(u => u.LastModifiedDateUtc);
             });
 
             base.OnModelCreating(modelBuilder);
